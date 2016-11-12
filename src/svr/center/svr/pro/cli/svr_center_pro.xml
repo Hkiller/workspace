@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_center_data" file="svr_center_data.xml"/>
+
+    <!-- 协议定义 -->
+    <macrosgroup name="SVR_CENTER_ERROR_NO">
+        <macro name="SVR_CENTER_ERROR_INTERNAL" value="-1"/>
+        <macro name="SVR_CENTER_ERROR_SVR_TYPE_NOT_EXIST" value="1"/>
+        <macro name="SVR_CENTER_ERROR_TOO_MANY_SVR_TYPES" value="2"/>
+    </macrosgroup>
+
+    <!-- 注册或者握手协议 -->
+    <struct name="svr_center_req_join" version="1">
+        <entry name="set" type="svr_center_set" id="1"/>
+        <entry name="svr_count" type="uint16" id="2"/>
+        <entry name="svrs" type="svr_center_svr_id" count="0" refer="svr_count" id="3"/>
+    </struct>
+
+    <struct name="svr_center_res_join" version="1">
+        <entry name="result" type="int8" id="1"/>
+    </struct>
+
+    <!-- 协议数据 -->
+    <struct name="svr_center_res_query" version="1">
+        <entry name="count" type="uint16" id="1"/>
+        <entry name="data" type="svr_center_svr_info" count="0" refer="count" id="2"/>
+    </struct>
+
+    <!-- 协议数据 -->
+    <struct name="svr_center_ntf_join" version="1">
+        <entry name="set_id" type="uint16" id="1"/>
+        <entry name="count" type="uint16" id="2"/>
+        <entry name="data" type="svr_center_svr_info" count="0" refer="count" id="3"/>
+    </struct>
+
+    <struct name="svr_center_ntf_leave" version="1">
+        <entry name="set_id" type="uint16" id="1"/>
+    </struct>
+    
+    <!-- 整体协议定义 -->
+    <macrosgroup name="SVR_CENTER_CMD_ID">
+        <macro name="SVR_CENTER_CMD_REQ_JOIN" value="1"/>
+        <macro name="SVR_CENTER_CMD_RES_JOIN" value="2"/>
+
+        <macro name="SVR_CENTER_CMD_REQ_QUERY" value="3"/>
+        <macro name="SVR_CENTER_CMD_RES_QUERY" value="4"/>
+
+        <macro name="SVR_CENTER_CMD_NTF_LEAVE" value="9"/>
+        <macro name="SVR_CENTER_CMD_NTF_JOIN" value="10"/>
+    </macrosgroup>
+
+    <union name="svr_center_pkg_data" version="1" desc="">
+        <entry name="svr_center_req_join" type="svr_center_req_join" id="SVR_CENTER_CMD_REQ_JOIN"/>
+        <entry name="svr_center_res_join" type="svr_center_res_join" id="SVR_CENTER_CMD_RES_JOIN"/>
+
+        <entry name="svr_center_res_query" type="svr_center_res_query" id="SVR_CENTER_CMD_RES_QUERY"/>
+
+        <entry name="svr_center_ntf_leave" type="svr_center_ntf_leave" id="SVR_CENTER_CMD_NTF_LEAVE"/>
+        <entry name="svr_center_ntf_join" type="svr_center_ntf_join" id="SVR_CENTER_CMD_NTF_JOIN"/>
+    </union>
+
+    <struct name="svr_center_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_center_pkg_data" id="3" select="cmd"/>
+    </struct>
+
+</metalib>

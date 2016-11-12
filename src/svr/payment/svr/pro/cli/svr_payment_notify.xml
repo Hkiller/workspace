@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_payment_iapppay" file="svr_payment_iapppay.xml"/>
+    <include name="svr_payment_qihoo" file="svr_payment_qihoo.xml"/>
+    <include name="svr_payment_damai" file="svr_payment_damai.xml"/>
+
+    <union name="svr_payment_vendor_record" version="1">
+        <entry name="iapppay" type="svr_payment_iapppay_record" id="PAYMENT_RECHARGE_SERVICE_IAPPPAY"/>
+        <entry name="qihoo" type="svr_payment_qihoo_record" id="PAYMENT_RECHARGE_SERVICE_QIHOO"/>
+        <entry name="damai" type="svr_payment_damai_record" id="PAYMENT_RECHARGE_SERVICE_DAMAI"/>
+    </union>
+
+</metalib>

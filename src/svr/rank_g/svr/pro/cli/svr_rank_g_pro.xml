@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <macro name="SVR_RANK_G_INDEX_MAX" value="64"/>
+
+    <macrosgroup name="SVR_RANK_G_ERROR">
+        <macro name="SVR_RANK_G_ERROR_SUCCESS" value="0"/>
+        <macro name="SVR_RANK_G_ERROR_INTERNAL" value="-1"/>
+        <macro name="SVR_RANK_G_ERROR_INDEX_NOT_EXIST" value="1"/>
+        <macro name="SVR_RANK_G_ERROR_RECORD_NOT_EXIST" value="2"/>
+        <macro name="SVR_RANK_G_ERROR_RECORD_INPUT_DATA" value="3"/>
+        <macro name="SVR_RANK_G_ERROR_QUERY_TYPE_UNKNOWN" value="4"/>
+        <macro name="SVR_RANK_G_ERROR_FULL" value="5"/>
+        <macro name="SVR_RANK_G_ERROR_SEASON_NOT_BEGIN" value="6"/>
+        <macro name="SVR_RANK_G_ERROR_SEASON_NOT_EXIST" value="7"/>
+        <macro name="SVR_RANK_G_ERROR_SEASON_MISMATCH" value="8"/>
+        <macro name="SVR_RANK_G_ERROR_SEASON_SAVING" value="9"/>
+        <macro name="SVR_RANK_G_ERROR_RECORD_NOT_IN_INDEX" value="10"/>
+    </macrosgroup>
+
+    <!-- 具体查询条件的结构定义 -->
+    <macrosgroup name="SVR_RANK_G_QUERY_TYPE">
+        <macro name="SVR_RANK_G_QUERY_TYPE_BY_POS" value="1"/>
+        <macro name="SVR_RANK_G_QUERY_TYPE_BY_ID" value="2"/>
+    </macrosgroup>
+
+    <struct name="svr_rank_g_query_by_pos" version="1">
+        <entry name="start_pos" type="uint32" id="1"/>
+    </struct>
+
+    <struct name="svr_rank_g_query_by_id" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+		<entry name="start_pos_adj" type="int32" id="2"/>
+    </struct>
+
+    <union name="svr_rank_g_query_data" version="1">
+        <entry name="by_pos" type="svr_rank_g_query_by_pos" id="SVR_RANK_G_QUERY_TYPE_BY_POS"/>
+        <entry name="by_id" type="svr_rank_g_query_by_id" id="SVR_RANK_G_QUERY_TYPE_BY_ID"/>
+    </union>
+
+    <struct name="svr_rank_g_query" version="1">
+        <entry name="query_type" type="uint8" bindmacrogroup="SVR_RANK_G_QUERY_TYPE" id="1"/>
+        <entry name="query_data" type="svr_rank_g_query_data" select="query_type" id="2"/>
+    </struct>
+
+    <struct name="svr_rank_g_season_id" version="1">
+        <entry name="index_id" type="uint16" id="1"/>
+        <entry name="season" type="uint16" id="2"/>
+    </struct>
+
+    <struct name="svr_rank_g_season" version="1">
+        <entry name="index_id" type="uint16" id="1"/>
+        <entry name="season" type="uint16" id="2"/>
+        <entry name="begin_time" type="uint32" id="3"/>
+        <entry name="end_time" type="uint32" id="4"/>
+    </struct>
+    
+    <!--  ============ 协议定义 ========== -->
+    <struct name="svr_rank_g_res_query_season" version="1">
+        <entry name="season_count" type="uint8" id="1"/>
+        <entry name="seasons" type="svr_rank_g_season" count="0" refer="season_count" id="2"/>
+    </struct>
+    
+    <!--     更新数据 -->
+    <struct name="svr_rank_g_req_update" version="1">
+        <entry name="data_len" type="uint32" id="1"/>
+        <entry name="data" type="uint8" count="0" refer="data_len" id="2"/>
+    </struct>
+
+    <!--     清除数据 -->
+    <struct name="svr_rank_g_req_remove" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+    </struct>
+
+    <!--     查询排行榜（不带数据) -->
+    <struct name="svr_rank_g_req_query" version="1">
+        <entry name="index_id" type="uint32" id="1"/>
+        <entry name="season" type="uint16" id="2"/>
+        <entry name="query" type="svr_rank_g_query" id="3"/>
+        <entry name="require_count" type="uint16" id="4"/>
+    </struct>
+
+    <struct name="svr_rank_g_res_query" version="1">
+        <entry name="index_id" type="uint32" id="1"/>
+        <entry name="season" type="uint16" id="2"/>
+        <entry name="query" type="svr_rank_g_query" id="3"/>
+        <entry name="result_start" type="uint32" id="4"/>
+        <entry name="user_id_count" type="uint32" id="5"/>
+        <entry name="user_ids" type="uint64" count="0" refer="user_id_count" id="6"/>
+    </struct>
+
+    <!--     查询排行榜（包括数据) -->
+    <struct name="svr_rank_g_req_query_with_data" version="1">
+        <entry name="index_id" type="uint32" id="1"/>
+        <entry name="season" type="uint16" id="2"/>
+        <entry name="query" type="svr_rank_g_query" id="3"/>
+        <entry name="require_count" type="uint16" id="4"/>
+    </struct>
+
+    <struct name="svr_rank_g_res_query_with_data" version="1">
+        <entry name="index_id" type="uint32" id="1"/>
+        <entry name="season" type="uint16" id="2"/>
+        <entry name="query" type="svr_rank_g_query" id="3"/>
+        <entry name="result_start" type="uint32" id="4"/>
+        <entry name="data_len" type="uint16" id="5"/>
+        <entry name="data" type="uint8" count="0" refer="data_len" id="6"/>
+    </struct>
+
+    <!-- 错误响应 -->
+    <struct name="svr_rank_g_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!--  =========== 整体协议定义 ========== -->
+    <macrosgroup name="SVR_RANK_G_CMD_ID">
+        <macro name="SVR_RANK_G_CMD_REQ_UPDATE" value="1"/>
+        <macro name="SVR_RANK_G_CMD_RES_UPDATE" value="2"/>
+
+        <macro name="SVR_RANK_G_CMD_REQ_REMOVE" value="3"/>
+        <macro name="SVR_RANK_G_CMD_RES_REMOVE" value="4"/>
+
+        <macro name="SVR_RANK_G_CMD_REQ_QUERY" value="5"/>
+        <macro name="SVR_RANK_G_CMD_RES_QUERY" value="6"/>
+
+        <macro name="SVR_RANK_G_CMD_REQ_QUERY_WITH_DATA" value="7"/>
+        <macro name="SVR_RANK_G_CMD_RES_QUERY_WITH_DATA" value="8"/>
+
+        <macro name="SVR_RANK_G_CMD_REQ_QUERY_SEASON" value="9"/>
+        <macro name="SVR_RANK_G_CMD_RES_QUERY_SEASON" value="10"/>
+        
+        <macro name="SVR_RANK_G_CMD_REQ_INIT" value="17"/>
+        <macro name="SVR_RANK_G_CMD_REQ_DUMP" value="19"/>
+        
+        <macro name="SVR_RANK_G_CMD_RES_ERROR" value="21"/>
+    </macrosgroup>
+
+    <union name="svr_rank_g_pkg_data" version="1" desc="">
+        <entry name="svr_rank_g_req_update" type="svr_rank_g_req_update" id="SVR_RANK_G_CMD_REQ_UPDATE"/>
+
+        <entry name="svr_rank_g_req_remove" type="svr_rank_g_req_remove" id="SVR_RANK_G_CMD_REQ_REMOVE"/>
+
+        <entry name="svr_rank_g_req_query" type="svr_rank_g_req_query" id="SVR_RANK_G_CMD_REQ_QUERY"/>
+        <entry name="svr_rank_g_res_query" type="svr_rank_g_res_query" id="SVR_RANK_G_CMD_RES_QUERY"/>
+		<entry name="svr_rank_g_req_query_with_data" type="svr_rank_g_req_query_with_data" id="SVR_RANK_G_CMD_REQ_QUERY_WITH_DATA"/>
+        <entry name="svr_rank_g_res_query_with_data" type="svr_rank_g_res_query_with_data" id="SVR_RANK_G_CMD_RES_QUERY_WITH_DATA"/>
+
+        <entry name="svr_rank_g_res_query_season" type="svr_rank_g_res_query_season" id="SVR_RANK_G_CMD_RES_QUERY_SEASON"/>
+
+        <entry name="svr_rank_g_res_error" type="svr_rank_g_res_error" id="SVR_RANK_G_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_rank_g_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_rank_g_pkg_data" id="3" select="cmd"/>
+    </struct>
+
+</metalib>

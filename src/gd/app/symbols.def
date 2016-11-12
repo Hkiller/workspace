@@ -1,0 +1,4 @@
+app_setup_app_init
+app_setup_app_fini
+app_tick_runner_app_init
+app_tick_runner_app_fini

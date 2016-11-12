@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" version="1">
+
+    <macrosgroup name="svr_dir_region_status">
+        <macro name="SVR_DIR_REGION_NORMAL" value="1" desc="服务器正常" />
+        <macro name="SVR_DIR_REGION_MAINTENANCE" value="2" desc="服务器维护中" />
+    </macrosgroup>
+
+    <macrosgroup name="svr_dir_region_type">
+        <macro name="SVR_DIR_REGION_PUBLIC" value="1" desc="公共服务器" />
+        <macro name="SVR_DIR_REGION_TESTING" value="2" desc="测试服务器" />
+        <macro name="SVR_DIR_REGION_INTERNAL" value="3" desc="内部服务器" />
+    </macrosgroup>
+
+    <struct name="svr_dir_server" version="1">
+        <entry name="ip" type="string" size="16" id="1"/>
+        <entry name="port" type="uint16" id="2"/>
+    </struct>
+
+    <struct name="svr_dir_region" version="1">
+        <entry name="region_id" type="uint16" id="1"/>
+        <entry name="region_name" type="string" size="64" id="2"/>
+        <entry name="region_state" type="uint8" bindmacrosgroup="svr_dir_region_status" id="3"/>
+        <entry name="region_type" type="uint8" bindmacrosgroup="svr_dir_region_type" id="4"/>
+        <entry name="suggest_server" type="svr_dir_server" id="5"/>
+    </struct>
+
+    <!--  ============ 错误码定义 ======== -->
+    <macrosgroup name="svr_dir_error">
+        <macro name="SVR_DIR_ERRNO_GAME_MISMATCH" value="1"/>
+        <macro name="SVR_DIR_ERRNO_SUCCESS" value="0"/>
+        <macro name="SVR_DIR_ERRNO_INTERNAL" value="-1"/>
+    </macrosgroup>
+
+    <!--  ============ 协议定义 ========== -->
+
+    <!-- 查询分区 -->
+    <struct name="svr_dir_req_query_regions" version="1">
+        <entry name="version" type="string" size="64" id="1"/>
+    </struct>
+
+    <struct name="svr_dir_res_query_regions" version="1">
+        <entry name="region_count" type="uint16" id="1"/>
+        <entry name="regions"  type="svr_dir_region" count="0" refer="region_count" id="2"/>
+    </struct>
+
+    <!-- 查询服务器列表 -->
+    <struct name="svr_dir_req_query_servers" version="1">
+        <entry name="region" type="uint16"/>
+    </struct>
+
+    <struct name="svr_dir_res_query_servers" version="1">
+        <entry name="server_count" type="uint16" id="1"/>
+        <entry name="servers"  type="svr_dir_server" count="0" refer="server_count" id="2"/>
+    </struct>
+    
+    <!--    错误响应 -->
+    <struct name="svr_dir_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!--  =========== 整体协议定义 ========== -->
+    <macrosgroup name="SVR_DIR_CMD_ID">
+        <macro name="SVR_DIR_CMD_REQ_QUERY_REGIONS" value="1"/>
+        <macro name="SVR_DIR_CMD_RES_QUERY_REGIONS" value="2"/>
+
+        <macro name="SVR_DIR_CMD_RES_ERROR" value="11"/>
+    </macrosgroup>
+
+    <union name="svr_dir_pkg_data" version="1" desc="">
+        <entry name="svr_dir_req_query_regions" type="svr_dir_req_query_regions" id="SVR_DIR_CMD_REQ_QUERY_REGIONS"/>
+        <entry name="svr_dir_res_query_regions" type="svr_dir_res_query_regions" id="SVR_DIR_CMD_RES_QUERY_REGIONS"/>
+
+        <entry name="svr_dir_res_error" type="svr_dir_res_error" id="SVR_DIR_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_dir_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_dir_pkg_data" id="2" select="cmd"/>
+    </struct>
+</metalib>
+

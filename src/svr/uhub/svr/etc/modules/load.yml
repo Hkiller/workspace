@@ -1,0 +1,72 @@
+- name: log_context
+  config:
+    nocleanup: 0
+    #bufsize: 4kb
+
+  rollingpolicies:
+    - dev: { type: sizewin, maxsize: 500mb, maxnum: 10 }
+
+  layouts:
+    - default: { type: dated }
+
+  appenders:
+    - dev: { type: rollingfile, policy: dev, layout: default }
+    - deploment: { type: rollingfile, policy: dev, layout: default }
+    - syslog: { type: syslog, layout: default }
+    - stdout: { type: stream, layout: default }
+    - stderr: { type: stream, layout: default }
+
+  categories:
+    - default: { appender: dev }
+
+  debug: 1
+
+- name: app_setup
+  debug-app: 0
+  debug-net: 0
+  tickers: [ tl, net ]
+
+- name: app_tick_runner
+
+- name: gd_timer_mgr
+
+- name: logic_manage
+  require-timeout-ms: 20000
+  context-timeout-ms: 60000
+
+- name: dr_store_manage
+
+- include: metalibs
+
+- name: net_dns_manage
+  
+- name: db-connection
+  type: mongo_driver
+  outgoing-recv-at: db-connection-send
+  incoming-send-to: db-client-process
+  uri: $db-svr
+  ringbuf-size: $db-buf-size
+  auto-enable: 1
+  debug: 0
+
+- name: db-client
+  type: mongo_cli_proxy
+  mongo-driver: db-connection
+  incoming-recv-at: db-client-process
+  outgoing-send-to: db-connection-send
+  dft-db: $db-ns
+  buf-size: 4096000
+  debug: 0
+
+- name: set_svr_stub
+  svr-type: svr_uhub
+  request-send-to: process-incoming
+  response-send-to: process-response
+  outgoing-recv-at: process-outgoing
+  debug: 1
+
+- name: uhub_svr
+  db: db-client
+  debug: 1
+
+# -*- coding: utf-8 -*-

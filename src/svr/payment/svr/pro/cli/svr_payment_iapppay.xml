@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_payment_data" file="svr_payment_data.xml"/>
+
+    <struct name="svr_payment_iapppay_record" version="1">
+        <entry name="transid" type="string" size="32" id="1"/> <!-- 计费支付平台的交易流水号 -->
+        <entry name="appuserid" type="string" size="32" id="2"/> <!-- 用户在商户应用的唯一标识 -->
+        <entry name="appid" type="string" size="20" id="3"/> <!-- 平台为商户应用分配的唯一代码 -->
+        <entry name="waresid" type="uint16" id="4"/> <!-- 平台为应用内需计费商品分配的编码 -->
+        <entry name="feetype" type="uint16" id="5"/> <!-- 计费方式 -->
+        <entry name="money" type="float" id="6"/> <!-- 本次交易的金额 -->
+        <entry name="currency" type="string" size="32" id="7"/> <!-- 货币类型以及单位 -->
+        <entry name="result" type="int32" id="8"/> <!-- 交易结果:  0–交易成功,2–待支付 -->
+        <entry name="transtime" type="string" size="20" id="9"/> <!-- 交易时间格式： yyyy-mm-dd hh24:mi:ss -->
+        <entry name="paytype" type="int32" id="10"/> <!-- 支付方式 -->
+        <entry name="transtype" type="int32" id="11"/> <!-- 交易类型：0-支付交易；1-支付冲正（暂未启用）；2-契约退订；3-自动续费 -->
+    </struct>
+
+    <struct name="svr_payment_iapppay_error" version="1">
+        <entry name="code" type="int32" id="1"/>
+        <entry name="errmsg" type="string" size="64" id="2"/>
+    </struct>
+    
+</metalib>

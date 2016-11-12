@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_apple_iap_data" file="svr_apple_iap_data.xml"/>
+
+    <!--  ============ 错误码定义 ======== -->
+    <macrosgroup name="svr_apple_iap_error">
+        <macro name="SVR_APPLE_IAP_ERRNO_SUCCESS" value="0"/>
+        <macro name="SVR_APPLE_IAP_ERRNO_INTERNAL" value="-1"/>
+        <macro name="SVR_APPLE_IAP_ERRNO_VALIDATE_TIMEOUT" value="-2"/>
+    </macrosgroup>
+
+    <!--  ============ 协议定义 ========== -->
+
+    <!--     验证充值请求 -->
+    <struct name="svr_apple_iap_req_validate" version="1">
+        <entry name="receipt" type="string" size="SVR_APPLE_IAP_RECEIPT_MAX" id="1"/>
+    </struct>
+
+    <struct name="svr_apple_iap_res_validate" version="1">
+        <entry name="status" type="int32" id="1"/>
+        <entry name="receipt" type="svr_apple_iap_purchase_data" id="2"/>
+    </struct>
+
+    <!--    错误响应 -->
+    <struct name="svr_apple_iap_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!--  =========== 整体协议定义 ========== -->
+    <macrosgroup name="SVR_APPLE_IAP_CMD_ID">
+        <macro name="SVR_APPLE_IAP_CMD_REQ_VALIDATE" value="1"/>
+        <macro name="SVR_APPLE_IAP_CMD_RES_VALIDATE" value="2"/>
+
+        <macro name="SVR_APPLE_IAP_CMD_RES_ERROR" value="3"/>
+    </macrosgroup>
+
+    <union name="svr_apple_iap_pkg_data" version="1" desc="">
+        <entry name="svr_apple_iap_req_validate" type="svr_apple_iap_req_validate" id="SVR_APPLE_IAP_CMD_REQ_VALIDATE"/>
+        <entry name="svr_apple_iap_res_validate" type="svr_apple_iap_res_validate" id="SVR_APPLE_IAP_CMD_RES_VALIDATE"/>
+
+        <entry name="svr_apple_iap_res_error" type="svr_apple_iap_res_error" id="SVR_APPLE_IAP_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_apple_iap_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_apple_iap_pkg_data" id="2" select="cmd"/>
+    </struct>
+
+</metalib>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" version="1">
+    <include name="svr_version_data" file="svr_version_data.xml"/>
+
+    <!--  ============ 协议相关数据 ============= -->
+    <struct name="svr_version_package_with_version" version="1">
+        <entry name="version" type="string" size="64" id="1"/>
+        <entry name="package" type="svr_version_package" id="2"/>
+    </struct>
+
+    <!--  ============ 错误码定义 ======== -->
+    <macrosgroup name="svr_version_error">
+        <macro name="SVR_VERSION_ERRNO_SUCCESS" value="0"/>
+        <macro name="SVR_VERSION_ERRNO_INTERNAL" value="-1"/>
+        <macro name="SVR_VERSION_ERRNO_VERSION_UNKNOWN" value="1"/>
+        <macro name="SVR_VERSION_ERRNO_NO_PATH" value="2"/>
+        <macro name="SVR_VERSION_ERRNO_DEVICE_CATEGORY_NOT_SUPPORT" value="3"/>
+        <macro name="SVR_VERSION_ERRNO_CHANEL_NOT_SUPPORT" value="4"/>
+    </macrosgroup>
+
+    <!--  ============ 协议定义 ========== -->
+
+    <!--     查询版本升级路径 -->
+    <struct name="svr_version_req_query" version="1">
+        <entry name="from_version" type="string" size="64" id="1"/>
+        <entry name="to_version" type="string" size="64" id="2"/>
+    </struct>
+
+    <struct name="svr_version_res_query" version="1">
+        <entry name="update_strategy" type="uint8" bindmacrosgroup="svr_version_update_strategy" id="1"/>
+        <entry name="package_count" type="uint16" id="2"/>
+        <entry name="packages" type="svr_version_package_with_version" count="0" refer="package_count" id="3"/>
+    </struct>
+    
+    <!--    错误响应 -->
+    <struct name="svr_version_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!--  =========== 整体协议定义 ========== -->
+    <macrosgroup name="SVR_VERSION_CMD_ID">
+        <macro name="SVR_VERSION_CMD_REQ_QUERY" value="1"/>
+        <macro name="SVR_VERSION_CMD_RES_QUERY" value="2"/>
+
+        <macro name="SVR_VERSION_CMD_RES_ERROR" value="11"/>
+    </macrosgroup>
+
+    <union name="svr_version_pkg_data" version="1">
+        <entry name="svr_version_req_query" type="svr_version_req_query" id="SVR_VERSION_CMD_REQ_QUERY"/>
+        <entry name="svr_version_res_query" type="svr_version_res_query" id="SVR_VERSION_CMD_RES_QUERY"/>
+
+        <entry name="svr_version_res_error" type="svr_version_res_error" id="SVR_VERSION_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_version_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_version_pkg_data" id="3" select="cmd"/>
+    </struct>
+</metalib>
+

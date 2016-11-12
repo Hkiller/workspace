@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_set_data" file="svr_set_data.xml"/>
+
+    <!-- 协议定义 -->
+    <macrosgroup name="SVR_SET_ERROR_NO">
+        <macro name="SVR_SET_ERROR_INTERNAL" value="-1"/>
+    </macrosgroup>
+
+    <struct name="svr_stub_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <!-- <entry name="data" type="svr_stub_pkg_data" id="3" select="cmd"/> -->
+    </struct>
+
+</metalib>

@@ -1,0 +1,54 @@
+- name: log_context
+  config:
+    nocleanup: 0
+    #bufsize: 4kb
+
+  rollingpolicies:
+    - dev: { type: sizewin, maxsize: 500mb, maxnum: 10 }
+
+  layouts:
+    - default: { type: dated }
+
+  appenders:
+    - dev: { type: rollingfile, policy: dev, layout: default }
+    - deploment: { type: rollingfile, policy: dev, layout: default }
+    - syslog: { type: syslog, layout: default }
+    - stdout: { type: stream, layout: default }
+    - stderr: { type: stream, layout: default }
+
+  categories:
+    - default: { appender: dev }
+
+  debug: 1
+
+- name: app_setup
+  debug-app: 0
+  debug-net: 0
+  tickers:
+    - tl: {process-count: 500}
+
+- name: app_tick_runner
+
+- name: gd_timer_mgr
+
+- name: dr_store_manage
+
+- name: svr_rank_f_lib
+  type: dr_store_loader
+  load-from-symbol: g_metalib_svr_rank_f_pro
+
+- include: metalibs
+
+- name: set_svr_stub
+  svr-type: svr_rank_f
+  request-send-to: process-rank-f-request
+  outgoing-recv-at: process-rank-f-outgoing
+  debug: 1
+
+- name: rank_f_svr
+  request-recv-at: process-rank-f-request
+  check-span-ms: 1000
+
+  debug: 2
+
+# -*- coding: utf-8 -*-

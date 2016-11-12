@@ -1,0 +1,4 @@
+app_net_env_global_init
+app_net_env_global_fini
+app_net_runner_app_init
+app_net_runner_app_fini

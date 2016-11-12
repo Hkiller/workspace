@@ -1,0 +1,64 @@
+- name: log_context
+  config:
+    nocleanup: 0
+    #bufsize: 4kb
+
+  rollingpolicies:
+    - dev: { type: sizewin, maxsize: 500mb, maxnum: 10 }
+
+  layouts:
+    - default: { type: dated }
+
+  appenders:
+    - dev: { type: rollingfile, policy: dev, layout: default }
+    - deploment: { type: rollingfile, policy: dev, layout: default }
+    - syslog: { type: syslog, layout: default }
+    - stdout: { type: stream, layout: default }
+    - stderr: { type: stream, layout: default }
+
+  categories:
+    - default: { appender: dev }
+  debug: 1
+
+- name: app_net_env
+
+- name: app_setup
+  debug-app: 0
+  debug-net: 0
+  tickers:
+    - net
+    - tl: {process-count: 500}
+
+- name: app_tick_runner
+
+- name: gd_timer_mgr
+
+- name: dr_cvt_manage
+- name: dr_pbuf_cvt
+- name: dr_pbuf_len_cvt
+
+- name: dr_store_manage
+- include: metalibs
+
+- name: svr_conn_lib
+  type: dr_store_loader
+  load-from-symbol: g_metalib_svr_conn_pro
+
+- name: set_svr_stub
+  svr-type: $svr-type
+  request-send-to: process-conn-request
+  response-send-to: process-conn-trans
+  notify-send-to: process-conn-trans
+  outgoing-recv-at: process-conn-outgoing
+  debug: 1
+
+- name: conn_svr
+  ip:
+  ss-send-to: process-conn-outgoing
+  ss-request-recv-at: process-conn-request
+  ss-trans-recv-at: process-conn-trans
+  check-span-ms: 1000
+  conn-timeout-s: 300
+  debug: 2
+
+# -*- coding: utf-8 -*-

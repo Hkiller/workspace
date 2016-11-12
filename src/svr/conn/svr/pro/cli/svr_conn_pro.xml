@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_conn_data" file="svr_conn_data.xml"/>
+
+    <!--  ============ 协议定义 ========== -->
+
+    <!--  绑定连接到用户 -->
+    <struct name="svr_conn_req_bind_user" version="1">
+        <entry name="data" type="conn_svr_conn_info" id="1"/>
+    </struct>
+
+    <!-- 关闭连接 -->
+    <struct name="svr_conn_req_close" version="1">
+        <entry name="conn_id" type="uint32" id="1"/>
+        <entry name="user_id" type="uint64" id="2"/>
+    </struct>
+
+
+    <!--  =========== 整体协议定义 ========== -->
+    <!-- 整体协议定义 -->
+    <macrosgroup name="SVR_CONN_CMD_ID">
+        <macro name="SVR_CONN_CMD_REQ_BIND_USER" value="1"/>
+
+        <macro name="SVR_CONN_CMD_REQ_CLOSE" value="3"/>
+
+        <macro name="SVR_CONN_CMD_NOTIFY_DISCONNECTED" value="21"/>
+    </macrosgroup>
+
+    <union name="svr_conn_pkg_data" version="1" desc="">
+        <entry name="svr_conn_req_bind_user" type="svr_conn_req_bind_user" id="SVR_CONN_CMD_REQ_BIND_USER"/>
+
+        <entry name="svr_conn_req_close" type="svr_conn_req_close" id="SVR_CONN_CMD_REQ_CLOSE"/>
+    </union>
+
+    <struct name="svr_conn_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_conn_pkg_data" id="2" select="cmd"/>
+    </struct>
+
+</metalib>

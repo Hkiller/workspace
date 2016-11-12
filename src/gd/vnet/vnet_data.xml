@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GBK" standalone="yes" ?>
+<metalib tagsetversion="1" version="1" >
+    <struct name="vnet_conn_info" version="1">
+        <entry name="connection_id" type='int64'/>
+    </struct>
+</metalib>

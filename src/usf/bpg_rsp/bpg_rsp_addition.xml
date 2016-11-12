@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GBK" standalone="yes" ?>
+<metalib tagsetversion="1" name="BASEPKG" version="1" >
+    <struct name="bpg_rsp_addition_data" version="1">
+        <entry name="count" type='int16'/>
+        <entry name="capacity" type='int16'/>
+        <entry name="pieces" type='int32' count='0' refer='count'/>
+    </struct>
+</metalib>

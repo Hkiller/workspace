@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <macrosgroup name="svr_payment_service">
+        <macro name="PAYMENT_RECHARGE_SERVICE_IAPPPAY" value="1"/>  <!-- 充值 -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_IAP" value="2"/>  <!-- IAP充值 -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_QIHOO" value="3"/> <!-- 360充值 -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_DAMAI" value="4"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_UNICOMPAY_OFFLINE" value="5"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_UNICOMPAY_ONLINE" value="6"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_CMCCPAY_OFFLINE" value="7"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_CMCCPAY_ONLINE" value="8"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_TELECOMPAY_OFFLINE" value="9"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_TELECOMPAY_ONLINE" value="10"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_HAOXIN_OFFLINE" value="11"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_HAOXIN_ONLINE" value="12"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_CHUANGKU_OFFLINE" value="13"/> <!-- -->
+        <macro name="PAYMENT_RECHARGE_SERVICE_CHUANGKU_ONLINE" value="14"/> <!-- -->
+    </macrosgroup>
+
+    <macrosgroup name="svr_payment_device_category">
+        <macro name="svr_payment_device_windows" value="1"/>
+        <macro name="svr_payment_device_ios" value="2"/>
+        <macro name="svr_payment_device_android" value="3"/>
+    </macrosgroup>
+    
+    <macro name="PAYMENT_MONEY_TYPE_MIN" value="1"/>
+    <macro name="PAYMENT_MONEY_TYPE_MAX" value="4"/>
+    <macro name="PAYMENT_MONEY_TYPE_COUNT" value="3"/>
+
+    <struct name="svr_payment_money" version="1">
+        <entry name="type" type="uint8" id="1"/>
+        <entry name="count" type="uint64" id="2"/>
+    </struct>
+
+    <struct name="svr_payment_money_group" version="1">
+        <entry name="count" type="uint8" id="1"/>
+        <entry name="datas" type="svr_payment_money" count="PAYMENT_MONEY_TYPE_COUNT" refer="count" id="2"/>
+    </struct>
+
+    <macrosgroup name="svr_payment_recharge_state">
+        <macro name="PAYMENT_RECHARGE_INPROCESS" value="1"/>
+        <macro name="PAYMENT_RECHARGE_FAIL" value="2"/>
+        <macro name="PAYMENT_RECHARGE_SUCCESS" value="3"/>
+        <macro name="PAYMENT_RECHARGE_TIMEOUT" value="4"/>
+    </macrosgroup>
+    
+</metalib>

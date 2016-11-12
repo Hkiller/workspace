@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <macro name="SVR_CHAT_MSG_MAX_LEN" value="128"/>
+    <macro name="SVR_CHAT_APPEND_MAX_LEN" value="128"/>
+
+    <macrosgroup name="svr_chat_error">
+        <macro name="SVR_CHAT_ERRNO_SUCCESS" value="0"/>
+        <macro name="SVR_CHAT_ERRNO_INTERNAL" value="-1"/>
+        <macro name="SVR_CHAT_ERRNO_CHANEL_TYPE_UNKNOWN" value="1"/>
+    </macrosgroup>
+
+    <struct name="svr_chat_msg" version="1">
+        <entry name="sn" type="uint32" id="1"/>
+        <entry name="send_time" type="uint32" id="2"/>
+        <entry name="sender_id" type="uint64" id="3"/>
+        <entry name="sender_name" type="string" size="64" id="4"/>
+        <entry name="msg" type="string" size="SVR_CHAT_MSG_MAX_LEN" id="5"/>
+        <entry name="addition_data_size" type="uint8" id="7"/>
+        <entry name="addition_data" type="uint8" count="SVR_CHAT_APPEND_MAX_LEN" refer="addition_data_size" id="8"/>
+    </struct>
+
+    <!-- 协议定义 -->
+    <struct name="svr_chat_req_send_msg" version="1">
+        <entry name="chanel_type" type="uint16" id="1"/>
+        <entry name="chanel_id" type="uint64" id="2"/>
+        <entry name="sender_id" type="uint64" id="3"/>
+        <entry name="sender_name" type="string" size="64" id="4"/>
+        <entry name="msg" type="string" size="SVR_CHAT_MSG_MAX_LEN" id="5"/>
+        <entry name="addition_data_size" type="uint8" id="6"/>
+        <entry name="addition_data" type="uint8" count="SVR_CHAT_APPEND_MAX_LEN" refer="addition_data_size" id="7"/>
+    </struct>
+
+    <struct name="svr_chat_req_query_msg" version="1">
+        <entry name="chanel_type" type="uint16" id="1"/>
+        <entry name="chanel_id" type="uint64" id="2"/>
+        <entry name="after_sn" type="uint32" id="3"/>
+        <entry name="require_count" type="uint32" id="4"/>
+    </struct>
+
+    <struct name="svr_chat_res_query_msg" version="1">
+        <entry name="max_sn" type="uint32" id="1"/>
+        <entry name="count" type="uint8" id="2"/>
+        <entry name="msgs" type="svr_chat_msg" count="0" refer="count" id="3"/>
+    </struct>
+
+    <!--    错误响应 -->
+    <struct name="svr_chat_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!--  =========== 整体协议定义 ========== -->
+    <macrosgroup name="SVR_CHAT_CMD_ID">
+        <macro name="SVR_CHAT_CMD_REQ_SEND_MSG" value="1"/>
+        <macro name="SVR_CHAT_CMD_RES_SEND_MSG" value="2"/>
+
+        <macro name="SVR_CHAT_CMD_REQ_QUERY_MSG" value="3"/>
+        <macro name="SVR_CHAT_CMD_RES_QUERY_MSG" value="4"/>
+
+        <macro name="SVR_CHAT_CMD_RES_ERROR" value="5"/>
+    </macrosgroup>
+
+    <union name="svr_chat_pkg_data" version="1" desc="">
+        <entry name="svr_chat_req_send_msg" type="svr_chat_req_send_msg" id="SVR_CHAT_CMD_REQ_SEND_MSG"/>
+
+        <entry name="svr_chat_req_query_msg" type="svr_chat_req_query_msg" id="SVR_CHAT_CMD_REQ_QUERY_MSG"/>
+        <entry name="svr_chat_res_query_msg" type="svr_chat_res_query_msg" id="SVR_CHAT_CMD_RES_QUERY_MSG"/>
+
+        <entry name="svr_chat_res_error" type="svr_chat_res_error" id="SVR_CHAT_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_chat_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_chat_pkg_data" id="3" select="cmd"/>
+    </struct>
+
+</metalib>

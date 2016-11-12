@@ -1,0 +1,36 @@
+- name: mail_query_full
+  respons-to: SVR_MAIL_CMD_REQ_QUERY_MAIL_FULL
+  operations:
+    - mail_op_query_full
+
+- name: mail_query_basic
+  respons-to: SVR_MAIL_CMD_REQ_QUERY_MAIL_BASIC
+  operations:
+    - mail_op_query_basic
+
+- name: mail_query_detail
+  respons-to: SVR_MAIL_CMD_REQ_QUERY_MAIL_DETAIL
+  operations:
+    - mail_op_query_detail
+
+- name: mail_send
+  respons-to: SVR_MAIL_CMD_REQ_SEND_MAIL
+  operations:
+    - mongo_id_reserve: { id-name: mail_id, reserve-count: 1024 }
+    - mail_op_send_mail
+
+- name: mail_remove
+  respons-to: SVR_MAIL_CMD_REQ_REMOVE_MAIL
+  operations:
+    - mail_op_remove_mail
+
+- name: mail_update
+  respons-to: SVR_MAIL_CMD_REQ_UPDATE_MAIL
+  operations:
+    - mail_op_update_mail
+
+- name: mail_send_global
+  respons-to: SVR_MAIL_CMD_REQ_SEND_GLOBAL_MAIL
+  operations:
+    - mongo_id_reserve: { id-name: mail_id, reserve-count: 1024 }
+    - mail_op_send_global_mail

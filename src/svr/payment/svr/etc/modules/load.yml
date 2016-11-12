@@ -1,0 +1,110 @@
+- name: log_context
+  config:
+    nocleanup: 0
+    #bufsize: 4kb
+
+  rollingpolicies:
+    - dev: { type: sizewin, maxsize: 500mb, maxnum: 10 }
+
+  layouts:
+    - default: { type: dated }
+
+  appenders:
+    - dev: { type: rollingfile, policy: dev, layout: default }
+    - deploment: { type: rollingfile, policy: dev, layout: default }
+    - syslog: { type: syslog, layout: default }
+    - stdout: { type: stream, layout: default }
+    - stderr: { type: stream, layout: default }
+
+  categories:
+    - default: { appender: dev }
+
+  debug: 1
+
+- name: app_setup
+  debug-app: 0
+  debug-net: 0
+  tickers: [ tl, net ]
+
+- name: app_tick_runner
+
+- name: gd_timer_mgr
+
+- name: net_trans_manage
+  debug: 1
+
+- name: logic_executor_type_group
+
+- name: logic_manage
+  require-timeout-ms: 20000
+  context-timeout-ms: 60000
+
+- name: logic_op_basic
+
+- name: dr_store_manage
+
+- name: svr_apple_iap_lib
+  type: dr_store_loader
+  load-from-symbol: g_metalib_svr_apple_iap_pro
+
+- name: svr_payment_lib
+  type: dr_store_loader
+  load-from-symbol: g_metalib_svr_payment_pro
+
+- name: net_dns_manage
+
+- name: db-connection
+  type: mongo_driver
+  outgoing-recv-at: db-connection-send
+  incoming-send-to: db-client-process
+  uri: $db-svr
+  ringbuf-size: $db-buf-size
+  auto-enable: 1
+  debug: 2
+
+- name: db-client
+  type: mongo_cli_proxy
+  mongo-driver: db-connection
+  incoming-recv-at: db-client-process
+  outgoing-send-to: db-connection-send
+  dft-db: $db-ns
+  debug: 0
+
+- name: id-generator
+  type: mongo_id_generator
+  mongo-cli: db-client
+  ids:
+    - { name: payment_id, start: 1024, inc: 1024 }
+
+- name: mongo_id_reserve
+  id-generator: id-generator
+
+- name: payment-executor-manage
+  type: logic_executor_mgr
+
+- name: set_svr_stub
+  svr-type: svr_payment
+  request-send-to: process-payment-incoming
+  response-send-to: process-response
+  outgoing-recv-at: process-outgoing
+  debug: 1
+
+- name: payment-rsp-manager
+  type: set_logic_rsp_manage
+  #queue-attr: conn_svr_conn_info.user_id
+  executor-manage:  payment-executor-manage
+  commit-to: process-outgoing
+  recv-at: process-payment-incoming
+  debug: 2
+
+- name: set_logic_sp
+  outgoing-send-to: process-outgoing
+  incoming-recv-at: process-response
+  debug: 1
+
+- name: payment_svr
+  rsp-manage: payment-rsp-manager
+  db: db-client
+  debug: 1
+
+# -*- coding: utf-8 -*-

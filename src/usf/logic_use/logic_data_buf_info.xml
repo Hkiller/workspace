@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1" >
+    <struct name="logic_data_buf_info" version="1">
+        <entry name="size" type="uint32"/>
+    </struct>
+</metalib>

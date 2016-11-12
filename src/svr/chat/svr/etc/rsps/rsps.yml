@@ -1,0 +1,9 @@
+- name: ClientRsp_SendMsg
+  respons-to: SVR_CHAT_CMD_REQ_SEND_MSG
+  operations:
+    - ChatSvr_Op_SendMsg
+
+- name: ClientRsp_QueryMsg
+  respons-to: SVR_CHAT_CMD_REQ_QUERY_MSG
+  operations:
+    - ChatSvr_Op_QueryMsg

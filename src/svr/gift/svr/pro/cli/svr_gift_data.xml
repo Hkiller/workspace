@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <macro name="SVR_GIFT_CDKEY_LEN" value="16"/>
+
+    <!-- cdkey使用策略 -->
+    <macrosgroup name="svr_gift_use_policy">
+        <macro name="svr_gift_use_once_global" value="1"/>         <!-- 全局使用一次的cdkey -->
+        <macro name="svr_gift_use_once_per_user" value="2"/>       <!-- 每一个用户使用一次的cdkey -->
+    </macrosgroup>
+
+    <!-- cdkey生成信息 -->
+    <struct name="svr_gift_generate" version="1">
+        <entry name="generate_id" type="uint32" id="1"/>
+        <entry name="begin_time" type="uint32" id="2"/>
+        <entry name="expire_time" type="uint32" id="3"/>
+        <entry name="use_policy" type="uint8" id="4" bindmacrosgroup="svr_gift_use_policy"/>
+        <entry name="data_len" type="uint16" id="5"/>
+        <entry name="data" type="uint8" count="128" refer="data_len" id="6"/>
+    </struct>
+    
+    <!--    cdk基础信息 -->
+    <struct name="svr_gift_use_basic" version="1">
+        <entry name="cdkey" type="string" size="SVR_GIFT_CDKEY_LEN" id="1"/>
+    </struct>
+
+    <!--     cdk完整信息 -->
+    <macrosgroup name="svr_gift_use_state">
+        <macro name="svr_gift_use_state_used" value="1"/>
+        <macro name="svr_gift_use_state_not_used" value="2"/>
+    </macrosgroup>
+
+    <struct name="svr_gift_use_record_use" version="1">
+        <entry name="region_id" type="uint32" id="1"/>
+        <entry name="user_id" type="uint64" id="2"/>
+        <entry name="use_time" type="uint32" id="3"/>
+    </struct>
+
+    <union name="svr_gift_use_record_state_data" version="1">
+        <entry name="use" type="svr_gift_use_record_use" id="svr_gift_use_state_used"/>
+    </union>
+
+    <struct name="svr_gift_use_full" version="1">
+        <entry name="cdkey" type="string" size="SVR_GIFT_CDKEY_LEN" id="1"/>
+        <entry name="generate_id" type="uint32" id="2"/>
+        <entry name="state" type="uint8" bindmacrosgroup="svr_gift_use_state" id="3"/>
+        <entry name="state_data" type="svr_gift_use_record_state_data" select="state" id="4"/>
+    </struct>
+</metalib>

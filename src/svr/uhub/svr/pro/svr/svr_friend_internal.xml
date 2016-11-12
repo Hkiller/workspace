@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_friend_pro" file="svr_friend_pro.xml"/>
+
+    <struct name="svr_friend_record" version="1">
+        <entry name="_id" type="string" size="64"/>
+        <entry name="user_id" type="uint64"/>
+        <entry name="state" type="uint8" bindmacrosgroup="svr_friend_state"/>
+    </struct>
+
+    <struct name="svr_friend_op_add_ctx" version="1">
+        <entry name="uid" type="uint64"/>
+        <entry name="fuid" type="uint64"/>
+        <entry name="record_len" type="uint16"/>
+        <entry name="record" type="uint8" count="0" refer="record_len"/>
+    </struct>
+
+</metalib>

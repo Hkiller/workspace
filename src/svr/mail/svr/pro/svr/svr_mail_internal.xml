@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="MSData" version="1">
+    <include name="svr_mail_pro" file="svr_mail_pro.xml"/>
+
+    <struct name="svr_mail_record_tmpl" version="1">
+        <entry name="_id" type="uint64" id="1"/>
+        <entry name="sender_gid" type="uint64" id="2"/>
+        <entry name="receiver_gid" type="uint64" id="3"/>
+        <entry name="send_time" type="uint64" id="4"/>
+        <entry name="state" type="uint8" id="5"/>
+        <entry name="title" type="string" size="SVR_MAIL_TITLE_LEN" id="7"/>
+        <entry name="body" type="string" size="SVR_MAIL_BODY_LEN" id="8"/>
+    </struct>
+
+    <struct name="svr_mail_record_global_tmpl" version="1">
+        <entry name="_id" type="uint64" id="1"/>
+        <entry name="send_time" type="uint64" id="4"/>
+        <entry name="state" type="uint8" id="5"/>
+        <entry name="title" type="string" size="SVR_MAIL_TITLE_LEN" id="7"/>
+        <entry name="body" type="string" size="SVR_MAIL_BODY_LEN" id="8"/>
+    </struct>
+
+    <struct name="svr_mail_record_global_list" version="1">
+        <entry name="record_count" type="uint16"/>
+        <entry name="records" type="svr_mail_record_global_tmpl" count="0" refer="record_count"/>
+    </struct>
+
+</metalib>
+

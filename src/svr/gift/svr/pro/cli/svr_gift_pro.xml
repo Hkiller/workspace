@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_gift_data" file="svr_gift_data.xml"/>
+    
+    <!--  ============ 错误码定义 ======== -->
+    <macrosgroup name="svr_gift_error">
+        <macro name="SVR_GIFT_ERRNO_SUCCESS" value="0"/>
+        <macro name="SVR_GIFT_ERRNO_ALREADY_USED" value="1"/>
+        <macro name="SVR_GIFT_ERRNO_NOTEXIST" value="2"/>
+        <macro name="SVR_GIFT_ERRNO_REGION_MISMATCH" value="3"/>
+        <macro name="SVR_GIFT_ERRNO_INTERNAL" value="-1"/>
+        <macro name="SVR_GIFT_ERRNO_DB" value="-2"/>
+    </macrosgroup>
+
+    <!-- ============ 协议定义 ======== -->
+
+    <!-- 生成CDK -->
+    <struct name="svr_gift_req_generate" version="1">
+        <entry name="format" type="string" size="32" id="1"/>
+        <entry name="region_id" type="uint16" id="2"/>
+        <entry name="use_policy" type="uint8" id="3" bindmacrosgroup="svr_gift_use_policy"/>
+        <entry name="begin_time" type="uint32" id="5"/>
+        <entry name="expire_time" type="uint32" id="6"/>
+        <entry name="generate_count" type="uint32" id="7"/>
+        <entry name="data_len" type="uint16" id="8"/>
+        <entry name="data" type="uint8" count="0" refer="data_len" id="9"/>
+    </struct>
+
+    <struct name="svr_gift_res_generate" version="1">
+        <entry name="generate_id" type="uint32" id="1"/>
+        <entry name="record_count" type="uint16" id="2"/>
+        <entry name="records" type="svr_gift_use_basic" count="0" refer="record_count" id="3"/>
+    </struct>
+
+    <!-- 更新生成记录 -->
+    <struct name="svr_gift_req_update_generate" version="1">
+        <entry name="generate_id" type="uint32" id="1"/>
+        <entry name="begin_time" type="uint32" id="2"/>
+        <entry name="expire_time" type="uint32" id="3"/>
+    </struct>
+
+    <!-- 查询生成记录 -->
+    <struct name="svr_gift_res_query_generate" version="1">
+        <entry name="generate_count" type="uint32" id="1"/>
+        <entry name="generates" type="svr_gift_generate" count="0" refer="generate_count" id="2"/>
+    </struct>
+
+    <!-- 查询一次生成的cdkey使用信息 -->
+    <struct name="svr_gift_req_query_use" version="1">
+        <entry name="generate_id" type="uint32" id="1"/>
+    </struct>
+
+    <struct name="svr_gift_res_query_use" version="1">
+        <entry name="record_count" type="uint16" id="2"/>
+        <entry name="records" type="svr_gift_use_full" count="0" refer="record_count" id="3"/>
+    </struct>
+    
+    <!-- 使用CDKEY -->
+    <struct name="svr_gift_req_use" version="1">
+        <entry name="cdkey" type="string" size="SVR_GIFT_CDKEY_LEN" id="1"/>
+        <entry name="user_id" type="uint64" id="2"/>
+        <entry name="region_id" type="uint16" id="3"/>
+    </struct>
+
+    <struct name="svr_gift_res_use" version="1">
+        <entry name="data_len" type="uint16" id="1"/>
+        <entry name="data" type="uint8" count="0" refer="data_len" id="2"/>
+    </struct>
+
+    <!-- 错误响应 -->
+    <struct name="svr_gift_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!-- 整体协议定义 -->
+    <macrosgroup name="SVR_GIFT_CMD_ID">
+        <macro name="SVR_GIFT_CMD_REQ_GENERATE" value="1"/>
+        <macro name="SVR_GIFT_CMD_RES_GENERATE" value="2"/>
+
+        <macro name="SVR_GIFT_CMD_REQ_UPDATE_GENERATE" value="3"/>
+        <macro name="SVR_GIFT_CMD_RES_UPDATE_GENERATE" value="4"/>
+
+        <macro name="SVR_GIFT_CMD_REQ_QUERY_GENERATE" value="5"/>
+        <macro name="SVR_GIFT_CMD_RES_QUERY_GENERATE" value="6"/>
+
+        <macro name="SVR_GIFT_CMD_REQ_QUERY_USE" value="7"/>
+        <macro name="SVR_GIFT_CMD_RES_QUERY_USE" value="8"/>
+        
+        <macro name="SVR_GIFT_CMD_REQ_USE" value="9"/>
+        <macro name="SVR_GIFT_CMD_RES_USE" value="10"/>
+
+        <macro name="SVR_GIFT_CMD_RES_ERROR" value="20"/>
+    </macrosgroup>
+
+    <union name="svr_gift_pkg_data" version="1" desc="">
+        <entry name="svr_gift_req_generate" type="svr_gift_req_generate" id="SVR_GIFT_CMD_REQ_GENERATE"/>
+        <entry name="svr_gift_res_generate" type="svr_gift_res_generate" id="SVR_GIFT_CMD_RES_GENERATE"/>
+
+        <entry name="svr_gift_req_update_generate" type="svr_gift_req_update_generate" id="SVR_GIFT_CMD_REQ_UPDATE_GENERATE"/>
+
+        <entry name="svr_gift_res_query_generate" type="svr_gift_res_query_generate" id="SVR_GIFT_CMD_RES_QUERY_GENERATE"/>
+
+        <entry name="svr_gift_req_query_use" type="svr_gift_req_query_use" id="SVR_GIFT_CMD_REQ_QUERY_USE"/>
+        <entry name="svr_gift_res_query_use" type="svr_gift_res_query_use" id="SVR_GIFT_CMD_RES_QUERY_USE"/>
+        
+        <entry name="svr_gift_req_use" type="svr_gift_req_use" id="SVR_GIFT_CMD_REQ_USE"/>
+        <entry name="svr_gift_res_use" type="svr_gift_res_use" id="SVR_GIFT_CMD_RES_USE"/>
+
+        <entry name="svr_gift_res_error" type="svr_gift_res_error" id="SVR_GIFT_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_gift_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_gift_pkg_data" id="2" select="cmd"/>
+    </struct>
+
+</metalib>

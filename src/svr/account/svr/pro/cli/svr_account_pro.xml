@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <macro name="SVR_ACCOUNT_MAX_LEN" value="256"/>
+    <macro name="SVR_ACCOUNT_PASSWD_MAX_LEN" value="64"/>
+
+    <macrosgroup name="SVR_ACCOUNT_TYPE">
+        <macro name="SVR_ACCOUNT_EMAIL" value="1"/>
+        <macro name="SVR_ACCOUNT_DEVICE" value="2"/>
+        <macro name="SVR_ACCOUNT_QQ" value="3"/>
+        <macro name="SVR_ACCOUNT_WEIXIN" value="4"/>
+        <macro name="SVR_ACCOUNT_QIHOO" value="5"/>
+        <macro name="SVR_ACCOUNT_DAMAI" value="6"/>
+    </macrosgroup>
+    <macro name="SVR_ACCOUNT_TYPE_MIN" value="1"/>
+    <macro name="SVR_ACCOUNT_TYPE_MAX" value="7"/>
+
+    <macrosgroup name="SVR_ACCOUNT_STATE">
+        <macro name="SVR_ACCOUNT_STATE_NORMAL" value="0"/>
+        <macro name="SVR_ACCOUNT_STATE_BLOCKED" value="1"/>
+        <macro name="SVR_ACCOUNT_STATE_TEST" value="2"/>
+        <macro name="SVR_ACCOUNT_STATE_INTERNAL" value="3"/>
+    </macrosgroup>
+
+    <macrosgroup name="SVR_ACCOUNT_ERROR">
+        <macro name="SVR_ACCOUNT_ERROR_VENDOR_NOT_LOGIN" value="8"/>
+        <macro name="SVR_ACCOUNT_ERROR_NOT_SUPPORT_ACCOUNT_TYPE" value="7"/>
+        <macro name="SVR_ACCOUNT_ERROR_NO_RIGHT" value="6"/>
+        <macro name="SVR_ACCOUNT_ERROR_NOT_LOGIN" value="5"/>
+        <macro name="SVR_ACCOUNT_ERROR_LOGIC_ID_DUPLICATE" value="4"/>
+        <macro name="SVR_ACCOUNT_ERROR_NO_PASSWD" value="3"/>
+        <macro name="SVR_ACCOUNT_ERROR_PASSWD" value="2"/>
+        <macro name="SVR_ACCOUNT_ERROR_NOT_EXIST" value="1"/>
+        <macro name="SVR_ACCOUNT_ERROR_SUCCESS" value="0"/>
+        <macro name="SVR_ACCOUNT_ERROR_INTERNAL" value="-1"/>
+        <macro name="SVR_ACCOUNT_ERROR_DB" value="-2"/>
+    </macrosgroup>
+
+    <struct name="svr_account_logic_id" version="1">
+        <entry name="account_type" type="uint16" bindmacrosgroup="SVR_ACCOUNT_TYPE" id="1"/>
+        <entry name="account" type="string" size="SVR_ACCOUNT_MAX_LEN" id="2"/>
+    </struct>
+
+    <struct name="svr_account_binding" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+        <entry name="logic_id" type="svr_account_logic_id" id="2"/>
+    </struct>
+
+    <struct name="svr_account_binding_list" version="1" id="1">
+        <entry name="count" type="uint16" id="1"/>
+        <entry name="data" type="svr_account_binding" count="0" refer="count" id="2"/>
+    </struct>
+
+    <struct name="svr_account_login_info" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+        <entry name="logic_id" type="svr_account_logic_id" id="2"/>
+        <entry name="token" type="string" size="64" id="3"/>
+        <entry name="name" type="string" size="64" id="4"/>
+        <entry name="avatar" type="string" size="128" id="5"/>
+    </struct>
+
+    <!-- 协议定义 -->
+
+    <!-- 创建一个账号并且绑定 -->
+    <struct name="svr_account_req_create" version="1">
+        <entry name="logic_id" type="svr_account_logic_id" id="1"/>
+    </struct>
+
+    <struct name="svr_account_res_create" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+    </struct>
+
+    <!-- 账号登陆 -->
+    <struct name="svr_account_req_login" version="1">
+        <entry name="logic_id" type="svr_account_logic_id" id="1"/>
+        <entry name="chanel" type="string" size="16" id="2"/>
+        <entry name="device_cap" type="uint8" id="3"/>
+        <entry name="device_category" type="uint8" id="4"/>
+    </struct>
+
+    <struct name="svr_account_res_login" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+        <entry name="account_state" type="uint8" id="2" bindmacrosgroup="SVR_ACCOUNT_STATE"/>
+    </struct>
+
+    <!-- 账号查找token -->
+    <struct name="svr_account_req_query_login_info" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+    </struct>
+
+    <struct name="svr_account_res_query_login_info" version="1">
+        <entry name="data" type="svr_account_login_info" id="1"/>
+    </struct>
+
+    <!-- 将一个帐号和用户ID绑定 -->
+    <struct name="svr_account_req_bind" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+        <entry name="logic_id" type="svr_account_logic_id" id="2"/>
+    </struct>
+
+    <!-- 将一个帐号和用户解除绑定 -->
+    <struct name="svr_account_req_unbind" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+        <entry name="account_type" type="uint16" bindmacrosgroup="SVR_ACCOUNT_TYPE" id="2"/>
+    </struct>
+
+    <!-- 根据逻辑帐号获取列表用户信息列表 -->
+    <struct name="svr_account_req_find_by_logic_id" version="1">
+        <entry name="count" type="uint16" id="1"/>
+        <entry name="logic_ids" type="svr_account_logic_id" count="0" refer="count" id="2"/>
+    </struct>
+
+    <struct name="svr_account_req_find_by_account_id" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+    </struct>
+
+    <!-- 错误响应 -->
+    <struct name="svr_account_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!-- 整体协议定义 -->
+    <macrosgroup name="SVR_ACCOUNT_CMD_ID">
+        <macro name="SVR_ACCOUNT_CMD_REQ_CREATE" value="1"/>
+        <macro name="SVR_ACCOUNT_CMD_RES_CREATE" value="2"/>
+
+        <macro name="SVR_ACCOUNT_CMD_REQ_LOGIN" value="3"/>
+        <macro name="SVR_ACCOUNT_CMD_RES_LOGIN" value="4"/>
+
+        <macro name="SVR_ACCOUNT_CMD_REQ_BIND" value="5"/>
+        <macro name="SVR_ACCOUNT_CMD_RES_BIND" value="6"/>
+
+        <macro name="SVR_ACCOUNT_CMD_REQ_UNBIND" value="7"/>
+        <macro name="SVR_ACCOUNT_CMD_RES_UNBIND" value="8"/>
+
+        <macro name="SVR_ACCOUNT_CMD_REQ_FIND_BY_LOGIC_ID" value="9"/>
+        <macro name="SVR_ACCOUNT_CMD_RES_FIND_BY_LOGIC_ID" value="9"/>
+
+        <macro name="SVR_ACCOUNT_CMD_REQ_FIND_BY_ACCOUNT_ID" value="10"/>
+        <macro name="SVR_ACCOUNT_CMD_RES_FIND_BY_ACCOUNT_ID" value="11"/>
+
+        <macro name="SVR_ACCOUNT_CMD_REQ_QUERY_LOGIN_INFO" value="12"/>
+        <macro name="SVR_ACCOUNT_CMD_RES_QUERY_LOGIN_INFO" value="13"/>
+
+        <macro name="SVR_ACCOUNT_CMD_RES_ERROR" value="21"/>
+    </macrosgroup>
+
+    <union name="svr_account_pkg_data" version="1" desc="">
+        <entry name="svr_account_req_create" type="svr_account_req_create" id="SVR_ACCOUNT_CMD_REQ_CREATE"/>
+        <entry name="svr_account_res_create" type="svr_account_res_create" id="SVR_ACCOUNT_CMD_RES_CREATE"/>
+
+        <entry name="svr_account_req_login" type="svr_account_req_login" id="SVR_ACCOUNT_CMD_REQ_LOGIN"/>
+        <entry name="svr_account_res_login" type="svr_account_res_login" id="SVR_ACCOUNT_CMD_RES_LOGIN"/>
+
+        <entry name="svr_account_req_bind" type="svr_account_req_bind" id="SVR_ACCOUNT_CMD_REQ_BIND"/>
+
+        <entry name="svr_account_req_unbind" type="svr_account_req_unbind" id="SVR_ACCOUNT_CMD_REQ_UNBIND"/>
+
+        <entry name="svr_account_req_find_by_logic_id" type="svr_account_req_find_by_logic_id" id="SVR_ACCOUNT_CMD_REQ_FIND_BY_LOGIC_ID"/>
+
+        <entry name="svr_account_req_find_by_account_id" type="svr_account_req_find_by_account_id" id="SVR_ACCOUNT_CMD_REQ_FIND_BY_ACCOUNT_ID"/>
+
+        <entry name="svr_account_req_query_login_info" type="svr_account_req_query_login_info" id="SVR_ACCOUNT_CMD_REQ_QUERY_LOGIN_INFO"/>
+        <entry name="svr_account_res_query_login_info" type="svr_account_res_query_login_info" id="SVR_ACCOUNT_CMD_RES_QUERY_LOGIN_INFO"/>
+
+        <entry name="svr_account_res_error" type="svr_account_res_error" id="SVR_ACCOUNT_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_account_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_account_pkg_data" id="2" select="cmd"/>
+    </struct>
+
+</metalib>

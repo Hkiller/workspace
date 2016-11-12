@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="TCaplusUse" version="1" >
+    <struct name="SysIdInfo" version="1">
+        <entry name="_id" type="string" size="128"/>
+        <entry name="id_value" type="uint64" />
+    </struct>
+    <struct name="SysIdInfoList" version="1">
+        <entry name="count" type="uint32"/>
+        <entry name="data" type="SysIdInfo" count="0" refer="count" />
+    </struct>
+</metalib>

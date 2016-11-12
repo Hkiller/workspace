@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_apple_iap_data" file="svr_apple_iap_data.xml"/>
+</metalib>

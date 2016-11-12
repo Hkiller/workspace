@@ -1,0 +1,24 @@
+- name: friend_query
+  respons-to: SVR_FRIEND_CMD_REQ_QUERY
+  operations:
+    - friend_op_query
+
+- name: friend_add
+  respons-to: SVR_FRIEND_CMD_REQ_ADD
+  operations:
+    - friend_op_add
+
+- name: friend_remove
+  respons-to: SVR_FRIEND_CMD_REQ_REMOVE
+  operations:
+    - friend_op_remove
+
+- name: friend_ack
+  respons-to: SVR_FRIEND_CMD_REQ_ACK
+  operations:
+    - friend_op_ack
+
+- name: friend_sync
+  respons-to: SVR_FRIEND_CMD_REQ_SYNC
+  operations:
+    - friend_op_sync

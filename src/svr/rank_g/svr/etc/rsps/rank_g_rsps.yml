@@ -1,0 +1,39 @@
+- name: rank_g_query
+  respons-to: SVR_RANK_G_CMD_REQ_QUERY
+  operations:
+    - rank_g_op_query
+
+- name: rank_g_query_with_data
+  respons-to: SVR_RANK_G_CMD_REQ_QUERY_WITH_DATA
+  operations:
+    - rank_g_op_query_with_data
+
+- name: rank_g_update
+  respons-to: SVR_RANK_G_CMD_REQ_UPDATE
+  operations:
+    - rank_g_op_update
+
+- name: rank_g_remove
+  respons-to: SVR_RANK_G_CMD_REQ_REMOVE
+  operations:
+    - rank_g_op_remove
+
+- name: rank_g_query_season
+  respons-to: SVR_RANK_G_CMD_REQ_QUERY_SEASON
+  operations:
+    - rank_g_op_query_season
+
+- name: rank_g_dump
+  respons-to: SVR_RANK_G_CMD_REQ_DUMP
+  operations:
+    - rank_g_op_dump
+
+- name: rank_g_init
+  respons-to: SVR_RANK_G_CMD_REQ_INIT
+  operations:
+    - rank_g_op_init
+    
+#内部请求，修改赛季
+- name: internal_change_season
+  operations:
+    - rank_g_op_change_season

@@ -1,0 +1,48 @@
+- name: log_context
+  config:
+    nocleanup: 0
+    #bufsize: 0
+
+  rollingpolicies:
+    - dev: { type: sizewin, maxsize: 500mb, maxnum: 10 }
+
+  layouts:
+    - default: { type: dated }
+
+  appenders:
+    - dev: { type: rollingfile, policy: dev, layout: default }
+    - deploment: { type: rollingfile, policy: dev, layout: default }
+    - syslog: { type: syslog, layout: default }
+    - stdout: { type: stream, layout: default }
+    - stderr: { type: stream, layout: default }
+
+  categories:
+    - default: { appender: dev }
+
+  debug: 0
+
+- name: app_net_env
+
+- name: app_setup
+  debug-app: 0
+  debug-net: 0
+  tickers:
+    - tl: {process-count: 500}
+
+- name: app_net_runner
+
+- name: gd_timer_mgr
+
+- name: center_svr
+  ringbuf-size: 2mb
+  process-count-per-tick: 10
+  max-pkg-size: 5mb
+  #conn-timeout-ms: 500
+
+  #内存大小，当从共享内存加载时这个配置项无效，共享内存大小是初始化时设定的
+  record-shm: 1
+  record-buf-size: 50mb
+
+  debug: 2
+
+# -*- coding: utf-8 -*-

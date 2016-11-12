@@ -1,0 +1,63 @@
+- name: log_context
+  config:
+    nocleanup: 0
+    #bufsize: 4kb
+
+  rollingpolicies:
+    - dev: { type: sizewin, maxsize: 500mb, maxnum: 10 }
+
+  layouts:
+    - default: { type: dated }
+
+  appenders:
+    - dev: { type: rollingfile, policy: dev, layout: default }
+    - deploment: { type: rollingfile, policy: dev, layout: default }
+    - syslog: { type: syslog, layout: default }
+    - stdout: { type: stream, layout: default }
+    - stderr: { type: stream, layout: default }
+
+  categories:
+    - default: { appender: dev }
+
+  debug: 0
+
+- name: app_net_env
+
+- name: app_setup
+  debug-app: 1
+  debug-net: 0
+  tickers: [ net, tl ]
+
+- name: app_tick_runner
+
+- name: gd_timer_mgr
+
+- name: dr_store_manage
+
+- include: metalibs
+
+- name: set_svr
+
+  ringbuf-size: 5mb
+  local-search-span-s: 30
+  process-count-per-tick: 10
+
+  center:
+    read-chanel-size: 4096
+    write-chanel-size: 4096
+    #max-pkg-size: 5 * 1024 * 1024
+    reconnect-span-ms: 3000
+    update-span-s: 300
+
+  mon:
+    restart-wait-ms: 30000
+    debug: 0
+
+  set:
+    timeout-ms: 3000
+    read-block-size: 2048
+    max-pkg-size: 4mb
+    
+  debug: 2
+
+# -*- coding: utf-8 -*-

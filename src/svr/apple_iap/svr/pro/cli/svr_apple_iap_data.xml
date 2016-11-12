@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <macro name="SVR_APPLE_IAP_RECEIPT_MAX" value="4096"/>
+    <macro name="SVR_APPLE_IAP_TRANSACTIONID_MAX" value="128"/>
+
+    <macro name="SVR_APPLE_IAP_PRODUCTID_MAX" value="128"/>
+    <macro name="SVR_APPLE_IAP_BUNDLEID_MAX" value="128"/>
+    <macro name="SVR_APPLE_IAP_BUNDLEVER_MAX" value="128"/>
+
+    <struct name="svr_apple_iap_purchase_data" version="1">
+        <entry name="quantity" type="uint16" id="1"/>
+        <entry name="product_id" type="string" size="SVR_APPLE_IAP_PRODUCTID_MAX" id="2"/>
+        <entry name="transaction_id" type="string" size="SVR_APPLE_IAP_TRANSACTIONID_MAX" id="3"/>
+        <entry name="purchase_date_ms" type="uint64" id="4"/>
+        <entry name="original_transaction_id" type="string" size="SVR_APPLE_IAP_TRANSACTIONID_MAX" id="5"/>
+        <entry name="original_purchase_date_ms" type="uint64" id="6"/>
+        <entry name="item_id" type="uint64" id="7"/>
+        <entry name="version_external_identifier" type="uint32" id="8"/>
+        <entry name="bid" type="string" size="SVR_APPLE_IAP_BUNDLEID_MAX" id="9"/>
+        <entry name="bvrs" type="string" size="SVR_APPLE_IAP_BUNDLEVER_MAX" id="10"/>
+    </struct>
+
+</metalib>

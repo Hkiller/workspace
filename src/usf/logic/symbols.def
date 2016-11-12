@@ -1,0 +1,6 @@
+logic_executor_mgr_app_init
+logic_executor_mgr_app_fini
+logic_executor_type_group_app_init
+logic_executor_type_group_app_fini
+logic_manage_app_init
+logic_manage_app_fini

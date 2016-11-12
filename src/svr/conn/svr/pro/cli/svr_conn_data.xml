@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <macrosgroup name="conn_svr_device_category">
+        <macro name="conn_svr_device_windows" value="1"/>
+        <macro name="conn_svr_device_ios" value="2"/>
+        <macro name="conn_svr_device_android" value="3"/>
+    </macrosgroup>
+
+    <macrosgroup name="conn_svr_device_cap">
+        <macro name="conn_svr_device_cap_low" value="1"/>
+        <macro name="conn_svr_device_cap_medium" value="2"/>
+        <macro name="conn_svr_device_cap_high" value="3"/>
+    </macrosgroup>
+    
+    <struct name="conn_svr_conn_info" version="1">
+        <entry name="conn_id" type="uint32" id="1"/>
+        <entry name="user_id" type="uint64" id="2"/>
+        <entry name="user_state" type="uint8" id="3"/>
+        <entry name="device_cap" type="uint8" id="4"/>
+        <entry name="device_category" type="uint8" id="5"/>
+        <entry name="chanel" type="string" size="16" id="6"/>
+    </struct>
+
+</metalib>

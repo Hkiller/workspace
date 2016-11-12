@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_conn_http_data" file="svr_conn_http_data.xml"/>
+
+    <!--  ============ 协议定义 ========== -->
+
+    <!--    错误响应 -->
+    <struct name="svr_conn_http_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!--  =========== 整体协议定义 ========== -->
+    <macrosgroup name="SVR_CONN_HTTP_CMD_ID">
+        <macro name="SVR_CONN_HTTP_CMD_RES_ERROR" value="3"/>
+    </macrosgroup>
+
+    <union name="svr_conn_http_pkg_data" version="1" desc="">
+        <entry name="svr_conn_http_res_error" type="svr_conn_http_res_error" id="SVR_CONN_HTTP_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_conn_http_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_conn_http_pkg_data" id="3" select="cmd"/>
+    </struct>
+
+</metalib>

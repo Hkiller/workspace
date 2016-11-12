@@ -1,0 +1,4 @@
+set_logic_rsp_manage_app_init
+set_logic_rsp_manage_app_fini
+set_logic_sp_app_init
+set_logic_sp_app_fini

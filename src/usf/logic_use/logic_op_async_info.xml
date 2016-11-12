@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1" >
+    <struct name="logic_op_asnyc_info" version="1">
+        <entry name="res_rv" type="uint8"/>
+    </struct>
+</metalib>

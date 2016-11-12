@@ -1,0 +1,3 @@
+set_svr_app_init
+set_svr_app_fini
+

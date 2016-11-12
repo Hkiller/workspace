@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_gift_pro" file="svr_gift_pro.xml"/>
+
+    <struct name="svr_gift_use_record" version="1">
+        <entry name="_id" type="string" size="64"/>
+        <entry name="generate_id" type="uint32"/>
+        <entry name="state" type="uint8" bindmacrosgroup="svr_gift_use_state"/>
+        <entry name="state_data" type="svr_gift_use_record_state_data" select="state"/>
+    </struct>
+
+    <struct name="svr_gift_use_record_list" version="1">
+        <entry name="record_count" type="uint16"/>
+        <entry name="records" type="svr_gift_use_record" count="0" refer="record_count"/>
+    </struct>
+
+    <struct name="svr_gift_generate_record" version="1" primarykey="_id">
+        <entry name="_id" type="uint32"/>
+        <entry name="prefix" type="string" size="4"/>
+        <entry name="cdkey_len" type="uint8"/>
+        <entry name="region_id" type="uint16"/>
+        <entry name="use_policy" type="uint8" bindmacrosgroup="svr_gift_use_policy"/>
+        <entry name="begin_time" type="uint32"/>
+        <entry name="expire_time" type="uint32"/>
+        <entry name="generate_count" type="uint32"/>
+    </struct>
+
+    <struct name="svr_gift_op_generate_ctx" version="1">
+        <entry name="success_count" type="uint16"/>
+        <entry name="fail_count" type="uint16"/>
+        <entry name="record_len" type="uint16"/>
+        <entry name="record" type="uint8" count="0" refer="record_len"/>
+    </struct>
+    
+</metalib>

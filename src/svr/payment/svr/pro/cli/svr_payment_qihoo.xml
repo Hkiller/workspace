@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_payment_data" file="svr_payment_data.xml"/>
+
+    <struct name="svr_payment_qihoo_record" version="1">
+        <entry name="product_id" type="string" size="36" id="1"/> <!-- 应用自定义的商品id -->
+        <entry name="amount" type="uint32" id="2"/> <!-- 总价,以分为单位 -->
+        <entry name="app_uid" type="string" size="50" id="3"/> <!-- 应用分配给用户的id -->
+        <entry name="user_id" type="uint64" id="4"/> <!-- 360账号id -->
+        <entry name="order_id" type="uint64" id="5"/> <!-- 360返回的支付订单号 -->
+        <entry name="gateway_flag" type="string" size="16" id="6"/> <!-- 如果支付返回成功，返回success,应用需要确认是success才给用户加钱 -->
+        <entry name="sign_return" type="string" size="32" id="7"/> <!-- 应用回传给订单核实接口的参数,不加入签名校验计算 -->
+    </struct>
+
+    <struct name="svr_payment_qihoo_verify_result" version="1">
+        <entry name="reg" type="string" size="64" id="2"/>
+    </struct>
+
+</metalib>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<metalib tagsetversion="1" version="1">
+    <struct name="set_logic_carry_info" version="1">
+        <entry name="sn" type="uint32"/>
+        <entry name="cmd" type="uint32"/>
+        <entry name="response" type="uint32"/>
+        <entry name="from_svr_type" type="uint16"/>
+        <entry name="from_svr_id" type="uint16"/>
+    </struct>
+</metalib>

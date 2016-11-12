@@ -1,0 +1,47 @@
+- name: gift_generate
+  queue: manage
+  respons-to: SVR_GIFT_CMD_REQ_GENERATE
+  operations:
+    - gift_op_check_state
+    - gift_op_generate
+
+- name: gift_update_generate
+  queue: manage
+  respons-to: SVR_GIFT_CMD_REQ_UPDATE_GENERATE
+  operations:
+    - gift_op_check_state
+    - gift_op_update_generate
+    
+- name: gift_query_generate
+  queue: manage
+  respons-to: SVR_GIFT_CMD_REQ_QUERY_GENERATE
+  operations:
+    - gift_op_check_state
+    - gift_op_query_generate
+    
+- name: gift_query_use
+  queue: manage
+  respons-to: SVR_GIFT_CMD_REQ_QUERY_USE
+  operations:
+    - gift_op_check_state
+    - gift_op_query_use
+    
+- name: gift_use
+  respons-to: SVR_GIFT_CMD_REQ_USE
+  operations:
+    - gift_op_check_state
+    - gift_op_use
+
+#internal    
+- name: internal_init
+  queue: manage
+  operations:
+    - gift_op_init
+  debug: 1
+
+- name: internal_expire
+  queue: manage
+  operations:
+    - gift_op_expire
+  debug: 1
+  

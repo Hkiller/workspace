@@ -1,0 +1,4 @@
+log_context_global_init
+log_context_global_fini
+log_context_app_init
+log_context_app_fini

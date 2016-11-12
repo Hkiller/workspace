@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_rank_f_pro" file="svr_rank_f_pro.xml"/>
+
+    <struct name="svr_rank_f_record" version="1">
+        <entry name="rank_f_uid" type="uint64" id="512"/>
+    </struct>
+
+</metalib>

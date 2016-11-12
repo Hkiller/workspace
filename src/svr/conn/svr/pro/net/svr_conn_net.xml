@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <macrosgroup name="svr_conn_net_error">
+        <macro name="SVR_CONN_NET_ERROR_INTERNAL" value="-1"/>
+        <macro name="SVR_CONN_NET_ERROR_SVR_UNKNOWN" value="1"/>
+        <macro name="SVR_CONN_NET_ERROR_NOT_AUTH" value="2"/>
+        <macro name="SVR_CONN_NET_ERROR_NOT_LOGIN" value="3"/>
+    </macrosgroup>
+
+    <struct name="svr_conn_net_req_head" version="1">
+        <entry name="pkg_len" type="uint16"/>
+        <entry name="to_svr" type="uint16"/>
+        <entry name="sn" type="uint32"/>
+    </struct>
+
+    <struct name="svr_conn_net_res_head" version="1">
+        <entry name="pkg_len" type="uint16"/>
+        <entry name="from_svr" type="uint16"/>
+        <entry name="result" type="int8"/>
+        <entry name="flags" type="int8"/>
+        <entry name="sn" type="uint32"/>
+    </struct>
+</metalib>

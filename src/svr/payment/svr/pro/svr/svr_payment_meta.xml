@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_payment_data" file="svr_payment_data.xml"/>
+
+    <struct name="bag_info" version="1">
+        <entry name="bag_id" type="uint16" id="1"/>
+        <entry name="money_type_count" type="uint8" id="2"/>
+    </struct>
+
+</metalib>

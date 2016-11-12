@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_account_pro" file="svr_account_pro.xml"/>
+
+    <macro name="SVR_ACCOUNT_ACCOUNT_TYPE_COUNT" value="4"/>
+
+    <struct name="svr_account_full" version="1">
+        <entry name="_id" type="uint64"/>
+        <entry name="account_state" type="uint8" id="2" bindmacrosgroup="SVR_ACCOUNT_STATE"/>
+        <entry name="logic_device" type="string" size="SVR_ACCOUNT_MAX_LEN"/>
+        <entry name="logic_email" type="string" size="SVR_ACCOUNT_MAX_LEN"/>
+        <entry name="logic_qq" type="string" size="32"/>
+        <entry name="logic_weixin" type="string" size="SVR_ACCOUNT_MAX_LEN"/>
+        <entry name="logic_qihoo" type="string" size="SVR_ACCOUNT_MAX_LEN"/>
+    </struct>
+
+    <struct name="svr_account_full_list" version="1">
+        <entry name="count" type="uint32"/>
+        <entry name="data" type="svr_account_full" count="0" refer="count"/>
+    </struct>
+
+    <struct name="svr_account_basic" version="1">
+        <entry name="_id" type="uint64"/>
+        <entry name="account_state" type="uint8" id="2" bindmacrosgroup="SVR_ACCOUNT_STATE"/>
+    </struct>
+
+    <struct name="svr_account_basic_list" version="1">
+        <entry name="count" type="uint32"/>
+        <entry name="data" type="svr_account_basic" count="0" refer="count"/>
+    </struct>
+
+</metalib>

@@ -1,0 +1,21 @@
+- name: account_create
+  respons-to: SVR_ACCOUNT_CMD_REQ_CREATE
+  operations:
+    - mongo_id_reserve: { id-name: account_id, reserve-count: 1024 }
+    - account_op_create
+
+- name: account_login
+  respons-to: SVR_ACCOUNT_CMD_REQ_LOGIN
+  operations:
+    - mongo_id_reserve: { id-name: account_id, reserve-count: 1024 }
+    - account_op_login
+
+- name: account_bind
+  respons-to: SVR_ACCOUNT_CMD_REQ_BIND
+  operations:
+    - account_op_bind
+
+- name: account_query_login_info
+  respons-to: SVR_ACCOUNT_CMD_REQ_QUERY_LOGIN_INFO
+  operations:
+    - account_op_query_login_info

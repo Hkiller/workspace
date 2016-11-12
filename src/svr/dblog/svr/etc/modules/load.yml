@@ -1,0 +1,56 @@
+- name: log_context
+  config:
+    nocleanup: 0
+    #bufsize: 4kb
+
+  rollingpolicies:
+    - dev: { type: sizewin, maxsize: 500mb, maxnum: 10 }
+
+  layouts:
+    - default: { type: dated }
+
+  appenders:
+    - dev: { type: rollingfile, policy: dev, layout: default }
+    - deploment: { type: rollingfile, policy: dev, layout: default }
+    - syslog: { type: syslog, layout: default }
+    - stdout: { type: stream, layout: default }
+    - stderr: { type: stream, layout: default }
+
+  categories:
+    - default: { appender: dev }
+
+  debug: 1
+
+- name: app_setup
+  debug-app: 0
+  debug-net: 0
+  tickers: [ tl, net ]
+
+- name: app_tick_runner
+
+- name: gd_timer_mgr
+
+- name: dr_store_manage
+
+# - name: svr_dblog_lib
+#   type: dr_store_loader
+#   load-from-symbol: g_metalib_svr_dblog_pro
+
+- name: net_dns_manage
+
+- name: mongo_driver
+  # outgoing-recv-at: db-connection-send
+  # incoming-send-to: db-client-process
+  uri: $db-svr
+  ringbuf-size: $db-buf-size
+  auto-enable: 1
+  debug: 1
+
+- name: set_svr_stub
+  svr-type: svr_dblog
+  debug: 1
+
+- name: dblog_svr
+  debug: 1
+
+# -*- coding: utf-8 -*-

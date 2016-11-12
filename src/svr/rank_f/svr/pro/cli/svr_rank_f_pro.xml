@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <macro name="SVR_RANK_F_ATTR_NAME_LEN" value="64"/>
+    <macro name="SVR_RANK_F_INDEX_MAX" value="64"/>
+
+    <macrosgroup name="SVR_RANK_F_ERROR">
+        <macro name="SVR_RANK_F_ERROR_SUCCESS" value="0"/>
+        <macro name="SVR_RANK_F_ERROR_INTERNAL" value="-1"/>
+        <macro name="SVR_RANK_F_ERROR_USER_NOT_EXIST" value="1"/>
+        <macro name="SVR_RANK_F_ERROR_RECORD_NOT_EXIST" value="2"/>
+    </macrosgroup>
+
+    <!--  ============ 协议定义 ========== -->
+
+    <!--     推送数据，更新部分用户数据 -->
+    <struct name="svr_rank_f_req_update" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+        <entry name="data_len" type="uint32" id="2"/>
+        <entry name="data" type="uint8" count="0" refer="data_len" id="3"/>
+    </struct>
+
+    <!--    推送数据，删除部分用户数据 -->
+    <struct name="svr_rank_f_req_remove" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+        <entry name="user_id_count" type="uint32" id="2"/>
+        <entry name="user_ids" type="uint64" count="0" refer="user_id_count" id="3"/>
+    </struct>
+
+    <!--     清理一个用户的排行榜 -->
+    <struct name="svr_rank_f_req_clear" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+    </struct>
+
+    <!--     查询排行榜（不带数据) -->
+    <struct name="svr_rank_f_req_query" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+        <entry name="index_id" type="uint32" id="2"/>
+    </struct>
+
+    <struct name="svr_rank_f_res_query" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+        <entry name="index_id" type="uint32" id="2"/>
+        <entry name="user_id_count" type="uint32" id="3"/>
+        <entry name="user_ids" type="uint64" count="0" refer="user_id_count" id="4"/>
+    </struct>
+
+    <!--     查询排行榜（包括数据) -->
+    <struct name="svr_rank_f_req_query_with_data" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+        <entry name="index_id" type="uint32" id="2"/>
+        <entry name="start_pos" type="uint16" id="3"/>
+        <entry name="require_count" type="uint16" id="4"/>
+        <entry name="attr_count" type="uint32" id="5"/>
+        <entry name="attr_names" type="string" size="SVR_RANK_F_ATTR_NAME_LEN" count="0" refer="attr_count" id="6"/>
+    </struct>
+
+    <struct name="svr_rank_f_res_query_with_data" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+        <entry name="index_id" type="uint32" id="2"/>
+        <entry name="start_pos" type="uint16" id="3"/>
+        <entry name="total_count" type="uint16" id="4"/>
+        <entry name="return_count" type="uint16" id="5"/>
+        <entry name="data_len" type="uint16" id="6"/>
+        <entry name="data" type="uint8" count="0" refer="data_len" id="7"/>
+    </struct>
+
+    <!-- 错误响应 -->
+    <struct name="svr_rank_f_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!--  =========== 整体协议定义 ========== -->
+    <macrosgroup name="SVR_RANK_F_CMD_ID">
+        <macro name="SVR_RANK_F_CMD_REQ_UPDATE" value="1"/>
+        <macro name="SVR_RANK_F_CMD_RES_UPDATE" value="2"/>
+
+        <macro name="SVR_RANK_F_CMD_REQ_REMOVE" value="3"/>
+        <macro name="SVR_RANK_F_CMD_RES_REMOVE" value="4"/>
+
+        <macro name="SVR_RANK_F_CMD_REQ_CLEAR" value="5"/>
+        <macro name="SVR_RANK_F_CMD_RES_CLEAR" value="6"/>
+
+        <macro name="SVR_RANK_F_CMD_REQ_QUERY" value="7"/>
+        <macro name="SVR_RANK_F_CMD_RES_QUERY" value="8"/>
+
+        <macro name="SVR_RANK_F_CMD_REQ_QUERY_WITH_DATA" value="9"/>
+        <macro name="SVR_RANK_F_CMD_RES_QUERY_WITH_DATA" value="10"/>
+
+        <macro name="SVR_RANK_F_CMD_RES_ERROR" value="11"/>
+    </macrosgroup>
+
+    <union name="svr_rank_f_pkg_data" version="1" desc="">
+        <entry name="svr_rank_f_req_update" type="svr_rank_f_req_update" id="SVR_RANK_F_CMD_REQ_UPDATE"/>
+
+        <entry name="svr_rank_f_req_remove" type="svr_rank_f_req_remove" id="SVR_RANK_F_CMD_REQ_REMOVE"/>
+
+        <entry name="svr_rank_f_req_clear" type="svr_rank_f_req_clear" id="SVR_RANK_F_CMD_REQ_CLEAR"/>
+
+        <entry name="svr_rank_f_req_query" type="svr_rank_f_req_query" id="SVR_RANK_F_CMD_REQ_QUERY"/>
+        <entry name="svr_rank_f_res_query" type="svr_rank_f_res_query" id="SVR_RANK_F_CMD_RES_QUERY"/>
+
+        <entry name="svr_rank_f_req_query_with_data" type="svr_rank_f_req_query_with_data" id="SVR_RANK_F_CMD_REQ_QUERY_WITH_DATA"/>
+        <entry name="svr_rank_f_res_query_with_data" type="svr_rank_f_res_query_with_data" id="SVR_RANK_F_CMD_RES_QUERY_WITH_DATA"/>
+
+        <entry name="svr_rank_f_res_error" type="svr_rank_f_res_error" id="SVR_RANK_F_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_rank_f_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_rank_f_pkg_data" id="3" select="cmd"/>
+    </struct>
+
+</metalib>

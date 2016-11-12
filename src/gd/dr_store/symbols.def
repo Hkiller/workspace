@@ -1,0 +1,4 @@
+dr_store_manage_app_init
+dr_store_manage_app_fini
+dr_store_loader_app_init
+dr_store_loader_app_fini

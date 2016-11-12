@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="net"  version="10" id='123'>
+
+<macro name="VERSION" value="100" desc='VERSION.desc' cname="VERSION.cname"/>
+
+
+<macro name="MAX_BODY_LEN" value="32000" />
+
+<macrosgroup name="MsgID" desc="message id">
+  <macro name="CMD_LOGIN" value="34" />
+  <macro name="CMD_LOGOUT" value="89" />
+</macrosgroup>
+
+<struct name="PkgHead" version="1" versionindicator="version" id='1' desc="PkgHead.desc">
+	<entry name="magic" type="short" defaultvalue="13" id='11'/>
+	<entry name="version" type="short" defaultvalue="1" id='12'/>
+	<entry name="time" type="datetime" />
+	<entry name="cmd" type="smallint" />
+	<entry name="bodylen" type="smallint" cname="bodylen.cname"/>
+	<entry name="msgid" type="uint" desc = "message id" />
+</struct>
+
+<macro name="MAX_NAME_LEN" value="12" />
+<macro name="MAX_PASS_LEN" value="32" />
+
+<struct name="CmdLogin" version="10" id = "6" size="200" primarykey="name,pass">
+	<entry name="name" type="string" size="MAX_NAME_LEN" cname = "登录用户名" />
+	<entry name="pass" type="string" size="MAX_PASS_LEN" id = "6" />
+	<entry name="zone" type="string" size="MAX_PASS_LEN" count = "2" />
+    <index name="index1" column="name,pass"/>
+    <index name="index2" column="name"/>
+</struct>
+
+<macro name="MAX_ATTR_SIZE" value="128" />
+
+<struct name="CmdLogout" version="10" cname = "注销消息结构" id='5'>
+	<entry name="reason" type="int" />
+	<entry name="attrcount" type="int" />
+	<entry name="attr" type="tinyint" count="MAX_ATTR_SIZE" refer='attrcount'/>
+</struct>
+
+<union name="PkgBody" version="10" id='4'>
+	<entry name="login" type="CmdLogin" id="CMD_LOGIN" />
+	<entry name="logout" type="CmdLogout" id="CMD_LOGOUT" />
+</union>
+
+
+<struct name="Pkg" version="10" id='3'>
+	<entry name="head" type="PkgHead" />
+	<entry name="body" type="PkgBody" select="head.cmd" sizeinfo="head.bodylen" />	
+</struct>
+
+</metalib>

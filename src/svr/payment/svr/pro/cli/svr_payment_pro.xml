@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_payment_data" file="svr_payment_data.xml"/>
+    <include name="svr_payment_notify" file="svr_payment_notify.xml"/>
+
+    <macro name="PAYMENT_RECEIPT_LEN" value="4096"/>
+    
+    <!--  ============ 错误码定义 ======== -->
+    <macrosgroup name="svr_payment_error">
+        <macro name="SVR_PAYMENT_ERRNO_SUCCESS" value="0"/>
+        <macro name="SVR_PAYMENT_ERRNO_INTERNAL" value="-1"/>
+        <macro name="SVR_PAYMENT_ERRNO_DB" value="-2"/>
+        <macro name="SVR_PAYMENT_ERRNO_RECHARGE_SERVICE_ERROR" value="1"/>
+        <macro name="SVR_PAYMENT_ERRNO_BAG_ID_ERROR" value="2"/>
+        <macro name="SVR_PAYMENT_ERRNO_MONEY_TYPE_ERROR" value="3"/>
+        <macro name="SVR_PAYMENT_ERRNO_NOT_ENOUTH_MONEY" value="4"/>
+        <macro name="SVR_PAYMENT_ERRNO_RECHARGE_IAP_ERROR" value="5"/>
+        <macro name="SVR_PAYMENT_ERRNO_PRODUCT_NOT_EXIST" value="6"/>
+        <macro name="SVR_PAYMENT_ERRNO_RECHARGE_PROCESSED" value="7"/>
+        <macro name="SVR_PAYMENT_ERRNO_RECHARGE_TIMEOUT" value="8"/>
+        <macro name="SVR_PAYMENT_ERRNO_RECHARGE_NOT_EXIST" value="9"/>
+        <macro name="SVR_PAYMENT_ERRNO_LOGIN_AGAIN" value="10"/>
+        <macro name="SVR_PAYMENT_ERRNO_PAY_AGAIN" value="11"/>
+    </macrosgroup>
+
+    <!--  ============ 协议定义 ========== -->
+    <!--     启动充值 -->
+    <struct name="svr_payment_req_recharge_begin" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+        <entry name="region_id" type="uint16" id="2"/>
+        <entry name="user_id" type="uint64" id="3"/>
+        <entry name="service" type="uint16" id="4" bindmacrosgroup="svr_payment_service"/>
+        <entry name="chanel" type="string" size="16" id="5"/>
+        <entry name="device_category" type="uint8" id="6"/>
+        
+        <entry name="bag_id" type="uint16" id="7"/>
+        <entry name="product_id" type="string" size="32" id="8"/>
+
+        <!-- 冲入的游戏内货币 -->
+        <entry name="money_count" type="uint16" id="9"/>
+        <entry name="moneies" type="svr_payment_money" count="PAYMENT_MONEY_TYPE_COUNT" refer="money_count" id="10"/>
+
+        <!-- 消耗的真实货币 -->
+        <entry name="cost" type="float" id="11"/>
+    </struct>
+
+    <struct name="svr_payment_res_recharge_begin" version="1">
+        <entry name="trade_id" type="string" size="64" id="1"/>
+        <entry name="notify_to" type="string" size="64" id="2"/>
+    </struct>
+    
+    <!--     充值提交 -->
+    <struct name="svr_payment_req_recharge_commit" version="1">
+        <entry name="trade_id" type="string" size="64" id="1"/>
+        <entry name="receipt" type="string" size="PAYMENT_RECEIPT_LEN" id="2"/>
+    </struct>
+
+    <struct name="svr_payment_res_recharge_commit" version="1">
+        <entry name="state" type="uint8" id="1" bindmacrosgroup="svr_payment_recharge_state"/>
+        <entry name="error" type="int64" id="2"/>
+        <entry name="error_msg" type="string" size="64" id="3"/>
+        <entry name="balance" type="svr_payment_money_group" id="4"/>
+    </struct>
+
+    <!--    查询 -->
+    <struct name="svr_payment_req_get_balance" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+        <entry name="bag_id" type="uint16" id="2"/>
+    </struct>
+
+    <struct name="svr_payment_res_get_balance" version="1">
+        <entry name="balance" type="svr_payment_money_group" id="1"/>
+    </struct>
+
+    <!--    支付 -->
+    <struct name="svr_payment_req_pay" version="1">
+        <entry name="user_id" type="uint64" id="1"/>
+        <entry name="bag_id" type="uint16" id="2"/>
+        <entry name="reason" type="uint16" id="3"/>
+        <entry name="pay" type="svr_payment_money_group" id="4"/>
+        <entry name="product_id" type="string" size="32" id="5"/>
+    </struct>
+
+    <struct name="svr_payment_res_pay" version="1">
+        <entry name="result" type="int16" id="1"/>
+        <entry name="balance" type="svr_payment_money_group" id="2"/>
+    </struct>
+
+    <!-- 结果通知 -->
+    <struct name="svr_payment_req_notify" version="1">
+        <entry name="service" type="uint16" id="1" bindmacrosgroup="svr_payment_service"/>
+        <entry name="device_category" type="uint8" id="2" bindmacrosgroup="svr_payment_device_category"/>
+        <entry name="trade_id" type="string" size="64" id="3"/>
+        <entry name="data" type="svr_payment_vendor_record" id="4" select="service"/>
+    </struct>
+
+    <!-- 错误响应 -->
+    <struct name="svr_payment_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!--  =========== 整体协议定义 ========== -->
+    <macrosgroup name="SVR_PAYMENT_CMD_ID">
+        <macro name="SVR_PAYMENT_CMD_REQ_RECHARGE_BEGIN" value="1"/>
+        <macro name="SVR_PAYMENT_CMD_RES_RECHARGE_BEGIN" value="2"/>
+        
+        <macro name="SVR_PAYMENT_CMD_REQ_RECHARGE_COMMIT" value="3"/>
+        <macro name="SVR_PAYMENT_CMD_RES_RECHARGE_COMMIT" value="4"/>
+
+        <macro name="SVR_PAYMENT_CMD_REQ_GET_BALANCE" value="5"/>
+        <macro name="SVR_PAYMENT_CMD_RES_GET_BALANCE" value="6"/>
+
+        <macro name="SVR_PAYMENT_CMD_REQ_PAY" value="7"/>
+        <macro name="SVR_PAYMENT_CMD_RES_PAY" value="8"/>
+
+        <!-- 外部通知 -->
+        <macro name="SVR_PAYMENT_CMD_REQ_NOTIFY" value="19"/>
+        <macro name="SVR_PAYMENT_CMD_RES_NOTIFY" value="20"/>
+        
+        <macro name="SVR_PAYMENT_CMD_RES_ERROR" value="21"/>
+    </macrosgroup>
+
+    <union name="svr_payment_pkg_data" version="1" desc="">
+        <entry name="svr_payment_req_recharge_begin" type="svr_payment_req_recharge_begin" id="SVR_PAYMENT_CMD_REQ_RECHARGE_BEGIN"/>
+        <entry name="svr_payment_res_recharge_begin" type="svr_payment_res_recharge_begin" id="SVR_PAYMENT_CMD_RES_RECHARGE_BEGIN"/>
+        
+        <entry name="svr_payment_req_recharge_commit" type="svr_payment_req_recharge_commit" id="SVR_PAYMENT_CMD_REQ_RECHARGE_COMMIT"/>
+        <entry name="svr_payment_res_recharge_commit" type="svr_payment_res_recharge_commit" id="SVR_PAYMENT_CMD_RES_RECHARGE_COMMIT"/>
+
+        <entry name="svr_payment_req_get_balance" type="svr_payment_req_get_balance" id="SVR_PAYMENT_CMD_REQ_GET_BALANCE"/>
+        <entry name="svr_payment_res_get_balance" type="svr_payment_res_get_balance" id="SVR_PAYMENT_CMD_RES_GET_BALANCE"/>
+
+        <entry name="svr_payment_req_pay" type="svr_payment_req_pay" id="SVR_PAYMENT_CMD_REQ_PAY"/>
+        <entry name="svr_payment_res_pay" type="svr_payment_res_pay" id="SVR_PAYMENT_CMD_RES_PAY"/>
+
+        <entry name="svr_payment_req_notify" type="svr_payment_req_notify" id="SVR_PAYMENT_CMD_REQ_NOTIFY"/>
+        
+        <entry name="svr_payment_res_error" type="svr_payment_res_error" id="SVR_PAYMENT_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_payment_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_payment_pkg_data" id="2" select="cmd"/>
+    </struct>
+
+</metalib>

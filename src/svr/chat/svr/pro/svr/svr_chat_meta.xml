@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    
+    <struct name="svr_chat_chanel_info" version="1">
+        <entry name="chanel_type" type="uint16"/>
+        <entry name="chanel_expire_time_s" type="uint32"/>
+        <entry name="msg_expire_count" type="uint32"/>
+        <entry name="msg_expire_time_s" type="uint32"/>
+    </struct>
+
+</metalib>

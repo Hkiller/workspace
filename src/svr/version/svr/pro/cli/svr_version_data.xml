@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" version="1">
+
+    <macro name="SVR_VERSION_MAX_DESC_LEN" value="254" desc="描述串最大长度" />
+    <macro name="SVR_VERSION_MAX_NAME_LEN" value="128" desc="名字字符串最大长度" />
+    <macro name="SVR_VERSION_MAX_MD5_LEN" value="33" desc="文件MD5串长度" />
+    <macro name="SVR_VERSION_MAX_URL_LENGTH" value="128"/>
+
+    <macrosgroup name="svr_version_update_strategy">
+        <macro name="SVR_VERSION_UPDATE_STRATEGY_NO"          value="0"/>
+        <macro name="SVR_VERSION_UPDATE_STRATEGY_ADVISE"      value="1" desc="推荐更新" />
+        <macro name="SVR_VERSION_UPDATE_STRATEGY_FORCE"       value="2" desc="强制更新" />
+        <macro name="SVR_VERSION_UPDATE_STRATEGY_SILENCE"     value="3" desc="强制静默更新" />
+    </macrosgroup>
+
+    <!-- package 定义 -->
+    <macrosgroup name="svr_version_package_type">
+        <macro name="svr_version_package_type_full" value="1"/>
+        <macro name="svr_version_package_type_navigator" value="2"/>
+    </macrosgroup>
+    
+    <struct name="svr_version_package_data_full" version="1">
+        <entry name="size" type="uint32" id="1"/>
+        <entry name="md5" type="string" size="SVR_VERSION_MAX_MD5_LEN" id="2"/>
+        <entry name="url" type="string" size="SVR_VERSION_MAX_URL_LENGTH" id="3"/>
+    </struct>
+
+    <struct name="svr_version_package_data_navigator" version="1">
+        <entry name="url" type="string" size="SVR_VERSION_MAX_URL_LENGTH" id="3"/>
+    </struct>
+
+    <union name="svr_version_package_data" version="1">
+        <entry name="full" type="svr_version_package_data_full" id="svr_version_package_type_full"/>
+        <entry name="navi" type="svr_version_package_data_navigator" id="svr_version_package_type_navigator"/>
+    </union>
+
+    <struct name="svr_version_package" version="1">
+        <entry name="type" type="uint8" id="1" bindmacrosgroup="svr_version_package_type"/>
+        <entry name="data" type="svr_version_package_data" id="2" select="type"/>
+    </struct>
+
+</metalib>
+

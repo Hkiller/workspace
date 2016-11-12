@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="svr_payment_data" file="svr_payment_data.xml"/>
+    <include name="svr_payment_notify" file="svr_payment_notify.xml"/>
+    
+    <!-- 用户存量信息 -->
+    <struct name="payment_data" version="1">
+        <entry name="_id" type="string" size="16" id="1"/> <!-- _id = user_id - bag_id -->
+
+        <entry name="user_id" type="uint64" id="2"/>
+        <entry name="bag_id" type="uint16" id="3"/>
+
+        <entry name="money1" type="uint64" id="4"/>
+        <entry name="money2" type="uint64" id="5"/>
+        <entry name="money3" type="uint64" id="6"/>
+    </struct>
+
+    <struct name="payment_data_list" version="1">
+        <entry name="count" type="uint16" id="1"/>
+        <entry name="records" type="payment_data" count="0" refer="count" id="2"/>
+    </struct>
+
+    <!-- 账单信息 -->
+    <macrosgroup name="payment_bill_way">
+        <macro name="payment_bill_way_in" value="1"/>
+        <macro name="payment_bill_way_out" value="2"/>
+    </macrosgroup>
+
+    <struct name="payment_bill_data" version="1">
+        <entry name="way" type="uint8" bindmacrosgroup="payment_bill_way" id="1"/>
+        <entry name="money" type="svr_payment_money_group" id="2"/>
+        <entry name="acitvity_id" type="uint64" id="3"/>
+        <entry name="gift_id" type="uint64" id="4"/>
+        <entry name="product_id" type="string" size="32" id="5"/>
+        <entry name="recharge_way_info" type="string" size="128" id="6"/>
+    </struct>
+
+    <!-- 支付信息 -->
+    <struct name="payment_recharge_record" version="1">
+        <entry name="_id" type="string" size="64" id="1"/>
+        <entry name="version" type="uint32" id="2"/>
+
+        <!-- 角色相关 -->
+        <entry name="account_id" type="uint64" id="3"/>
+        <entry name="region_id" type="uint16" id="4"/>
+        <entry name="user_id" type="uint64" id="5"/>
+        <entry name="service" type="uint16" id="6" bindmacrosgroup="svr_payment_service"/>
+        <entry name="chanel" type="string" size="16" id="7"/>
+        <entry name="device_category" type="uint8" id="8"/>
+
+        <!-- 充值相关 -->
+        <entry name="bag_id" type="uint16" id="9"/>
+        <entry name="product_id" type="string" size="32" id="10"/>
+        <entry name="money_count" type="uint16" id="11"/>
+        <entry name="moneies" type="svr_payment_money" count="PAYMENT_MONEY_TYPE_COUNT" refer="money_count" id="12"/>
+        <entry name="cost" type="float" id="13"/>
+        <entry name="begin_time" type="uint32" id="14"/>
+
+        <!-- 结果相关 -->
+        <entry name="commit_time" type="uint32" id="15"/>
+        <entry name="state" type="uint8" id="16" bindmacrosgroup="svr_payment_recharge_state"/>
+        <entry name="error" type="int64" id="17"/>
+        <entry name="error_msg" type="string" size="64" id="18"/>
+        <entry name="vendor_record" type="svr_payment_vendor_record" select="service" id="19"/>
+    </struct>
+
+    <struct name="payment_recharge_record_list" version="1">
+        <entry name="count" type="uint16" id="1"/>
+        <entry name="records" type="payment_recharge_record" count="0" refer="count" id="2"/>
+    </struct>
+    
+</metalib>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="MSData" version="1">
+
+    <macro name="SVR_MAIL_USER_DATA_LEN" value="128"/>
+    <macro name="SVR_MAIL_TITLE_LEN" value="128"/>
+    <macro name="SVR_MAIL_BODY_LEN" value="1024"/>
+    <macro name="SVR_MAIL_ATTACH_LEN" value="256"/>
+    <macro name="SVR_MAIL_ROLES_COUNT" value="128"/>
+
+    <!-- 邮件数据结构定义 -->
+    <struct name="svr_mail_basic" version="1">
+        <entry name="mail_id" type="uint64" id="1"/>
+        <entry name="sender_gid" type="uint64" id="2"/>
+        <entry name="sender_data_len" type="uint16" id="3"/>
+        <entry name="sender_data" type="uint8" count="SVR_MAIL_USER_DATA_LEN" refer="sender_data_len" id="4"/>
+        <entry name="send_time" type="uint64" id="5"/>
+        <entry name="state" type="uint16" id="6"/>
+        <entry name="title" type="string" size="SVR_MAIL_TITLE_LEN" id="8"/>
+    </struct>
+
+    <struct name="svr_mail_detail" version="1">
+        <entry name="mail_id" type="uint64" id="1"/>
+        <entry name="body" type="string" size="SVR_MAIL_BODY_LEN" id="2"/>
+        <entry name="attach_len" type="uint16" id="3"/>
+        <entry name="attach" type="uint8" count="SVR_MAIL_ATTACH_LEN" refer="attach_len" id="4"/>
+    </struct>
+
+    <struct name="svr_mail_full" version="1">
+        <entry name="mail_id" type="uint64" id="1"/>
+        <entry name="sender_gid" type="uint64" id="2"/>
+        <entry name="sender_data_len" type="uint16" id="3"/>
+        <entry name="sender_data" type="uint8" count="SVR_MAIL_USER_DATA_LEN" refer="sender_data_len" id="4"/>
+        <entry name="send_time" type="uint64" id="5"/>
+        <entry name="state" type="uint16" id="6"/>
+        <entry name="title" type="string" size="SVR_MAIL_TITLE_LEN" id="8"/>
+        <entry name="body" type="string" size="SVR_MAIL_BODY_LEN" id="9"/>
+        <entry name="attach_len" type="uint16" id="10"/>
+        <entry name="attach" type="uint8" count="SVR_MAIL_ATTACH_LEN" refer="attach_len" id="11"/>
+    </struct>
+
+    <macrosgroup name="SVR_MAIL_ERROR">
+        <macro name="SVR_MAIL_ERROR_SUCCESS" value="0"/>
+        <macro name="SVR_MAIL_ERROR_INTERNAL" value="-1"/>
+        <macro name="SVR_MAIL_ERROR_DB" value="-2"/>
+    </macrosgroup>
+
+    <!--  ============ 协议定义 ========== -->
+
+    <!--     发送邮件请求 -->
+    <struct name="svr_mail_req_send_mail" version="1">
+        <entry name="sender_gid" type="uint64" id="1"/>
+        <entry name="sender_data_len" type="uint16" id="2"/>
+        <entry name="sender_data" type="uint8" count="SVR_MAIL_USER_DATA_LEN" refer="sender_data_len" id="3"/>
+        <entry name="state" type="uint16" id="4"/>
+        <entry name="title" type="string" size="SVR_MAIL_TITLE_LEN" id="5"/>
+        <entry name="body" type="string" size="SVR_MAIL_BODY_LEN" id="6"/>
+        <entry name="attach_len" type="uint16" id="7"/>
+        <entry name="attach" type="uint8" count="SVR_MAIL_ATTACH_LEN" refer="attach_len" id="8"/>
+        <entry name="receiver_count" type="uint16" id="9"/>
+        <entry name="receivers" type="uint64" count="0" refer="receiver_count" id="10"/>
+    </struct>
+
+    <!--     发送邮件响应 -->
+    <struct name="svr_mail_send_mail_result" version="1">
+        <entry name="receiver" type="uint64" id="1"/>
+        <entry name="mail_id" type="uint64" id="2"/>
+        <entry name="result" type="uint8" id="3"/>
+    </struct>
+
+    <struct name="svr_mail_res_send_mail" version="1">
+        <entry name="result_count" type="uint16" id="1"/>
+        <entry name="results" type="svr_mail_send_mail_result" count="0" refer="result_count" id="2"/>
+    </struct>
+
+    <!-- 发送全局邮件 -->
+    <struct name="svr_mail_req_send_global_mail" version="1">
+        <entry name="title" type="string" size="SVR_MAIL_TITLE_LEN" id="1"/>
+        <entry name="body" type="string" size="SVR_MAIL_BODY_LEN" id="2"/>
+        <entry name="attach_len" type="uint16" id="3"/>
+        <entry name="attach" type="uint8" count="SVR_MAIL_ATTACH_LEN" refer="attach_len" id="4"/>
+        <entry name="state" type="uint16" id="5"/>
+    </struct>
+
+    <!--     删除邮件请求 -->
+    <struct name="svr_mail_req_remove_mail" version="1">
+        <entry name="receiver_gid" type="uint64" id="1"/>
+        <entry name="mail_id" type="uint64" id="2"/>
+    </struct>
+
+    <!--     标记邮件已经读取请求 -->
+    <macrosgroup name="svr_mail_op_type">
+        <macro name="SVR_MAIL_OP_TYPE_UPDATE_STATE" value="1"/>
+        <macro name="SVR_MAIL_OP_TYPE_UPDATE_ATTACH" value="2"/>
+    </macrosgroup>
+
+    <struct name="svr_mail_op_data_update_state" version="1">
+        <entry name="state" type="uint16" id="1"/>
+    </struct>
+
+    <struct name="svr_mail_op_data_update_attach" version="1">
+        <entry name="attach_len" type="uint16" id="1"/>
+        <entry name="attach" type="uint8" count="SVR_MAIL_ATTACH_LEN" refer="attach_len" id="2"/>
+    </struct>
+
+    <union name="svr_mail_op_data" version="1">
+        <entry name="update_state" type="svr_mail_op_data_update_state" id="SVR_MAIL_OP_TYPE_UPDATE_STATE"/>
+        <entry name="update_attach" type="svr_mail_op_data_update_attach" id="SVR_MAIL_OP_TYPE_UPDATE_ATTACH"/>
+    </union>
+
+    <struct name="svr_mail_op" version="1">
+        <entry name="type" type="uint8" bindmacrosgroup="svr_mail_op_type" id="1"/>
+        <entry name="data" type="svr_mail_op_data" select="type" id="2"/>
+    </struct>
+
+    <struct name="svr_mail_req_update_mail" version="1">
+        <entry name="receiver_gid" type="uint64" id="1"/>
+        <entry name="mail_id" type="uint64" id="2"/>
+        <entry name="op_count" type="uint8" id="3"/>
+        <entry name="ops" type="svr_mail_op" count="0" refer="op_count" id="4"/>
+    </struct>
+
+    <!--     查询请求 -->
+    <macrosgroup name="svr_mail_query_condition_type">
+        <macro name="SVR_MAIL_QUERY_CONDITION_TYPE_BY_SENDER" value="1"/>
+        <macro name="SVR_MAIL_QUERY_CONDITION_TYPE_BY_RECEIVER" value="2"/>
+        <macro name="SVR_MAIL_QUERY_CONDITION_TYPE_BY_ID" value="3"/>
+    </macrosgroup>
+
+    <struct name="svr_mail_query_condition_data_by_sender" version="1">
+        <entry name="sender_gid" type="uint64" id="1"/>
+    </struct>
+
+    <struct name="svr_mail_query_condition_data_by_receiver" version="1">
+        <entry name="receiver_gid" type="uint64" id="1"/>
+    </struct>
+
+    <struct name="svr_mail_query_condition_data_by_id" version="1">
+        <entry name="mail_id" type="uint64" id="1"/>
+    </struct>
+
+    <union name="svr_mail_query_condition_data" version="1">
+        <entry name="by_sender" type="svr_mail_query_condition_data_by_sender" id="SVR_MAIL_QUERY_CONDITION_TYPE_BY_SENDER"/>
+        <entry name="by_receiver" type="svr_mail_query_condition_data_by_receiver" id="SVR_MAIL_QUERY_CONDITION_TYPE_BY_RECEIVER"/>
+        <entry name="by_id" type="svr_mail_query_condition_data_by_id" id="SVR_MAIL_QUERY_CONDITION_TYPE_BY_ID"/>
+    </union>
+
+    <struct name="svr_mail_query_condition" version="1">
+        <entry name="type" type="uint8" bindmacrosgroup="svr_mail_query_condition_type" id="1"/>
+        <entry name="data" type="svr_mail_query_condition_data" select="type" id="2"/>
+    </struct>
+
+    <!--     查询邮件请求(full) -->
+    <struct name="svr_mail_req_query_mail_full" version="1">
+        <entry name="condition" type="svr_mail_query_condition" id="1"/>
+        <entry name="after_time" type="uint32" id="2"/>
+        <entry name="require_count" type="uint16" id="3"/>
+        <entry name="create_time" type="uint32" id="4"/>
+    </struct>
+
+    <struct name="svr_mail_res_query_mail_full" version="1">
+        <entry name="total_count" type="uint16" id="2"/>
+        <entry name="mail_count" type="uint16" id="3"/>
+        <entry name="mails" type="svr_mail_full" count="0" refer="mail_count" id="4"/>
+    </struct>
+
+    <!--     查询邮件请求(basic) -->
+    <struct name="svr_mail_req_query_mail_basic" version="1">
+        <entry name="condition" type="svr_mail_query_condition" id="1"/>
+        <entry name="after_time" type="uint64" id="2"/>
+        <entry name="require_count" type="uint16" id="3"/>
+    </struct>
+
+    <struct name="svr_mail_res_query_mail_basic" version="1">
+        <entry name="user_gid" type="uint64" id="1"/>
+        <entry name="total_count" type="uint16" id="2"/>
+        <entry name="mail_count" type="uint16" id="3"/>
+        <entry name="mails" type="svr_mail_basic" count="0" refer="mail_count" id="4"/>
+    </struct>
+
+    <!--     查询邮件请求(detail) -->
+    <struct name="svr_mail_req_query_mail_detail" version="1">
+        <entry name="condition" type="svr_mail_query_condition" id="1"/>
+        <entry name="after_time" type="uint64" id="2"/>
+        <entry name="require_count" type="uint16" id="3"/>
+    </struct>
+
+    <struct name="svr_mail_res_query_mail_detail" version="1">
+        <entry name="total_count" type="uint16" id="1"/>
+        <entry name="mail_count" type="uint16" id="2"/>
+        <entry name="mails" type="svr_mail_detail" count="0" refer="mail_count" id="3"/>
+    </struct>
+
+    <!-- 错误响应 -->
+    <struct name="svr_mail_res_error" version="1">
+        <entry name="error" type="int16" id="1"/>
+    </struct>
+
+    <!--  =========== 整体协议定义 ========== -->
+    <macrosgroup name="SVR_MAIL_CMD_ID">
+        <macro name="SVR_MAIL_CMD_REQ_SEND_MAIL" value="1"/>
+        <macro name="SVR_MAIL_CMD_RES_SEND_MAIL" value="2"/>
+
+        <macro name="SVR_MAIL_CMD_REQ_REMOVE_MAIL" value="3"/>
+        <macro name="SVR_MAIL_CMD_RES_REMOVE_MAIL" value="4"/>
+
+        <macro name="SVR_MAIL_CMD_REQ_UPDATE_MAIL" value="5"/>
+        <macro name="SVR_MAIL_CMD_RES_UPDATE_MAIL" value="6"/>
+
+        <macro name="SVR_MAIL_CMD_REQ_QUERY_MAIL_FULL" value="7"/>
+        <macro name="SVR_MAIL_CMD_RES_QUERY_MAIL_FULL" value="8"/>
+
+        <macro name="SVR_MAIL_CMD_REQ_QUERY_MAIL_BASIC" value="9"/>
+        <macro name="SVR_MAIL_CMD_RES_QUERY_MAIL_BASIC" value="10"/>
+
+        <macro name="SVR_MAIL_CMD_REQ_QUERY_MAIL_DETAIL" value="11"/>
+        <macro name="SVR_MAIL_CMD_RES_QUERY_MAIL_DETAIL" value="12"/>
+
+        <macro name="SVR_MAIL_CMD_REQ_SEND_GLOBAL_MAIL" value="13"/>
+        <macro name="SVR_MAIL_CMD_RES_SEND_GLOBAL_MAIL" value="14"/>
+
+        <macro name="SVR_MAIL_CMD_RES_ERROR" value="21"/>
+    </macrosgroup>
+
+    <union name="svr_mail_pkg_data" version="1" desc="">
+        <entry name="svr_mail_req_send_mail" type="svr_mail_req_send_mail" id="SVR_MAIL_CMD_REQ_SEND_MAIL"/>
+        <entry name="svr_mail_res_send_mail" type="svr_mail_res_send_mail" id="SVR_MAIL_CMD_RES_SEND_MAIL"/>
+
+        <entry name="svr_mail_req_remove_mail" type="svr_mail_req_remove_mail" id="SVR_MAIL_CMD_REQ_REMOVE_MAIL"/>
+
+        <entry name="svr_mail_req_update_mail" type="svr_mail_req_update_mail" id="SVR_MAIL_CMD_REQ_UPDATE_MAIL"/>
+
+        <entry name="svr_mail_req_query_mail_full" type="svr_mail_req_query_mail_full" id="SVR_MAIL_CMD_REQ_QUERY_MAIL_FULL"/>
+        <entry name="svr_mail_res_query_mail_full" type="svr_mail_res_query_mail_full" id="SVR_MAIL_CMD_RES_QUERY_MAIL_FULL"/>
+
+        <entry name="svr_mail_req_query_mail_basic" type="svr_mail_req_query_mail_basic" id="SVR_MAIL_CMD_REQ_QUERY_MAIL_BASIC"/>
+        <entry name="svr_mail_res_query_mail_basic" type="svr_mail_res_query_mail_basic" id="SVR_MAIL_CMD_RES_QUERY_MAIL_BASIC"/>
+
+        <entry name="svr_mail_req_query_mail_detail" type="svr_mail_req_query_mail_detail" id="SVR_MAIL_CMD_REQ_QUERY_MAIL_DETAIL"/>
+        <entry name="svr_mail_res_query_mail_detail" type="svr_mail_res_query_mail_detail" id="SVR_MAIL_CMD_RES_QUERY_MAIL_DETAIL"/>
+
+        <entry name="svr_mail_req_send_global_mail" type="svr_mail_req_send_global_mail" id="SVR_MAIL_CMD_REQ_SEND_GLOBAL_MAIL"/>
+
+        <entry name="svr_mail_res_error" type="svr_mail_res_error" id="SVR_MAIL_CMD_RES_ERROR"/>
+    </union>
+
+    <struct name="svr_mail_pkg" version="1">
+        <entry name="cmd" type="uint32" id="1"/>
+        <entry name="data" type="svr_mail_pkg_data" id="3" select="cmd"/>
+    </struct>
+
+</metalib>
+

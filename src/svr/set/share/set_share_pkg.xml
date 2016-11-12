@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1" >
+    <struct name="set_pkg_head" version="1">
+        <entry name="to_svr_type" type="uint16"/>
+        <entry name="to_svr_id" type="uint16"/>
+        <entry name="from_svr_type" type="uint16"/>
+        <entry name="from_svr_id" type="uint16"/>
+        <entry name="sn" type="uint32"/>
+        <entry name="flags" type="uint16"/>
+    </struct>
+
+    <struct name="set_pkg_carry" version="1">
+        <entry name="len" type="uint8"/>
+        <entry name="data" type="uint8" count="0" refer="len"/>
+    </struct>
+
+</metalib>
