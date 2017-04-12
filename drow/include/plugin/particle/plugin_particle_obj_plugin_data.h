@@ -1,0 +1,27 @@
+#ifndef UI_PLUGIN_PARTICLE_OBJ_PLUGIN_DATA_H
+#define UI_PLUGIN_PARTICLE_OBJ_PLUGIN_DATA_H
+#include "plugin_particle_types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
+plugin_particle_obj_plugin_data_t
+plugin_particle_obj_plugin_data_create(plugin_particle_obj_plugin_t plugin, plugin_particle_obj_particle_t particle);
+void plugin_particle_obj_plugin_data_free(plugin_particle_obj_plugin_data_t plugin_data);
+
+plugin_particle_obj_plugin_data_t
+plugin_particle_obj_plugin_data_find_by_ctx(plugin_particle_obj_particle_t particle, void * ctx);
+    
+plugin_particle_obj_t plugin_particle_obj_plugin_data_obj(plugin_particle_obj_plugin_data_t plugin_data);
+plugin_particle_obj_plugin_t plugin_particle_obj_plugin_data_plugin(plugin_particle_obj_plugin_data_t plugin_data);
+plugin_particle_obj_particle_t plugin_particle_obj_plugin_data_particle(plugin_particle_obj_plugin_data_t plugin_data);
+void * plugin_particle_obj_plugin_data_data(plugin_particle_obj_plugin_data_t plugin_data);
+plugin_particle_obj_plugin_data_t plugin_particle_obj_plugin_data_from_data(void * data);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{3add40ae-b34f-41df-8055-86cd73a86d8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{6bedf40b-e0d4-4187-ae05-62c4cabb1b30}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\uipp\sprite_b2\B2Object.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_b2\B2ObjectPart.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_b2\B2System.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_b2\B2World.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_Manipulator.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_OnCollision.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_Runto.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_Setup.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_Suspend.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_WaitCollision.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_WaitNotCollision.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_WaitStop.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Collision.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2ObjectExt.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2ObjectPartExt.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2ObjectPartMeta.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2WorldExt.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\build\vc\protocol\ui\sprite_b2\ui_sprite_b2_data.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\build\vc\protocol\ui\sprite_b2\ui_sprite_b2_evt.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_Manipulator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_OnCollision.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_Runto.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_Setup.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_Suspend.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_WaitCollision.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_WaitNotCollision.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_WaitStop.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Collision.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Module.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2ObjectExt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2ObjectPartExt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2ObjectPartMeta.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2WorldExt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\build\vc\protocol\ui\sprite_b2\sprite_b2_meta_lib.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\build\vc\protocol\ui\sprite_b2\sprite_b2_meta_traits.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\uipp\sprite_b2\protocol.def">
+      <Filter>src</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

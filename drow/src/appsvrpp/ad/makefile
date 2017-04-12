@@ -1,0 +1,3 @@
+target-product:=appsvrpp_ad
+include ../../../../buildtools/repository.mk
+include ../../../../buildtools/product.mk

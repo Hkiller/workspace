@@ -31,13 +31,9 @@ RETRY:
     if (conn_http_request_alloc(&blk, svr, request, cmd->m_pkg_buf_size) != 0) return;
     assert(blk);
 
-    if (ringbuffer_block_data(svr->m_ringbuf, blk, 0, &data) < 0) {
-        CPE_ERROR(
-            svr->m_em, "%s: request %d at connection %d: on json request: get ringbuf data fail!",
-            conn_http_svr_name(svr), request->m_id, connection->m_id);
-        conn_http_request_set_error(request, 500, "Internal Server Error");
-        return;
-    }
+    data = NULL;
+    ringbuffer_data(svr->m_ringbuf, blk, cmd->m_pkg_buf_size, 0, (void*)&data);
+    assert(data);
 
     assert(cmd->m_req_meta);
 
@@ -54,14 +50,14 @@ RETRY:
                 conn_http_svr_name(svr), request->m_id, connection->m_id, cmd->m_pkg_buf_size, new_pkg_buf_size);
 
             cmd->m_pkg_buf_size = new_pkg_buf_size;
-            ringbuffer_shrink(svr->m_ringbuf, blk, 0);
-            blk = NULL;
+            ringbuffer_free(svr->m_ringbuf, blk);
             goto RETRY;
         }
         else {
             CPE_ERROR(
                 svr->m_em, "%s: request %d at connection %d: on json request: read from json fail, error=%d!",
                 conn_http_svr_name(svr), request->m_id, connection->m_id, data_size);
+            ringbuffer_free(svr->m_ringbuf, blk);
             conn_http_request_set_error(request, 400, "Bad Request");
             return;
         }
@@ -90,6 +86,7 @@ static void on_json_response(conn_http_request_t request, const void * data, siz
         CPE_ERROR(
             svr->m_em, "%s: request %d at connection %d: on json response: generate result ringbuf error!",
             conn_http_svr_name(svr), request->m_id, connection->m_id);
+        if (stream.m_first_blk) ringbuffer_free(svr->m_ringbuf, stream.m_first_blk);
         return;
     }
 
@@ -97,11 +94,13 @@ static void on_json_response(conn_http_request_t request, const void * data, siz
         CPE_ERROR(
             svr->m_em, "%s: request %d at connection %d: on json response: write to json fail, error=%d!",
             conn_http_svr_name(svr), request->m_id, connection->m_id, result_size);
+        if (stream.m_first_blk) ringbuffer_free(svr->m_ringbuf, stream.m_first_blk);
         conn_http_request_set_error(request, 400, "Bad Request");
         return;
     }
 
-    conn_http_request_set_response(request, "text/json", stream.m_first_blk, result_size);
+    conn_http_request_set_response(request, "text/json", &stream.m_first_blk, result_size);
+    if (stream.m_first_blk) ringbuffer_free(svr->m_ringbuf, stream.m_first_blk);
 }
 
 struct conn_http_formator g_conn_http_formator_json = {

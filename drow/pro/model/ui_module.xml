@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_common" file="ui_common.xml"/>
+
+    <macrosgroup name="ui_img_block_flags">
+        <macro name="UI_IMG_BLOCK_FLAG_ALPHA_BLEND" value="1"/>
+        <macro name="UI_IMG_BLOCK_FLAG_SCALESTYPE" value="2"/>
+    </macrosgroup>
+
+    <struct name="ui_img_block" version="1">
+        <entry name="id" type="uint32" id="1"/>
+        <entry name="name_id" type="uint32" id="2"/>
+        <entry name="use_img" type="uint32" id="3"/>
+        <entry name="src_x" type="uint32" id="4"/>
+        <entry name="src_y" type="uint32" id="5"/>
+        <entry name="src_w" type="uint32" id="6"/>
+        <entry name="src_h" type="uint32" id="7"/>
+        <entry name="flag" type="uint16" id="8"/>
+        <entry name="reserve" type="uint16" id="9"/>
+        <entry name="rect" type="ui_rect" id="10"/>
+    </struct>
+    
+</metalib>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="chipmunk_common" file="chipmunk_common.xml"/>
+
+    <!-- scene -->
+    <struct name="chipmunk_scene" version="1">
+        <entry name="gravity" type="chipmunk_pair" id="1"/>
+    </struct>
+
+    <!-- body -->
+    <macrosgroup name="chipmunk_obj_type">
+        <macro name="CHIPMUNK_OBJ_TYPE_DYNAMIC" value="0"/>
+        <macro name="CHIPMUNK_OBJ_TYPE_KINEMATIC" value="1"/>
+        <macro name="CHIPMUNK_OBJ_TYPE_STATIC" value="2"/>
+    </macrosgroup>
+
+    <struct name="chipmunk_body" version="1">
+        <entry name="id" type="uint32" id="1"/>
+        <entry name="name" type="string" size="64" id="2"/>
+        <entry name="anchorpoint" type="chipmunk_pair" id="3"/>
+        <entry name="type" type="uint8" id="4" bindmacrogroup="chipmunk_obj_type"/>
+    </struct>
+
+    <!-- fixture -->
+    <struct name="chipmunk_fixture_data_segment" version="1">
+        <entry name="radius" type="float" id="1"/>
+        <entry name="a" type="chipmunk_pair" id="2"/>
+        <entry name="b" type="chipmunk_pair" id="3"/>
+    </struct>
+    
+    <struct name="chipmunk_fixture_data_circle" version="1">
+        <entry name="radius" type="float" id="1"/>
+        <entry name="position" type="chipmunk_pair" id="2"/>
+    </struct>
+    
+    <struct name="chipmunk_fixture_data_entity_rect" version="1">
+        <entry name="adj" type="chipmunk_pair" id="1"/>
+    </struct>
+
+    <struct name="chipmunk_fixture_data_box" version="1">
+        <entry name="lt" type="chipmunk_pair" id="1"/>
+        <entry name="rb" type="chipmunk_pair" id="2"/>
+    </struct>
+
+    <struct name="chipmunk_fixture_data_sector" version="1">
+        <entry name="center" type="chipmunk_pair" id="1"/>
+        <entry name="center_base" type="uint8" id="2"/>
+        <entry name="radius" type="float" id="3"/>
+        <entry name="angle_start" type="float" id="4"/>
+        <entry name="angle_range" type="float" id="5"/>
+        <entry name="angle_step" type="float" id="6"/>
+    </struct>
+    
+    <macrosgroup name="chipmunk_fixture_type">
+        <macro name="chipmunk_fixture_type_polygon" value="1"/>
+        <macro name="chipmunk_fixture_type_circle" value="2"/>
+        <macro name="chipmunk_fixture_type_box" value="3"/>
+        <macro name="chipmunk_fixture_type_sector" value="4"/>
+        <macro name="chipmunk_fixture_type_entity_rect" value="5"/>
+        <macro name="chipmunk_fixture_type_segment" value="6"/>
+    </macrosgroup>
+    
+    <union name="chipmunk_fixture_data" version="1">
+        <entry name="entity_rect" type="chipmunk_fixture_data_entity_rect" id="chipmunk_fixture_type_entity_rect"/>
+        <entry name="circle" type="chipmunk_fixture_data_circle" id="chipmunk_fixture_type_circle"/>
+        <entry name="box" type="chipmunk_fixture_data_box" id="chipmunk_fixture_type_box"/>
+        <entry name="sector" type="chipmunk_fixture_data_sector" id="chipmunk_fixture_type_sector"/>
+        <entry name="segment" type="chipmunk_fixture_data_segment" id="chipmunk_fixture_type_segment"/>
+    </union>
+
+    <struct name="chipmunk_fixture" version="1">
+        <entry name="name" type="string" size="64" id="1"/>        
+        <entry name="mass" type="float" id="2"/>
+        <entry name="density" type="float" id="3"/>
+        <entry name="elasticity" type="float" id="4"/>
+        <entry name="friction" type="float" id="5"/>
+        <entry name="surface_velocity" type="chipmunk_pair" id="6"/>
+        <entry name="collision_mask" type="uint32" id="7"/>
+        <entry name="collision_group" type="uint32" id="8"/>
+        <entry name="collision_category" type="uint32" id="9"/>
+        <entry name="is_sensor" type="uint8" id="10"/>
+        <entry name="fixture_type" type="uint8" id="11"/>
+        <entry name="fixture_data" type="chipmunk_fixture_data" select="fixture_type" id="12"/>
+    </struct>
+
+    <struct name="chipmunk_shape" version="1">
+        <entry name="shape_type" type="uint8" id="1"/>
+        <entry name="shape_data" type="chipmunk_fixture_data" select="shape_type" id="2"/>
+    </struct>
+    
+    <!-- polygon node -->
+    <struct name="chipmunk_polygon_node" version="1">
+        <entry name="group_id" type="uint16" id="1"/>
+        <entry name="pos" type="chipmunk_pair" id="2"/>
+    </struct>
+
+    <!-- constraint -->
+    <struct name="chipmunk_constraint_data_pivot_joint" version="1">
+        <entry name="anchor_a" type="chipmunk_pair" id="1"/>
+        <entry name="anchor_b" type="chipmunk_pair" id="2"/>
+    </struct>
+
+    <struct name="chipmunk_constraint_data_pin_joint" version="1">
+        <entry name="anchor_a" type="chipmunk_pair" id="1"/>
+        <entry name="anchor_b" type="chipmunk_pair" id="2"/>
+    </struct>
+
+    <struct name="chipmunk_constraint_data_slide_joint" version="1">
+        <entry name="anchor_a" type="chipmunk_pair" id="1"/>
+        <entry name="anchor_b" type="chipmunk_pair" id="2"/>
+        <entry name="min" type="float" id="3"/>
+        <entry name="max" type="float" id="4"/>
+    </struct>
+
+    <struct name="chipmunk_constraint_data_gear_joint" version="1">
+        <entry name="phase" type="float" id="1"/>
+        <entry name="ratio" type="float" id="2"/>
+    </struct>
+    
+    <struct name="chipmunk_constraint_data_groove_joint" version="1">
+        <entry name="groove_a" type="chipmunk_pair" id="1"/>
+        <entry name="groove_b" type="chipmunk_pair" id="2"/>
+        <entry name="anchor_b" type="chipmunk_pair" id="3"/>
+    </struct>
+
+    <struct name="chipmunk_constraint_data_ratchet_joint" version="1">
+        <entry name="phase" type="float" id="1"/>
+        <entry name="ratio" type="float" id="2"/>
+    </struct>
+
+    <struct name="chipmunk_constraint_data_rotary_limit_joint" version="1">
+        <entry name="min" type="float" id="1"/>
+        <entry name="max" type="float" id="2"/>
+    </struct>
+    
+    <struct name="chipmunk_constraint_data_simple_motor" version="1">
+        <entry name="rate" type="float" id="1"/>
+    </struct>
+
+    <struct name="chipmunk_constraint_data_damped_spring" version="1">
+        <entry name="anchor_a" type="chipmunk_pair" id="1"/>
+        <entry name="anchor_b" type="chipmunk_pair" id="2"/>
+        <entry name="rest_length" type="float" id="3"/>
+        <entry name="stiffness" type="float" id="4"/>
+        <entry name="damping" type="float" id="5"/>
+    </struct>
+
+    <struct name="chipmunk_constraint_data_damped_rotary_spring" version="1">
+        <entry name="rest_angle" type="float" id="1"/>
+        <entry name="stiffness" type="float" id="2"/>
+        <entry name="damping" type="float" id="3"/>
+    </struct>
+
+    <macrosgroup name="chipmunk_constraint_type">
+        <macro name="chipmunk_constraint_type_pivot_joint" value="1"/>
+        <macro name="chipmunk_constraint_type_pin_joint" value="2"/>
+        <macro name="chipmunk_constraint_type_slide_joint" value="3"/>
+        <macro name="chipmunk_constraint_type_groove_joint" value="4"/>
+        <macro name="chipmunk_constraint_type_gear_joint" value="5"/>
+        <macro name="chipmunk_constraint_type_ratchet_joint" value="6"/>
+        <macro name="chipmunk_constraint_type_rotary_limit_joint" value="7"/>
+        <macro name="chipmunk_constraint_type_simple_motor" value="8"/>
+        <macro name="chipmunk_constraint_type_damped_spring" value="9"/>
+        <macro name="chipmunk_constraint_type_damped_rotary_spring" value="10"/>
+        <macro name="chipmunk_constraint_type_fix_rotation_joint" value="11"/>
+    </macrosgroup>
+
+    <union name="chipmunk_constraint_data" version="1">
+        <entry name="pivot_joint" type="chipmunk_constraint_data_pivot_joint" id="chipmunk_constraint_type_pivot_joint"/>
+        <entry name="pin_joint" type="chipmunk_constraint_data_pin_joint" id="chipmunk_constraint_type_pin_joint"/>
+        <entry name="slide_joint" type="chipmunk_constraint_data_slide_joint" id="chipmunk_constraint_type_slide_joint"/>
+        <entry name="groove_joint" type="chipmunk_constraint_data_groove_joint" id="chipmunk_constraint_type_groove_joint"/>
+        <entry name="gear_joint" type="chipmunk_constraint_data_gear_joint" id="chipmunk_constraint_type_gear_joint"/>
+        <entry name="ratchet_joint" type="chipmunk_constraint_data_ratchet_joint" id="chipmunk_constraint_type_ratchet_joint"/>
+        <entry name="rotary_limit_joint" type="chipmunk_constraint_data_rotary_limit_joint" id="chipmunk_constraint_type_rotary_limit_joint"/>
+        <entry name="simple_motor" type="chipmunk_constraint_data_simple_motor" id="chipmunk_constraint_type_simple_motor"/>
+        <entry name="rotary_damped_spring" type="chipmunk_constraint_data_damped_spring" id="chipmunk_constraint_type_damped_spring"/>
+        <entry name="rotary_damped_rotary_spring" type="chipmunk_constraint_data_damped_rotary_spring" id="chipmunk_constraint_type_damped_rotary_spring"/>
+    </union>
+    
+    <struct name="chipmunk_constraint" version="1">
+        <entry name="name" type="string" size="64" id="1"/>
+        <entry name="body_a" type="uint32" id="2"/>
+        <entry name="body_b" type="uint32" id="3"/>
+        <entry name="constraint_type" type="uint8" id="4"/>
+        <entry name="constraint_data" type="chipmunk_constraint_data" select="constraint_type" id="5"/>
+    </struct>
+
+</metalib>

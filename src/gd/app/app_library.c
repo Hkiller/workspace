@@ -5,14 +5,8 @@
 #include "cpe/pal/pal_strings.h"
 #include "cpe/pal/pal_dlfcn.h"
 #include "gd/app/app_library.h"
+#include "app_library_symbol_i.h"
 #include "app_internal_ops.h"
-
-struct gd_app_lib {
-    char * m_name;
-    void * m_handler;
-    gd_app_module_type_list_t m_modules;
-    TAILQ_ENTRY(gd_app_lib) m_next;
-};
 
 void * gd_app_default_lib_handler = NULL;
 static int gd_app_default_lib_handler_loaded = 0;
@@ -124,8 +118,12 @@ void gd_app_lib_close_for_module(
 }
 
 void * gd_app_lib_sym(struct gd_app_lib * lib, const char * symName, error_monitor_t em) {
+    gd_app_symbol_t symbol;
     void * sym;
 
+    symbol = gd_app_symbol_find(lib ? lib->m_name : "", symName);
+    if (symbol) return symbol->m_symbol;
+                            
     dlerror();
 
     if (gd_app_default_lib_handler_loaded == 0 && lib == NULL && gd_app_default_lib_handler == NULL) {

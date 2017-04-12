@@ -25,6 +25,13 @@
 	#ifndef INFINITY
 		#define INFINITY (1e1000)
 	#endif
+
+    #if defined modff
+        #undef modff
+        #define CPE_USE_MODFF
+        float msc_modff(float _X, float *_Y);
+        #define modff msc_modff
+    #endif
 #endif
 
 #endif

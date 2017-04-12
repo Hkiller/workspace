@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="conn">
+      <UniqueIdentifier>{922eb2bb-e792-4c2d-9c63-6760bb33944f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pp_conn">
+      <UniqueIdentifier>{3cbdbaa6-9c35-4bca-bf0f-6827d3618bdf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\svrpp\conn\net_cli\NetClient.cpp">
+      <Filter>pp_conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svrpp\conn\net_cli\NetMonitor.cpp">
+      <Filter>pp_conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_fsm_connecting.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_fsm_disable.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_fsm_disconnected.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_fsm_established.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_module.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_monitor.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_net.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_pkg.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_send.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_svr_stub.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\build\vc\protocol\svr_conn_net_cli\protocol\svr\conn\metalib.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_svr_cmd.c">
+      <Filter>conn</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\svr\conn\svr\pro\net\svr_conn_net.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\svr\conn\net_cli\conn_net_cli_internal_ops.h">
+      <Filter>conn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\svr\conn\net_cli\conn_net_cli_internal_types.h">
+      <Filter>conn</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

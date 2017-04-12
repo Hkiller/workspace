@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5E7C0B7C-DE00-424E-AEF6-E2C313999037}</ProjectGuid>
+    <RootNamespace>gd</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\3rdTools\yaml\include;..\..\3rdTools\yajl\include;..\..\3rdTools\libxml2\include;..\..\3rdTools\libev\include;..\..\3rdTools\log4c\include;..\..\3rdTools\curl\include;..\..\3rdTools\curl\include\win32\curl;..\..\build\vc\protocol\gd;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;CURL_STATICLIB;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\3rdTools\yaml\include;..\..\3rdTools\yajl\include;..\..\3rdTools\libxml2\include;..\..\3rdTools\libev\include;..\..\3rdTools\log4c\include;..\..\3rdTools\curl\include;..\..\3rdTools\curl\include\win32\curl;..\..\build\vc\protocol\gd;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;CURL_STATICLIB;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\gd\app\app.h" />
+    <ClInclude Include="..\..\include\gd\app\app_basic.h" />
+    <ClInclude Include="..\..\include\gd\app\app_child.h" />
+    <ClInclude Include="..\..\include\gd\app\app_context.h" />
+    <ClInclude Include="..\..\include\gd\app\app_library.h" />
+    <ClInclude Include="..\..\include\gd\app\app_log.h" />
+    <ClInclude Include="..\..\include\gd\app\app_module.h" />
+    <ClInclude Include="..\..\include\gd\app\app_module_installer.h" />
+    <ClInclude Include="..\..\include\gd\app\app_rsp.h" />
+    <ClInclude Include="..\..\include\gd\app\app_tl.h" />
+    <ClInclude Include="..\..\include\gd\app\app_types.h" />
+    <ClInclude Include="..\..\include\gd\app\tests-env\with_app.hpp" />
+    <ClInclude Include="..\..\include\gd\dr_store\dr_ref.h" />
+    <ClInclude Include="..\..\include\gd\dr_store\dr_store.h" />
+    <ClInclude Include="..\..\include\gd\dr_store\dr_store_manage.h" />
+    <ClInclude Include="..\..\include\gd\dr_store\dr_store_types.h" />
+    <ClInclude Include="..\..\include\gd\evt\evt_error.h" />
+    <ClInclude Include="..\..\include\gd\evt\evt_manage.h" />
+    <ClInclude Include="..\..\include\gd\evt\evt_read.h" />
+    <ClInclude Include="..\..\include\gd\evt\evt_types.h" />
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_detail.h" />
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_group.h" />
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_manage.h" />
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_task.h" />
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_types.h" />
+    <ClInclude Include="..\..\include\gd\timer\timer_manage.h" />
+    <ClInclude Include="..\..\include\gd\timer\timer_types.h" />
+    <ClInclude Include="..\..\include\gd\utils\id_generator.h" />
+    <ClInclude Include="..\..\include\gd\utils\utils_types.h" />
+    <ClInclude Include="..\..\include\gd\dr_dm\dr_dm_data.h" />
+    <ClInclude Include="..\..\include\gd\dr_dm\dr_dm_manage.h" />
+    <ClInclude Include="..\..\include\gd\dr_dm\dr_dm_types.h" />
+    <ClInclude Include="..\..\include\gd\dr_cvt\dr_cvt.h" />
+    <ClInclude Include="..\..\include\gd\dr_cvt\dr_cvt_manage.h" />
+    <ClInclude Include="..\..\include\gd\dr_cvt\dr_cvt_types.h" />
+    <ClInclude Include="..\..\include\gd\vnet\vnet_control_pkg.h" />
+    <ClInclude Include="..\..\include\gd\vnet\vnet_types.h" />
+    <ClInclude Include="..\..\src\gd\app\app_internal_ops.h" />
+    <ClInclude Include="..\..\src\gd\app\app_internal_types.h" />
+    <ClInclude Include="..\..\src\gd\app\app_library_i.h" />
+    <ClInclude Include="..\..\src\gd\app\app_library_symbol_i.h" />
+    <ClInclude Include="..\..\src\gd\app\app_module_installer_i.h" />
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_attr_binding_i.h" />
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_attr_i.h" />
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_formula_i.h" />
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_module_i.h" />
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_provider_i.h" />
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_request_i.h" />
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_synchronizer_i.h" />
+    <ClInclude Include="..\..\src\gd\dr_store\dr_store_internal_ops.h" />
+    <ClInclude Include="..\..\src\gd\dr_store\dr_store_internal_types.h" />
+    <ClInclude Include="..\..\src\gd\net_trans\net_trans_group_i.h" />
+    <ClInclude Include="..\..\src\gd\net_trans\net_trans_manage_i.h" />
+    <ClInclude Include="..\..\src\gd\net_trans\net_trans_task_i.h" />
+    <ClInclude Include="..\..\src\gd\timer\timer_internal_ops.h" />
+    <ClInclude Include="..\..\src\gd\timer\timer_internal_types.h" />
+    <ClInclude Include="..\..\src\gd\evt\evt_internal_types.h" />
+    <ClInclude Include="..\..\src\gd\dr_cvt\dr_cvt_internal_ops.h" />
+    <ClInclude Include="..\..\src\gd\dr_cvt\dr_cvt_internal_types.h" />
+    <ClInclude Include="..\..\src\gd\dr_dm\dr_dm_internal_ops.h" />
+    <ClInclude Include="..\..\src\gd\dr_dm\dr_dm_internal_types.h" />
+    <ClInclude Include="..\..\src\gd\net\app_net_internal_types.h" />
+    <ClInclude Include="..\..\build\vc\protocol\gd\protocol\vnet\vnet_data.h" />
+    <ClInclude Include="..\..\src\gd\vnet\vnet_internal_types.h" />
+    <ClInclude Include="..\..\src\gd\log\log_internal_ops.h" />
+    <ClInclude Include="..\..\src\gd\log\log_internal_types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\gd\app\app_child.c" />
+    <ClCompile Include="..\..\src\gd\app\app_context.c" />
+    <ClCompile Include="..\..\src\gd\app\app_context_create.c" />
+    <ClCompile Include="..\..\src\gd\app\app_context_ms.c" />
+    <ClCompile Include="..\..\src\gd\app\app_context_run.c" />
+    <ClCompile Include="..\..\src\gd\app\app_context_tick.c" />
+    <ClCompile Include="..\..\src\gd\app\app_library.c" />
+    <ClCompile Include="..\..\src\gd\app\app_library_symbol.c" />
+    <ClCompile Include="..\..\src\gd\app\app_module.c" />
+    <ClCompile Include="..\..\src\gd\app\app_module_data.c" />
+    <ClCompile Include="..\..\src\gd\app\app_module_installer.c" />
+    <ClCompile Include="..\..\src\gd\app\app_module_type.c" />
+    <ClCompile Include="..\..\src\gd\app\app_named_em.c" />
+    <ClCompile Include="..\..\src\gd\app\app_rsp.c" />
+    <ClCompile Include="..\..\src\gd\app\app_setup.c" />
+    <ClCompile Include="..\..\src\gd\app\app_tick_runner.c" />
+    <ClCompile Include="..\..\src\gd\app\app_tl.c" />
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_attr.c" />
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_attr_binding.c" />
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_formula.c" />
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_module.c" />
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_provider.c" />
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_request.c" />
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_synchronizer.c" />
+    <ClCompile Include="..\..\src\gd\dr_store\dr_store_ops.c" />
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_group.c" />
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_manage.c" />
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_manage_module.c" />
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_net.c" />
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_task.c" />
+    <ClCompile Include="..\..\src\gd\timer\timer_manage.c" />
+    <ClCompile Include="..\..\src\gd\evt\evt_manage.c" />
+    <ClCompile Include="..\..\src\gd\evt\evt_manage_module.c" />
+    <ClCompile Include="..\..\src\gd\evt\evt_processor.c" />
+    <ClCompile Include="..\..\src\gd\evt\evt_read.c" />
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt.c" />
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_bson.c" />
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_copy.c" />
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_noop.c" />
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_pbuf.c" />
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_pbuf_len.c" />
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_manage.c" />
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_type.c" />
+    <ClCompile Include="..\..\src\gd\dr_store\dr_ref.c" />
+    <ClCompile Include="..\..\src\gd\dr_store\dr_store.c" />
+    <ClCompile Include="..\..\src\gd\dr_store\dr_store_loader.c" />
+    <ClCompile Include="..\..\src\gd\dr_store\dr_store_manage.c" />
+    <ClCompile Include="..\..\src\gd\utils\id_generator.c" />
+    <ClCompile Include="..\..\src\gd\utils\id_generator_file.c" />
+    <ClCompile Include="..\..\src\gd\dr_dm\dr_dm_data.c" />
+    <ClCompile Include="..\..\src\gd\dr_dm\dr_dm_index.c" />
+    <ClCompile Include="..\..\src\gd\dr_dm\dr_dm_manage.c" />
+    <ClCompile Include="..\..\src\gd\dr_dm\dr_dm_manage_module.c" />
+    <ClCompile Include="..\..\src\gd\net\app_net_env.c" />
+    <ClCompile Include="..\..\src\gd\net\app_net_runner.c" />
+    <ClCompile Include="..\..\src\gd\vnet\vnet_conn_info.c" />
+    <ClCompile Include="..\..\src\gd\vnet\vnet_control_pkg.c" />
+    <ClCompile Include="..\..\build\vc\protocol\gd\protocol\vnet\vnet_data.c" />
+    <ClCompile Include="..\..\src\gd\log\log_context.c" />
+    <ClCompile Include="..\..\src\gd\log\log_context_module.c" />
+    <ClCompile Include="..\..\src\gd\log\log_em.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\gd\vnet\vnet_data.xml">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">set PATH=$(ProjectDir)..\..\3rdTools\iconv\vc\bin%3b$(ProjectDir)..\..\3rdTools\zlib\vc\bin%3b%PATH%
+$(ProjectDir)..\..\build\vc\tools\cpe_dr_tool.exe -i %(FullPath) --output-h $(ProjectDir)..\..\build\vc\protocol\$(ProjectName)\protocol\vnet --output-lib-c $(ProjectDir)..\..\build\vc\protocol\$(ProjectName)\protocol\vnet\%(Filename).c --output-lib-c-arg g_metalib_vnet_metalib
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\build\vc\protocol\$(ProjectName)\protocol\vnet\vnet_data.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">set PATH=$(ProjectDir)..\..\3rdTools\iconv\vc\bin%3b$(ProjectDir)..\..\3rdTools\zlib\vc\bin%3b%PATH%
+$(ProjectDir)..\..\build\vc\tools\cpe_dr_tool.exe -i %(FullPath) --output-h $(ProjectDir)..\..\build\vc\protocol\$(ProjectName)\protocol\vnet --output-lib-c $(ProjectDir)..\..\build\vc\protocol\$(ProjectName)\protocol\vnet\%(Filename).c --output-lib-c-arg g_metalib_vnet_metalib
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\build\vc\protocol\$(ProjectName)\protocol\vnet\vnet_data.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="cpe.vcxproj">
+      <Project>{cd696340-af2a-4d07-bc14-0990c0fa0864}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

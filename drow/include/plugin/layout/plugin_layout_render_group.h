@@ -1,0 +1,30 @@
+#ifndef PLUGIN_LAYOUT_RENDER_GROUP_H
+#define PLUGIN_LAYOUT_RENDER_GROUP_H
+#include "plugin_layout_types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+plugin_layout_render_group_t plugin_layout_render_group_create(plugin_layout_render_t render);
+void plugin_layout_render_group_free(plugin_layout_render_group_t group);
+
+void plugin_layout_render_group_clear(plugin_layout_render_group_t group);
+int plugin_layout_render_group_add_node(plugin_layout_render_group_t group, plugin_layout_render_node_t node);
+int plugin_layout_render_group_remove_node(plugin_layout_render_group_t group, plugin_layout_render_node_t node);
+uint8_t plugin_layout_render_group_have_node(plugin_layout_render_group_t group, plugin_layout_render_node_t node);    
+int plugin_layout_render_group_add_nodes(plugin_layout_render_group_t group, plugin_layout_render_group_t from_group);
+
+uint32_t plugin_layout_render_group_node_count(plugin_layout_render_group_t group);
+void plugin_layout_render_group_nodes(plugin_layout_render_group_t group, plugin_layout_render_node_it_t it);
+plugin_layout_render_node_t plugin_layout_render_group_last_node(plugin_layout_render_group_t group);
+plugin_layout_render_node_t plugin_layout_render_group_first_node(plugin_layout_render_group_t group);
+
+void plugin_layout_render_group_bound_rt(plugin_layout_render_group_t group, ui_rect_t rt);
+void plugin_layout_render_group_adj_pos(plugin_layout_render_group_t group, ui_vector_2_t adj_pos);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

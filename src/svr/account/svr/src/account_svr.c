@@ -39,6 +39,7 @@ static struct logic_op_register_def g_account_ops[] = {
     , { "account_op_query_by_logic_id", account_svr_op_query_by_logic_id_send, account_svr_op_query_by_logic_id_recv }
     , { "account_op_query_by_account_id", account_svr_op_query_by_account_id_send, account_svr_op_query_by_account_id_recv }
     , { "account_op_query_login_info", account_svr_op_query_login_info, NULL }
+    , { "account_op_query_external_friends", account_svr_op_query_external_friends_send, account_svr_op_query_external_friends_recv }
 };
 
 /* static struct { */
@@ -94,12 +95,14 @@ account_svr_create(
     ACCOUNT_SVR_LOAD_META(m_meta_res_create, "svr_account_res_create");
     ACCOUNT_SVR_LOAD_META(m_meta_res_login, "svr_account_res_login");
     ACCOUNT_SVR_LOAD_META(m_meta_res_query_login_info, "svr_account_res_query_login_info");
+    ACCOUNT_SVR_LOAD_META(m_meta_res_query_external_friends, "svr_account_res_query_external_friends");
     ACCOUNT_SVR_LOAD_META(m_meta_logic_id, "svr_account_logic_id");
     ACCOUNT_SVR_LOAD_META(m_meta_login_info, "svr_account_login_info");
     ACCOUNT_SVR_LOAD_META(m_meta_record_full, "svr_account_full");
     ACCOUNT_SVR_LOAD_META(m_meta_record_full_list, "svr_account_full_list");
     ACCOUNT_SVR_LOAD_META(m_meta_record_basic, "svr_account_basic");
     ACCOUNT_SVR_LOAD_META(m_meta_record_basic_list, "svr_account_basic_list");
+    ACCOUNT_SVR_LOAD_META(m_meta_logic_id_list, "svr_account_logic_id_list");
 
     svr->m_op_register = logic_op_register_create(app, NULL, alloc, em);
     if (svr->m_op_register == NULL) {

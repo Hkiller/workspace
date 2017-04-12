@@ -32,6 +32,9 @@ logic_op_exec_result_t
 rank_g_svr_op_query_season_send(logic_context_t ctx, logic_stack_node_t stack, void * user_data, cfg_t cfg);
 
 logic_op_exec_result_t
+rank_g_svr_op_query_data_send(logic_context_t ctx, logic_stack_node_t stack, void * user_data, cfg_t cfg);
+    
+logic_op_exec_result_t
 rank_g_svr_op_dump_send(logic_context_t ctx, logic_stack_node_t stack, void * user_data, cfg_t cfg);
 
 logic_op_exec_result_t

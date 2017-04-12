@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="scrollmap_pair" version="1">
+        <entry name="x" type="float" id="1"/>
+        <entry name="y" type="float" id="2"/>
+    </struct>
+
+    <struct name="scrollmap_rect" version="1">
+        <entry name="lt" type="scrollmap_pair" id="1"/>
+        <entry name="rb" type="scrollmap_pair" id="2"/>
+    </struct>
+
+    <struct name="scrollmap_range" version="1">
+        <entry name="begin" type="float" id="1"/>
+        <entry name="end" type="float" id="2"/>
+    </struct>
+
+</metalib>
+

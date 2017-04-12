@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="barrage_common" file="barrage_common.xml"/>
+    <include name="barrage_info" file="barrage_info.xml"/>
+
+    <struct name="barrage_bullet" version="1">
+        <entry name="frame" type="uint32" id="1"/>
+        <entry name="speed_angle_rad" type="float" id="3"/>
+        <entry name="speed" type="float" id="4"/>
+        <entry name="speed_pair" type="barrage_pair" id="5"/>
+        <entry name="color" type="barrage_color" id="8"/>
+        <entry name="acceleration" type="float" id="9"/>
+        <entry name="acceleration_angle" type="float" id="10"/>
+        <entry name="x_rate" type="float" id="12"/>
+        <entry name="y_rate" type="float" id="13"/>
+        <entry name="life_circle" type="uint16" id="14"/>
+        <entry name="angle_to_speed" type="uint8" id="15"/>
+    </struct>
+
+    <struct name="barrage_emitter_emitter_data" version="1">
+        <entry name="pos" type="barrage_pair" id="1"/>
+        <entry name="speed" type="float" id="2"/>
+        <entry name="speed_angle" type="float" id="3"/>
+        <entry name="acceleration" type="float" id="4"/>
+        <entry name="acceleration_angle" type="float" id="5"/>
+
+        <entry name="emitter_pos_radius" type="barrage_rand_float" id="6"/>
+        <entry name="emitter_pos_angle" type="barrage_rand_float" id="7"/>
+        <entry name="emitter_count" type="barrage_rand_uint8" id="8"/>
+        <entry name="emitter_span" type="barrage_rand_uint8" id="9"/>
+        <entry name="emitter_angle" type="barrage_rand_emitter_value" id="10"/>
+        <entry name="emitter_angle_range" type="barrage_rand_float" id="11"/>
+    </struct>
+
+    <struct name="barrage_emitter_bullet_data" version="1">
+        <entry name="proto" type="string" size="64" id="1"/>
+        <entry name="life_circle" type="barrage_rand_uint16" id="2"/>
+        <entry name="scale" type="barrage_pair" id="3"/>
+        <entry name="angle" type="barrage_rand_float" id="4"/>
+        <entry name="color" type="barrage_color" id="5"/>
+        <entry name="speed" type="barrage_rand_float" id="6"/>
+        <entry name="acceleration" type="barrage_rand_float" id="8"/>
+        <entry name="acceleration_angle" type="barrage_rand_float" id="9"/>
+        <entry name="angle_to_speed" type="uint8" id="10"/>
+        <entry name="x_rate" type="barrage_rand_float" id="11"/>
+        <entry name="y_rate" type="barrage_rand_float" id="12"/>
+    </struct>
+
+    <struct name="barrage_emitter" version="1">
+        <entry name="frame_start" type="uint32" id="2"/>
+        <entry name="frame_complete" type="uint32" id="3"/>
+        <entry name="emitter" type="barrage_emitter_emitter_data" id="6"/>
+        <entry name="bullet" type="barrage_emitter_bullet_data" id="7"/>
+
+        <entry name="next_emitter_span" type="uint8" id="8"/>
+        <entry name="next_emitter_count" type="uint8" id="9"/>
+        
+        <entry name="speed_pair" type="barrage_pair" id="10"/>
+
+        <entry name="world_pos" type="barrage_pair" id="11"/>
+        <entry name="world_angle" type="float" id="12"/>
+    </struct>
+
+    <struct name="barrage_barrage" version="1">
+        <entry name="frame" type="uint32" id="1"/>
+    </struct>
+    
+</metalib>

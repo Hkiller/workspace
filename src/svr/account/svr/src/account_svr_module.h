@@ -45,13 +45,15 @@ struct account_svr {
     LPDRMETA m_meta_res_login;
     LPDRMETA m_meta_res_create;
     LPDRMETA m_meta_res_query_login_info;
+    LPDRMETA m_meta_res_query_external_friends;
     LPDRMETA m_meta_logic_id;
     LPDRMETA m_meta_login_info;
     LPDRMETA m_meta_record_full;
     LPDRMETA m_meta_record_full_list;
     LPDRMETA m_meta_record_basic;
     LPDRMETA m_meta_record_basic_list;
-
+    LPDRMETA m_meta_logic_id_list;
+    
     account_svr_login_info_list_t m_free_login_infos;
 
     struct mem_buffer m_dump_buffer;

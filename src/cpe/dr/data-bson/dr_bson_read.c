@@ -32,12 +32,12 @@ struct dr_bson_read_ctx {
 static int dr_bson_read_stack_init(
     struct dr_bson_read_stack * process_stack, struct dr_bson_read_ctx * ctx,
     LPDRMETA meta, LPDRMETAENTRY from_entry, size_t output_start_pos, int for_array,
-    const char * input, int32_t input_capacity)
+    const char * input, size_t input_capacity)
 {
     int32_t doc_size;
 
     if (input_capacity < 5) {
-        CPE_ERROR(ctx->m_em, "init stack for meta %s: input capacity %d too small!", dr_meta_name(meta), input_capacity);
+        CPE_ERROR(ctx->m_em, "init stack for meta %s: input capacity %d too small!", dr_meta_name(meta), (int32_t)input_capacity);
         return -1;
     }
 
@@ -45,7 +45,7 @@ static int dr_bson_read_stack_init(
     if (doc_size > input_capacity) {
         CPE_ERROR(
             ctx->m_em, "init stack for meta %s: doc size %d overflow, input capacity is %d!",
-            dr_meta_name(meta), doc_size, input_capacity);
+            dr_meta_name(meta), doc_size, (int32_t)input_capacity);
         return -1;
     }
 
@@ -92,7 +92,7 @@ static int dr_bson_read_stack_init(
     goto DR_BSON_READ_IGNORE
 
 #define dr_bson_read_start_pos()                                \
-    dr_entry_data_start_pos(entry, array_pos)
+    ((int)dr_entry_data_start_pos(entry, array_pos))
 
 #define dr_bson_read_by_int32() do {                                    \
         char * write_buf;                                               \
@@ -522,9 +522,9 @@ static int dr_bson_read_i(
                 break;
             case dr_bson_type_reg: {
                 int32_t len;
-                len = strlen(curStack->m_input_data + curStack->m_input_pos) + 1;
+                len = (int32_t)strlen(curStack->m_input_data + curStack->m_input_pos) + 1;
                 curStack->m_input_pos += len;
-                len = strlen(curStack->m_input_data + curStack->m_input_pos) + 1;
+                len = (int32_t)strlen(curStack->m_input_data + curStack->m_input_pos) + 1;
                 curStack->m_input_pos += len;
                 break;
             }

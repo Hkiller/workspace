@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:paddingRight="10dip"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@drawable/sdk_float_left_bg"
+     >
+
+    <RelativeLayout
+        android:id="@+id/rl_useraccount"
+        android:layout_width="0dip"
+        android:layout_height="50dip"
+        android:layout_marginLeft="1dip"
+        android:layout_marginRight="1dip"
+        android:layout_weight="1"
+        android:background="@drawable/sdk_menu_item_selector"
+        android:gravity="center"
+        android:padding="2dip" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/sdk_useraccount" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="账户"
+            android:textSize="12dip" />
+    </RelativeLayout>
+    
+   <RelativeLayout 
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="50dip"
+        android:padding="2dip"
+        android:id="@+id/rl_gift"
+        android:layout_marginLeft="1dip"
+        android:layout_marginRight="1dip"
+        android:gravity="center"
+        android:background="@drawable/sdk_menu_item_selector"
+        >
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sdk_gift"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="10dip"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="12dip"
+            android:text="礼包"      
+            />
+    </RelativeLayout>
+    
+   
+   <RelativeLayout 
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="50dip"
+        android:layout_marginLeft="1dip"
+        android:layout_marginRight="1dip"
+        android:padding="2dip"
+        android:id="@+id/rl_reading"
+        android:gravity="center"
+        android:background="@drawable/sdk_menu_item_selector"
+        >
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/sdk_reading"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="12dip"
+            android:text="攻阅"      
+            />
+    </RelativeLayout>
+    
+   
+   <RelativeLayout 
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="50dip"
+        android:padding="2dip"
+        android:layout_marginLeft="1dip"
+        android:layout_marginRight="1dip"
+        android:gravity="center"
+        android:id="@+id/rl_service"
+        android:background="@drawable/sdk_menu_item_selector"
+        >
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sdk_service"
+            android:layout_alignParentTop="true"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="12dip"
+            android:text="客服"      
+            />
+    </RelativeLayout>
+</LinearLayout>

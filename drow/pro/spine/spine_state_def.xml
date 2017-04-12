@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="spine_part" version="1">
+        <entry name="name" type="uint32" id="1"/>
+        <entry name="init_state" type="uint32" id="2"/>
+        <entry name="init_anim" type="uint32" id="3"/>
+    </struct>
+
+    <struct name="spine_part_state" version="1">
+        <entry name="name" type="uint32" id="1"/>
+        <entry name="anim" type="uint32" id="2"/>
+    </struct>
+
+    <struct name="spine_part_transition" version="1">
+        <entry name="from" type="uint32" id="1"/>
+        <entry name="to" type="uint32" id="2"/>
+        <entry name="name" type="uint32" id="3"/>
+        <entry name="anim" type="uint32" id="4"/>
+    </struct>
+    
+</metalib>

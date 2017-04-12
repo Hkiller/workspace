@@ -13,6 +13,7 @@ struct mem_allocrator {
     mem_allocrator_alloc_t m_alloc;
     mem_allocrator_alloc_t m_calloc;
     mem_allocrator_free_t m_free;
+    void * m_ctx;
 };
 
 void * mem_alloc(struct mem_allocrator * alloc, size_t size);

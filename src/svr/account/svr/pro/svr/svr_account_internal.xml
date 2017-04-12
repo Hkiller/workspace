@@ -12,6 +12,7 @@
         <entry name="logic_qq" type="string" size="32"/>
         <entry name="logic_weixin" type="string" size="SVR_ACCOUNT_MAX_LEN"/>
         <entry name="logic_qihoo" type="string" size="SVR_ACCOUNT_MAX_LEN"/>
+        <entry name="logic_facebook" type="string" size="SVR_ACCOUNT_MAX_LEN"/>
     </struct>
 
     <struct name="svr_account_full_list" version="1">
@@ -29,4 +30,9 @@
         <entry name="data" type="svr_account_basic" count="0" refer="count"/>
     </struct>
 
+    <struct name="svr_account_logic_id_list" version="1">
+        <entry name="count" type="uint16" id="1"/>
+        <entry name="data" type="svr_account_logic_id" count="0" refer="count" id="2"/>
+    </struct>
+    
 </metalib>

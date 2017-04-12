@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_control" file="ui_control.xml"/>
+
+    <!-- RGUIWindow: RGUIPanel -->
+    <struct name="ui_window" version="1">
+	    <entry name="mudal" type="uint8" id="6"/>
+	    <entry name="start_show" type="uint8" id="7"/>
+	    <entry name="dialog_template" type="uint8" id="9"/>
+    </struct>
+
+    <!-- RGUIPanel: RGUIControl -->
+    <struct name="ui_panel" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+
+    <!-- RGUIPicture: RGUIControl -->
+    <struct name="ui_picture" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+
+    <!-- RGUILabel: RGUIControl -->
+    <struct name="ui_label" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+    </struct>
+
+    <!-- RGUIButton: RGUILabel -->
+    <struct name="ui_button" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="down" type="ui_control_down" id="2"/>
+    </struct>
+
+    <!-- RGUIToggle: RGUIButton -->
+    <struct name="ui_toggle" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="down" type="ui_control_down" id="2"/>
+        <entry name="group" type="ui_control_group" id="3"/>
+    </struct>
+
+    <!-- RGUIProgressBar: RGUILabel -->
+    <struct name="ui_progress" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="type" type="uint8" id="2"/>
+        <entry name="mode" type="uint8" id="3"/>
+        <entry name="speed" type="float" id="4"/>
+        <entry name="cur_progress" type="float" id="5"/>
+    </struct>
+
+    <!-- RGUIPictureCondition: RGUIPicture -->
+    <struct name="ui_picture_cond" version="1">
+        <entry name="index" type="uint32" id="1"/>
+    </struct>
+
+    <!-- RGUICheckBox: RGUIButton -->
+    <struct name="ui_check_box" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="down" type="ui_control_down" id="2"/>
+        <entry name="check" type="ui_control_check" id="3"/>
+    </struct>
+
+    <!-- RGUIRadioBox: RGUICheckBox -->
+    <struct name="ui_radio_box" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="down" type="ui_control_down" id="2"/>
+        <entry name="check" type="ui_control_check" id="3"/>
+        <entry name="group" type="ui_control_group" id="4"/>
+    </struct>
+
+    <!-- RGUIComboBox: RGUILabel -->
+    <struct name="ui_combo_box" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="drop_list_box_template_id" type="uint32" id="2"/>
+        <entry name="drop_push_btn_template_id" type="uint32" id="3"/>
+    </struct>
+
+    <!-- RGUIEditBox: RGUILabel -->
+    <struct name="ui_edit_box" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="editor" type="ui_control_editor" id="2"/>
+    </struct>
+
+    <!-- RGUIMultiEditBox: RGUIEditBox -->
+    <struct name="ui_multi_edit_box" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="editor" type="ui_control_editor" id="2"/>
+        <entry name="line_height" type="int32" id="3"/>
+        <entry name="unit_height" type="ui_unit" id="4"/>
+    </struct>
+
+    <!-- RGUILabelCondition: RGUILabel -->
+    <struct name="ui_label_condition" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="index" type="uint32" id="2"/>
+    </struct>
+
+    <!-- RGUIRichLabel: RGUILabelCondition -->
+    <struct name="ui_rich_label" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="index" type="uint32" id="2"/>
+    </struct>
+
+    <!-- RGUIRichText: RGUILabel -->
+    <struct name="ui_rich_text" version="1">
+        <entry name="text" type="ui_control_text" id="1"/>
+        <entry name="line_height" type="int32" id="2"/>
+        <entry name="unit_height" type="ui_unit" id="3"/>
+    </struct>
+
+    <!-- RGUIListBoxCol: RGUIControl -->
+    <struct name="ui_list_box_col" version="1">
+        <entry name="scroll" type="ui_control_scroll" id="1"/>
+        <entry name="box" type="ui_control_box" id="2"/>
+        <entry name="col_count" type="uint32" id="3"/>
+    </struct>
+
+    <!-- RGUIListBoxRow: RGUIControl -->
+    <struct name="ui_list_box_row" version="1">
+        <entry name="scroll" type="ui_control_scroll" id="1"/>
+        <entry name="box" type="ui_control_box" id="2"/>
+        <entry name="row_count" type="uint32" id="3"/>
+    </struct>
+
+    <!-- RGUIListBoxAdvItem: RGUIPanel -->
+    <struct name="ui_list_box_adv_item" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+
+    <!-- RGUIScrollPanel: RGUIControl -->
+    <struct name="ui_scroll_panel" version="1">
+        <entry name="scroll" type="ui_control_scroll" id="1"/>
+    </struct>
+
+    <!-- RGUISlider: RGUIControl -->
+    <struct name="ui_slider" version="1">
+        <entry name="mid_btn_template_id" type="uint32" id="1"/>
+        <entry name="status_frame" type="ui_control_res_ref" id="2"/>
+        <entry name="slider_range" type="uint32" id="3"/>
+    </struct>
+
+    <!-- RGUISwitch: RGUIControl -->
+    <struct name="ui_switcher" version="1">
+        <entry name="mid_btn_template_id" type="uint32" id="1"/>
+        <entry name="turnon_frame" type="ui_control_res_ref" id="2"/>
+    </struct>
+
+    <!-- RGUITab: RGUIControl -->
+    <struct name="ui_tab" version="1">
+	    <entry name="toggle_dock" type="uint8" id="1"/>
+        <entry name="toggle_grap_unit" type="ui_unit_vector_2" id="2"/>
+        <entry name="toggle_rela_unit" type="ui_unit_vector_2" id="3"/>
+        <entry name="toggle_grap_real" type="ui_vector_2" id="4"/>
+        <entry name="toggle_rela_real" type="ui_vector_2" id="5"/>
+        <entry name="toggle_template_id" type="uint32" id="6"/>
+    </struct>
+
+    <!-- RGUITabPage: RGUIPanel -->
+    <struct name="ui_tab_page" version="1">
+        <entry name="toggle_text_id" type="uint32" id="1"/>
+        <entry name="toggle_text_key" type="uint32" id="2"/>
+        <entry name="toggle_template_id" type="uint32" id="3"/>
+    </struct>
+
+    <!-- RGUISwiper: RGUIControl -->
+    <struct name="ui_swiper" version="1">
+        <entry name="curr_page_frame" type="ui_control_res_ref" id="1"/>
+        <entry name="gray_page_frame" type="ui_control_res_ref" id="2"/>
+    </struct>
+
+    <!-- RGUIComboBoxDropList: RGUIListBoxCol -->
+    <struct name="ui_comb_box_drop_list" version="1">
+        <entry name="scroll" type="ui_control_scroll" id="1"/>
+        <entry name="box" type="ui_control_box" id="2"/>
+        <entry name="col_count" type="uint32" id="3"/>
+        <entry name="max_drop_item" type="uint32" id="4"/>
+    </struct>
+
+    <!-- all -->
+    <union name="ui_control_data" version="1">
+        <entry name="window" type="ui_window" id="ui_control_type_window"/>
+        <entry name="panel" type="ui_panel" id="ui_control_type_panel"/>
+        <entry name="picture" type="ui_picture" id="ui_control_type_picture"/>
+        <entry name="label" type="ui_label" id="ui_control_type_label"/>
+        <entry name="button" type="ui_button" id="ui_control_type_button"/>
+        <entry name="toggle" type="ui_toggle" id="ui_control_type_toggle"/>
+        <entry name="progress" type="ui_progress" id="ui_control_type_progress"/>
+        <entry name="picture_cond" type="ui_picture_cond" id="ui_control_type_picture_cond"/>
+        <entry name="check_box" type="ui_check_box" id="ui_control_type_check_box"/>
+        <entry name="radio_box" type="ui_radio_box" id="ui_control_type_radio_box"/>
+        <entry name="combo_box" type="ui_combo_box" id="ui_control_type_combo_box"/>
+        <entry name="edit_box" type="ui_edit_box" id="ui_control_type_edit_box"/>
+        <entry name="multi_edit_box" type="ui_multi_edit_box" id="ui_control_type_multi_edit_box"/>
+        <entry name="label_condition" type="ui_label_condition" id="ui_control_type_label_condition"/>
+        <entry name="rich_label" type="ui_rich_label" id="ui_control_type_rich_label"/>
+        <entry name="rich_text" type="ui_rich_text" id="ui_control_type_rich_text"/>
+        <entry name="list_box_col" type="ui_list_box_col" id="ui_control_type_list_box_col"/>
+        <entry name="list_box_row" type="ui_list_box_row" id="ui_control_type_list_box_row"/>
+        <entry name="list_box_adv_item" type="ui_list_box_adv_item" id="ui_control_type_list_box_adv_item"/>
+        <entry name="scroll_panel" type="ui_scroll_panel" id="ui_control_type_scroll_panel"/>
+        <entry name="slider" type="ui_slider" id="ui_control_type_slider"/>
+        <entry name="switcher" type="ui_switcher" id="ui_control_type_switcher"/>
+        <entry name="tab" type="ui_tab" id="ui_control_type_tab"/>
+        <entry name="tab_page" type="ui_tab_page" id="ui_control_type_tab_page"/>
+        <entry name="swiper" type="ui_swiper" id="ui_control_type_swiper"/>
+        <entry name="comb_box_drop_list" type="ui_comb_box_drop_list" id="ui_control_type_comb_box_drop_list"/>        
+    </union>
+
+    <struct name="ui_control" version="1">
+        <entry name="id" type="uint32" id="1"/>
+        <entry name="name_id" type="uint32" id="2"/>
+        <entry name="basic" type="ui_control_basic" id="3"/>
+        <entry name="type" type="uint8" id="4"/>
+        <entry name="data" type="ui_control_data" id="5" select="type"/>
+    </struct>
+
+</metalib>

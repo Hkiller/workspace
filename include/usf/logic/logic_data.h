@@ -12,18 +12,21 @@ logic_data_t logic_context_data_find(logic_context_t context, const char * name)
 logic_data_t logic_context_data_get_or_create(logic_context_t context, LPDRMETA meta, size_t capacity);
 void logic_context_datas(logic_context_t context, logic_data_it_t it);
 logic_data_t logic_context_data_copy(logic_context_t context, logic_data_t data);
-
+logic_data_t logic_context_data_dyn_reserve_for_append(logic_context_t context, LPDRMETA meta, uint32_t nelement);
+    
 /*logic_data在stack上的接口*/
 logic_data_t logic_stack_data_find(logic_stack_node_t stack_node, const char * name);
 logic_data_t logic_stack_data_get_or_create(logic_stack_node_t stack_node, LPDRMETA meta, size_t capacity);
 void logic_stack_datas(logic_stack_node_t context, logic_data_it_t it);
 logic_data_t logic_stack_data_copy(logic_stack_node_t stack_node, logic_data_t data);
+logic_data_t logic_stack_data_dyn_reserve_for_append(logic_stack_node_t stack_node, LPDRMETA meta, uint32_t nelement);
 
 /*logic_data在requires上的接口*/
 logic_data_t logic_require_data_find(logic_require_t require, const char * name);
 logic_data_t logic_require_data_get_or_create(logic_require_t require, LPDRMETA meta, size_t capacity);
 void logic_require_datas(logic_require_t context, logic_data_it_t it);
 logic_data_t logic_require_data_copy(logic_require_t require, logic_data_t data);
+logic_data_t logic_require_data_dyn_reserve_for_append(logic_require_t require, LPDRMETA meta, uint32_t nelement);
 
 /*logic_data的统一接口*/
 logic_context_t logic_data_context(logic_data_t data);

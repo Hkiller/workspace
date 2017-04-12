@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_common" file="ui_common.xml"/>
+
+    <macrosgroup name="ui_particle_xform_mode">
+        <macro name="UI_PARTICLE_XFORM_LOCAL" value="0"/>
+        <macro name="UI_PARTICLE_XFORM_WORLD" value="1"/>
+    </macrosgroup>
+
+    <macrosgroup name="ui_particle_bound_mode">
+        <macro name="UI_PARTICLE_BOUND_NONE" value="0"/>
+        <macro name="UI_PARTICLE_BOUND_PARTICLE" value="1"/>
+        <macro name="UI_PARTICLE_BOUND_VERTICES" value="2"/>
+    </macrosgroup>
+
+    <macrosgroup name="ui_particle_belend_mode">
+        <macro name="UI_PARTICLE_BLEND_ADDITIVE" value="0"/> <!-- Final Color = Particle Color + Background Color  -->
+        <macro name="UI_PARTICLE_BLEND_ALPHABASE" value="1"/> <!-- Final Color = Particle Color * Particle Alpha + Background Color * (1 - Particle Alpha) -->
+        <macro name="UI_PARTICLE_BLEND_COLORBASE" value="2"/> <!-- Final Color = Particle Color + Background Color * (white - Particle Color) -->
+        <macro name="UI_PARTICLE_BLEND_NONE" value="3"/> <!-- Final Color = Particle Color -->
+        <macro name="UI_PARTICLE_BLEND_BLACK" value="4"/>
+        <macro name="UI_PARTICLE_BLEND_MULTIPLY" value="5"/>
+        <macro name="UI_PARTICLE_BLEND_MULTIPLY_FILTER" value="6"/>
+        <macro name="UI_PARTICLE_BLEND_DARKROOM" value="7"/>
+        <macro name="UI_PARTICLE_BLEND_DODGE" value="8"/>
+        <macro name="UI_PARTICLE_BLEND_DODGE_FILTER" value="9"/>
+        <macro name="UI_PARTICLE_BLEND_FILTER_COLOR" value="10"/>
+        <macro name="UI_PARTICLE_BLEND_ADDITIVE_1" value="11"/>
+        <macro name="UI_PARTICLE_BLEND_ADDITIVE_2" value="12"/>
+        <macro name="UI_PARTICLE_BLEND_HIGHLIGHT_1" value="13"/>
+        <macro name="UI_PARTICLE_BLEND_HIGHLIGHT_2" value="14"/>
+        <macro name="UI_PARTICLE_BLEND_SUBDUEDLIGHT" value="15"/>
+        <macro name="UI_PARTICLE_BLEND_ADD_PIC_LEVEL_1" value="16"/>
+        <macro name="UI_PARTICLE_BLEND_ADD_PIC_LEVEL_2" value="17"/>
+        <macro name="UI_PARTICLE_BLEND_CG_EFFECTS" value="18"/>
+        <macro name="UI_PARTICLE_BLEND_MASK" value="19"/>
+        <macro name="UI_PARTICLE_BLEND_RE_MASK" value="20"/>
+        <macro name="UI_PARTICLE_BLEND_RE_ALPHA_FILL" value="21"/>
+        <macro name="UI_PARTICLE_BLEND_HIGHLIGHT_PROTECT" value="22"/>
+        <macro name="UI_PARTICLE_BLEND_HIGHLIGHT_COVER" value="23"/>
+        <macro name="UI_PARTICLE_BLEND_DARK_FLIP" value="24"/>
+        <macro name="UI_PARTICLE_BLEND_MIRROR_ADD" value="25"/>
+        <macro name="UI_PARTICLE_BLEND_HIGHLIGHT_ADD" value="26"/>
+        <macro name="UI_PARTICLE_BLEND_MINUS" value="27"/>
+        <macro name="UI_PARTICLE_BLEND_LINE_RE_ADD" value="28"/>
+        <macro name="UI_PARTICLE_BLEND_RE_SUBDUEDLIGHT" value="29"/>
+        <macro name="UI_PARTICLE_BLEND_RE_ADD" value="30"/>
+        <macro name="UI_PARTICLE_BLEND_RE_DEEPED" value="31"/>
+        <macro name="UI_PARTICLE_BLEND_RE_FILTER_COLOR" value="32"/>
+        <macro name="UI_PARTICLE_BLEND_RE_LINE" value="33"/>
+        <macro name="UI_PARTICLE_BLEND_EDGE_MAP" value="34"/>
+        <macro name="UI_PARTICLE_BLEND_CUSTOM" value="35"/>
+    </macrosgroup>
+
+    <macrosgroup name="ui_particle_filter_mode">
+	    <macro name="UI_PARTICLE_FILTER_NEAREST" value="0"/>
+	    <macro name="UI_PARTICLE_FILTER_LINEAR" value="1"/>
+	    <macro name="UI_PARTICLE_FILTER_NEAREST_MIPMAP_NEAREST" value="2"/>
+	    <macro name="UI_PARTICLE_FILTER_NEAREST_MIPMAP_LINEAR" value="3"/>
+	    <macro name="UI_PARTICLE_FILTER_LINEAR_MIPMAP_NEAREST" value="4"/>
+	    <macro name="UI_PARTICLE_FILTER_LINEAR_MIPMAP_LINEAR" value="5"/>
+    </macrosgroup>
+
+    <struct name="ui_particle_emitter" version="1">
+        <entry name="name_id" type="uint32" id="1"/>
+
+        <!-- basic -->
+        <entry name="xform_mod" type="uint8" bindmacrosgroup="ui_particle_xform_mode" id="2" defaultvalue="0"/>
+        <entry name="bound_mod" type="uint8" bindmacrosgroup="ui_particle_bound_mode" id="3" defaultvalue="0"/>
+        <entry name="spawn_rate" type="float" id="4" defaultvalue="25.0"/>
+        <entry name="max_amount" type="uint32" id="5" defaultvalue="200"/>
+        <entry name="auto_up_dir" type="uint8" id="6" defaultvalue="0"/>
+        <entry name="scale" type="float" id="7" defaultvalue="1.0"/>
+
+        <!-- time -->
+        <entry name="init_delay_time" type="float" id="8"/>
+        <entry name="loop_delay_time" type="float" id="9"/>
+        <entry name="duration" type="float" id="10"/>
+        <entry name="time_scale" type="float" id="11" defaultvalue="1.0"/>
+        <entry name="repeat_time" type="uint32" id="12" defaultvalue="1"/>
+        <entry name="min_extra_brust" type="uint32" id="13"/>
+        <entry name="max_extra_brust" type="uint32" id="14"/>
+
+        <!-- child effect -->
+        <entry name="wait_child_fx" type="uint8" id="15"/>
+        <entry name="pass_on_color" type="uint8" id="16"/>
+        <entry name="child_fx_file_id" type="uint32" id="17"/>
+
+        <!-- sprite -->
+        <entry name="blend_mode" type="uint8" bindmacrosgroup="ui_particle_belend_mode" id="18"/> <!-- blend mode for quad particle rendering -->
+        <entry name="filter_mode" type="uint8" bindmacrosgroup="ui_particle_filter_mode" id="19" defaultvalue="1"/>
+        <entry name="custom_src_factor" type="uint32" id="20"/>
+        <entry name="custom_des_factor" type="uint32" id="21"/>
+        <entry name="tiling_u" type="uint8" id="22" defaultvalue="1"/>  <!-- working U tiling -->
+        <entry name="tiling_v" type="uint8" id="23" defaultvalue="1"/> <!-- working V tiling -->
+        <entry name="atlas_x" type="float" id="24"/> <!-- texture altas x offset -->
+        <entry name="atlas_y" type="float" id="25"/> <!-- texture atlas y offset -->
+        <entry name="atlas_w" type="float" id="26"/> <!-- texture atlas width -->
+        <entry name="atlas_h" type="float" id="27"/> <!-- texture atlas height -->
+        <entry name="coord_offset" type="ui_vector_2" id="28"/> <!-- texture coordinates offset -->
+        <entry name="coord_scale" type="ui_vector_2" id="29"/> <!-- texture coordinates scaling -->
+        <entry name="origin" type="uint8" bindmacrosgroup="ui_pos_policy" id="30" defaultvalue="4"/> <!-- origin used to do stretch/spin -->
+        <entry name="texture_id" type="uint32" id="31"/>
+        <entry name="texture_x" type="uint32" id="47"/>
+        <entry name="texture_y" type="uint32" id="48"/>
+        <entry name="texture_w" type="uint32" id="49"/>
+        <entry name="texture_h" type="uint32" id="50"/>
+
+        <!-- collision -->
+        <entry name="collision_atlas_x" type="float" id="32"/>
+        <entry name="collision_atlas_y" type="float" id="33"/>
+        <entry name="collision_atlas_w" type="float" id="34"/>
+        <entry name="collision_atlas_h" type="float" id="35"/>
+
+        <!-- event -->
+        <entry name="on_emitter_begin_id" type="uint32" id="36"/>
+        <entry name="on_emitter_end_id" type="uint32" id="37"/>
+        <entry name="on_particle_begin_id" type="uint32" id="38"/>
+        <entry name="on_particle_end_id" type="uint32" id="39"/>
+
+        <entry name="user_text_id" type="uint32" id="40"/>
+
+        <entry name="is_render" type="uint8" id="41" defaultvalue="1"/>
+
+        <entry name="dead_anim_id" type="uint32" id="42"/>
+
+        <entry name="use_state" type="uint8" id="43" defaultvalue="1"/>
+        <entry name="particle_repeat_times" type="uint32" id="44" defaultvalue="1"/>
+        <entry name="group_id" type="uint32" id="45"/>
+
+        <entry name="bind_emitters_id" type="uint32" id="46"/>
+    </struct>
+
+</metalib>

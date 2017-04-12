@@ -162,6 +162,39 @@ logic_data_t logic_stack_data_find(logic_stack_node_t stack_node, const char * n
     return (logic_data_t)cpe_hash_table_find(&stack_node->m_context->m_mgr->m_datas, &key);    
 }
 
+logic_data_t logic_context_data_dyn_reserve_for_append(logic_context_t context, LPDRMETA meta, uint32_t nelement) {
+    logic_data_t data;
+    struct dr_meta_dyn_info dyn_info;
+    size_t element_size;
+    size_t capacity;
+    
+    if (dr_meta_find_dyn_info(meta, &dyn_info) != 0) return NULL;
+
+    element_size = dr_entry_element_size(dyn_info.m_data.m_array.m_array_entry);
+    assert(element_size <= dr_meta_size(meta));
+    
+    data = logic_context_data_find(context, dr_meta_name(meta));
+    if (data) {
+        uint32_t old_count;
+        if (dr_entry_try_read_uint32(
+                &old_count,
+                ((char *)logic_data_data(data)) + dyn_info.m_data.m_array.m_refer_start,
+                dyn_info.m_data.m_array.m_refer_entry,
+                NULL) != 0)
+        {
+            return NULL;
+        }
+        nelement += old_count;
+    }
+    
+    capacity = dr_meta_size(meta) + (nelement > 0 ? (nelement - 1) : 0) * element_size;
+    if (data == NULL || capacity > data->m_capacity) {
+        data = logic_context_data_get_or_create(context, meta, capacity);
+    }
+    
+    return data;
+}
+
 logic_data_t logic_stack_data_get_or_create(logic_stack_node_t stack_node, LPDRMETA meta, size_t capacity) {
     struct logic_data key;
 
@@ -178,6 +211,39 @@ logic_data_t logic_stack_data_copy(logic_stack_node_t stack_node, logic_data_t d
     key.m_owner_data.m_stack = stack_node;
 
     return logic_data_get_or_create_i(&key, data->m_meta, data->m_capacity, data);
+}
+
+logic_data_t logic_stack_data_dyn_reserve_for_append(logic_stack_node_t stack_node, LPDRMETA meta, uint32_t nelement) {
+    logic_data_t data;
+    struct dr_meta_dyn_info dyn_info;
+    size_t element_size;
+    size_t capacity;
+    
+    if (dr_meta_find_dyn_info(meta, &dyn_info) != 0) return NULL;
+
+    element_size = dr_entry_element_size(dyn_info.m_data.m_array.m_array_entry);
+    assert(element_size <= dr_meta_size(meta));
+    
+    data = logic_stack_data_find(stack_node, dr_meta_name(meta));
+    if (data) {
+        uint32_t old_count;
+        if (dr_entry_try_read_uint32(
+                &old_count,
+                ((char *)logic_data_data(data)) + dyn_info.m_data.m_array.m_refer_start,
+                dyn_info.m_data.m_array.m_refer_entry,
+                NULL) != 0)
+        {
+            return NULL;
+        }
+        nelement += old_count;
+    }
+    
+    capacity = dr_meta_size(meta) + (nelement > 0 ? (nelement - 1) : 0) * element_size;
+    if (data == NULL || capacity > data->m_capacity) {
+        data = logic_stack_data_get_or_create(stack_node, meta, capacity);
+    }
+    
+    return data;
 }
 
 logic_data_t logic_require_data_find(logic_require_t require, const char * name) {
@@ -206,6 +272,39 @@ logic_data_t logic_require_data_copy(logic_require_t require, logic_data_t data)
     key.m_owner_data.m_require = require;
 
     return logic_data_get_or_create_i(&key, data->m_meta, data->m_capacity, data);
+}
+
+logic_data_t logic_require_data_dyn_reserve_for_append(logic_require_t require, LPDRMETA meta, uint32_t nelement) {
+    logic_data_t data;
+    struct dr_meta_dyn_info dyn_info;
+    size_t element_size;
+    size_t capacity;
+    
+    if (dr_meta_find_dyn_info(meta, &dyn_info) != 0) return NULL;
+
+    element_size = dr_entry_element_size(dyn_info.m_data.m_array.m_array_entry);
+    assert(element_size <= dr_meta_size(meta));
+    
+    data = logic_require_data_find(require, dr_meta_name(meta));
+    if (data) {
+        uint32_t old_count;
+        if (dr_entry_try_read_uint32(
+                &old_count,
+                ((char *)logic_data_data(data)) + dyn_info.m_data.m_array.m_refer_start,
+                dyn_info.m_data.m_array.m_refer_entry,
+                NULL) != 0)
+        {
+            return NULL;
+        }
+        nelement += old_count;
+    }
+    
+    capacity = dr_meta_size(meta) + (nelement > 0 ? (nelement - 1) : 0) * element_size;
+    if (data == NULL || capacity > data->m_capacity) {
+        data = logic_require_data_get_or_create(require, meta, capacity);
+    }
+    
+    return data;
 }
 
 void logic_data_free(logic_data_t data) {

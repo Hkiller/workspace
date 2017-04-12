@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <macrosgroup name="appsvr_device_service_type">
+        <macro name="appsvr_device_service_push" value="1"/>
+    </macrosgroup>
+    
+    <!-- 查询设备信息 -->
+    <macrosgroup name="appsvr_device_category">
+        <macro name="appsvr_device_windows" value="1"/>
+        <macro name="appsvr_device_ios" value="2"/>
+        <macro name="appsvr_device_android" value="3"/>
+    </macrosgroup>
+
+    <macrosgroup name="appsvr_device_cap">
+        <macro name="appsvr_device_cap_low" value="1"/>
+        <macro name="appsvr_device_cap_medium" value="2"/>
+        <macro name="appsvr_device_cap_high" value="3"/>
+    </macrosgroup>
+    
+    <struct name="appsvr_device_info" version="1">
+        <entry name="category" type="uint8" bindmacrosgroup="appsvr_device_category" id="1"/>
+        <entry name="cpu_name" type="string" size="64" id="2"/>
+        <entry name="cpu_freq" type="uint64" size="64" id="3"/>
+        <entry name="memory_kb" type="uint64" id="4"/>
+        <entry name="device_id" type="string" size="64" id="5"/>
+        <entry name="device_model" type="string" size="64" id="6"/>
+        <entry name="device_cap" type="uint8" id="7"/>
+        <entry name="device_language" type="string" size="8" id="8"/>
+    </struct>
+
+    <struct name="appsvr_device_query_info" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+
+    <!-- 查询路径 -->
+    <macrosgroup name="appsvr_device_path_category">
+        <macro name="appsvr_device_path_document" value="1"/>
+        <macro name="appsvr_device_path_cache" value="2"/>
+        <macro name="appsvr_device_path_install" value="3"/>
+    </macrosgroup>
+    
+    <struct name="appsvr_device_path" version="1">
+        <entry name="category" type="uint8" bindmacrosgroup="appsvr_device_path_category" id="1"/>
+        <entry name="path" type="string" size="256" id="2"/>
+    </struct>
+
+    <struct name="appsvr_device_query_path" version="1">
+        <entry name="category" type="uint8" bindmacrosgroup="appsvr_device_path_category" id="1"/>
+    </struct>
+
+    <!-- 安装 -->
+    <struct name="appsvr_device_start_install" version="1">
+        <entry name="source" type="string" size="256" id="1"/>
+    </struct>
+
+    <!-- 查询网络状态 -->
+    <macrosgroup name="appsvr_device_network_state">
+        <macro name="appsvr_device_network_none" value="1"/>
+        <macro name="appsvr_device_network_wifi" value="2"/>
+        <macro name="appsvr_device_network_wwan" value="3"/>
+    </macrosgroup>
+
+    <struct name="appsvr_device_query_network" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+
+    <struct name="appsvr_device_network_info" version="1">
+        <entry name="state" type="uint8" id="1" bindmacrosgroup="appsvr_device_network_state"/>
+    </struct>
+
+</metalib>

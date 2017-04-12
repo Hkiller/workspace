@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{a80a0975-0ed3-4fa5-bb94-ce00eaf31662}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\cfg">
+      <UniqueIdentifier>{48939a13-b247-4e9e-b0b6-e04d69ecbda5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dr">
+      <UniqueIdentifier>{4c98e8ec-28ce-443d-89ec-8b714170b28e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\utils">
+      <UniqueIdentifier>{538013f6-0edb-4e90-99d3-04705bbfe374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dp">
+      <UniqueIdentifier>{a784dc23-06c7-4b6b-9cb6-e81ca1832763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\tl">
+      <UniqueIdentifier>{095a8bff-339a-4e4a-b58e-3e32c74b3287}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\nm">
+      <UniqueIdentifier>{42481483-d246-4fe1-b6d2-7dda32129b54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\pom_grp">
+      <UniqueIdentifier>{8cc44810-4af4-4ef7-95ff-7ff787adfa6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\pom">
+      <UniqueIdentifier>{7f51d67f-1406-4aa5-a2c9-ac6e6f2bc83f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\otm">
+      <UniqueIdentifier>{15408973-6b7d-4659-b47f-1d93141ffda1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{117aa328-9d92-434c-9e03-5cfda106e2a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\cfg">
+      <UniqueIdentifier>{5fbf956a-c0b5-4ffc-819a-fab2a343f23c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dr">
+      <UniqueIdentifier>{0fe25d98-a31b-440d-89ba-0907fed20f8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{446cc0a9-bdc0-4cf8-a613-91b82b01672b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dp">
+      <UniqueIdentifier>{3b0f4eae-b9b3-418e-8766-e12edb8ebbbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\nm">
+      <UniqueIdentifier>{d77620ed-6096-4e6a-9c8f-668dd7bd670d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\pom">
+      <UniqueIdentifier>{045d3bd1-b800-4a64-9ca1-e90832b0fd4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\pom_grp">
+      <UniqueIdentifier>{64d5cdcd-9e33-43e3-b027-4ebb431545b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\otm">
+      <UniqueIdentifier>{a2fcc7da-4eb1-4cfb-938e-1d3c48c3a8cc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\cpepp\cfg\Exceptions.hpp">
+      <Filter>include\cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\cfg\Node.hpp">
+      <Filter>include\cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\cfg\NodeIterator.hpp">
+      <Filter>include\cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\cfg\System.hpp">
+      <Filter>include\cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\cfg\Tree.hpp">
+      <Filter>include\cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dr\Data.hpp">
+      <Filter>include\dr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dr\Entry.hpp">
+      <Filter>include\dr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dr\Meta.hpp">
+      <Filter>include\dr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dr\MetaLib.hpp">
+      <Filter>include\dr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dr\System.hpp">
+      <Filter>include\dr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\ClassCategory.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\CString.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\DynListUtils.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\ErrorCollector.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\FunctionalExt.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\IntTypeSelect.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\MemBuffer.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\ObjHolder.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\ObjRef.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\OpGuard.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\ProbabilitySelector.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\Random.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\RangeMgr.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\StreamFile.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\StreamMem.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\System.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\ToRef.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\WeightSelector.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dp\Manager.hpp">
+      <Filter>include\dp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dp\Request.hpp">
+      <Filter>include\dp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dp\Responser.hpp">
+      <Filter>include\dp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dp\ResponserAdp.hpp">
+      <Filter>include\dp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dp\ResponserIterator.hpp">
+      <Filter>include\dp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dp\System.hpp">
+      <Filter>include\dp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\tl\Manager.hpp">
+      <Filter>include\tl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\tl\System.hpp">
+      <Filter>include\tl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\tl\TimeLine.hpp">
+      <Filter>include\tl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\tl\Timer.hpp">
+      <Filter>include\tl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\nm\Group.hpp">
+      <Filter>include\nm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\nm\Manager.hpp">
+      <Filter>include\nm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\nm\Object.hpp">
+      <Filter>include\nm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\nm\ObjectIterator.hpp">
+      <Filter>include\nm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\nm\System.hpp">
+      <Filter>include\nm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\pom_grp\ObjectRef.hpp">
+      <Filter>include\pom_grp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\pom_grp\Store.hpp">
+      <Filter>include\pom_grp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\pom_grp\StoreEntry.hpp">
+      <Filter>include\pom_grp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\pom_grp\StoreTable.hpp">
+      <Filter>include\pom_grp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\pom_grp\System.hpp">
+      <Filter>include\pom_grp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\pom\Manager.hpp">
+      <Filter>include\pom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\pom\Object.hpp">
+      <Filter>include\pom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\pom\System.hpp">
+      <Filter>include\pom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\otm\Manager.hpp">
+      <Filter>include\otm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\otm\Memo.hpp">
+      <Filter>include\otm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\otm\MemoBuf.hpp">
+      <Filter>include\otm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\otm\System.hpp">
+      <Filter>include\otm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\otm\Timer.hpp">
+      <Filter>include\otm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\otm\TimerProcessor.hpp">
+      <Filter>include\otm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\utils\TypeUtils.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dr\CTypeUtils.hpp">
+      <Filter>include\dr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpepp\dr\Exceptions.hpp">
+      <Filter>include\dr</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\cpepp\cfg\Node.cpp">
+      <Filter>src\cfg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\cfg\NodePlacehold.cpp">
+      <Filter>src\cfg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\cfg\Tree.cpp">
+      <Filter>src\cfg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\dr\Data.cpp">
+      <Filter>src\dr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\ErrorCollector.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\MemBuffer.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\OpGuard.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\ProbabilitySelector.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\Random.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\RangeMgr.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\StreamFile.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\StreamMem.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\ToRef.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\utils\WeightSelector.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\dp\Manager.cpp">
+      <Filter>src\dp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\dp\Request.cpp">
+      <Filter>src\dp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\dp\Responser.cpp">
+      <Filter>src\dp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\dp\ResponserAdp.cpp">
+      <Filter>src\dp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\nm\Group.cpp">
+      <Filter>src\nm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\nm\Manager.cpp">
+      <Filter>src\nm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\nm\Object.cpp">
+      <Filter>src\nm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\pom\Manager.cpp">
+      <Filter>src\pom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\pom_grp\Store.cpp">
+      <Filter>src\pom_grp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\otm\Manager.cpp">
+      <Filter>src\otm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\dr\CTypeUtils.cpp">
+      <Filter>src\dr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\dr\Entry.cpp">
+      <Filter>src\dr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\dr\Meta.cpp">
+      <Filter>src\dr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\dr\MetaLib.cpp">
+      <Filter>src\dr</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

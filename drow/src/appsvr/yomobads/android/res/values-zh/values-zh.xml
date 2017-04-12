@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="down_app_toast_msg">已加入下载队列</string>
+    <string name="down_failed_msg">下载失败</string>
+    <string name="down_finished_msg">下载成功,点击安装</string>
+    <string name="down_londing_msg">正在下载</string>
+    <string name="down_pregress_msg">已下载</string>
+    <string name="pc_dialog_cancel_msg">继续</string>
+    <string name="pc_dialog_ok_msg">退出</string>
+    <string name="pc_dialog_video_close_msg">未播放完成将无法获得奖励！\n是否关闭?</string>
+    <string name="pc_toast_cannot_network_msg">当前网络不支持</string>
+    <string name="pc_toast_no_network_msg">请检查您的网络</string>
+    <string name="pc_video_close_msg">关闭视频</string>
+    <string name="pc_video_details_msg">了解详情</string>
+    <string name="pc_video_down_time_msg"><Data>&lt;font color="#38C72F">%1$s&lt;/font>&lt;font color="#ffffff">秒&lt;/font></Data></string>
+    <string name="web_reload_msg">点击屏幕 重新加载</string>
+</resources>

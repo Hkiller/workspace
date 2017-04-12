@@ -13,7 +13,7 @@
                                                                         \
     cpe_hash_string_t                                                   \
     __module_name::NAME = (cpe_hash_string_t)                           \
-        &s_ ## __module_name ## _Name;                                  \
+        (void*)&s_ ## __module_name ## _Name;                           \
                                                                         \
     extern "C"                                                          \
     EXPORT_DIRECTIVE                                                    \
@@ -27,7 +27,6 @@
             product =                                                   \
                 new (app.nmManager(), module.name())                    \
                 __module_impl(app, module, moduleCfg);                  \
-            (void)product;                                              \
             __init(product, app, module, moduleCfg);                    \
             return 0;                                                   \
         }                                                               \

@@ -7,6 +7,7 @@
 #include "gd/app/app_log.h"
 #include "gd/app/app_context.h"
 #include "gd/app/app_module.h"
+#include "gd/app/app_module_installer.h"
 #include "app_internal_ops.h"
 
 struct gd_app_module {
@@ -83,7 +84,7 @@ gd_app_module_create_i(
     return runing_module;
 }
 
-static int gd_app_module_create(gd_app_context_t context, const char * module_name, cfg_t cfg) {
+int gd_app_module_create(gd_app_context_t context, const char * module_name, cfg_t cfg) {
     assert(context);
 
     return gd_app_module_create_i(
@@ -126,70 +127,9 @@ static void gd_app_module_free(
     }
 }
 
-static int gd_app_modules_load_i(gd_app_context_t context, cfg_t moduleListCfg, mem_buffer_t buffer) {
-    int rv;
-    cfg_t moduleCfg;
-    struct cfg_it cfgIt;
-
-    if (cfg_type(moduleListCfg) != CPE_CFG_TYPE_SEQUENCE) {
-        APP_CTX_ERROR(
-            context, "app: load module [%s]: config type error!",
-            cfg_path(buffer, moduleListCfg, 0));
-        return -1;
-    }
-
-    rv = 0;
-    cfg_it_init(&cfgIt, moduleListCfg);
-    while(rv == 0 && (moduleCfg = cfg_it_next(&cfgIt))) {
-        const char * buf;
-
-        buf = cfg_get_string(moduleCfg, "name", NULL);
-        if (buf) {
-            if (gd_app_module_create(context, buf, moduleCfg) != 0) {
-                rv = -1;
-            }
-            continue;
-        }
-
-        buf = cfg_get_string(moduleCfg, "include", NULL);
-        if (buf) {
-            cfg_t includeCfg =
-                cfg_find_cfg(
-                    cfg_find_cfg(cfg_parent(moduleListCfg), buf),
-                    "load");
-            if (includeCfg == NULL) {
-                APP_CTX_ERROR(
-                    context, "app: load module [%s]: config type error!",
-                    cfg_path(buffer, moduleListCfg, 0));
-                rv = -1;
-            }
-            else {
-                if (gd_app_modules_load_i(context, includeCfg, buffer) != 0) {
-                    rv = -1;
-                }
-            }
-
-            continue;
-        }
-
-        APP_CTX_ERROR(
-            context, "app: load module [%s]: no name or include configured!",
-            cfg_path(buffer, moduleCfg, 0));
-
-        return -1;
-    }
-
-    if (rv != 0) {
-        gd_app_modules_unload(context);
-    }
-
-    return rv;
-}
-
 int gd_app_modules_load(gd_app_context_t context) {
     cfg_t moduleListCfg;
-    struct mem_buffer buffer;
-    int r;
+    gd_app_module_installer_t installer;
 
     moduleListCfg = cfg_find_cfg(context->m_cfg, "modules.load");
 
@@ -200,13 +140,18 @@ int gd_app_modules_load(gd_app_context_t context) {
         return -1;
     }
 
-    mem_buffer_init(&buffer, context->m_alloc);
+    installer = gd_app_module_installer_create(context, moduleListCfg);
+    if (installer == NULL) {
+        APP_CTX_INFO(context, "app: modules load: create installer fail!");
+        return -1;
+    }
+    
+    while(!gd_app_module_installer_is_done(installer)) {
+        int r = gd_app_module_installer_install_one(installer);
+        if (r) return r;
+    }
 
-    r = gd_app_modules_load_i(context, moduleListCfg, &buffer);
-
-    mem_buffer_clear(&buffer);
-
-    return r;
+    return 0;
 }
 
 void gd_app_modules_unload(gd_app_context_t context) {

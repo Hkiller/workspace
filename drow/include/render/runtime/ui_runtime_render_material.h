@@ -1,0 +1,27 @@
+#ifndef UI_RUNTIME_RENDER_MATERIAL_H
+#define UI_RUNTIME_RENDER_MATERIAL_H
+#include "ui_runtime_types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
+ui_runtime_render_material_t ui_runtime_render_material_create(ui_runtime_render_t render);
+ui_runtime_render_material_t ui_runtime_render_material_clone(ui_runtime_render_material_t material);    
+void ui_runtime_render_material_free(ui_runtime_render_material_t material);
+
+ui_runtime_render_technique_t ui_runtime_render_material_cur_technique(ui_runtime_render_material_t material);
+void ui_runtime_render_material_set_cur_technique(ui_runtime_render_material_t material, ui_runtime_render_technique_t technique);
+
+void ui_runtime_render_material_techniques(ui_runtime_render_material_t material, ui_runtime_render_technique_it_t it);
+
+ui_runtime_render_state_t ui_runtime_render_material_check_create_render_state(ui_runtime_render_material_t material);
+int ui_runtime_render_material_set_render_state(ui_runtime_render_material_t material, ui_runtime_render_state_data_t render_state_data);
+ui_runtime_render_state_t ui_runtime_render_material_render_state(ui_runtime_render_material_t material);
+void ui_runtime_render_material_set_parent_render_state(ui_runtime_render_material_t material, ui_runtime_render_state_t parent);
+    
+#ifdef __cplusplus
+}
+#endif
+
+#endif

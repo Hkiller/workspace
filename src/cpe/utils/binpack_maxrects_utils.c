@@ -85,46 +85,48 @@ uint8_t binpack_rect_is_contained_in(binpack_rect_t a, binpack_rect_t b) {
 		&& a->y+a->height <= b->y+b->height;
 }
 
-uint8_t binpack_maxrects_ctx_split_free_node(binpack_maxrects_ctx_t ctx, binpack_rect_t free_node, binpack_rect_t used_node) {
+uint8_t binpack_maxrects_ctx_split_free_node(binpack_maxrects_ctx_t ctx, binpack_rect_t i_free_node, binpack_rect_t used_node) {
+    struct binpack_rect free_node = *i_free_node;
+    
 	/* Test with SAT if the rectangles even intersect. */
-	if (used_node->x >= free_node->x + free_node->width
-        || used_node->x + used_node->width <= free_node->x
-        || used_node->y >= free_node->y + free_node->height
-        || used_node->y + used_node->height <= free_node->y)
+	if (used_node->x >= free_node.x + free_node.width
+        || used_node->x + used_node->width <= free_node.x
+        || used_node->y >= free_node.y + free_node.height
+        || used_node->y + used_node->height <= free_node.y)
     {
 		return 0;
     }
 
-	if (used_node->x < free_node->x + free_node->width && used_node->x + used_node->width > free_node->x) {
+	if (used_node->x < free_node.x + free_node.width && used_node->x + used_node->width > free_node.x) {
 		/* New node at the top side of the used node.*/
-		if (used_node->y > free_node->y && used_node->y < free_node->y + free_node->height) {
-			struct binpack_rect new_node = * free_node;
+		if (used_node->y > free_node.y && used_node->y < free_node.y + free_node.height) {
+			struct binpack_rect new_node = free_node;
 			new_node.height = used_node->y - new_node.y;
             if (binpack_maxrects_ctx_push_free_rect(ctx, &new_node) == NULL) return 0;
 		}
 
 		/* New node at the bottom side of the used node.*/
-		if (used_node->y + used_node->height < free_node->y + free_node->height) {
-			struct binpack_rect new_node = * free_node;
+		if (used_node->y + used_node->height < free_node.y + free_node.height) {
+			struct binpack_rect new_node = free_node;
 			new_node.y = used_node->y + used_node->height;
-			new_node.height = free_node->y + free_node->height - (used_node->y + used_node->height);
+			new_node.height = free_node.y + free_node.height - (used_node->y + used_node->height);
             if (binpack_maxrects_ctx_push_free_rect(ctx, &new_node) == NULL) return 0;
 		}
 	}
 
-	if (used_node->y < free_node->y + free_node->height && used_node->y + used_node->height > free_node->y) {
+	if (used_node->y < free_node.y + free_node.height && used_node->y + used_node->height > free_node.y) {
 		/* New node at the left side of the used node.*/
-		if (used_node->x > free_node->x && used_node->x < free_node->x + free_node->width) {
-			struct binpack_rect new_node = * free_node;
+		if (used_node->x > free_node.x && used_node->x < free_node.x + free_node.width) {
+			struct binpack_rect new_node = free_node;
 			new_node.width = used_node->x - new_node.x;
             if (binpack_maxrects_ctx_push_free_rect(ctx, &new_node) == NULL) return 0;
 		}
 
 		/* New node at the right side of the used node.*/
-		if (used_node->x + used_node->width < free_node->x + free_node->width) {
-			struct binpack_rect new_node = * free_node;
+		if (used_node->x + used_node->width < free_node.x + free_node.width) {
+			struct binpack_rect new_node = free_node;
 			new_node.x = used_node->x + used_node->width;
-			new_node.width = free_node->x + free_node->width - (used_node->x + used_node->width);
+			new_node.width = free_node.x + free_node.width - (used_node->x + used_node->width);
             if (binpack_maxrects_ctx_push_free_rect(ctx, &new_node) == NULL) return 0;
 		}
 	}

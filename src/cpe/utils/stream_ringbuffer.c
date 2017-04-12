@@ -16,7 +16,7 @@ int stream_do_write_to_ringbuffer(struct write_stream * input_stream, const void
         if (stream->m_last_blk == NULL) goto ALLOC_NEW_BUF;
 
         data_capacity = ringbuffer_block_data(stream->m_ringbuf, stream->m_last_blk, stream->m_pos, &data);
-        if (data_capacity < 0) goto ALLOC_NEW_BUF;
+        if (data_capacity <= 0) goto ALLOC_NEW_BUF;
 
         assert(data);
         once_write_size = (int)size - total_write_size;

@@ -27,6 +27,7 @@ extern "C" {
 # define FMT_INT64_T "%I64d"
 # define FMT_UINT32_T "%u"
 # define FMT_INT32_T "%d"
+# define FMT_UINT16_T "%hu"
 #else
 # define FMT_SIZE_T "%zd"
 

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdTools\c-ares\include\ares.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\include\ares_rules.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\include\ares_version.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\include\win32\ares_build.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_data.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_dns.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_getenv.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_getopt.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_inet_net_pton.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_iphlpapi.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_ipv6.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_library_init.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_llist.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_nowarn.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_platform.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_private.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_setup.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_strcasecmp.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_strdup.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_writev.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\bitncmp.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\config-dos.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\config-win32.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\nameser.h" />
+    <ClInclude Include="..\..\3rdTools\c-ares\src\setup_once.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_cancel.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_create_query.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_data.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_destroy.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_expand_name.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_expand_string.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_fds.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_free_hostent.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_free_string.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_getenv.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_gethostbyaddr.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_gethostbyname.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_getnameinfo.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_getopt.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_getsock.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_init.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_library_init.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_llist.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_mkquery.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_nowarn.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_options.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_aaaa_reply.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_a_reply.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_mx_reply.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_naptr_reply.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_ns_reply.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_ptr_reply.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_soa_reply.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_srv_reply.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_txt_reply.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_platform.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_process.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_query.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_search.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_send.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_strcasecmp.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_strdup.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_strerror.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_timeout.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_version.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_writev.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares__close_sockets.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares__get_hostent.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares__read_line.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares__timeval.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\bitncmp.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\inet_net_pton.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\inet_ntop.c" />
+    <ClCompile Include="..\..\3rdTools\c-ares\src\windows_port.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F530BC9C-6BF8-428F-952D-5DDA0F4E9416}</ProjectGuid>
+    <RootNamespace>c-ares</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\3rdTools\c-ares\include;..\..\3rdTools\c-ares\include\win32;..\..\3rdTools\c-ares\src;..\..\3rdTools\c-ares\include\win32;..\..\3rdTools\c-ares\include\win32\c-ares;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CARES_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\3rdTools\c-ares\include;..\..\3rdTools\c-ares\include\win32;..\..\3rdTools\c-ares\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CARES_STATICLIB;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,21 @@
+#ifndef UI_MODEL_MANIP_SCENE_EXPORT_TEXTURE_H
+#define UI_MODEL_MANIP_SCENE_EXPORT_TEXTURE_H
+#include "plugin_tiledmap_manip_scene_export_ctx_i.h"
+
+struct plugin_tiledmap_scene_export_texture {
+    plugin_tiledmap_scene_export_ctx_t m_ctx;
+    TAILQ_ENTRY(plugin_tiledmap_scene_export_texture) m_next;
+    uint32_t m_src_id;
+    ui_cache_pixel_buf_t m_pixel_buf;
+};
+
+plugin_tiledmap_scene_export_texture_t
+plugin_tiledmap_scene_export_texture_create(plugin_tiledmap_scene_export_ctx_t ctx, ui_data_src_t module_src);
+void plugin_tiledmap_scene_export_texutre_free(plugin_tiledmap_scene_export_texture_t texture);
+plugin_tiledmap_scene_export_texture_t
+plugin_tiledmap_scene_export_texture_find(plugin_tiledmap_scene_export_ctx_t ctx, uint32_t src_id);
+
+ui_cache_pixel_buf_t
+plugin_tiledmap_scene_export_load_pixel_buf(plugin_tiledmap_scene_export_ctx_t ctx, ui_data_src_t module_src);
+
+#endif

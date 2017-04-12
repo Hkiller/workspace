@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_common" file="ui_common.xml"/>
+
+    <macrosgroup name="ui_texture_ref_type">
+        <macro name="UI_TEXTURE_REF_IMG" value="1"/>
+        <macro name="UI_TEXTURE_REF_FRAME" value="2"/>
+    </macrosgroup>
+
+    <!-- 到一个图块的引用 -->
+    <struct name="ui_img_ref" version="1">
+        <entry name="module_id" type="uint32" id="1"/>
+        <entry name="img_block_id" type="uint32" id="2"/>
+        <entry name="name" type="string" size="UI_NAME_LEN" id="3"/>
+        <entry name="trans" type="ui_trans" id="4"/>
+	    <entry name="freedom" type="uint8" id="5"/>
+        <entry name="polys" type="ui_vector_2" count="4" id="6"/>
+    </struct>
+
+    <!-- 到一个Frame的引用 -->
+    <struct name="ui_frame_ref" version="1">
+        <entry name="sprite_id" type="uint32" id="1"/>
+        <entry name="frame_id" type="uint32" id="2"/>
+        <entry name="trans" type="ui_trans" id="5"/>
+    </struct>
+
+    <!-- 统一的贴图引用 -->
+    <union name="ui_texture_ref_data" version="1">
+        <entry name="img" type="ui_img_ref" id="UI_TEXTURE_REF_IMG"/>
+        <entry name="frame" type="ui_frame_ref" id="UI_TEXTURE_REF_FRAME"/>
+    </union>
+
+    <struct name="ui_texture_ref" version="1">
+        <entry name="type" type="uint8" id="1" bindmacrogroup="ui_texture_ref_type"/>
+        <entry name="data" type="ui_texture_ref_data" id="2" select="type"/>
+    </struct>
+
+</metalib>

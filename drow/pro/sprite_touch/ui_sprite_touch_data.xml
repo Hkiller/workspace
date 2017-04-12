@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="ui_sprite_touch_pair" version="1">
+        <entry name="x" type="float" id="1"/>
+        <entry name="y" type="float" id="2"/>
+    </struct>
+
+    <!-- 多边形定义 -->
+    <macrosgroup name="ui_sprite_touch_shape_type">
+        <macro name="UI_SPRITE_TOUCH_SHAPE_ENTITY_RECT" value="1"/>
+        <macro name="UI_SPRITE_TOUCH_SHAPE_BOX" value="2"/>
+        <macro name="UI_SPRITE_TOUCH_SHAPE_CIRCLE" value="3"/>
+    </macrosgroup>
+
+    <struct name="ui_sprite_touch_shape_data_entity_rect" version="1">
+        <entry name="adj" type="ui_sprite_touch_pair" id="1"/>
+    </struct>
+
+    <struct name="ui_sprite_touch_shape_data_box" version="1">
+        <entry name="lt" type="ui_sprite_touch_pair" id="1"/>
+        <entry name="rb" type="ui_sprite_touch_pair" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_touch_shape_data_circle" version="1">
+        <entry name="base_pos" type="uint8" id="1"/>
+        <entry name="radius" type="float" id="2"/>
+    </struct>
+
+    <union name="ui_sprite_touch_shape_data" version="1">
+        <entry name="entity_rect" type="ui_sprite_touch_shape_data_entity_rect" id="UI_SPRITE_TOUCH_SHAPE_ENTITY_RECT"/>
+        <entry name="box" type="ui_sprite_touch_shape_data_box" id="UI_SPRITE_TOUCH_SHAPE_BOX"/>
+        <entry name="circle" type="ui_sprite_touch_shape_data_circle" id="UI_SPRITE_TOUCH_SHAPE_CIRCLE"/>
+    </union>
+
+    <struct name="ui_sprite_touch_shape" version="1">
+        <entry name="type" type="uint8" id="1" bindmacrogroup="ui_sprite_touch_shape_type"/>
+        <entry name="data" type="ui_sprite_touch_shape_data" id="2" select="type"/>
+    </struct>
+
+
+</metalib>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{bd4e5b13-6e44-4e50-8a8c-bd62c064e182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{fc77525c-fb94-4193-9210-8cbbd985d463}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdTools\libev\include\ev++.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libev\include\ev.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libev\include\event.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libev\src\win32\config.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libev\src\ev_vars.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libev\src\ev_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdTools\libev\src\ev.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -144,8 +144,6 @@ int fsm_machine_apply_event(fsm_machine_t fsm, void * evt) {
     if (next_state_id == FSM_INVALID_STATE
         && cur_state->m_trans_count > (sizeof(cur_state->m_base_trans) / sizeof(cur_state->m_base_trans[0])))
     {
-        int ext_trans_count = (sizeof(cur_state->m_base_trans) / sizeof(cur_state->m_base_trans[0])) - cur_state->m_trans_count;
-        assert(ext_trans_count <= cur_state->m_ext_trans_capacity);
         assert(cur_state->m_ext_trans);
         
         for(i = 0; next_state_id== FSM_INVALID_STATE && i < base_trans_count; ++i) {

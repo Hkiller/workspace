@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3236DCE4-ED44-4083-A77E-6A16D49F765E}</ProjectGuid>
+    <RootNamespace>cpepp</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\3rdTools\yaml\include;..\..\3rdTools\yajl\include;..\..\3rdTools\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4624;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\3rdTools\yaml\include;..\..\3rdTools\yajl\include;..\..\3rdTools\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4624;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\cpepp\cfg\Exceptions.hpp" />
+    <ClInclude Include="..\..\include\cpepp\cfg\Node.hpp" />
+    <ClInclude Include="..\..\include\cpepp\cfg\NodeIterator.hpp" />
+    <ClInclude Include="..\..\include\cpepp\cfg\System.hpp" />
+    <ClInclude Include="..\..\include\cpepp\cfg\Tree.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dr\CTypeUtils.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dr\Data.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dr\Entry.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dr\Exceptions.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dr\Meta.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dr\MetaLib.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dr\System.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\ClassCategory.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\CString.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\DynListUtils.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\ErrorCollector.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\FunctionalExt.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\IntTypeSelect.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\MemBuffer.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\ObjHolder.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\ObjRef.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\OpGuard.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\ProbabilitySelector.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\Random.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\RangeMgr.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\StreamFile.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\StreamMem.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\System.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\ToRef.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\TypeUtils.hpp" />
+    <ClInclude Include="..\..\include\cpepp\utils\WeightSelector.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dp\Manager.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dp\Request.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dp\Responser.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dp\ResponserAdp.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dp\ResponserIterator.hpp" />
+    <ClInclude Include="..\..\include\cpepp\dp\System.hpp" />
+    <ClInclude Include="..\..\include\cpepp\tl\Manager.hpp" />
+    <ClInclude Include="..\..\include\cpepp\tl\System.hpp" />
+    <ClInclude Include="..\..\include\cpepp\tl\TimeLine.hpp" />
+    <ClInclude Include="..\..\include\cpepp\tl\Timer.hpp" />
+    <ClInclude Include="..\..\include\cpepp\nm\Group.hpp" />
+    <ClInclude Include="..\..\include\cpepp\nm\Manager.hpp" />
+    <ClInclude Include="..\..\include\cpepp\nm\Object.hpp" />
+    <ClInclude Include="..\..\include\cpepp\nm\ObjectIterator.hpp" />
+    <ClInclude Include="..\..\include\cpepp\nm\System.hpp" />
+    <ClInclude Include="..\..\include\cpepp\pom_grp\ObjectRef.hpp" />
+    <ClInclude Include="..\..\include\cpepp\pom_grp\Store.hpp" />
+    <ClInclude Include="..\..\include\cpepp\pom_grp\StoreEntry.hpp" />
+    <ClInclude Include="..\..\include\cpepp\pom_grp\StoreTable.hpp" />
+    <ClInclude Include="..\..\include\cpepp\pom_grp\System.hpp" />
+    <ClInclude Include="..\..\include\cpepp\pom\Manager.hpp" />
+    <ClInclude Include="..\..\include\cpepp\pom\Object.hpp" />
+    <ClInclude Include="..\..\include\cpepp\pom\System.hpp" />
+    <ClInclude Include="..\..\include\cpepp\otm\Manager.hpp" />
+    <ClInclude Include="..\..\include\cpepp\otm\Memo.hpp" />
+    <ClInclude Include="..\..\include\cpepp\otm\MemoBuf.hpp" />
+    <ClInclude Include="..\..\include\cpepp\otm\System.hpp" />
+    <ClInclude Include="..\..\include\cpepp\otm\Timer.hpp" />
+    <ClInclude Include="..\..\include\cpepp\otm\TimerProcessor.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\cpepp\cfg\Node.cpp" />
+    <ClCompile Include="..\..\src\cpepp\cfg\NodePlacehold.cpp" />
+    <ClCompile Include="..\..\src\cpepp\cfg\Tree.cpp" />
+    <ClCompile Include="..\..\src\cpepp\dr\CTypeUtils.cpp" />
+    <ClCompile Include="..\..\src\cpepp\dr\Data.cpp" />
+    <ClCompile Include="..\..\src\cpepp\dr\Entry.cpp" />
+    <ClCompile Include="..\..\src\cpepp\dr\Meta.cpp" />
+    <ClCompile Include="..\..\src\cpepp\dr\MetaLib.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\ErrorCollector.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\MemBuffer.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\OpGuard.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\ProbabilitySelector.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\Random.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\RangeMgr.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\StreamFile.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\StreamMem.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\ToRef.cpp" />
+    <ClCompile Include="..\..\src\cpepp\utils\WeightSelector.cpp" />
+    <ClCompile Include="..\..\src\cpepp\dp\Manager.cpp" />
+    <ClCompile Include="..\..\src\cpepp\dp\Request.cpp" />
+    <ClCompile Include="..\..\src\cpepp\dp\Responser.cpp" />
+    <ClCompile Include="..\..\src\cpepp\dp\ResponserAdp.cpp" />
+    <ClCompile Include="..\..\src\cpepp\nm\Group.cpp" />
+    <ClCompile Include="..\..\src\cpepp\nm\Manager.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)NmManager.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)NmManager.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpepp\nm\Object.cpp" />
+    <ClCompile Include="..\..\src\cpepp\pom\Manager.cpp" />
+    <ClCompile Include="..\..\src\cpepp\pom_grp\Store.cpp" />
+    <ClCompile Include="..\..\src\cpepp\otm\Manager.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)OtmManager.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)OtmManager.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

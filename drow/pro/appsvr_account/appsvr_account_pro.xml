@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <macrosgroup name="appsvr_account_type">
+        <macro name="appsvr_account_email" value="1"/>
+        <macro name="appsvr_account_device" value="2"/>
+        <macro name="appsvr_account_qq" value="3"/>
+        <macro name="appsvr_account_weixin" value="4"/>
+        <macro name="appsvr_account_360" value="5"/>
+        <macro name="appsvr_account_damai" value="6"/>
+        <macro name="appsvr_account_facebook" value="7"/>
+    </macrosgroup>
+
+    <struct name="appsvr_account_service_info" version="1">
+        <entry name="type" type="uint8" id="1"/>
+        <entry name="support_relogin" type="uint8" id="2"/>
+    </struct>
+    
+    <struct name="appsvr_account_query_services" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+
+    <struct name="appsvr_account_service_list" version="1">
+        <entry name="service_count" type="uint8" id="1"/>
+        <entry name="services" type="appsvr_account_service_info" count="0" refer="service_count" id="2"/>
+    </struct>
+    
+    <struct name="appsvr_account_login" version="1">
+        <entry name="account_type" type="uint8" id="1"/>
+    </struct>
+
+    <macrosgroup name="appsvr_account_login_result" version="1">
+        <macro name="appsvr_account_login_success" value="0"/>
+        <macro name="appsvr_account_login_canceled" value="1"/>
+        <macro name="appsvr_account_login_failed" value="2"/>
+        <macro name="appsvr_account_login_not_install" value="3"/>
+        <macro name="appsvr_account_login_not_authorization" value="4"/>
+    </macrosgroup>
+  
+    <struct name="appsvr_account_login_result" version="1">
+        <entry name="result" type="uint8" bindmacrosgroup="appsvr_payment_result" id="1"/>
+        <entry name="token" type="string" size="4096" id="3"/>
+        <entry name="expires_in" type="uint32" id="4"/>
+        <entry name="error_msg" type="string" size="64" id="5"/>
+        <entry name="error_code" type="uint32"  id="6"/>
+    </struct>
+  
+    <struct name="appsvr_account_relogin" version="1">
+        <entry name="account_type" type="uint8" id="1"/>
+    </struct>
+    
+</metalib>

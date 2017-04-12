@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_sprite_ctrl_data" file="ui_sprite_ctrl_data.xml"/>
+
+    <macrosgroup name="ui_sprite_ctrl_turntable_track_type">
+        <macro name="UI_SPRITE_CTRL_TURNTABLE_TRACK_TYPE_CIRCLE" value="1"/>
+        <macro name="UI_SPRITE_CTRL_TURNTABLE_TRACK_TYPE_ELLIPSE" value="2"/>
+    </macrosgroup>
+
+    <struct name="ui_sprite_ctrl_turntable_track_def_circle" version="1">
+        <entry name="radius" type="float" id="1"/>
+    </struct>
+
+    <struct name="ui_sprite_ctrl_turntable_track_def_ellipse" version="1">
+        <entry name="angle" type="float" id="1"/>
+        <entry name="radius_x" type="float" id="2"/>
+        <entry name="radius_y" type="float" id="3"/>
+    </struct>
+
+    <union name="ui_sprite_ctrl_turntable_track_def" version="1">
+        <entry name="circle" type="ui_sprite_ctrl_turntable_track_def_circle" id="UI_SPRITE_CTRL_TURNTABLE_TRACK_TYPE_CIRCLE"/>
+        <entry name="ellipse" type="ui_sprite_ctrl_turntable_track_def_ellipse" id="UI_SPRITE_CTRL_TURNTABLE_TRACK_TYPE_ELLIPSE"/>
+    </union>
+
+    <struct name="ui_sprite_ctrl_turntable_def" version="1">
+        <entry name="focuse_angle" type="float" id="1"/>
+        <entry name="max_angel_step" type="float" id="2"/>
+        <entry name="scale_min" type="float" id="3"/>
+        <entry name="scale_max" type="float" id="4"/>
+        <entry name="slot_count" type="uint8" id="5"/>
+        <entry name="slots" type="float" count="16" refer="slot_count" id="6"/>
+        <entry name="track_type" type="uint8" id="9" bindmacrogroup="ui_sprite_ctrl_turntable_track_type"/>
+        <entry name="track_def" type="ui_sprite_ctrl_turntable_track_def" id="10" select="track_type"/>
+    </struct>
+
+    <struct name="ui_sprite_ctrl_turntable_data" version="1">
+        <entry name="focuse_entity_id" type="uint32" id="1"/>
+    </struct>
+
+</metalib>

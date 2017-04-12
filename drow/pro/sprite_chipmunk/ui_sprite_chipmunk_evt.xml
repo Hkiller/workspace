@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_sprite_chipmunk_data" file="ui_sprite_chipmunk_data.xml"/>
+
+    <macrosgroup name="ui_sprite_evt_chipmunk_op_base_policy">
+        <macro name="UI_SPRITE_EVT_CHIPMUNK_OP_BASE_POLICY_WROLD" value="0"/> 
+        <macro name="UI_SPRITE_EVT_CHIPMUNK_OP_BASE_OBJECT_FLIP" value="1"/> 
+        <macro name="UI_SPRITE_EVT_CHIPMUNK_OP_BASE_OBJECT_ANGLE" value="2"/> 
+        <macro name="UI_SPRITE_EVT_CHIPMUNK_OP_BASE_OBJECT_MOVING" value="3"/> 
+    </macrosgroup>
+
+    <!-- 位置移动控制事件 -->
+    <struct name="ui_sprite_evt_chipmunk_run_to_entity" version="1">
+        <entry name="entity_id" type="uint32" id="1"/>
+        <entry name="entity_name" type="string" size="64" id="2"/>
+        <entry name="near_distance" type="float" id="3"/>
+        <entry name="max_distance" type="float" id="4"/>
+        <entry name="max_speed" type="float" id="5"/>
+        <entry name="inc_delta_speed" type="float" id="6"/>
+        <entry name="dec_delta_speed" type="float" id="7"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_chipmunk_run_follow_entity" version="1">
+        <entry name="entity_id" type="uint32" id="1"/>
+        <entry name="entity_name" type="string" size="64" id="2"/>
+        <entry name="near_distance" type="float" id="3"/>
+        <entry name="max_distance" type="float" id="4"/>
+        <entry name="max_speed" type="float" id="5"/>
+        <entry name="inc_delta_speed" type="float" id="6"/>
+        <entry name="dec_delta_speed" type="float" id="7"/>
+    </struct>
+
+    <!-- 控制事件 -->
+    <struct name="ui_sprite_evt_chipmunk_stop" version="1">
+        <entry name="body" type="string" size="64" id="1"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_chipmunk_set_awake" version="1">
+        <entry name="body" type="string" size="64" id="1"/>
+        <entry name="awake" type="uint8" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_chipmunk_set_to_entity" version="1">
+        <entry name="body" type="string" size="64" id="1"/>
+        <entry name="entity_id" type="uint32" id="2"/>
+        <entry name="entity_name" type="string" size="64" id="3"/>
+        <entry name="pos_of_entity" type="string" size="32" id="4"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_chipmunk_push_by_impulse_pair" version="1">
+        <entry name="body" type="string" size="64" id="1"/>
+        <entry name="impulse" type="ui_sprite_chipmunk_pair" id="2"/>
+        <entry name="base_policy" type="uint8" bindmacrogroup="ui_sprite_evt_chipmunk_op_base_policy" id="3"/>
+    </struct>
+    
+    <struct name="ui_sprite_evt_chipmunk_push_by_impulse_angle" version="1">
+        <entry name="body" type="string" size="64" id="1"/>
+        <entry name="impulse" type="float" id="2"/>
+        <entry name="angle" type="float" id="3"/>
+        <entry name="base_policy" type="uint8" bindmacrogroup="ui_sprite_evt_chipmunk_op_base_policy" id="4"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_chipmunk_set_linear_velocity_pair" version="1">
+        <entry name="body" type="string" size="64" id="1"/>
+        <entry name="velocity" type="ui_sprite_chipmunk_pair" id="2"/>
+        <entry name="base_policy" type="uint8" bindmacrogroup="ui_sprite_evt_chipmunk_op_base_policy" id="3"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_chipmunk_set_linear_velocity_angle" version="1">
+        <entry name="body" type="string" size="64" id="1"/>
+        <entry name="velocity" type="float" id="2"/>
+        <entry name="angle" type="float" id="3"/>
+        <entry name="base_policy" type="uint8" bindmacrogroup="ui_sprite_evt_chipmunk_op_base_policy" id="4"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_chipmunk_rand_linear_velocity_angle" version="1">
+        <entry name="body" type="string" size="64" id="1"/>
+        <entry name="velocity_min" type="float" id="2"/>
+        <entry name="velocity_max" type="float" id="3"/>
+        <entry name="angle_min" type="float" id="4"/>
+        <entry name="angle_max" type="float" id="5"/>
+        <entry name="base_policy" type="uint8" bindmacrogroup="ui_sprite_evt_chipmunk_op_base_policy" id="6"/>
+    </struct>
+
+    <!-- touch move -->
+    <struct name="ui_sprite_chipmunk_move_state" version="1">
+        <entry name="start_pos" type="ui_sprite_chipmunk_pair" id="1"/>
+        <entry name="start_time_ms" type="uint64" id="2"/>
+        <entry name="pre_pos" type="ui_sprite_chipmunk_pair" id="3"/>
+        <entry name="pre_time_ms" type="uint64" id="4"/>
+        <entry name="cur_pos" type="ui_sprite_chipmunk_pair" id="5"/>
+        <entry name="cur_time_ms" type="uint64" id="6"/>
+        <entry name="speed" type="ui_sprite_chipmunk_pair" id="7"/>
+    </struct>
+    
+</metalib>

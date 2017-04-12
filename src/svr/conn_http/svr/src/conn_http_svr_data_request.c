@@ -326,21 +326,33 @@ static void conn_http_request_on_complete(ebb_request * ebb_request) {
 
 void conn_http_request_link_node_r(conn_http_request_t request, ringbuffer_block_t blk) {
     if (request->m_req_blk) {
+        CPE_ERROR(
+            request->m_connection->m_svr->m_em, "request %d at connection %d: link_r 1",
+            request->m_id, request->m_connection->m_id);
 		ringbuffer_link(request->m_connection->m_svr->m_ringbuf, request->m_req_blk , blk);
 	}
     else {
 		blk->id = request->m_id;
 		request->m_req_blk = blk;
+        CPE_ERROR(
+            request->m_connection->m_svr->m_em, "request %d at connection %d: link_r 2, %d",
+            request->m_id, request->m_connection->m_id, blk->id);
 	}
 }
 
 void conn_http_request_link_node_w(conn_http_request_t request, ringbuffer_block_t blk) {
     if (request->m_res_blk) {
+        CPE_ERROR(
+            request->m_connection->m_svr->m_em, "request %d at connection %d: link_w 1",
+            request->m_id, request->m_connection->m_id);
 		ringbuffer_link(request->m_connection->m_svr->m_ringbuf, request->m_res_blk , blk);
 	}
     else {
 		blk->id = request->m_id;
 		request->m_res_blk = blk;
+        CPE_ERROR(
+            request->m_connection->m_svr->m_em, "request %d at connection %d: link_w 2, %d",
+            request->m_id, request->m_connection->m_id, blk->id);
 	}
 }
 
@@ -415,7 +427,7 @@ void conn_http_request_set_error(conn_http_request_t request, uint32_t http_errn
 }
 
 void conn_http_request_set_response(
-    conn_http_request_t request, const char * body_format, ringbuffer_block_t body_data, uint32_t body_size)
+    conn_http_request_t request, const char * body_format, ringbuffer_block_t * body_data, uint32_t body_size)
 {
     conn_http_connection_t connection = request->m_connection;
     conn_http_svr_t svr = connection->m_svr;
@@ -432,14 +444,9 @@ void conn_http_request_set_response(
         return;
     }
 
-    if (ringbuffer_block_data(svr->m_ringbuf, blk, 0, &data) < 0) {
-        CPE_ERROR(
-            svr->m_em, "%s: request %d at connection %d: set_response: get ringbuf data fail!",
-            conn_http_svr_name(svr), request->m_id, connection->m_id);
-        ringbuffer_shrink(svr->m_ringbuf, blk, data_len);
-        ebb_connection_schedule_close(&connection->m_ebb_conn);
-        return;
-    }
+    data = NULL;
+    ringbuffer_block_data(svr->m_ringbuf, blk, 0, &data);
+    assert(data);
 
     data_len = snprintf(data, data_len, "HTTP/1.1 200 OK\r\nContent-Type: %s\r\nContent-Length: %d\r\n\r\n", body_format, body_size);
 
@@ -449,10 +456,10 @@ void conn_http_request_set_response(
     link_to = request->m_res_blk;
     assert(link_to);
 
-    while(body_data && body_size > 0) {
+    while(*body_data && body_size > 0) {
         int blk_size;
 
-        blk = ringbuffer_unlink(svr->m_ringbuf, &body_data);
+        blk = ringbuffer_unlink(svr->m_ringbuf, body_data);
         blk_size = ringbuffer_block_len(svr->m_ringbuf, blk, 0);
 
         if (blk_size > body_size) {

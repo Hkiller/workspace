@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+     >
+    
+    <include 
+        android:id="@+id/ic_nav"
+        layout="@layout/sdk_cz_navigation"
+        />
+
+    <FrameLayout 
+        android:layout_width="80dip"
+        android:layout_height="match_parent"
+        android:id="@+id/fl_charge_channel"
+        android:background="#E1EDDC"
+        android:layout_below="@id/ic_nav"
+        >
+          <View
+            android:id="@+id/v_slider"     
+            android:layout_width="match_parent"
+            android:layout_height="38dip"
+            android:layout_gravity="top|left" 
+            android:background="@drawable/sdk_charge_mark"
+            />
+    <LinearLayout 
+        android:id="@+id/ll_charge_channel"
+        android:layout_width="80dip"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+         <ListView 
+	        android:id="@+id/lv_pay"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:divider="#E1EDDC"
+	        android:paddingLeft="5dip"
+	        android:paddingRight="5dip"
+	        android:scrollingCache="false"
+	        android:fadingEdge="none"
+        ></ListView>
+    </LinearLayout>
+    </FrameLayout>
+    
+    <TextView 
+		android:id="@+id/tv_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fl_charge_channel"
+        android:layout_below="@id/ic_nav"
+        android:layout_margin="6dip"
+        android:background="#E1EDDC"
+        android:textColor="#f76300"
+        android:padding="6dip"   
+        android:singleLine="true"
+        android:text="温馨提示：玩游戏到送元宝" />
+  
+    <com.game.sdk.pager.VerticalViewPager 
+        android:id="@+id/dv_chargeContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/fl_charge_channel"
+        android:layout_below="@id/tv_add"
+        android:layout_marginLeft="6dip"
+        />
+        
+</RelativeLayout>

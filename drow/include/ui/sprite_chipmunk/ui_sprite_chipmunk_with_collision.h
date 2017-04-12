@@ -1,0 +1,34 @@
+#ifndef UI_SPRITE_CHIPMUNK_WITH_COLLISION_H
+#define UI_SPRITE_CHIPMUNK_WITH_COLLISION_H
+#include "ui_sprite_chipmunk_types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+extern const char * UI_SPRITE_CHIPMUNK_WITH_COLLISION_NAME;
+
+ui_sprite_chipmunk_with_collision_t ui_sprite_chipmunk_with_collision_create(ui_sprite_fsm_state_t fsm_state, const char * name);
+void ui_sprite_chipmunk_with_collision_free(ui_sprite_chipmunk_with_collision_t send_evt);
+
+ui_sprite_chipmunk_with_collision_src_t
+ui_sprite_chipmunk_with_collision_src_create(ui_sprite_chipmunk_with_collision_t with_collision);
+
+int ui_sprite_chipmunk_with_collision_src_set_load_from(ui_sprite_chipmunk_with_collision_src_t src, const char * load_from);
+int ui_sprite_chipmunk_with_collision_src_set_name(ui_sprite_chipmunk_with_collision_src_t src, const char * name);
+int ui_sprite_chipmunk_with_collision_src_set_category(ui_sprite_chipmunk_with_collision_src_t src, const char * category);
+int ui_sprite_chipmunk_with_collision_src_set_mask(ui_sprite_chipmunk_with_collision_src_t src, const char * mask);
+int ui_sprite_chipmunk_with_collision_src_set_group(ui_sprite_chipmunk_with_collision_src_t src, uint32_t group);
+int ui_sprite_chipmunk_with_collision_src_set_mass(ui_sprite_chipmunk_with_collision_src_t src, float mass);
+int ui_sprite_chipmunk_with_collision_src_set_moment(ui_sprite_chipmunk_with_collision_src_t src, float moment);
+int ui_sprite_chipmunk_with_collision_src_set_is_free(ui_sprite_chipmunk_with_collision_src_t src, uint8_t is_free);
+int ui_sprite_chipmunk_with_collision_src_set_is_main(ui_sprite_chipmunk_with_collision_src_t src, uint8_t is_main);
+int ui_sprite_chipmunk_with_collision_src_set_type(ui_sprite_chipmunk_with_collision_src_t src, chipmunk_obj_type_t obj_type);
+int ui_sprite_chipmunk_with_collision_src_set_runing_mode(ui_sprite_chipmunk_with_collision_src_t src, ui_sprite_chipmunk_runing_mode_t runing_mode);
+int ui_sprite_chipmunk_with_collision_src_set_gravity(ui_sprite_chipmunk_with_collision_src_t src, UI_SPRITE_CHIPMUNK_GRAVITY * gravity);
+    
+#ifdef __cplusplus
+}
+#endif
+
+#endif

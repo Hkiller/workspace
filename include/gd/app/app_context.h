@@ -71,7 +71,10 @@ void gd_app_flags_set(gd_app_context_t context, uint32_t flag);
 void gd_app_flag_enable(gd_app_context_t context, gd_app_flag_t flag);
 void gd_app_flag_disable(gd_app_context_t context, gd_app_flag_t flag);
 int gd_app_flag_is_enable(gd_app_context_t context, gd_app_flag_t flag);
- 
+
+int gd_app_add_tag(gd_app_context_t context, const char * tag);
+uint8_t gd_app_have_tag(gd_app_context_t context, const char * tag);
+    
 /*the main*/
 int gd_app_run(gd_app_context_t context);
 int gd_app_notify_stop(gd_app_context_t context);

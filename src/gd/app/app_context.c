@@ -234,7 +234,7 @@ int gd_app_cfg_reload(gd_app_context_t context) {
 
     if (context->m_root) {
         mem_buffer_strcat(&context->m_tmp_buffer[0], context->m_root);
-        mem_buffer_strcat(&context->m_tmp_buffer[0], "/");
+        if (strcmp(context->m_root, "/") != 0) mem_buffer_strcat(&context->m_tmp_buffer[0], "/");
     }
     mem_buffer_strcat(&context->m_tmp_buffer[0], "etc.bc");
     if (vfs_file_exist(context->m_vfs_mgr, (char*)mem_buffer_make_continuous(&context->m_tmp_buffer[0], 0))) {
@@ -245,7 +245,7 @@ int gd_app_cfg_reload(gd_app_context_t context) {
     mem_buffer_clear_data(&context->m_tmp_buffer[0]);
     if (context->m_root) {
         mem_buffer_strcat(&context->m_tmp_buffer[0], context->m_root);
-        mem_buffer_strcat(&context->m_tmp_buffer[0], "/");
+        if (strcmp(context->m_root, "/") != 0) mem_buffer_strcat(&context->m_tmp_buffer[0], "/");
     }
     mem_buffer_strcat(&context->m_tmp_buffer[0], "etc.yml");
     if (vfs_file_exist(context->m_vfs_mgr, (char*)mem_buffer_make_continuous(&context->m_tmp_buffer[0], 0))) {
@@ -256,7 +256,7 @@ int gd_app_cfg_reload(gd_app_context_t context) {
     mem_buffer_clear_data(&context->m_tmp_buffer[0]);
     if (context->m_root) {
         mem_buffer_strcat(&context->m_tmp_buffer[0], context->m_root);
-        mem_buffer_strcat(&context->m_tmp_buffer[0], "/");
+        if (strcmp(context->m_root, "/") != 0) mem_buffer_strcat(&context->m_tmp_buffer[0], "/");
     }
     mem_buffer_strcat(&context->m_tmp_buffer[0], "etc");
     
@@ -273,7 +273,7 @@ READ_COMPLETE:
         mem_buffer_clear_data(&context->m_tmp_buffer[0]);
         if (context->m_root) {
             mem_buffer_strcat(&context->m_tmp_buffer[0], context->m_root);
-            mem_buffer_strcat(&context->m_tmp_buffer[0], "/");
+            if (strcmp(context->m_root, "/") != 0) mem_buffer_strcat(&context->m_tmp_buffer[0], "/");
         }
         mem_buffer_strcat(&context->m_tmp_buffer[0], "alter");
         
@@ -340,6 +340,40 @@ int gd_app_debug(gd_app_context_t context) {
 
 void gd_app_set_debug(gd_app_context_t context, int level) {
     context->m_debug = level;
+}
+
+int gd_app_add_tag(gd_app_context_t context, const char * tag) {
+    cfg_t tags;
+
+    tags = cfg_struct_add_seq(context->m_cfg, "tags", cfg_merge_use_exist);
+    if (tags == NULL) {
+        CPE_ERROR(context->m_em, "gd_app_add_tag: create tags fail!");
+        return -1;
+    }
+    
+    if (cfg_seq_add_string(tags, tag) == NULL) {
+        CPE_ERROR(context->m_em, "gd_app_add_tag: add tag fail!");
+        return -1;
+    }
+
+    return 0;
+}
+
+uint8_t gd_app_have_tag(gd_app_context_t context, const char * tag) {
+    cfg_t tags;
+    struct cfg_it child_it;
+    cfg_t child_cfg;
+    
+    tags = cfg_find_cfg(context->m_cfg, "tags");
+    if (tags == NULL) return 0;
+
+    cfg_it_init(&child_it, tags);
+    while((child_cfg = cfg_it_next(&child_it))) {
+        const char * value = cfg_as_string(child_cfg, NULL);
+        if (value && strcmp(value, tag) == 0) return 1;
+    }
+
+    return 0;
 }
 
 gd_app_status_t gd_app_state(gd_app_context_t context) {

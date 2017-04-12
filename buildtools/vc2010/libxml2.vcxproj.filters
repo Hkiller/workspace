@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{6e5412d1-d092-4ea6-8db1-1842360166cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\libxml">
+      <UniqueIdentifier>{31b10d00-dea6-4a85-87f0-e357e1910665}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{5d0e085b-15c4-49a4-b048-289191e8151a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\win32">
+      <UniqueIdentifier>{51dd8700-fdc6-4cb6-bf1c-96d53121bcd3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\win32config.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\wsockcompat.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\c14n.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\catalog.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\chvalid.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\debugXML.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\dict.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\DOCBparser.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\encoding.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\entities.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\globals.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\hash.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\HTMLparser.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\HTMLtree.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\list.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\nanoftp.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\nanohttp.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\parser.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\parserInternals.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\pattern.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\relaxng.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\SAX.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\SAX2.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\schemasInternals.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\schematron.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\threads.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\tree.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\uri.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\valid.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xinclude.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xlink.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlautomata.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlerror.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlexports.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlIO.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlmemory.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlmodule.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlreader.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlregexp.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlsave.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlschemas.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlschemastypes.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlstring.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlunicode.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlversion.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xmlwriter.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xpath.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xpathInternals.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\include\libxml\xpointer.h">
+      <Filter>include\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\acconfig.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\elfgcchack.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\libxml.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\trio.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\triodef.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\trionan.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\triop.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\triostr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\win32\libxml2_config.h">
+      <Filter>src\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libxml2\src\win32\config.h">
+      <Filter>src\win32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\c14n.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\catalog.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\chvalid.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\debugXML.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\dict.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\DOCBparser.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\encoding.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\entities.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\error.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\globals.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\hash.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\HTMLparser.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\HTMLtree.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\legacy.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\list.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\nanoftp.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\nanohttp.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\parser.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\parserInternals.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\pattern.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\relaxng.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\SAX.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\SAX2.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\schematron.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\threads.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\tree.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\trio.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\trionan.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\triostr.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\uri.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\valid.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xinclude.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xlink.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlIO.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlmemory.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlmodule.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlreader.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlregexp.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlsave.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlschemas.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlschemastypes.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlstring.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlunicode.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xmlwriter.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xpath.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libxml2\src\xpointer.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

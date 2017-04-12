@@ -12,7 +12,8 @@
 #include "rank_g_svr_rank_tree.h"
 
 static int rank_g_svr_op_query_with_data_from_tree(rank_g_svr_t svr, rank_g_svr_index_t index, logic_context_t ctx, SVR_RANK_G_REQ_QUERY_WITH_DATA * req, uint32_t result_capacity);
-static SVR_RANK_G_RES_QUERY_WITH_DATA * rank_g_svr_op_query_with_data_create_res(rank_g_svr_t svr, logic_context_t ctx, SVR_RANK_G_REQ_QUERY_WITH_DATA * req, uint32_t result_capacity);
+static SVR_RANK_G_RES_QUERY_WITH_DATA * rank_g_svr_op_query_with_data_create_res(
+    rank_g_svr_t svr, logic_context_t ctx, rank_g_svr_index_t index, SVR_RANK_G_REQ_QUERY_WITH_DATA * req, uint32_t result_capacity);
 
 logic_op_exec_result_t
 rank_g_svr_op_query_with_data_send(logic_context_t ctx, logic_stack_node_t stack, void * user_data, cfg_t cfg) {
@@ -130,7 +131,7 @@ static int rank_g_svr_op_query_with_data_from_tree(
     work_ctx.svr = svr;
     work_ctx.index = index;
     work_ctx.result_capacity = result_capacity;
-    work_ctx.res = rank_g_svr_op_query_with_data_create_res(svr, ctx, req, result_capacity);
+    work_ctx.res = rank_g_svr_op_query_with_data_create_res(svr, ctx, index, req, result_capacity);
 
     if ((rv = rank_g_svr_index_query(
              svr, index,
@@ -145,7 +146,9 @@ static int rank_g_svr_op_query_with_data_from_tree(
 }
 
 static SVR_RANK_G_RES_QUERY_WITH_DATA *
-rank_g_svr_op_query_with_data_create_res(rank_g_svr_t svr, logic_context_t ctx, SVR_RANK_G_REQ_QUERY_WITH_DATA * req, uint32_t result_capacity) {
+rank_g_svr_op_query_with_data_create_res(
+    rank_g_svr_t svr, logic_context_t ctx, rank_g_svr_index_t index, SVR_RANK_G_REQ_QUERY_WITH_DATA * req, uint32_t result_capacity)
+{
     logic_data_t res_data;
     SVR_RANK_G_RES_QUERY_WITH_DATA * res;
 
@@ -160,6 +163,7 @@ rank_g_svr_op_query_with_data_create_res(rank_g_svr_t svr, logic_context_t ctx, 
     res = logic_data_data(res_data);
     res->index_id = req->index_id;
     res->query = req->query;
+    res->total_count = rt_size(index->m_rank_tree);
     res->data_len = 0;
 
     return res;

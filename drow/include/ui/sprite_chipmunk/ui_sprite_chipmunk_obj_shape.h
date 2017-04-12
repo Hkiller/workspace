@@ -1,0 +1,31 @@
+#ifndef UI_SPRITE_CHIPMUNK_OBJ_SHAPE_H
+#define UI_SPRITE_CHIPMUNK_OBJ_SHAPE_H
+#include "protocol/plugin/chipmunk/chipmunk_info.h"
+#include "cpe/cfg/cfg_types.h"
+#include "ui_sprite_chipmunk_types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+ui_sprite_chipmunk_obj_shape_t
+ui_sprite_chipmunk_obj_shape_create_managed(ui_sprite_chipmunk_obj_shape_group_t group);
+ui_sprite_chipmunk_obj_shape_t
+ui_sprite_chipmunk_obj_shape_create_mamaged_from_body(ui_sprite_chipmunk_obj_body_t body);
+
+CHIPMUNK_FIXTURE * ui_sprite_chipmunk_obj_shape_fixture_data(ui_sprite_chipmunk_obj_shape_t obj_shape);
+void * ui_sprite_chipmunk_obj_shape_cp_shape(ui_sprite_chipmunk_obj_shape_t obj_shape);
+uint32_t ui_sprite_chipmunk_obj_shape_node_count(ui_sprite_chipmunk_obj_shape_t obj_shape);
+
+ui_sprite_chipmunk_obj_shape_node_buf_t ui_sprite_chipmunk_obj_shape_alloc_node_buf(ui_sprite_chipmunk_obj_shape_t obj_shape, uint32_t node_capacity);
+ui_sprite_chipmunk_obj_shape_node_buf_t ui_sprite_chipmunk_obj_shape_get_node_buf(ui_sprite_chipmunk_obj_shape_t obj_shape);
+uint32_t ui_sprite_chipmunk_obj_shape_node_buf_capacity(ui_sprite_chipmunk_obj_shape_node_buf_t node_buf);
+uint32_t ui_sprite_chipmunk_obj_shape_node_buf_count(ui_sprite_chipmunk_obj_shape_node_buf_t node_buf);
+void ui_sprite_chipmunk_obj_shape_node_buf_set_count(ui_sprite_chipmunk_obj_shape_node_buf_t node_buf, uint32_t count);
+CHIPMUNK_PAIR * ui_sprite_chipmunk_obj_shape_node_buf_data(ui_sprite_chipmunk_obj_shape_node_buf_t node_buf);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

@@ -1,0 +1,70 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:name="com.drowgames.unicompay.Application"
+        >
+        <!-- unipaysdk start, Please copy to your manifest -->
+        <!-- If this app is published at wostore, This Logo Activity MUST BE configed. -->
+        <activity 
+            android:name="com.unicom.dcLoader.welcomeview"
+            android:label="@string/app_name"
+            android:screenOrientation="sensor"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="keyboardHidden|screenSize|navigation|orientation"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            
+            <meta-data android:name="UNICOM_DIST_ACTIVITY" android:value="$pre-activity"/>
+        </activity>
+
+        <activity
+            android:name="com.unicom.wostore.unipay.paysecurity.SecurityActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        
+        <service  android:name="com.unicom.wostore.unipay.paysecurity.SecurityServiceFramework"/> 
+        <!-- <service  android:name="com.unicom.wostore.unipay.paysecurity.UpdateService" android:process=":unicomuptsrv"/> -->
+				
+        <activity
+
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+				
+        <meta-data   android:name="wostore_billing_otherpay"            android:value="true" />
+        <meta-data   android:name="wostore_billing_chinaunicom"         android:value="true" />
+        <meta-data   android:name="wostore_billing_chinamobile"         android:value="true" />
+        <meta-data   android:name="wostore_billing_chinatele"           android:value="true" />
+		<!-- unipaysdk end, Please copy to your manifest -->
+
+    </application>
+
+    <!-- unipaysdk begin, Please copy to your manifest -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <!-- unipaysdk end, Please copy to your manifest -->
+
+</manifest>

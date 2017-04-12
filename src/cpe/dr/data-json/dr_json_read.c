@@ -2,6 +2,7 @@
 #include "cpe/pal/pal_stdlib.h"
 #include "yajl/yajl_parse.h"
 #include "cpe/pal/pal_string.h"
+#include "cpe/utils/buffer.h"
 #include "cpe/pal/pal_strings.h"
 #include "cpe/dr/dr_json.h"
 #include "cpe/dr/dr_error.h"
@@ -10,15 +11,9 @@
 #include "../dr_internal_types.h"
 #include "../dr_ctype_ops.h"
 
-#define JSON_PARSE_CTX_BUF_LEN CPE_DR_MACRO_LEN + 1
-
-#define JSON_PARSE_CTX_COPY_STR_TMP(__ctx, str, len) do {   \
-        size_t __len = len;                                 \
-        if (__len >= JSON_PARSE_CTX_BUF_LEN) {              \
-            __len = JSON_PARSE_CTX_BUF_LEN - 1;             \
-        }                                                   \
-        memcpy(__ctx->m_buf, str, __len);                   \
-        __ctx->m_buf[__len] = 0;                            \
+#define JSON_PARSE_CTX_COPY_STR_TMP(__ctx, str, len) do {       \
+        mem_buffer_clear_data(&(__ctx)->m_tmp_buf);             \
+        mem_buffer_strdup_len(&(__ctx)->m_tmp_buf, (const char *)(str), len); \
     } while(0)
 
 enum dr_json_read_select_state {
@@ -54,7 +49,7 @@ struct dr_json_parse_ctx {
 
     int m_size;
 
-    char m_buf[JSON_PARSE_CTX_BUF_LEN]; //used to store tmp data
+    struct mem_buffer m_tmp_buf;
 };
 
 static char * dr_json_parse_get_write_pos(
@@ -161,7 +156,7 @@ static int dr_json_do_parse_calc_start_pos(
             CPE_ERROR_EX(
                 c->m_em, dr_code_error_format_error,
                 "process %s.%s, expect not in array!",
-                dr_meta_name(parseType->m_meta), c->m_buf);
+                dr_meta_name(parseType->m_meta), (const char *)mem_buffer_make_continuous(&c->m_tmp_buf, 0));
             return -1;
         }
 
@@ -174,7 +169,7 @@ static int dr_json_do_parse_calc_start_pos(
             CPE_ERROR_EX(
                 c->m_em, dr_code_error_format_error,
                 "process %s.%s, array count overflow!",
-                dr_meta_name(parseType->m_meta), c->m_buf);
+                dr_meta_name(parseType->m_meta), (const char *)mem_buffer_make_continuous(&c->m_tmp_buf, 0));
             return -1;
         }
 
@@ -202,7 +197,8 @@ static void dr_json_do_parse_from_string(
     if (writePos == NULL) return;
 
     JSON_PARSE_CTX_COPY_STR_TMP(c, s, l);
-    dr_entry_set_from_string(writePos, c->m_buf, parseType->m_entry, c->m_em);
+    dr_entry_set_from_string(
+        writePos, (const char *)mem_buffer_make_continuous(&c->m_tmp_buf, 0), parseType->m_entry, c->m_em);
 }
 
 static int dr_json_number(void * ctx, const char * s, size_t l) {
@@ -254,8 +250,7 @@ static int dr_json_map_key(void * ctx, const unsigned char * stringVal, size_t s
 
     JSON_PARSE_CTX_COPY_STR_TMP(c, stringVal, stringLen);
 
-
-    entry = dr_meta_find_entry_by_name(curStack->m_meta, c->m_buf);
+    entry = dr_meta_find_entry_by_name(curStack->m_meta, (const char *)mem_buffer_make_continuous(&c->m_tmp_buf, 0));
     if (entry == NULL) {
         return 1;
     }
@@ -273,7 +268,11 @@ static int dr_json_map_key(void * ctx, const unsigned char * stringVal, size_t s
         }
         break;
     default:
-        CPE_ERROR_EX(c->m_em, dr_code_error_internal, "process %s.%s, unknown select state %d", dr_meta_name(curStack->m_meta), c->m_buf, curStack->m_select_state);
+        CPE_ERROR_EX(
+            c->m_em, dr_code_error_internal, "process %s.%s, unknown select state %d",
+            dr_meta_name(curStack->m_meta),
+            (const char *)mem_buffer_make_continuous(&c->m_tmp_buf, 0),
+            curStack->m_select_state);
         return 1;
     }
 
@@ -451,6 +450,12 @@ static void dr_json_parse_ctx_init(
     ctx->m_stackPos = -1;
     ctx->m_em = em;
     ctx->m_size = (int)dr_meta_size(meta);
+
+    mem_buffer_init(&ctx->m_tmp_buf, NULL);
+}
+
+static void dr_json_parse_ctx_fini(struct dr_json_parse_ctx * ctx) {
+    mem_buffer_clear(&ctx->m_tmp_buf);
 }
 
 static int dr_json_read_i(
@@ -470,6 +475,7 @@ static int dr_json_read_i(
     hand = yajl_alloc(&g_dr_json_callbacks, NULL, (void *)&ctx);
     if (hand == NULL) {
         CPE_ERROR_EX(em, dr_code_error_internal, "can`t alloc memory for json parser");
+        dr_json_parse_ctx_fini(&ctx);
         return 0;
     }
 
@@ -479,11 +485,13 @@ static int dr_json_read_i(
         CPE_ERROR_EX(
             em, dr_code_error_format_error, "parse json error, stat=%s\n%s",
             (const char *)yajl_status_to_string(stat), err_str);
+        dr_json_parse_ctx_fini(&ctx);
         free(err_str);
         yajl_free(hand);
         return 0;
     }
 
+    dr_json_parse_ctx_fini(&ctx);
     yajl_free(hand);
 
     return ctx.m_size;

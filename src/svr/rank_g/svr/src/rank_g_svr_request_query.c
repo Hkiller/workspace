@@ -11,7 +11,7 @@
 #include "rank_g_svr_season_info.h"
 
 static int rank_g_svr_op_query_from_tree(rank_g_svr_t svr, rank_g_svr_index_t index, logic_context_t ctx, SVR_RANK_G_REQ_QUERY * req);
-static SVR_RANK_G_RES_QUERY * rank_g_svr_op_query_create_res(rank_g_svr_t svr, logic_context_t ctx, SVR_RANK_G_REQ_QUERY * req);
+static SVR_RANK_G_RES_QUERY * rank_g_svr_op_query_create_res(rank_g_svr_t svr, logic_context_t ctx, rank_g_svr_index_t index, SVR_RANK_G_REQ_QUERY * req);
 
 logic_op_exec_result_t
 rank_g_svr_op_query_send(logic_context_t ctx, logic_stack_node_t stack, void * user_data, cfg_t cfg) {
@@ -115,7 +115,7 @@ static int rank_g_svr_op_query_from_tree(rank_g_svr_t svr, rank_g_svr_index_t in
     
     work_ctx.svr = svr;
     work_ctx.index = index;
-    work_ctx.res = rank_g_svr_op_query_create_res(svr, ctx, req);
+    work_ctx.res = rank_g_svr_op_query_create_res(svr, ctx, index, req);
     if (work_ctx.res == NULL) return -1;
 
     if ((rv = rank_g_svr_index_query(
@@ -131,7 +131,7 @@ static int rank_g_svr_op_query_from_tree(rank_g_svr_t svr, rank_g_svr_index_t in
 }
 
 static SVR_RANK_G_RES_QUERY *
-rank_g_svr_op_query_create_res(rank_g_svr_t svr, logic_context_t ctx, SVR_RANK_G_REQ_QUERY * req) {
+rank_g_svr_op_query_create_res(rank_g_svr_t svr, logic_context_t ctx, rank_g_svr_index_t index, SVR_RANK_G_REQ_QUERY * req) {
     uint32_t res_data_capacity;
     logic_data_t res_data;
     SVR_RANK_G_RES_QUERY * res;
@@ -146,6 +146,7 @@ rank_g_svr_op_query_create_res(rank_g_svr_t svr, logic_context_t ctx, SVR_RANK_G
     res = logic_data_data(res_data);
     res->index_id = req->index_id;
     res->query = req->query;
+    res->total_count = rt_size(index->m_rank_tree);
     res->user_id_count = 0;
 
     return res;

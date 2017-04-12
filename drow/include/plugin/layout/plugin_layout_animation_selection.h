@@ -1,0 +1,40 @@
+#ifndef DROW_PLUGIN_LAYOUT_ANIMATION_SELECTION_H
+#define DROW_PLUGIN_LAYOUT_ANIMATION_SELECTION_H
+#include "plugin_layout_types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef enum plugin_layout_animation_selection_type {
+    plugin_layout_animation_selection_line,
+    plugin_layout_animation_selection_block
+} plugin_layout_animation_selection_type_t;
+    
+plugin_layout_animation_selection_t plugin_layout_animation_selection_create(plugin_layout_render_t render);
+void plugin_layout_animation_selection_free(plugin_layout_animation_selection_t selection);
+plugin_layout_animation_selection_t plugin_layout_animation_selection_find_first(plugin_layout_render_t render);
+    
+plugin_layout_animation_selection_t plugin_layout_animation_selection_from_animation(plugin_layout_animation_t animation);
+
+plugin_layout_animation_selection_type_t plugin_layout_animation_selection_type(plugin_layout_animation_selection_t selection);
+void plugin_layout_animation_selection_set_type(plugin_layout_animation_selection_t selection, plugin_layout_animation_selection_type_t type);
+
+int plugin_layout_animation_selection_begin_pos(plugin_layout_animation_selection_t selection);
+int plugin_layout_animation_selection_end_pos(plugin_layout_animation_selection_t selection);
+uint32_t plugin_layout_animation_selection_length(plugin_layout_animation_selection_t selection);
+void plugin_layout_animation_selection_set_range(plugin_layout_animation_selection_t selection, int begin, int end);
+void plugin_layout_animation_selection_set_range_by_pt(plugin_layout_animation_selection_t selection, ui_vector_2_t begin_pt, ui_vector_2_t end_pt);
+
+cpe_str_ucs4_t plugin_layout_animation_selection_text_ucs4(mem_allocrator_t alloc, plugin_layout_animation_selection_t selection);
+char * plugin_layout_animation_selection_text_utf8(mem_allocrator_t alloc, plugin_layout_animation_selection_t selection);
+
+int plugin_layout_animation_selection_set_text_utf8(plugin_layout_animation_selection_t selection, const char * utf8);
+int plugin_layout_animation_selection_set_text_ucs4(plugin_layout_animation_selection_t selection, const uint32_t * text, size_t text_len);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+

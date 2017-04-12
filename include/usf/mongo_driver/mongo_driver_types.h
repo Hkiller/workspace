@@ -43,7 +43,7 @@ typedef enum mongo_topology_type {
     mongo_topology_type_rs_no_primary,
     mongo_topology_type_rs_with_primary,
     mongo_topology_type_single,
-    mongo_topology_type_count,    
+    mongo_topology_type_count,
 } mongo_topology_type_t;
         
 #ifdef __cplusplus

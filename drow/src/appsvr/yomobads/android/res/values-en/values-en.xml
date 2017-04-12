@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="down_app_toast_msg">Added to the download list</string>
+    <string name="down_failed_msg">Download failure</string>
+    <string name="down_finished_msg">Download completed,click to install!</string>
+    <string name="down_londing_msg">Downloding</string>
+    <string name="down_pregress_msg">Download completed</string>
+    <string name="pc_dialog_cancel_msg">Cancel</string>
+    <string name="pc_dialog_ok_msg">Confirm</string>
+    <string name="pc_dialog_video_close_msg">Unfinished cann\'t receive rewards！\nClose?</string>
+    <string name="pc_toast_cannot_network_msg">The current network is not supported</string>
+    <string name="pc_toast_no_network_msg">No network</string>
+    <string name="pc_video_close_msg">Close</string>
+    <string name="pc_video_details_msg">Detailed information</string>
+    <string name="pc_video_down_time_msg"><Data>&lt;font color="#38C72F">%1$s&lt;/font>&lt;font color="#ffffff">S&lt;/font></Data></string>
+    <string name="web_reload_msg">Click screen to reloading</string>
+</resources>

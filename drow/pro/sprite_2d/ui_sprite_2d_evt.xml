@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_sprite_2d_data" file="ui_sprite_2d_data.xml"/>
+
+    <!-- 位置移动控制事件 -->
+    <struct name="ui_sprite_evt_2d_move_set_to_entity" version="1">
+        <entry name="entity_id" type="uint32" id="1"/>
+        <entry name="entity_name" type="string" size="64" id="2"/>
+        <entry name="pos_of_entity" type="string" size="32" id="3"/>
+    </struct>
+
+    <!-- 缩放  -->
+    <struct name="ui_sprite_evt_2d_scale" version="1">
+        <entry name="duration" type="float" id="1"/>
+        <entry name="scale" type="ui_sprite_2d_pair" id="2"/>
+    </struct>
+
+    <!-- 翻转  -->
+    <struct name="ui_sprite_evt_2d_flip_to_entity" version="1">
+        <entry name="entity_id" type="uint32" id="1"/>
+        <entry name="entity_name" type="string" size="64" id="2"/>
+        <entry name="pos_of_entity" type="string" size="32" id="3"/>
+        <entry name="process_x" type="uint8" id="4"/>
+        <entry name="process_y" type="uint8" id="5"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_2d_flip_follow_entity" version="1">
+        <entry name="entity_id" type="uint32" id="1"/>
+        <entry name="entity_name" type="string" size="64" id="2"/>
+        <entry name="pos_of_entity" type="string" size="32" id="3"/>
+        <entry name="process_x" type="uint8" id="4"/>
+        <entry name="process_y" type="uint8" id="5"/>
+    </struct>
+
+    <!-- 查找 -->
+    <struct name="ui_sprite_evt_2d_search" version="1">
+        <entry name="search_policy" type="string" size="64" id="1"/>
+        <entry name="group_name" type="string" size="64" id="2"/>
+        <entry name="shape" type="ui_sprite_2d_shape"  id="3"/>
+    </struct>
+
+</metalib>

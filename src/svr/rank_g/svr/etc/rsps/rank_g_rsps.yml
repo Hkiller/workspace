@@ -23,6 +23,11 @@
   operations:
     - rank_g_op_query_season
 
+- name: rank_g_query_data
+  respons-to: SVR_RANK_G_CMD_REQ_QUERY_DATA
+  operations:
+    - rank_g_op_query_data
+
 - name: rank_g_dump
   respons-to: SVR_RANK_G_CMD_REQ_DUMP
   operations:

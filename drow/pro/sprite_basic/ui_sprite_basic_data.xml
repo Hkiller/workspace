@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="ui_sprite_basic_gen_entities_data" version="1">
+        <entry name="creator_id" type="uint32" id="1"/>
+        <entry name="creator_name" type="string" size="64" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_basic_check_entity_exist_data" version="1">
+        <entry name="entity_id" type="string" size="128" id="1"/>
+        <entry name="dead_event" type="string" size="128" id="2"/>
+    </struct>
+
+    <!-- value generator -->
+    <macrosgroup name="ui_sprite_basic_value_geneartor_type">
+        <macro name="UI_SPRITE_BASIC_VALUE_GENEARTOR_TYPE_IN_RANGE" value="1"/>
+        <macro name="UI_SPRITE_BASIC_VALUE_GENEARTOR_TYPE_RAND" value="2"/>
+    </macrosgroup>
+
+    <struct name="ui_sprite_basic_value_geneartor_def_in_range" version="1">
+        <entry name="min" type="string" size="128" id="1"/>
+        <entry name="max" type="string" size="128" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_basic_value_geneartor_def_rand" version="1">
+        <entry name="min" type="string" size="128" id="1"/>
+        <entry name="max" type="string" size="128" id="2"/>
+    </struct>
+    
+    <union name="ui_sprite_basic_value_geneartor_def_data" version="1">
+        <entry name="in_range" type="ui_sprite_basic_value_geneartor_def_in_range" id="UI_SPRITE_BASIC_VALUE_GENEARTOR_TYPE_IN_RANGE"/>
+        <entry name="rand" type="ui_sprite_basic_value_geneartor_def_rand" id="UI_SPRITE_BASIC_VALUE_GENEARTOR_TYPE_RAND"/>
+    </union>
+
+    <struct name="ui_sprite_basic_value_geneartor_def" version="1">
+        <entry name="once_gen_count" type="string" size="64" id="1"/>
+        <entry name="supply_count" type="uint8" id="2"/>
+        <entry name="supplies" type="string" size="64" count="10" refer="supply_count" id="3"/>
+        <entry name="type" type="uint8" id="4" bindmacrosgroup="ui_sprite_basic_value_geneartor_type"/>
+        <entry name="data" type="ui_sprite_basic_value_geneartor_def_data" id="5" select="type"/>
+    </struct>
+
+</metalib>

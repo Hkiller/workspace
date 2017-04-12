@@ -22,13 +22,13 @@ void * net_trans_task_data(net_trans_task_t task);
 size_t net_trans_task_data_capacity(net_trans_task_t task);
 
 mem_buffer_t net_trans_task_buffer(net_trans_task_t task);
-const char * net_trans_task_buffer_to_string(net_trans_task_t task);
+char * net_trans_task_buffer_to_string(net_trans_task_t task);
 
 int net_trans_task_start(net_trans_task_t task);
 
 int net_trans_task_restart(net_trans_task_t task);
     
-int net_trans_task_set_post_to(net_trans_task_t task, const char * uri, const char * data, int data_len);
+int net_trans_task_set_post_to(net_trans_task_t task, const char * uri, const char * data, size_t data_len);
 int net_trans_task_set_get(net_trans_task_t task, const char * uri);
 
 void net_trans_task_set_debug(net_trans_task_t task, uint8_t is_debug);

@@ -90,6 +90,7 @@ static void on_yaml_response(conn_http_request_t request, const void * data, siz
         CPE_ERROR(
             svr->m_em, "%s: request %d at connection %d: on yaml response: generate result ringbuf error!",
             conn_http_svr_name(svr), request->m_id, connection->m_id);
+        if (stream.m_first_blk) ringbuffer_free(svr->m_ringbuf, stream.m_first_blk);
         return;
     }
 
@@ -97,11 +98,13 @@ static void on_yaml_response(conn_http_request_t request, const void * data, siz
         CPE_ERROR(
             svr->m_em, "%s: request %d at connection %d: on yaml response: write to yaml fail, error=%d!",
             conn_http_svr_name(svr), request->m_id, connection->m_id, result_size);
+        if (stream.m_first_blk) ringbuffer_free(svr->m_ringbuf, stream.m_first_blk);
         conn_http_request_set_error(request, 400, "Bad Request");
         return;
     }
 
-    conn_http_request_set_response(request, "text/yaml", stream.m_first_blk, result_size);
+    conn_http_request_set_response(request, "text/yaml", &stream.m_first_blk, result_size);
+    if (stream.m_first_blk) ringbuffer_free(svr->m_ringbuf, stream.m_first_blk);
 }
 
 struct conn_http_formator g_conn_http_formator_yaml = {

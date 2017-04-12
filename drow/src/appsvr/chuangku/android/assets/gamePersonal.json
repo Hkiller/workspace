@@ -1,0 +1,16 @@
+{
+"readed": 0 ,
+"skip_debug": 1 , 
+"battle_win": { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 } , 
+"battle_fail":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 } , 
+"guide_end":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 } , 
+"function_guide":  { "hand": 1 , "receive_button" : 0, "pay" : 0 , "fullscreen_level" : 0 } , 
+"level_drop":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 } , 
+"diamond_notenough":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 } , 
+"money_notenough":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 } , 
+"bomb_notenough":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 },
+"main_enter":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 },
+"main_gift_click":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 },
+"level_story_enter":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 },
+"ready_battle_click":  { "hand": 1 , "receive_button" : 0, "pay" : 1 , "fullscreen_level" : 0 }
+}

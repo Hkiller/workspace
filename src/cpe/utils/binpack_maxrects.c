@@ -44,6 +44,14 @@ void binpack_maxrects_ctx_set_span(binpack_maxrects_ctx_t ctx, uint8_t span) {
     ctx->m_span = span;
 }
 
+uint32_t binpack_maxrects_ctx_width(binpack_maxrects_ctx_t ctx) {
+    return ctx->m_bin_width;
+}
+
+uint32_t binpack_maxrects_ctx_height(binpack_maxrects_ctx_t ctx) {
+    return ctx->m_bin_height;
+}
+
 int binpack_maxrects_ctx_init(binpack_maxrects_ctx_t ctx, uint32_t width, uint32_t height) {
     struct binpack_rect n = { 0, 0, width, height, NULL };
 
@@ -243,16 +251,29 @@ binpack_rect_t binpack_maxrects_ctx_insert(
 	int32_t score1; /* Unused in this function. We don't need to know the score after finding the position. */
 	int32_t score2;
     binpack_rect_t to_dst;
+    uint8_t resize_width = 0;
+    uint8_t resize_height = 0;
+
+    if (width + ctx->m_span <= ctx->m_bin_width) {
+        resize_width = 1;
+        width += ctx->m_span;
+    }
+
+    if (height + ctx->m_span <= ctx->m_bin_height) {
+        resize_height = 1;
+        height += ctx->m_span;
+    }
     
-    if (binpack_maxrects_ctx_score_rect(ctx, &new_node, width + ctx->m_span, height + ctx->m_span, method, accept_rotate, &score1, &score2) != 0) return NULL;
+    if (binpack_maxrects_ctx_score_rect(ctx, &new_node, width, height, method, accept_rotate, &score1, &score2) != 0) return NULL;
 
     to_dst = binpack_maxrects_ctx_place_rect(ctx, &new_node);
 
     if (to_dst) {
-        to_dst->width -= ctx->m_span;
-        to_dst->height -= ctx->m_span;
         assert(to_dst->width == width);
         assert(to_dst->height == height);
+        
+        if (resize_width) to_dst->width -= ctx->m_span;
+        if (resize_height) to_dst->height -= ctx->m_span;
     }
 
     return to_dst;

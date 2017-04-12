@@ -83,7 +83,7 @@ public:
         return *this;
     }
     
-    NetTransTaskBuilder & post_to(const char * uri, const char * data, int data_len) {
+    NetTransTaskBuilder & post_to(const char * uri, const char * data, size_t data_len) {
         assert(m_task);
         ((NetTransTask*)m_task)->set_post_to(uri, data, data_len);
         return *this;

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="ui_sprite_fsm_state_enter_event" version="1">
+        <entry name="enter_evt_from" type="uint32" id="1"/>
+        <entry name="enter_evt_to" type="uint32" id="2"/>
+        <entry name="enter_evt_name" type="string" size="64" id="3"/>
+    </struct>
+
+</metalib>

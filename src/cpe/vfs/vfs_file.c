@@ -56,7 +56,9 @@ uint8_t vfs_file_exist(vfs_mgr_t mgr, const char * path) {
 
     mount_point = vfs_mount_point_find_by_path(mgr, &path);
     if (mount_point == NULL) return 0;
-    
+
+    if (path[0] == 0) return 0;
+
     backend = mount_point->m_backend;
     assert(backend);
 

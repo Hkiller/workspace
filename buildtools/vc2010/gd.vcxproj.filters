@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{c4fc2453-b8c5-4e54-9c4d-bd3507e48f00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\app">
+      <UniqueIdentifier>{3d756012-478b-4a56-8020-c774e2bb6f8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\app\tests-env">
+      <UniqueIdentifier>{9803ccd3-fd21-45dc-9ce5-1a5901c23bbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dp">
+      <UniqueIdentifier>{e5b60373-a9fb-4078-9729-929625b8cbee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dp\tests-env">
+      <UniqueIdentifier>{e380c7da-f13c-4e85-afa4-2cbb08e9929c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dp\dr_store">
+      <UniqueIdentifier>{81fcde10-c192-44f4-88f4-714fc774e2cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\evt">
+      <UniqueIdentifier>{ce1effea-3b34-4dfa-8d86-927f27f56a26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\timer">
+      <UniqueIdentifier>{d88b92b2-f7e2-4aaf-88a4-aaae36774fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\utils">
+      <UniqueIdentifier>{cf43a543-d76e-4914-9ac6-1c08c0a761ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dr_dm">
+      <UniqueIdentifier>{bb79d974-cc20-454a-a4cf-b924f7de537c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dr_cvt">
+      <UniqueIdentifier>{166027ce-13e6-4e8f-974a-752b69e65447}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\vnet">
+      <UniqueIdentifier>{0f58aba9-dfe3-42c0-aedb-9ef9b06873c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{3fe7aafd-1790-4167-bb97-ae6277420e94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\app">
+      <UniqueIdentifier>{dbde2ea5-b7a0-4512-80ea-e8f4fb8ec090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\timer">
+      <UniqueIdentifier>{df9ba8c1-1ea3-4eb0-a9c2-fe5dda186fef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\evt">
+      <UniqueIdentifier>{b5f9dd2a-044c-42f1-96c2-4dd98953711f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dr_cvt">
+      <UniqueIdentifier>{e8fc7834-ba7a-4bee-a749-86ec5c80a576}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dr_store">
+      <UniqueIdentifier>{20538d27-c454-4b41-9e11-01fc41f34dbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{c93d3179-5442-4f0d-a31c-aa41565dea94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dr_dm">
+      <UniqueIdentifier>{e02b6735-479e-4b8b-8446-1e09cde83806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\net">
+      <UniqueIdentifier>{1e3c73b9-f2c1-4f23-8364-8b65e2bcf5c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\vnet">
+      <UniqueIdentifier>{b8bad72c-3fcc-4278-806e-49fc56c8a679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\log">
+      <UniqueIdentifier>{16c8b64a-8d4b-4239-9228-249ea6f901da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\net_trans">
+      <UniqueIdentifier>{00998f18-16f9-4e57-9542-a0bcf8e674bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\net_trans">
+      <UniqueIdentifier>{21b2783d-f00e-40a5-8d4f-258614a84add}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\app_attr">
+      <UniqueIdentifier>{6bd05bcf-3296-4b71-afaf-2577f8262e96}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\gd\app\app.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_basic.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_context.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_log.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_module.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_rsp.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_tl.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_types.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\tests-env\with_app.hpp">
+      <Filter>include\app\tests-env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_store\dr_ref.h">
+      <Filter>include\dp\dr_store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_store\dr_store.h">
+      <Filter>include\dp\dr_store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_store\dr_store_manage.h">
+      <Filter>include\dp\dr_store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_store\dr_store_types.h">
+      <Filter>include\dp\dr_store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\evt\evt_error.h">
+      <Filter>include\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\evt\evt_manage.h">
+      <Filter>include\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\evt\evt_read.h">
+      <Filter>include\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\evt\evt_types.h">
+      <Filter>include\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\timer\timer_manage.h">
+      <Filter>include\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\timer\timer_types.h">
+      <Filter>include\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\utils\id_generator.h">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\utils\utils_types.h">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_dm\dr_dm_data.h">
+      <Filter>include\dr_dm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_dm\dr_dm_manage.h">
+      <Filter>include\dr_dm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_dm\dr_dm_types.h">
+      <Filter>include\dr_dm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_cvt\dr_cvt.h">
+      <Filter>include\dr_cvt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_cvt\dr_cvt_manage.h">
+      <Filter>include\dr_cvt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\dr_cvt\dr_cvt_types.h">
+      <Filter>include\dr_cvt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\vnet\vnet_control_pkg.h">
+      <Filter>include\vnet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\vnet\vnet_types.h">
+      <Filter>include\vnet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app\app_internal_ops.h">
+      <Filter>src\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app\app_internal_types.h">
+      <Filter>src\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\timer\timer_internal_ops.h">
+      <Filter>src\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\timer\timer_internal_types.h">
+      <Filter>src\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\evt\evt_internal_types.h">
+      <Filter>src\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\dr_cvt\dr_cvt_internal_ops.h">
+      <Filter>src\dr_cvt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\dr_cvt\dr_cvt_internal_types.h">
+      <Filter>src\dr_cvt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\dr_dm\dr_dm_internal_ops.h">
+      <Filter>src\dr_dm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\dr_dm\dr_dm_internal_types.h">
+      <Filter>src\dr_dm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\net\app_net_internal_types.h">
+      <Filter>src\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\build\vc\protocol\gd\protocol\vnet\vnet_data.h">
+      <Filter>src\vnet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\vnet\vnet_internal_types.h">
+      <Filter>src\vnet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\log\log_internal_ops.h">
+      <Filter>src\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\log\log_internal_types.h">
+      <Filter>src\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\dr_store\dr_store_internal_ops.h">
+      <Filter>src\dr_store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\dr_store\dr_store_internal_types.h">
+      <Filter>src\dr_store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_detail.h">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_group.h">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_manage.h">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_task.h">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\net_trans\net_trans_types.h">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\net_trans\net_trans_group_i.h">
+      <Filter>src\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\net_trans\net_trans_manage_i.h">
+      <Filter>src\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\net_trans\net_trans_task_i.h">
+      <Filter>src\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_attr_binding_i.h">
+      <Filter>src\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_attr_i.h">
+      <Filter>src\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_formula_i.h">
+      <Filter>src\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_module_i.h">
+      <Filter>src\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_provider_i.h">
+      <Filter>src\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_request_i.h">
+      <Filter>src\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app_attr\app_attr_synchronizer_i.h">
+      <Filter>src\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app\app_library_i.h">
+      <Filter>src\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app\app_library_symbol_i.h">
+      <Filter>src\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_child.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_library.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gd\app\app_module_installer.h">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gd\app\app_module_installer_i.h">
+      <Filter>src\app</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\gd\app\app_child.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_context.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_context_create.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_context_ms.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_context_run.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_context_tick.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_library.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_module.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_module_data.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_module_type.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_named_em.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_rsp.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_setup.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_tl.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\timer\timer_manage.c">
+      <Filter>src\timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\evt\evt_manage.c">
+      <Filter>src\evt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\evt\evt_manage_module.c">
+      <Filter>src\evt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\evt\evt_processor.c">
+      <Filter>src\evt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\evt\evt_read.c">
+      <Filter>src\evt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt.c">
+      <Filter>src\dr_cvt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_bson.c">
+      <Filter>src\dr_cvt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_copy.c">
+      <Filter>src\dr_cvt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_noop.c">
+      <Filter>src\dr_cvt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_pbuf.c">
+      <Filter>src\dr_cvt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_def_pbuf_len.c">
+      <Filter>src\dr_cvt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_manage.c">
+      <Filter>src\dr_cvt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_cvt\dr_cvt_type.c">
+      <Filter>src\dr_cvt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_store\dr_ref.c">
+      <Filter>src\dr_store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_store\dr_store.c">
+      <Filter>src\dr_store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_store\dr_store_loader.c">
+      <Filter>src\dr_store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_store\dr_store_manage.c">
+      <Filter>src\dr_store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\utils\id_generator.c">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\utils\id_generator_file.c">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_dm\dr_dm_data.c">
+      <Filter>src\dr_dm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_dm\dr_dm_index.c">
+      <Filter>src\dr_dm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_dm\dr_dm_manage.c">
+      <Filter>src\dr_dm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_dm\dr_dm_manage_module.c">
+      <Filter>src\dr_dm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\net\app_net_env.c">
+      <Filter>src\net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\net\app_net_runner.c">
+      <Filter>src\net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\vnet\vnet_conn_info.c">
+      <Filter>src\vnet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\vnet\vnet_control_pkg.c">
+      <Filter>src\vnet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\build\vc\protocol\gd\protocol\vnet\vnet_data.c">
+      <Filter>src\vnet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\log\log_context.c">
+      <Filter>src\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\log\log_context_module.c">
+      <Filter>src\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\log\log_em.c">
+      <Filter>src\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_tick_runner.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\dr_store\dr_store_ops.c">
+      <Filter>src\dr_store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_group.c">
+      <Filter>src\net_trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_manage.c">
+      <Filter>src\net_trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_manage_module.c">
+      <Filter>src\net_trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_net.c">
+      <Filter>src\net_trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\net_trans\net_trans_task.c">
+      <Filter>src\net_trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_attr.c">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_attr_binding.c">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_formula.c">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_module.c">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_provider.c">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_request.c">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app_attr\app_attr_synchronizer.c">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_library_symbol.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gd\app\app_module_installer.c">
+      <Filter>src\app</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\gd\vnet\vnet_data.xml">
+      <Filter>src\vnet</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

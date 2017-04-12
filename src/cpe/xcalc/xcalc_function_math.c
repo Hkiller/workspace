@@ -17,6 +17,27 @@ xtoken_t xcomputer_func_angle_to_radians(void * ctx, xcomputer_t computer, const
     return xcomputer_func_create_token_float(computer, func_name, cpe_math_angle_to_radians(angle), em);
 }
 
+xtoken_t xcomputer_func_mod(void * ctx, xcomputer_t computer, const char * func_name, xtoken_it_t args, error_monitor_t em) {
+    xtoken_t arg_1;
+    xtoken_t arg_2;
+    int32_t arg1_int;
+    int32_t arg2_int;
+    float arg1_float;
+    float arg2_float;
+    
+    if (xcomputer_func_get_arg_2(&arg_1, &arg_2, func_name, args, em) != 0) return NULL;
+
+    if (xtoken_try_to_int32(arg_1, &arg1_int) == 0 && xtoken_try_to_int32(arg_2, &arg2_int) == 0) {
+        return xcomputer_func_create_token_int32(computer, func_name, arg2_int % arg1_int, em);
+    }
+    else if (xtoken_try_to_float(arg_1, &arg1_float) == 0 && xtoken_try_to_float(arg_2, &arg2_float) == 0) {
+        return xcomputer_func_create_token_float(computer, func_name, fmodf(arg2_float, arg2_float), em);
+    }
+    else {
+        CPE_ERROR(em, "%s: art type error!", func_name);
+        return NULL;
+    }
+}
 
 xtoken_t xcomputer_func_random(void * ctx, xcomputer_t computer, const char * func_name, xtoken_it_t args, error_monitor_t em) {
     xtoken_t arg_1;
@@ -101,5 +122,27 @@ xtoken_t xcomputer_func_random(void * ctx, xcomputer_t computer, const char * fu
             }
         }
     }
+}
+
+xtoken_t xcomputer_func_random_select(void * ctx, xcomputer_t computer, const char * func_name, xtoken_it_t args, error_monitor_t em) {
+    uint32_t count = 0;
+    xtoken_t token;
+    xtoken_t r = NULL;
+    
+    TAILQ_FOREACH(token, &args->m_not_visited, m_next) {
+        count++;
+    }
+
+    if (count > 0) {
+        uint32_t pos = cpe_rand_ctx_generate(cpe_rand_ctx_dft(), count);
+        while(pos > 0) {
+            xtoken_it_next(args);
+            pos--;
+        }
+        r = xtoken_it_next(args);
+        TAILQ_REMOVE(&args->m_not_visited, r, m_next);
+    }
+
+    return r;
 }
 

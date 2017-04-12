@@ -19,6 +19,10 @@ typedef struct vfs_read_stream * vfs_read_stream_t;
 typedef struct vfs_write_stream * vfs_write_stream_t;
 typedef struct vfs_visitor * vfs_visitor_t;
 
+typedef struct vfs_builder * vfs_builder_t;
+typedef struct vfs_builder_entry * vfs_builder_entry_t;
+typedef struct vfs_builder_entry_it * vfs_builder_entry_it_t;
+
 typedef enum vfs_visitor_next_op {
     vfs_visitor_next_go
     , vfs_visitor_next_ignore

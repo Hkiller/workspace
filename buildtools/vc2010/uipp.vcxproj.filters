@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{889cf930-9da9-4382-9ab5-b6531a289ca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{b5d797a0-a02b-47a5-9971-fc0732cc1388}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\sprite_fsm">
+      <UniqueIdentifier>{25d88943-d465-48f0-848c-7164251a2cbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\sprite">
+      <UniqueIdentifier>{6dcdae24-6a24-499d-9a35-2a970d354492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sprite">
+      <UniqueIdentifier>{2062f3f7-51ab-43fb-9476-946a856cbb25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sprite_fsm">
+      <UniqueIdentifier>{1bf13241-4d42-42a8-bc2e-4ae0c3384bed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sprite_anim">
+      <UniqueIdentifier>{6afbcc00-a1c0-49aa-ae12-ab930f6840fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\sprite_anim">
+      <UniqueIdentifier>{534526cf-6c7f-4354-bdd0-41561ed0d1c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sprite_2d">
+      <UniqueIdentifier>{f74ba360-6626-46b2-b939-f6b5357d71bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\sprite_2d">
+      <UniqueIdentifier>{f7e045a3-2ecb-4690-9035-8757d950144b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sprite_touch">
+      <UniqueIdentifier>{a7edf670-9083-48c6-a2a3-16d347db9a4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\sprite_touch">
+      <UniqueIdentifier>{ae2eb421-f804-4478-b585-2d8513277f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\sprite_cfg">
+      <UniqueIdentifier>{9c12035e-d08a-406d-b7b2-903069186123}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sprite_cfg">
+      <UniqueIdentifier>{7d0037e9-7db1-437b-86a7-b4d58a6cdd45}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\uipp\sprite\Component.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentGen.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentMeta.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentReg.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\Entity.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\Repository.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\System.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\World.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\WorldRes.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\WorldResGen.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_anim\AnimationBackend.hpp">
+      <Filter>include\sprite_anim</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_anim\AnimationBackendGen.hpp">
+      <Filter>include\sprite_anim</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_anim\AnimationSch.hpp">
+      <Filter>include\sprite_anim</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_anim\System.hpp">
+      <Filter>include\sprite_anim</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_2d\System.hpp">
+      <Filter>include\sprite_2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_2d\Transform.hpp">
+      <Filter>include\sprite_2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_touch\System.hpp">
+      <Filter>include\sprite_touch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_touch\TouchComponent.hpp">
+      <Filter>include\sprite_touch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_touch\TouchManager.hpp">
+      <Filter>include\sprite_touch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_cfg\CfgLoader.hpp">
+      <Filter>include\sprite_cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_cfg\System.hpp">
+      <Filter>include\sprite_cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_anim\AnimationCamera.hpp">
+      <Filter>include\sprite_anim</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\Action.hpp">
+      <Filter>include\sprite_fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\Fsm.hpp">
+      <Filter>include\sprite_fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\State.hpp">
+      <Filter>include\sprite_fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\System.hpp">
+      <Filter>include\sprite_fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_cfg\CfgLoaderExternGen.hpp">
+      <Filter>include\sprite_cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentWithDataGen.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentSimulate.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\EntityIterator.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\Group.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite\WorldUpdatorGen.hpp">
+      <Filter>include\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\ActionGen.hpp">
+      <Filter>include\sprite_fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\ActionMeta.hpp">
+      <Filter>include\sprite_fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\ActionReg.hpp">
+      <Filter>include\sprite_fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\ActionVisitor.hpp">
+      <Filter>include\sprite_fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\Repository.hpp">
+      <Filter>include\sprite_fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\uipp\sprite_cfg\ActionModuleReg.hpp">
+      <Filter>include\sprite_cfg</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\uipp\sprite\Entity.cpp">
+      <Filter>src\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite\Repository.cpp">
+      <Filter>src\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite\World.cpp">
+      <Filter>src\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_anim\AnimationSch.cpp">
+      <Filter>src\sprite_anim</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_cfg\CfgLoader.cpp">
+      <Filter>src\sprite_cfg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_anim\AnimationCamera.cpp">
+      <Filter>src\sprite_anim</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_touch\Touchable.cpp">
+      <Filter>src\sprite_touch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_touch\TouchManager.cpp">
+      <Filter>src\sprite_touch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite\Component.cpp">
+      <Filter>src\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_2d\Transform.cpp">
+      <Filter>src\sprite_2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite\EntityIterator.cpp">
+      <Filter>src\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite\Group.cpp">
+      <Filter>src\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_fsm\Action.cpp">
+      <Filter>src\sprite_fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_fsm\Fsm.cpp">
+      <Filter>src\sprite_fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_fsm\Repository.cpp">
+      <Filter>src\sprite_fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_fsm\State.cpp">
+      <Filter>src\sprite_fsm</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\uipp\sprite\config.mk">
+      <Filter>src\sprite</Filter>
+    </None>
+  </ItemGroup>
+</Project>

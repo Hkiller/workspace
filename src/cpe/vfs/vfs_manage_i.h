@@ -24,6 +24,8 @@ struct vfs_mgr {
     
     vfs_mount_point_list_t m_free_mount_points;
 
+    struct mem_buffer m_search_path_buffer;
+
     struct mem_buffer m_tmp_buffer;
 };
     

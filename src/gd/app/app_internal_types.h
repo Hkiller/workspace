@@ -21,6 +21,8 @@ extern "C" {
 struct gd_app_lib;
 typedef TAILQ_HEAD(gd_app_lib_list, gd_app_lib) gd_app_lib_list_t;
 
+typedef struct gd_app_symbol * gd_app_symbol_t;
+    
 struct gd_app_module_type;
 typedef TAILQ_HEAD(gd_app_module_type_list, gd_app_module_type) gd_app_module_type_list_t;
 

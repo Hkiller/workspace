@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{2343e4c4-4505-457e-b6d2-42857a42b4c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{b63fd273-4d2a-4bd5-83e3-fa2b40648e30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\win32">
+      <UniqueIdentifier>{c3d471f5-38c8-4a4a-a0ce-687d75af3604}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdTools\c-ares\include\ares.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\include\ares_rules.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\include\ares_version.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\include\win32\ares_build.h">
+      <Filter>include\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_data.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_dns.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_getenv.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_getopt.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_inet_net_pton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_iphlpapi.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_ipv6.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_library_init.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_llist.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_nowarn.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_platform.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_private.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_setup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_strcasecmp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_strdup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\ares_writev.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\bitncmp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\config-dos.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\config-win32.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\nameser.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\c-ares\src\setup_once.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares__close_sockets.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares__get_hostent.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares__read_line.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares__timeval.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_cancel.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_create_query.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_data.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_destroy.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_expand_name.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_expand_string.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_fds.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_free_hostent.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_free_string.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_getenv.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_gethostbyaddr.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_gethostbyname.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_getnameinfo.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_getopt.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_getsock.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_init.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_library_init.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_llist.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_mkquery.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_nowarn.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_options.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_a_reply.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_aaaa_reply.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_mx_reply.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_naptr_reply.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_ns_reply.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_ptr_reply.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_soa_reply.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_srv_reply.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_parse_txt_reply.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_platform.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_process.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_query.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_search.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_send.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_strcasecmp.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_strdup.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_strerror.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_timeout.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_version.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\ares_writev.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\bitncmp.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\inet_net_pton.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\inet_ntop.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\c-ares\src\windows_port.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

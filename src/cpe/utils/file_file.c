@@ -325,23 +325,34 @@ const char * file_name_no_dir(const char * input) {
 }
 
 int file_name_normalize(char * input) {
-    char * check_begin = NULL; 
-    char * check_end = NULL;
-    char * p;
+    char * sep;
+    char * sep_last = input;
+    size_t left_len = strlen(input);
+    
+    while((sep = strchr(sep_last, '/'))) {
+        size_t remove_len;
+        size_t move_len;
+        sep_last = sep + 1;
+        while(*sep_last == '/') sep_last++;
 
-    for(p = strchr(input, '/'); p; p = strchr(p + 1, '/')) {
-        check_begin = check_end;
-        check_end = p;
+        remove_len = (sep_last - sep) - 1;
+        if (remove_len == 0) continue;
 
-        if (check_begin) {
-            
+        move_len = left_len - (sep + 1 - input) - remove_len;
+        if (move_len > 0) {
+            memmove(sep + 1, sep_last, move_len);
+        }
+        sep[1 + move_len] = 0;
+        left_len -= remove_len;
+    }
+
+    if (left_len > 0) {
+        if (input[left_len - 1] == '/') {
+            input[left_len - 1] = 0;
+            left_len--;
         }
     }
-
-    if (check_end) {
-
-    }
-
+    
     return 0;
 }
 

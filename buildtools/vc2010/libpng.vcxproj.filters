@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{bd4e5b13-6e44-4e50-8a8c-bd62c064e182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{fc77525c-fb94-4193-9210-8cbbd985d463}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdTools\libpng\include\png.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libpng\include\pngconf.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libpng\include\pnglibconf.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libpng\src\pngdebug.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libpng\src\pnginfo.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libpng\src\pngpriv.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\libpng\src\pngstruct.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdTools\libpng\src\png.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngerror.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngget.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngmem.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngpread.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngread.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngrio.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngrtran.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngrutil.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngset.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngtrans.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngwio.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngwrite.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngwtran.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\libpng\src\pngwutil.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

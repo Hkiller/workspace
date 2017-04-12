@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{46706ed7-f45c-484e-aa5a-bd168e165191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{75bff138-dcc8-4452-8f36-d9c4fc079de7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdTools\argtable2\include\argtable2.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\argtable2\include\getopt.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\arg_date.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\arg_dbl.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\arg_end.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\arg_file.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\arg_int.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\arg_lit.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\arg_rem.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\arg_rex.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\arg_str.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\argtable2.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\getopt.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\argtable2\src\getopt1.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\3rdTools\argtable2\src\config.mk">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+</Project>

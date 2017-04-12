@@ -49,7 +49,7 @@ const char * file_name_base(const char * input, mem_buffer_t tbuf);
 const char * file_name_no_dir(const char * input);
 const char * file_name_append_base(mem_buffer_t tbuf, const char * input);
 int file_name_normalize(char * input);
-
+    
 /*dir operations*/
 int dir_exist(const char * path, error_monitor_t em);
 int dir_is_empty(const char * path, error_monitor_t em);

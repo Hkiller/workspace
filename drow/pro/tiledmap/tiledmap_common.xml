@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="tiledmap_pair" version="1">
+        <entry name="x" type="float" id="1"/>
+        <entry name="y" type="float" id="2"/>
+    </struct>
+
+    <struct name="tiledmap_rect" version="1">
+        <entry name="lt" type="tiledmap_pair" id="1"/>
+        <entry name="rb" type="tiledmap_pair" id="2"/>
+    </struct>
+
+</metalib>

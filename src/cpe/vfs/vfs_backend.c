@@ -93,3 +93,7 @@ vfs_backend_t vfs_backend_find_by_name(vfs_mgr_t mgr, const char * name) {
 vfs_backend_t vfs_backend_native(vfs_mgr_t mgr) {
     return TAILQ_FIRST(&mgr->m_backends);
 }
+
+void * vfs_backend_ctx(vfs_backend_t backend) {
+    return backend->m_ctx;
+}

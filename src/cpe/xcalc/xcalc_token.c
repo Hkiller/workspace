@@ -3,6 +3,7 @@
 #include "cpe/pal/pal_stdio.h"
 #include "cpe/pal/pal_string.h"
 #include "cpe/utils/string_utils.h"
+#include "cpe/utils/buffer.h"
 #include "xcalc_token_i.h"
 
 int xtoken_try_to_int32(xtoken_t token, int32_t * r) {
@@ -240,6 +241,31 @@ const char * xtoken_to_str(xtoken_t token, char * buf, size_t buf_size) {
     }
 }
 
+const char * xtoken_to_str_with_buffer(xtoken_t token, mem_buffer_t buffer) {
+    char buf[64];
+    
+    mem_buffer_clear_data(buffer);
+    
+    switch(token->m_type) {
+    case XTOKEN_NUM_INT:
+        snprintf(buf, sizeof(buf), FMT_INT64_T, token->m_data.num._int);
+        return mem_buffer_strdup(buffer, buf);
+    case XTOKEN_NUM_FLOAT:
+        snprintf(buf, sizeof(buf), "%f", (float)token->m_data.num._double);
+        return mem_buffer_strdup(buffer, buf);
+    case XTOKEN_STRING:
+    case XTOKEN_VAL:
+        if (token->m_data.str._end == NULL) {
+            return token->m_data.str._string;
+        }
+        else {
+            return mem_buffer_strdup_range(buffer, token->m_data.str._string, token->m_data.str._end);
+        }
+    default:
+        return NULL;
+    }
+}
+
 static int xtoken_do_str_cmp(const char * p1, int len1, const char * p2, int len2) {
     if (len1 < len2) {
         int r = memcmp(p1, p2, len1);
@@ -297,7 +323,7 @@ int xtoken_cmp(xtoken_t l, xtoken_t r) {
             else {
                 return xtoken_do_str_cmp(
                     buf,
-                    snprintf(buf, sizeof(buf), "%f", l->m_data.num._double),
+                    snprintf(buf, sizeof(buf), "%f", (float)l->m_data.num._double),
                     r->m_data.str._string,
                     (int)(r->m_data.str._end ? (r->m_data.str._end - r->m_data.str._string) : strlen(r->m_data.str._string)));
             }
@@ -328,7 +354,7 @@ int xtoken_cmp(xtoken_t l, xtoken_t r) {
                 l->m_data.str._string,
                 (int)(l->m_data.str._end ? (l->m_data.str._end - l->m_data.str._string) : strlen(l->m_data.str._string)),
                 buf,
-                snprintf(buf, sizeof(buf), "%f", r->m_data.num._double));
+                snprintf(buf, sizeof(buf), "%f", (float)r->m_data.num._double));
             }
         case XTOKEN_STRING:
         case XTOKEN_VAL:
@@ -374,7 +400,7 @@ void xtoken_dump(write_stream_t s, xtoken_t token) {
             stream_printf(s, ", value="FMT_INT64_T, token->m_data.num._int);
             break;
         case XTOKEN_NUM_FLOAT:
-            stream_printf(s, ", value=%f", token->m_data.num._double);
+            stream_printf(s, ", value=%f", (float)token->m_data.num._double);
             break;
         case XTOKEN_STRING:
         case XTOKEN_VAL:

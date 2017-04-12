@@ -1,0 +1,6 @@
+UIAppEnv_app_init
+UIAppEnv_app_fini
+UISpritePlugin_app_init
+UISpritePlugin_app_fini
+UIUniPage_app_init
+UIUniPage_app_fini

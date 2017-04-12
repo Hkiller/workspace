@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="ui_sprite_chipmunk_pair" version="1">
+        <entry name="x" type="float" id="1"/>
+        <entry name="y" type="float" id="2"/>
+    </struct>
+
+    <macrosgroup name="chipmunk_body_attr_id">
+        <macro name="CHIPMUNK_BODY_ATTR_ID_CATEGORY" value="1"/>
+        <macro name="CHIPMUNK_BODY_ATTR_ID_MASK" value="2"/>
+        <macro name="CHIPMUNK_BODY_ATTR_ID_GROUP" value="3"/>
+        <macro name="CHIPMUNK_BODY_ATTR_ID_MASS" value="4"/>
+        <macro name="CHIPMUNK_BODY_ATTR_ID_MOMENT" value="5"/>
+        <macro name="CHIPMUNK_BODY_ATTR_ID_TYPE" value="6"/>
+    </macrosgroup>
+    
+    <macrosgroup name="ui_sprite_chipmunk_obj_runing_mode">
+        <macro name="UI_SPRITE_CHIPMUNK_OBJ_RUNING_MODE_PASSIVE" value="0"/>
+        <macro name="UI_SPRITE_CHIPMUNK_OBJ_RUNING_MODE_ACTIVE" value="1"/>
+    </macrosgroup>
+
+    <!-- 对象控制数据 -->
+    <struct name="ui_sprite_chipmunk_obj_control_float" version="1">
+        <entry name="setted" type="uint8" id="1"/>
+        <entry name="value" type="float" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_chipmunk_obj_control" version="1">
+        <entry name="linear_velocity_angle" type="ui_sprite_chipmunk_obj_control_float" id="1"/>
+        <entry name="linear_velocity_value" type="ui_sprite_chipmunk_obj_control_float" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_chipmunk_obj_data" version="1">
+        <entry name="setter" type="ui_sprite_chipmunk_obj_control" value="1"/>
+        <entry name="linear_velocity" type="ui_sprite_chipmunk_pair" id="2"/>
+    </struct>
+
+    <!-- 碰撞通知数据 -->
+    <macrosgroup name="ui_sprite_chipmunk_collision_state">
+        <macro name="UI_SPRITE_CHIPMUNK_COLLISION_STATE_BEGIN" value="1"/>
+        <macro name="UI_SPRITE_CHIPMUNK_COLLISION_STATE_END" value="2"/>
+    </macrosgroup>
+
+    <struct name="ui_sprite_chipmunk_collision_data" version="1">
+        <entry name="collision_state" type="uint8" id="1" bindmacrogroup="ui_sprite_chipmunk_collision_state"/>
+        <entry name="collision_entity_id" type="uint32" id="2"/>
+        <entry name="collision_part_name" type="string" size="64" id="3"/>
+        <entry name="collision_other_name" type="string" size="64" id="4"/>
+        <entry name="collision_pos" type="ui_sprite_chipmunk_pair" id="5"/>
+        <entry name="collision_impulse_pair" type="ui_sprite_chipmunk_pair" id="6"/>
+        <entry name="collision_impulse" type="float" id="7"/>
+    </struct>
+
+    <!-- 重力策略 -->
+    <macrosgroup name="ui_sprite_chipmunk_gravity_type">
+        <macro name="UI_SPRITE_CHIPMUNK_GRAVITY_TYPE_NATIVE" value="0"/>
+        <macro name="UI_SPRITE_CHIPMUNK_GRAVITY_TYPE_FIX_VALUE" value="1"/>
+        <macro name="UI_SPRITE_CHIPMUNK_GRAVITY_TYPE_ADJ_VALUE" value="2"/>
+        <macro name="UI_SPRITE_CHIPMUNK_GRAVITY_TYPE_FIX_SIZE_VALUE" value="3"/>
+    </macrosgroup>
+
+    <struct name="ui_sprite_chipmunk_gravity_data_fix_value" version="1">
+        <entry name="gravity" type="ui_sprite_chipmunk_pair" id="1"/>
+    </struct>
+
+    <struct name="ui_sprite_chipmunk_gravity_data_fix_size_value" version="1">
+        <entry name="gravity" type="float" id="1"/>
+    </struct>
+    
+    <struct name="ui_sprite_chipmunk_gravity_data_adj_value" version="1">
+        <entry name="adj_value" type="float" id="1"/>
+    </struct>
+    
+    <union name="ui_sprite_chipmunk_gravity_data" version="1">
+        <entry name="fix_value" type="ui_sprite_chipmunk_gravity_data_fix_value" id="UI_SPRITE_CHIPMUNK_GRAVITY_TYPE_FIX_VALUE"/>
+        <entry name="adj_value" type="ui_sprite_chipmunk_gravity_data_adj_value" id="UI_SPRITE_CHIPMUNK_GRAVITY_TYPE_ADJ_VALUE"/>
+        <entry name="fix_size_value" type="ui_sprite_chipmunk_gravity_data_fix_size_value" id="UI_SPRITE_CHIPMUNK_GRAVITY_TYPE_FIX_SIZE_VALUE"/>
+    </union>
+
+    <struct name="ui_sprite_chipmunk_gravity" version="1">
+        <entry name="type" type="uint8" id="1" bindmacrogroup="ui_sprite_chipmunk_gravity_type"/>
+        <entry name="data" type="ui_sprite_chipmunk_gravity_data" id="2"/>
+    </struct>
+    
+    <!-- 转矩策略 -->
+
+</metalib>

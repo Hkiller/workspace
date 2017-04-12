@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\build\vc\protocol\ui\sprite_b2\ui_sprite_b2_data.h" />
+    <ClInclude Include="..\..\build\vc\protocol\ui\sprite_b2\ui_sprite_b2_evt.h" />
+    <ClInclude Include="..\..\include\uipp\sprite_b2\B2Object.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_b2\B2ObjectPart.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_b2\B2System.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_b2\B2World.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_Manipulator.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_OnCollision.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_Runto.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_Setup.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_Suspend.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_WaitCollision.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_WaitNotCollision.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Action_WaitStop.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2Collision.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2ObjectExt.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2ObjectPartExt.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2ObjectPartMeta.hpp" />
+    <ClInclude Include="..\..\src\uipp\sprite_b2\B2WorldExt.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\build\vc\protocol\ui\sprite_b2\sprite_b2_meta_lib.c" />
+    <ClCompile Include="..\..\build\vc\protocol\ui\sprite_b2\sprite_b2_meta_traits.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_Manipulator.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_OnCollision.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_Runto.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_Setup.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_Suspend.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_WaitCollision.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_WaitNotCollision.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Action_WaitStop.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Collision.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2Module.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2ObjectExt.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2ObjectPartExt.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2ObjectPartMeta.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_b2\B2WorldExt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\uipp\sprite_b2\protocol.def">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">set PATH=$(ProjectDir)..\..\3rdTools\iconv\vc\bin;$(ProjectDir)..\..\3rdTools\zlib\vc\bin;%PATH%
+$(ProjectDir)..\..\build\vc\tools\cpe_dr_tool.exe --input-group-root $(ProjectDir)../../src/ui/pro/sprite_b2 --input-group %(FullPath)  --output-h  $(ProjectDir)..\..\build\vc\protocol\ui\sprite_b2 --output-lib-c $(ProjectDir)..\..\build\vc\protocol\ui\sprite_b2\sprite_b2_meta_lib.c --with-traits --output-traits-cpp=$(ProjectDir)..\..\build\vc\protocol\ui\sprite_b2\sprite_b2_meta_traits.cpp --output-lib-c-arg=g_metalib_ui_sprite_b2</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\build\vc\protocol\ui\sprite_b2\sprite_b2_meta_lib.c;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Box2D.vcxproj">
+      <Project>{197643b8-46be-4559-89e6-e1b0226c8aab}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{62D6F777-055A-46B0-BA01-247073C857E2}</ProjectGuid>
+    <RootNamespace>ui_b2</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../include;../../3rdTools/yaml/include;../../3rdTools/yajl/include;../../3rdTools/libev/include;../../3rdTools/libxml2/include;../../3rdTools/iconv/vc/include;../../3rdTools/libxml2/include/vc;../../3rdTools/zlib/vc/include;../../3rdTools/Box2D/Box2D;../../build/vc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;YAML_DECLARE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../../include;../../3rdTools/yaml/include;../../3rdTools/yajl/include;../../3rdTools/libev/include;../../3rdTools/libxml2/include;../../3rdTools/iconv/vc/include;../../3rdTools/libxml2/include/vc;../../3rdTools/zlib/vc/include;../../3rdTools/Box2D/Box2D;../../build/vc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;YAML_DECLARE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

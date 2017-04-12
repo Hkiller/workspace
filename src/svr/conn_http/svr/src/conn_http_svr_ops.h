@@ -60,7 +60,7 @@ uint32_t conn_http_request_hash(conn_http_request_t request);
 void conn_http_request_set_error(conn_http_request_t request, uint32_t http_errno, const char * http_errmsg);
 void conn_http_request_set_response(
     conn_http_request_t request,
-    const char * body_format, ringbuffer_block_t body_data, uint32_t body_size);
+    const char * body_format, ringbuffer_block_t * body_data, uint32_t body_size);
 
 int conn_http_request_eq(conn_http_request_t l, conn_http_request_t r);
 int conn_http_request_alloc(ringbuffer_block_t * result, conn_http_svr_t svr, conn_http_request_t request, size_t size);

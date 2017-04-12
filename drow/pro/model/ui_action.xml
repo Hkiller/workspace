@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_texture_ref" file="ui_texture_ref.xml"/>
+
+    <struct name="ui_actor" version="1">
+        <entry name="id" type="uint32" id="1"/>
+        <entry name="name" type="string" size="UI_NAME_LEN" id="2"/>
+        <entry name="is_loop" type="uint8" id="3"/>
+        <entry name="loop_start" type="uint16" id="4"/>
+        <entry name="time_total" type="uint16" id="5"/>
+    </struct>
+
+    <struct name="ui_actor_layer" version="1">
+        <entry name="name" type="string" size="UI_NAME_LEN" id="2"/>
+        <entry name="is_lead" type="uint8" id="1"/>
+    </struct>
+
+    <struct name="ui_actor_frame" version="1">
+        <entry name="texture" type="ui_texture_ref" id="1"/>
+        <entry name="start_frame" type="uint16" id="2"/>
+        <entry name="sound" type="string" size="64" id="3"/>
+        <entry name="smooth" type="uint8" id="4"/>
+        <entry name="particle" type="string" size="64" id="5"/>
+        <entry name="event" type="string" size="128" id="6"/>
+    </struct>
+
+</metalib>

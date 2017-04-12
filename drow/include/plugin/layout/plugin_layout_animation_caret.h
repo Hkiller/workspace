@@ -1,0 +1,28 @@
+#ifndef DROW_PLUGIN_LAYOUT_ANIMATION_CARET_H
+#define DROW_PLUGIN_LAYOUT_ANIMATION_CARET_H
+#include "plugin_layout_types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+plugin_layout_animation_caret_t plugin_layout_animation_caret_create(plugin_layout_render_t render);
+void plugin_layout_animation_caret_free(plugin_layout_animation_caret_t caret);
+
+plugin_layout_animation_caret_t plugin_layout_animation_caret_from_animation(plugin_layout_animation_t animation);
+
+plugin_layout_animation_caret_t plugin_layout_animation_caret_find_first(plugin_layout_render_t render);
+
+uint8_t plugin_layout_animation_caret_is_visiable(plugin_layout_animation_caret_t caret);
+void plugin_layout_animation_caret_set_visiable(plugin_layout_animation_caret_t caret, uint8_t is_visiable);
+
+int plugin_layout_animation_caret_pos(plugin_layout_animation_caret_t caret);
+void plugin_layout_animation_caret_set_pos(plugin_layout_animation_caret_t caret, int pos);
+void plugin_layout_animation_caret_set_pos_by_pt(plugin_layout_animation_caret_t caret, ui_vector_2_t pt);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+

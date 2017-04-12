@@ -58,7 +58,7 @@ struct dr_bson_write_stack {
 
 #define dr_bson_write_cstring(v) do {                                    \
         const char * __v = v;                                           \
-        uint32_t len = strlen(__v) + 1;                                 \
+        uint32_t len = (uint32_t)(strlen(__v) + 1u);                                 \
         dr_bson_write_check_capacity(len);                              \
         memcpy(curStack->m_output_data + curStack->m_output_size, __v, len); \
         curStack->m_output_size += len;                             \
@@ -66,7 +66,7 @@ struct dr_bson_write_stack {
 
 #define dr_bson_write_string(v) do {                                    \
         const char * __v = v;                                           \
-        uint32_t len = strlen(__v) + 1;                                 \
+        uint32_t len = (uint32_t)(strlen(__v) + 1u);                                 \
         dr_bson_write_check_capacity(len + 4);                          \
         BSON_COPY_HTON32(curStack->m_output_data + curStack->m_output_size, (&len)); \
         memcpy(curStack->m_output_data + curStack->m_output_size + 4, __v, len); \
@@ -142,7 +142,7 @@ int dr_bson_write(
     processStack[0].m_array_pos = 0;
     processStack[0].m_output_data = (unsigned char *)output;
     processStack[0].m_output_size = 0;
-    processStack[0].m_output_capacity = output_capacity;
+    processStack[0].m_output_capacity = (uint32_t)output_capacity;
     processStack[0].m_array_begin_pos = 0;
     processStack[0].m_input_data = (char const *)input;
     processStack[0].m_input_data_capacity = input_capacity;

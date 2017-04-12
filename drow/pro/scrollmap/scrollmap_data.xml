@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="scrollmap_common" file="scrollmap_common.xml"/>
+
+    <macrosgroup name="scrollmap_tile_res_type">
+        <macro name="scrollmap_tile_res_type_tag" value="0"/>
+        <macro name="scrollmap_tile_res_type_module" value="1"/>
+        <macro name="scrollmap_tile_res_type_sprite" value="2"/>
+    </macrosgroup>
+
+    <macrosgroup name="scrollmap_tile_flip_type">
+        <macro name="scrollmap_tile_flip_type_none" value="0"/>
+        <macro name="scrollmap_tile_flip_type_x" value="1"/>
+        <macro name="scrollmap_tile_flip_type_y" value="2"/>
+        <macro name="scrollmap_tile_flip_type_xy" value="3"/>
+    </macrosgroup>
+
+    <macrosgroup name="scrollmap_tile_angle_type">
+        <macro name="scrollmap_tile_angle_type_none" value="0"/>
+        <macro name="scrollmap_tile_angle_type_90" value="1"/>
+        <macro name="scrollmap_tile_angle_type_180" value="2"/>
+        <macro name="scrollmap_tile_angle_type_270" value="3"/>
+    </macrosgroup>
+    
+    <struct name="scrollmap_tile" version="1">
+        <entry name="id" type="uint16" id="1"/>
+        <entry name="res_type" type="uint16" id="2" bindmacrosgroup="scrollmap_tile_res_type"/>
+        <entry name="src_id" type="uint32" id="3"/>
+        <entry name="res_id" type="uint32" id="4"/>
+        <entry name="flip_way" type="uint32" id="5" bindmacrosgroup="scrollmap_tile_flip_type"/>
+        <entry name="angle_way" type="uint32" id="6" bindmacrosgroup="scrollmap_tile_angle_type"/>
+        <entry name="res_w" type="uint16" id="7"/>
+        <entry name="res_h" type="uint16" id="8"/>
+        <entry name="origin_pos" type="scrollmap_pair" id="9"/>
+    </struct>
+
+    <struct name="scrollmap_layer" version="1">
+        <entry name="id" type="uint16" id="1"/>
+        <entry name="name" type="string" size="64" id="2"/>
+        <entry name="range" type="scrollmap_range" id="3"/>
+        <entry name="block_count" type="uint16" id="4"/>
+        <entry name="script_count" type="uint16" id="5"/>
+    </struct>
+
+    <struct name="scrollmap_block" version="1">
+        <entry name="layer" type="int16" id="1"/>
+        <entry name="tile_id" type="uint16" id="2"/>
+        <entry name="pos" type="scrollmap_pair" id="3"/>
+    </struct>
+    
+</metalib>

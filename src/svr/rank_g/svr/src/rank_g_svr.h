@@ -46,6 +46,7 @@ struct rank_g_svr {
     LPDRMETA m_pkg_meta_res_query;
     LPDRMETA m_pkg_meta_res_query_with_data;
     LPDRMETA m_pkg_meta_res_query_season;
+    LPDRMETA m_pkg_meta_res_query_data;
     LPDRMETA m_meta_season_saving;
     LPDRMETA m_meta_season_role_to_rank;
     

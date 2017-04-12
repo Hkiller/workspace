@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mobvista_black" >
+
+    <RelativeLayout
+        android:id="@+id/mobvista_rl_play_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp" >
+
+        <SurfaceView
+            android:id="@+id/mobvista_reward_surfaceview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/mobvista_reward_tv_sound"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/mobvista_reward_shape_progress"
+            android:gravity="center"
+            android:textColor="@color/mobvista_reward_white"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <com.mobvista.msdk.reward.view.SoundImageView
+            android:id="@+id/mobvista_reward_sound_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp" />
+
+        <LinearLayout
+            android:id="@+id/mobvista_reward_ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/mobvista_reward_big"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:id="@+id/mobvista_reward_rl_finish_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:background="@color/mobvista_reward_black_transparent" >
+
+        <com.mobvista.msdk.reward.view.RoundImageView
+            android:id="@+id/mobvista_reward_iv_icon"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/mobvista_reward_tv_appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/mobvista_reward_iv_icon"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/mobvista_reward_iv_icon"
+            android:textColor="@color/mobvista_reward_white"
+            android:textSize="14sp" />
+
+        <com.mobvista.msdk.reward.view.StarLevelView
+            android:id="@+id/mobvista_reward_ll_starLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/mobvista_reward_iv_icon"
+            android:layout_alignLeft="@id/mobvista_reward_tv_appName"
+            android:layout_below="@id/mobvista_reward_tv_appName"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@id/mobvista_reward_iv_icon" >
+        </com.mobvista.msdk.reward.view.StarLevelView>
+
+        <TextView
+            android:id="@+id/mobvista_reward_tv_cta"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/mobvista_reward_iv_icon"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/mobvista_reward_iv_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/mobvista_reward_shape_btn"
+            android:gravity="center"
+            android:text="Install Now"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/mobvista_reward_iv_finish_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/mobvista_reward_close"
+        android:visibility="gone" />
+
+</RelativeLayout>

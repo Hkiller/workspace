@@ -115,7 +115,7 @@ public:
     }
 
     void set_debug(bool b) { net_trans_task_set_debug(*this, b ? 1 : 0); }
-    void set_post_to(const char * uri, const char * data, int data_len);
+    void set_post_to(const char * uri, const char * data, size_t data_len);
     void set_get(const char * uri);
     void set_skip_data(ssize_t skip_size);
     void set_timeout(uint64_t timeout_ms);

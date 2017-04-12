@@ -42,6 +42,9 @@ void binpack_maxrects_ctx_set_span(binpack_maxrects_ctx_t ctx, uint8_t span);
 */
 int binpack_maxrects_ctx_init(binpack_maxrects_ctx_t ctx, uint32_t width, uint32_t height);
 
+uint32_t binpack_maxrects_ctx_width(binpack_maxrects_ctx_t ctx);
+uint32_t binpack_maxrects_ctx_height(binpack_maxrects_ctx_t ctx);
+    
 /* Inserts the given list of rectangles in an offline/batch mode, possibly rotated.
    @param rects The list of rectangles to insert. This vector will be destroyed in the process.
    @param dst [out] This list will contain the packed rectangles. The indices will not correspond to that of rects.

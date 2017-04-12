@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_sprite_camera_data" file="ui_sprite_camera_data.xml"/>
+
+    <!-- 控件: camera-touch -->
+    <struct name="ui_sprite_evt_camera_touch_begin" version="1">
+        <entry name="screen_pos" type="ui_sprite_camera_pair" id="1"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_camera_touch_move" version="1">
+        <entry name="old_screen_pos" type="ui_sprite_camera_pair" id="1"/>
+        <entry name="new_screen_pos" type="ui_sprite_camera_pair" id="2"/>
+        <entry name="max_speed" type="float" id="3"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_camera_touch_scale" version="1">
+        <entry name="finger_count" type="uint8" id="1"/>
+        <entry name="start_screen_pos" type="ui_sprite_camera_pair" count="4" refer="finger_count" id="2"/>
+        <entry name="curent_screen_pos" type="ui_sprite_camera_pair" count="4" refer="finger_count" id="3"/>
+        <entry name="max_speed" type="float" id="4"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_camera_touch_end" version="1">
+        <entry name="speed" type="ui_sprite_camera_pair" id="1"/>
+        <entry name="speed_reduce" type="float" id="2"/>
+        <entry name="speed_adj_min" type="float" id="3"/>
+        <entry name="speed_adj_max" type="float" id="4"/>
+    </struct>
+
+    <!-- 控件: camera-follow -->
+    <!-- 镜头跟踪对象 -->
+    <struct name="ui_sprite_evt_camera_follow_entity" version="1">
+        <entry name="entity_id" type="uint32" id="1"/>
+        <entry name="entity_name" type="string" size="64" id="2"/>
+        <entry name="pos_of_entity" type="string" size="32" id="3"/>
+        <entry name="pos_in_screen" type="ui_sprite_camera_pair" id="4"/>
+        <entry name="screen_lt" type="ui_sprite_camera_pair" id="5"/>
+        <entry name="screen_rb" type="ui_sprite_camera_pair" id="6"/>
+        <entry name="best_scale" type="float" id="7"/>
+        <entry name="max_speed" type="float" id="8"/>
+    </struct>
+
+    <!-- 控件: camera-contain -->
+    <!-- 镜头包含对象组 -->
+    <struct name="ui_sprite_evt_camera_contain_group" version="1">
+        <entry name="group_id" type="uint32" id="1"/>
+        <entry name="group_name" type="string" size="64" id="2"/>
+        <entry name="screen_lt" type="ui_sprite_camera_pair" id="5"/>
+        <entry name="screen_rb" type="ui_sprite_camera_pair" id="6"/>
+        <entry name="max_scale" type="float" id="7"/>
+        <entry name="best_scale" type="float" id="8"/>
+        <entry name="max_speed" type="float" id="9"/>
+    </struct>
+
+    <!-- 控件: camera-move -->
+    <!-- 镜头移动到对象 -->
+    <struct name="ui_sprite_evt_camera_move_to_entity" version="1">
+        <entry name="entity_id" type="uint32" id="1"/>
+        <entry name="entity_name" type="string" size="64" id="2"/>
+        <entry name="pos_of_entity" type="string" size="32" id="3"/>
+        <entry name="pos_in_screen" type="ui_sprite_camera_pair" id="4"/>
+        <entry name="scale" type="float" id="5"/>
+        <entry name="max_speed" type="float" id="6"/>
+    </struct>
+
+    <!-- 镜头移动到对象组 -->
+    <struct name="ui_sprite_evt_camera_move_to_group" version="1">
+        <entry name="group_name" type="string" size="64" id="1"/>
+        <entry name="group_screen_lt" type="ui_sprite_camera_pair" id="2"/>
+        <entry name="group_screen_rb" type="ui_sprite_camera_pair" id="3"/>
+        <entry name="scale" type="float" id="4"/>
+        <entry name="max_speed" type="float" id="5"/>
+    </struct>
+
+    <!-- 镜头设置到位置 -->
+    <struct name="ui_sprite_evt_camera_move_to_pos" version="1">
+        <entry name="pos_in_world" type="ui_sprite_camera_pair" id="1"/>
+        <entry name="pos_in_screen" type="ui_sprite_camera_pair" id="2"/>
+        <entry name="scale" type="float" id="3"/>
+        <entry name="max_speed" type="float" id="4"/>
+    </struct>
+
+    <!-- 控件: camera-shake -->
+	<!-- 镜头震动 -->
+    <struct name="ui_sprite_evt_camera_shake_to" version="1">
+    	<!-- 震动幅度 单位：米 -->
+        <entry name="amplitude" type="ui_sprite_camera_pair" id="1"/>
+        <entry name="num" type="uint32" id="2"/>
+        <entry name="duration" type="float" id="3"/>
+    </struct>
+
+    <!-- 控件: camera-scale -->
+    <struct name="ui_sprite_evt_camera_scale" version="1">
+        <entry name="scale" type="float" id="1"/>
+        <entry name="lock_entity_id" type="uint32" id="2"/>
+        <entry name="lock_entity_name" type="string" size="64" id="3"/>
+        <entry name="max_speed" type="float" id="4"/>
+    </struct>
+
+    <!-- 控件:  -->
+    <struct name="ui_sprite_evt_camera_trace_in_line" version="1">
+        <entry name="trace_type" type="string" size="32" id="1"/>
+        <entry name="pos_a_entity" type="string" size="64" id="2"/>
+        <entry name="pos_b_entity" type="string" size="64" id="3"/>
+        <entry name="screen_pos" type="ui_sprite_camera_pair" id="4"/>
+    </struct>
+
+</metalib>

@@ -101,7 +101,7 @@ void mongo_driver_topology_suitable_servers(
         }
         return;
     }
-CPE_ERROR(driver->m_em, "******************type=%d********************", driver->m_topology_type);
+
     /* Replica sets --
      * Find suitable servers based on read mode */
     if (driver->m_topology_type == mongo_topology_type_rs_no_primary || driver->m_topology_type == mongo_topology_type_rs_with_primary) {

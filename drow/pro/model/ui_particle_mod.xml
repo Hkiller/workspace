@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_common" file="ui_common.xml"/>
+
+    <macrosgroup name="ui_particle_mod_type">
+        <macro name="ui_particle_mod_type_accel_attract" value="1"/>
+        <macro name="ui_particle_mod_type_accel_damping" value="2"/>
+        <macro name="ui_particle_mod_type_accel_seed" value="3"/>
+        <macro name="ui_particle_mod_type_accel_sine" value="4"/>
+
+        <macro name="ui_particle_mod_type_color_curved" value="5"/>
+        <macro name="ui_particle_mod_type_color_curved_alpha" value="6"/>
+        <macro name="ui_particle_mod_type_color_fixed" value="7"/>
+        <macro name="ui_particle_mod_type_color_over_life" value="8"/>
+        <macro name="ui_particle_mod_type_color_seed" value="9"/>
+
+        <macro name="ui_particle_mod_type_lifetime_seed" value="10"/>
+
+        <macro name="ui_particle_mod_type_location_orbit" value="11"/>
+        <macro name="ui_particle_mod_type_location_seed" value="12"/>
+
+        <macro name="ui_particle_mod_type_rotation2d_seed" value="13"/>
+
+        <macro name="ui_particle_mod_type_size_curved_uniform" value="14"/>
+        <macro name="ui_particle_mod_type_size_curved" value="15"/>
+        <macro name="ui_particle_mod_type_size_uniform_over_life" value="16"/>
+        <macro name="ui_particle_mod_type_size_over_life" value="17"/>
+        <macro name="ui_particle_mod_type_size_seed" value="18"/>
+        <macro name="ui_particle_mod_type_size_uniform_seed" value="19"/>
+
+        <macro name="ui_particle_mod_type_texcoord_flipbook_uv" value="20"/>
+        <macro name="ui_particle_mod_type_texcoord_scroll_anim" value="21"/>
+        <macro name="ui_particle_mod_type_texcoord_tile_sub_tex" value="22"/>
+
+        <macro name="ui_particle_mod_type_uber_circle_spawn" value="23"/>
+        <macro name="ui_particle_mod_type_uber_ellipse_spawn" value="24"/>
+
+        <macro name="ui_particle_mod_type_velocity_attract" value="25"/>
+        <macro name="ui_particle_mod_type_velocity_seed" value="26"/>
+        <macro name="ui_particle_mod_type_velocity_threshold_stop" value="27"/>
+    </macrosgroup>
+    <macro name="UI_PARTICLE_MOD_TYPE_MIN" value="1"/>
+    <macro name="UI_PARTICLE_MOD_TYPE_MAX" value="28"/>
+
+    <!-- 吸引模块增强 -->
+    <macrosgroup name="ui_particle_attract_mod_type">
+        <macro name="UI_PARTICLE_ATTRACT_MOD_TYPE_BASIC" value="0"/>
+        <macro name="UI_PARTICLE_ATTRACT_MOD_TYPE_CURVED" value="1"/>
+        <macro name="UI_PARTICLE_ATTRACT_MOD_TYPE_AI_MOVE" value="2"/>
+        <macro name="UI_PARTICLE_ATTRACT_MOD_TYPE_AI_SPRING" value="3"/>
+        <macro name="UI_PARTICLE_ATTRACT_MOD_TYPE_AI_GRAVITATION" value="4"/>
+    </macrosgroup>
+
+    <struct name="ui_particle_mod_accel_attract_data_curved" version="1">
+        <entry name="power_adj_curve_id" type="uint16" id="1"/>
+    </struct>
+
+    <struct name="ui_particle_mod_accel_attract_data_ai_move" version="1">
+        <entry name="max_velocity" type="float" id="1"/>
+        <entry name="max_accel" type="float" id="2"/>
+    </struct>
+
+    <struct name="ui_particle_mod_accel_attract_data_ai_spring" version="1">
+        <entry name="K" type="float" id="1"/>
+        <entry name="max_distance" type="float" id="2"/>
+        <entry name="base_distance" type="float" id="3"/>
+    </struct>
+
+    <struct name="ui_particle_mod_accel_attract_data_ai_gravitation" version="1">
+        <entry name="G" type="float" id="1"/>
+        <entry name="max_distance" type="float" id="2"/>
+        <entry name="min_distance" type="float" id="3"/>
+    </struct>
+
+    <union name="ui_particle_mod_accel_attract_data" version="1">
+        <entry name="curved" type="ui_particle_mod_accel_attract_data_curved" id="UI_PARTICLE_ATTRACT_MOD_TYPE_CURVED"/>
+        <entry name="ai_move" type="ui_particle_mod_accel_attract_data_ai_move" id="UI_PARTICLE_ATTRACT_MOD_TYPE_AI_MOVE"/>
+        <entry name="ai_spring" type="ui_particle_mod_accel_attract_data_ai_spring" id="UI_PARTICLE_ATTRACT_MOD_TYPE_AI_SPRING"/>
+        <entry name="ai_gravitation" type="ui_particle_mod_accel_attract_data_ai_gravitation" id="UI_PARTICLE_ATTRACT_MOD_TYPE_AI_GRAVITATION"/>
+    </union>
+
+    <struct name="ui_particle_mod_accel_attract" version="1">
+        <entry name="location" type="ui_vector_3" id="1"/>
+        <entry name="power" type="float" id="2"/>
+        <entry name="kill_zone" type="float" id="3"/>
+        <entry name="is_location_local" type="uint8" id="4"/>
+        <entry name="attract_type" type="uint8" bindmacrosgroup="ui_particle_attract_mod_type" id="5"/>
+        <entry name="attract_data" type="ui_particle_mod_accel_attract_data" select="attract_type" id="6"/>
+    </struct>
+
+    <struct name="ui_particle_mod_accel_damping" version="1">
+        <entry name="size" type="float" id="1"/>
+    </struct>
+
+    <struct name="ui_particle_mod_accel_seed" version="1">
+        <entry name="min_base" type="ui_vector_3" id="1"/>
+        <entry name="max_base" type="ui_vector_3" id="2"/>
+    </struct>
+
+    <struct name="ui_particle_mod_accel_sine" version="1">
+        <entry name="base" type="ui_vector_3" id="1"/>
+        <entry name="cycle" type="float" id="2"/>
+    </struct>
+
+    <struct name="ui_particle_mod_color_curved" version="1">
+        <entry name="chanel_a_curve_id" type="uint16" id="1"/>
+        <entry name="chanel_r_curve_id" type="uint16" id="2"/>
+        <entry name="chanel_g_curve_id" type="uint16" id="3"/>
+        <entry name="chanel_b_curve_id" type="uint16" id="4"/>
+    </struct>
+
+    <struct name="ui_particle_mod_color_curved_alpha" version="1">
+        <entry name="chanel_a_curve_id" type="uint16" id="1"/>
+    </struct>
+
+    <struct name="ui_particle_mod_color_fixed" version="1">
+        <entry name="base_color" type="ui_color" id="1" defaultvalue="{ a: 1.0, r: 1.0, g: 1.0, b: 1.0 }"/>
+    </struct>
+
+    <struct name="ui_particle_mod_color_over_life" version="1">
+        <entry name="min_base_color" type="ui_color" id="1"/>
+        <entry name="max_base_color" type="ui_color" id="2"/>
+        <entry name="fade_begin_time" type="float" id="3"/>
+    </struct>
+
+    <struct name="ui_particle_mod_color_seed" version="1">
+        <entry name="min_base_color" type="ui_color" id="1"/>
+        <entry name="max_base_color" type="ui_color" id="2"/>
+    </struct>
+
+    <struct name="ui_particle_mod_lifetime_seed" version="1">
+        <entry name="min_base_time" type="float" id="1"/>
+        <entry name="max_base_time" type="float" id="2"/>
+    </struct>
+
+    <struct name="ui_particle_mod_location_orbit" version="1">
+        <entry name="orbit_x" type="float" id="1"/>
+        <entry name="orbit_y" type="float" id="2"/>
+        <entry name="orbit_rate" type="float" id="3"/>
+        <entry name="orbit_offset" type="float" id="4"/>
+    </struct>
+
+    <struct name="ui_particle_mod_location_seed" version="1">
+        <entry name="min_base_location" type="ui_vector_3" id="1"/>
+        <entry name="max_base_location" type="ui_vector_3" id="2"/>
+    </struct>
+
+    <struct name="ui_particle_mod_rotation2d_seed" version="1">
+        <entry name="min_spin_rate" type="float" id="1"/>
+        <entry name="max_spin_rate" type="float" id="2"/>
+        <entry name="min_init_spin" type="float" id="3"/>
+        <entry name="max_init_spin" type="float" id="4"/>
+    </struct>
+
+    <struct name="ui_particle_mod_size_curved" version="1">
+        <entry name="chanel_x_curve_id" type="uint16" id="1"/>
+        <entry name="chanel_y_curve_id" type="uint16" id="2"/>
+    </struct>
+
+    <struct name="ui_particle_mod_size_curved_uniform" version="1">
+        <entry name="chanel_size_curve_id" type="uint16" id="1"/>
+    </struct>
+
+    <struct name="ui_particle_mod_size_uniform_over_life" version="1">
+        <entry name="min_base_size" type="float" id="1"/>
+        <entry name="max_base_size" type="float" id="2"/>
+        <entry name="fade_begin_time" type="float" id="3"/>
+    </struct>
+
+    <struct name="ui_particle_mod_size_over_life" version="1">
+        <entry name="min_base_size" type="ui_vector_2" id="1"/>
+        <entry name="max_base_size" type="ui_vector_2" id="2"/>
+        <entry name="fade_begin_time" type="float" id="3"/>
+    </struct>
+
+    <struct name="ui_particle_mod_size_seed" version="1">
+        <entry name="min_base_size" type="ui_vector_2" id="1"/>
+        <entry name="max_base_size" type="ui_vector_2" id="2"/>
+    </struct>
+
+    <struct name="ui_particle_mod_size_uniform_seed" version="1">
+        <entry name="min_base_size" type="float" id="1"/>
+        <entry name="max_base_size" type="float" id="2"/>
+    </struct>
+
+    <struct name="ui_particle_mod_texcoord_flipbook_uv" version="1">
+        <entry name="loop" type="uint8" id="1"/>
+        <entry name="start_tile_index" type="int32" id="2"/>
+        <entry name="frame_rate" type="float" id="3"/>
+    </struct>
+
+    <struct name="ui_particle_mod_texcoord_scroll_anim" version="1">
+        <entry name="loop" type="uint8" id="1"/>
+        <entry name="speed_u" type="float" id="2"/>
+        <entry name="speed_v" type="float" id="3"/>
+    </struct>
+
+    <struct name="ui_particle_mod_texcoord_tile_sub_tex" version="1">
+        <entry name="tile_index" type="int32" id="1"/>
+    </struct>
+
+    <struct name="ui_particle_mod_uber_circle_spawn" version="1">
+        <entry name="angle_delta" type="float" id="1"/>
+        <entry name="circle_radius" type="float" id="2"/>
+        <entry name="min_radial_accel" type="float" id="3"/>
+        <entry name="max_radial_accel" type="float" id="4"/>
+        <entry name="min_tangent_accel" type="float" id="5"/>
+        <entry name="max_tangent_accel" type="float" id="6"/>
+        <entry name="min_radial_velocity" type="float" id="7"/>
+        <entry name="max_radial_velocity" type="float" id="8"/>
+        <entry name="min_arc_angle" type="float" id="9"/>
+        <entry name="max_arc_angle" type="float" id="10"/>
+        <entry name="distribute_delta" type="float" id="11"/>
+        <entry name="initial_angle" type="float" id="12"/>
+    </struct>
+
+    <struct name="ui_particle_mod_uber_ellipse_spawn" version="1">
+        <entry name="angle_delta" type="float" id="1"/>
+        <entry name="ellipse_axis_x" type="float" id="2"/>
+        <entry name="ellipse_axis_y" type="float" id="3"/>
+        <entry name="min_radial_accel" type="float" id="4"/>
+        <entry name="max_radial_accel" type="float" id="5"/>
+        <entry name="min_tangent_accel" type="float" id="6"/>
+        <entry name="max_tangent_accel" type="float" id="7"/>
+        <entry name="min_radial_velocity" type="float" id="8"/>
+        <entry name="max_radial_velocity" type="float" id="9"/>
+        <entry name="min_arc_angle" type="float" id="10"/>
+        <entry name="max_arc_angle" type="float" id="11"/>
+        <entry name="initial_angle" type="float" id="12"/>
+    </struct>
+
+    <struct name="ui_particle_mod_velocity_attract" version="1">
+        <entry name="attract_location" type="ui_vector_3" id="1"/>
+        <!-- <entry name="attract_power" type="float" id="2"/> -->
+        <entry name="power_chanel_curve_id" type="uint16" id="3"/>
+    </struct>
+
+    <struct name="ui_particle_mod_velocity_seed" version="1">
+        <entry name="min_base_velocity" type="ui_vector_3" id="1"/>
+        <entry name="max_base_velocity" type="ui_vector_3" id="2"/>
+        <entry name="min_multiplier" type="float" id="3"/>
+        <entry name="max_multiplier" type="float" id="4"/>
+    </struct>
+
+    <struct name="ui_particle_mod_velocity_threshold_stop" version="1">
+        <entry name="min_stop_threshold" type="float" id="1"/>
+        <entry name="max_stop_threshold" type="float" id="2"/>
+    </struct>
+
+    <union name="ui_particle_mod_data" version="1">
+        <!--  1 --> <entry name="accel_attract" type="ui_particle_mod_accel_attract" id="ui_particle_mod_type_accel_attract"/>
+        <!--  2 --> <entry name="accel_damping" type="ui_particle_mod_accel_damping" id="ui_particle_mod_type_accel_damping"/>
+        <!--  3 --> <entry name="accel_seed" type="ui_particle_mod_accel_seed" id="ui_particle_mod_type_accel_seed"/>
+        <!--  4 --> <entry name="accel_sine" type="ui_particle_mod_accel_sine" id="ui_particle_mod_type_accel_sine"/>
+        <!--  5 --> <entry name="color_curved" type="ui_particle_mod_color_curved" id="ui_particle_mod_type_color_curved"/>
+        <!--  6 --> <entry name="color_curved_alpha" type="ui_particle_mod_color_curved_alpha" id="ui_particle_mod_type_color_curved_alpha"/>
+        <!--  7 --> <entry name="color_fixed" type="ui_particle_mod_color_fixed" id="ui_particle_mod_type_color_fixed"/>
+        <!--  8 --> <entry name="color_over_life" type="ui_particle_mod_color_over_life" id="ui_particle_mod_type_color_over_life"/>
+        <!--  9 --> <entry name="color_seed" type="ui_particle_mod_color_seed" id="ui_particle_mod_type_color_seed"/>
+        <!-- 10 --> <entry name="lifetime_seed" type="ui_particle_mod_lifetime_seed" id="ui_particle_mod_type_lifetime_seed"/>
+        <!-- 11 --> <entry name="location_orbit" type="ui_particle_mod_location_orbit" id="ui_particle_mod_type_location_orbit"/>
+        <!-- 12 --> <entry name="location_seed" type="ui_particle_mod_location_seed" id="ui_particle_mod_type_location_seed"/>
+        <!-- 13 --> <entry name="rotation2d_seed" type="ui_particle_mod_rotation2d_seed" id="ui_particle_mod_type_rotation2d_seed"/>
+        <!-- 14 --> <entry name="size_curved_uniform" type="ui_particle_mod_size_curved_uniform" id="ui_particle_mod_type_size_curved_uniform"/>
+        <!-- 15 --> <entry name="size_curved" type="ui_particle_mod_size_curved" id="ui_particle_mod_type_size_curved"/>
+        <!-- 16 --> <entry name="size_uniform_over_life" type="ui_particle_mod_size_uniform_over_life" id="ui_particle_mod_type_size_uniform_over_life"/>
+        <!-- 17 --> <entry name="size_over_life" type="ui_particle_mod_size_over_life" id="ui_particle_mod_type_size_over_life"/>
+        <!-- 18 --> <entry name="size_seed" type="ui_particle_mod_size_seed" id="ui_particle_mod_type_size_seed"/>
+        <!-- 19 --> <entry name="size_uniform_seed" type="ui_particle_mod_size_uniform_seed" id="ui_particle_mod_type_size_uniform_seed"/>
+        <!-- 20 --> <entry name="texcoord_flipbook_uv" type="ui_particle_mod_texcoord_flipbook_uv" id="ui_particle_mod_type_texcoord_flipbook_uv"/>
+        <!-- 21 --> <entry name="texcoord_scroll_anim" type="ui_particle_mod_texcoord_scroll_anim" id="ui_particle_mod_type_texcoord_scroll_anim"/>
+        <!-- 22 --> <entry name="texcoord_tile_sub_tex" type="ui_particle_mod_texcoord_tile_sub_tex" id="ui_particle_mod_type_texcoord_tile_sub_tex"/>
+        <!-- 23 --> <entry name="uber_circle_spawn" type="ui_particle_mod_uber_circle_spawn" id="ui_particle_mod_type_uber_circle_spawn"/>
+        <!-- 24 --> <entry name="uber_ellipse_spawn" type="ui_particle_mod_uber_ellipse_spawn" id="ui_particle_mod_type_uber_ellipse_spawn"/>
+        <!-- 25 --> <entry name="velocity_attract" type="ui_particle_mod_velocity_attract" id="ui_particle_mod_type_velocity_attract"/>
+        <!-- 26 --> <entry name="velocity_seed" type="ui_particle_mod_velocity_seed" id="ui_particle_mod_type_velocity_seed"/>
+        <!-- 27 --> <entry name="velocity_threshold_stop" type="ui_particle_mod_velocity_threshold_stop" id="ui_particle_mod_type_velocity_threshold_stop"/>
+    </union>
+
+    <struct name="ui_particle_mod" version="1">
+        <entry name="type" type="uint8" bindmacrosgroup="ui_particle_mod_type" id="1"/>
+        <entry name="data" type="ui_particle_mod_data" select="type" id="2"/>
+        <entry name="begin_time" type="float" id="3"/>
+        <entry name="begin_distance" type="float" id="4"/>
+        <entry name="end_time" type="float" id="5"/>
+        <entry name="end_distance" type="float" id="6"/>
+    </struct>
+
+</metalib>

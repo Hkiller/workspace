@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="ui_sprite_2d_pair" version="1">
+        <entry name="x" type="float" id="1"/>
+        <entry name="y" type="float" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_2d_rect" version="1">
+        <entry name="lt" type="ui_sprite_2d_pair" id="1"/>
+        <entry name="rb" type="ui_sprite_2d_pair" id="2"/>
+    </struct>
+
+    <macrosgroup name="ui_sprite_2d_transform_pos_adj_type">
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_ADJ_BY_FLIP" value="1"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_ADJ_BY_SCALE" value="2"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_ADJ_BY_ANGLE" value="4"/>
+    </macrosgroup>
+    <macro name="UI_SPRITE_2D_TRANSFORM_POS_ADJ_ALL" value="7"/>
+
+    <macrosgroup name="ui_sprite_2d_transform_pos_policy">
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_ORIGIN" value="1"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_TOP_LEFT" value="2"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_TOP_CENTER" value="3"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_TOP_RIGHT" value="4"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_CENTER_LEFT" value="5"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_CENTER" value="6"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_CENTER_RIGHT" value="7"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_BOTTOM_LEFT" value="8"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_BOTTOM_CENTER" value="9"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_BOTTOM_RIGHT" value="10"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_F_TOP_LEFT" value="11"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_F_TOP_CENTER" value="12"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_F_TOP_RIGHT" value="13"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_F_CENTER_LEFT" value="14"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_F_CENTER_RIGHT" value="15"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_F_BOTTOM_LEFT" value="16"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_F_BOTTOM_CENTER" value="17"/>
+        <macro name="UI_SPRITE_2D_TRANSFORM_POS_F_BOTTOM_RIGHT" value="18"/>
+    </macrosgroup>
+
+    <struct name="ui_sprite_2d_transform_data" version="1">
+        <entry name="pos" type="ui_sprite_2d_pair" id="1"/>
+        <entry name="scale" type="ui_sprite_2d_pair" id="2"/>
+        <entry name="angle" type="float" id="3"/>
+        <entry name="flip_x" type="uint8" id="4"/>
+        <entry name="flip_y" type="uint8" id="5"/>
+        <entry name="rect" type="ui_sprite_2d_rect" id="6"/>
+    </struct>
+
+    <struct name="ui_sprite_2d_transform" version="1">
+        <entry name="transform" type="ui_sprite_2d_transform_data" id="1"/>
+    </struct>
+
+    <struct name="ui_sprite_2d_search_result" version="1">
+        <entry name="found_entity_id" type="uint32" id="1"/>
+        <entry name="found_entity_name" type="string" size="64" id="2"/>
+        <entry name="found_entity_pos" type="ui_sprite_2d_pair" id="3"/>
+    </struct>
+
+    <!-- 多边形定义 -->
+    <macrosgroup name="ui_sprite_2d_shape_type">
+        <macro name="UI_SPRITE_2D_SHAPE_BOX" value="1"/>
+        <macro name="UI_SPRITE_2D_SHAPE_CIRCLE" value="2"/>
+        <macro name="UI_SPRITE_2D_SHAPE_SECTOR" value="3"/>
+    </macrosgroup>
+
+    <struct name="ui_sprite_2d_shape_data_box" version="1">
+        <entry name="lt" type="ui_sprite_2d_pair" id="1"/>
+        <entry name="rb" type="ui_sprite_2d_pair" id="2"/>
+    </struct>
+    
+    <struct name="ui_sprite_2d_shape_data_circle" version="1">
+        <entry name="center" type="ui_sprite_2d_pair" id="1"/>
+		<entry name="center_base" type="string" size="64" id="2"/>
+        <entry name="radius" type="float" id="3"/>
+    </struct>
+ 	
+    <struct name="ui_sprite_2d_shape_data_sector" version="1">
+        <entry name="center" type="ui_sprite_2d_pair" id="1"/>
+        <entry name="center_base" type="string" size="64" id="2"/>
+        <entry name="radius" type="float" id="3"/>
+        <entry name="angle_start" type="float" id="4"/>
+        <entry name="angle_range" type="float" id="5"/>
+    </struct>
+    
+    <union name="ui_sprite_2d_shape_data" version="1">
+        <entry name="box" type="ui_sprite_2d_shape_data_box" id="UI_SPRITE_2D_SHAPE_BOX"/>
+        <entry name="circle" type="ui_sprite_2d_shape_data_circle" id="UI_SPRITE_2D_SHAPE_CIRCLE"/>
+        <entry name="sector" type="ui_sprite_2d_shape_data_sector" id="UI_SPRITE_2D_SHAPE_SECTOR"/>
+    </union>
+ 
+    <struct name="ui_sprite_2d_shape" version="1">
+        <entry name="type" type="uint8" id="1" bindmacrogroup="ui_sprite_2d_shape_type"/>
+        <entry name="data" type="ui_sprite_2d_shape_data" id="2" select="type"/>
+    </struct>
+    
+</metalib>

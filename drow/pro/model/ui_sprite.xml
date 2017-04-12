@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_texture_ref" file="ui_texture_ref.xml"/>
+
+    <macrosgroup name="ui_frame_img_grid_pos">
+        <macro name="ui_frame_img_grid_pos_lt" value="0"/> <!-- 左上 -->
+        <macro name="ui_frame_img_grid_pos_ct" value="1"/> <!-- 上边 -->
+        <macro name="ui_frame_img_grid_pos_rt" value="2"/> <!-- 右上 -->
+        <macro name="ui_frame_img_grid_pos_lc" value="3"/> <!-- 左边 -->
+        <macro name="ui_frame_img_grid_pos_cc" value="4"/> <!-- 中间 -->
+        <macro name="ui_frame_img_grid_pos_rc" value="5"/> <!-- 右边 -->
+        <macro name="ui_frame_img_grid_pos_lb" value="6"/> <!-- 左下 -->
+        <macro name="ui_frame_img_grid_pos_cb" value="7"/> <!-- 下边 -->
+        <macro name="ui_frame_img_grid_pos_rb" value="8"/> <!-- 右下  -->
+    </macrosgroup>
+    <macro name="ui_frame_img_grid_pos_count" value="9"/> <!-- 个数 -->    
+
+    <struct name="ui_frame" version="1">
+        <entry name="id" type="uint32" id="1"/>
+        <entry name="name" type="string" size="UI_NAME_LEN" id="2"/>
+        <entry name="bounding" type="ui_rect" id="3"/>
+        <entry name="bound_custom" type="uint8" id="4"/>
+        <entry name="accept_scale" type="uint8" id="5"/>
+    </struct>
+    
+</metalib>

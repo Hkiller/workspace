@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="scrollmap_common" file="scrollmap_common.xml"/>
+
+    <!-- 脚本触发条件 -->
+    <macrosgroup name="scrollmap_script_trigger_type">
+        <macro name="SCROLLMAP_SCRIPT_TRIGGER_TYPE_NONE" value="0"/>
+        <macro name="SCROLLMAP_SCRIPT_TRIGGER_TYPE_NO_TEAM" value="1"/>
+        <macro name="SCROLLMAP_SCRIPT_TRIGGER_TYPE_HAVE_TEAM" value="2"/>
+        <macro name="SCROLLMAP_SCRIPT_TRIGGER_TYPE_NO_OBJ" value="3"/>
+        <macro name="SCROLLMAP_SCRIPT_TRIGGER_TYPE_HAVE_OBJ" value="4"/>
+    </macrosgroup>
+
+    <struct name="scrollmap_script_trigger_data_with_name" version="1">
+        <entry name="name_prefix" type="string" size="32" id="1"/>
+    </struct>
+
+    <union name="scrollmap_script_trigger_data" version="1">
+        <entry name="no_team" type="scrollmap_script_trigger_data_with_name" id="SCROLLMAP_SCRIPT_TRIGGER_TYPE_NO_TEAM"/>
+        <entry name="have_team" type="scrollmap_script_trigger_data_with_name" id="SCROLLMAP_SCRIPT_TRIGGER_TYPE_HAVE_TEAM"/>
+        <entry name="no_obj" type="scrollmap_script_trigger_data_with_name" id="SCROLLMAP_SCRIPT_TRIGGER_TYPE_NO_OBJ"/>
+        <entry name="have_obj" type="scrollmap_script_trigger_data_with_name" id="SCROLLMAP_SCRIPT_TRIGGER_TYPE_HAVE_OBJ"/>
+    </union>
+
+    <struct name="scrollmap_script_trigger" version="1">
+        <entry name="type" type="uint8" id="1" bindmacrosgroup="scrollmap_script_trigger_type"/>
+        <entry name="data" type="scrollmap_script_trigger_data" select="type" id="2"/>
+    </struct>
+    
+    <!-- 脚本完成条件 -->
+    <macrosgroup name="scrollmap_script_complete_type">
+        <macro name="SCROLLMAP_SCRIPT_COMPLETE_TYPE_NONE" value="0"/>
+        <macro name="SCROLLMAP_SCRIPT_COMPLETE_TYPE_BY_DURATION" value="1"/>
+        <macro name="SCROLLMAP_SCRIPT_COMPLETE_TYPE_BY_DISTANCE" value="2"/>
+        <macro name="SCROLLMAP_SCRIPT_COMPLETE_TYPE_BY_TRIGGER" value="3"/>
+    </macrosgroup>
+
+    <struct name="scrollmap_script_complete_data_by_duration" version="1">
+        <entry name="duration" type="float" id="1"/>
+    </struct>
+
+    <struct name="scrollmap_script_complete_data_by_distance" version="1">
+        <entry name="distance" type="float" id="1"/>
+    </struct>
+
+    <union name="scrollmap_script_complete_data" version="1">
+        <entry name="by_duration" type="scrollmap_script_complete_data_by_duration" id="SCROLLMAP_SCRIPT_COMPLETE_TYPE_BY_DURATION"/>
+        <entry name="by_distance" type="scrollmap_script_complete_data_by_distance" id="SCROLLMAP_SCRIPT_COMPLETE_TYPE_BY_DISTANCE"/>
+        <entry name="by_trigger" type="scrollmap_script_trigger" id="SCROLLMAP_SCRIPT_COMPLETE_TYPE_BY_TRIGGER"/>
+    </union>
+
+    <struct name="scrollmap_script_complete" version="1">
+        <entry name="type" type="uint8" id="1" bindmacrosgroup="scrollmap_script_complete_type"/>
+        <entry name="data" type="scrollmap_script_complete_data" select="type" id="2"/>
+    </struct>
+
+    <!-- 脚本功能 -->
+    <macrosgroup name="scrollmap_script_type">
+        <macro name="SCROLLMAP_SCRIPT_TYPE_SCENE_ADJ_SPEED" value="1"/>
+        <macro name="SCROLLMAP_SCRIPT_TYPE_LAYER_LOAD" value="2"/>
+        <macro name="SCROLLMAP_SCRIPT_TYPE_LAYER_LOOP" value="3"/>
+        <macro name="SCROLLMAP_SCRIPT_TYPE_LAYER_GROUP_LOOP" value="4"/>
+        <macro name="SCROLLMAP_SCRIPT_TYPE_LAYER_CANCEL_LOOP" value="5"/>
+        <macro name="SCROLLMAP_SCRIPT_TYPE_LAYER_ADJ_SPEED" value="6"/>
+        <macro name="SCROLLMAP_SCRIPT_TYPE_GEN_LAND_OBJ" value="7"/>
+        <macro name="SCROLLMAP_SCRIPT_TYPE_GEN_FREE_OBJ" value="8"/>
+        <macro name="SCROLLMAP_SCRIPT_TYPE_GEN_TEAM" value="9"/>
+        <macro name="SCROLLMAP_SCRIPT_TYPE_CUSTOM" value="20"/>
+    </macrosgroup>
+
+    <!--     场景速度设定 -->
+    <struct name="scrollmap_script_data_scene_adj_speed" version="1">
+        <entry name="speed" type="float" id="1"/>
+    </struct>
+
+    <!--     层加载 -->
+    <struct name="scrollmap_script_data_layer_load" version="1">
+        <entry name="res" type="string" size="64" id="1"/>
+    </struct>
+
+    <!--     层区段循环 -->
+    <struct name="scrollmap_script_data_layer_loop" version="1">
+        <entry name="loop_distance" type="float" id="1"/>
+        <entry name="loop_count" type="uint32" id="2"/>
+    </struct>
+
+    <!--     层区段分组循环 -->
+    <struct name="scrollmap_script_data_layer_group_loop" version="1">
+        <entry name="layer_prefix" type="string" size="64" id="1"/>
+        <entry name="loop_distance" type="float" id="2"/>
+        <entry name="loop_count" type="uint32" id="3"/>
+    </struct>
+
+    <!--     层相对速度挑战 -->
+    <struct name="scrollmap_script_data_layer_adj_speed" version="1">
+        <entry name="adj_speed" type="float" id="1"/>
+    </struct>
+
+    <!--     生成一组飞机 -->
+    <struct name="scrollmap_script_data_gen_team" version="1">
+        <entry name="res" type="string" size="64" id="1"/>
+    </struct>
+
+    <!--     生成一个地面对象 -->
+    <struct name="scrollmap_script_data_gen_land_obj" version="1">
+        <entry name="obj_type" type="string" size="64" id="1"/>
+    </struct>
+
+    <!--     生成一个自由对象（不受场景速度控制) -->
+    <struct name="scrollmap_script_data_gen_free_obj" version="1">
+        <entry name="obj_type" type="string" size="64" id="1"/>
+    </struct>
+
+    <!--     生成一个自由对象（不受场景速度控制) -->
+    <struct name="scrollmap_script_data_custom" version="1">
+        <entry name="script" type="string" size="32" id="1"/>
+        <entry name="args" type="string" size="128" id="2"/>
+    </struct>
+    
+    <union name="scrollmap_script_data" version="1">
+        <entry name="scene_adj_speed" type="scrollmap_script_data_scene_adj_speed" id="SCROLLMAP_SCRIPT_TYPE_SCENE_ADJ_SPEED"/>
+        <entry name="layer_load" type="scrollmap_script_data_layer_load" id="SCROLLMAP_SCRIPT_TYPE_LAYER_LOAD"/>
+        <entry name="layer_loop" type="scrollmap_script_data_layer_loop" id="SCROLLMAP_SCRIPT_TYPE_LAYER_LOOP"/>
+        <entry name="layer_group_loop" type="scrollmap_script_data_layer_group_loop" id="SCROLLMAP_SCRIPT_TYPE_LAYER_GROUP_LOOP"/>
+        <entry name="layer_adj_speed" type="scrollmap_script_data_layer_adj_speed" id="SCROLLMAP_SCRIPT_TYPE_LAYER_ADJ_SPEED"/>
+        <entry name="gen_land_obj" type="scrollmap_script_data_gen_land_obj" id="SCROLLMAP_SCRIPT_TYPE_GEN_LAND_OBJ"/>
+        <entry name="gen_free_obj" type="scrollmap_script_data_gen_free_obj" id="SCROLLMAP_SCRIPT_TYPE_GEN_FREE_OBJ"/>
+        <entry name="gen_team" type="scrollmap_script_data_gen_team" id="SCROLLMAP_SCRIPT_TYPE_GEN_TEAM"/>
+        <entry name="custom" type="scrollmap_script_data_custom" id="SCROLLMAP_SCRIPT_TYPE_CUSTOM"/>
+    </union>
+    
+    <!-- 脚本数据总定义 --> 
+    <struct name="scrollmap_script" version="1">
+        <entry name="layer" type="int16" id="1"/>
+        <entry name="trigger_screen_pos_y" type="int16" id="2"/>
+        <entry name="logic_pos" type="scrollmap_pair" id="3"/>
+        <entry name="origin_pos" type="scrollmap_pair" id="4"/>
+        <entry name="repeatable" type="uint8" id="5"/>
+        <entry name="script_type" type="uint8" id="6"/>
+        <entry name="script_data" type="scrollmap_script_data" select="script_type" id="7"/>
+        <entry name="complete_condition" type="scrollmap_script_complete" id="8"/>
+        <entry name="trigger" type="scrollmap_script_trigger" id="9"/>
+        <entry name="trigger_delay" type="float" id="10"/>
+        <entry name="condition" type="string" size="64" id="11"/>
+    </struct>
+    
+</metalib>
+

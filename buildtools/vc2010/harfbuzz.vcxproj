@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-blob.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-buffer.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-common.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-deprecated.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-face.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-font.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-ft.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-set.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-shape-plan.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-shape.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-unicode.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-version.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\src\hb-ucdn\ucdn.h" />
+    <ClInclude Include="..\..\3rdTools\harfbuzz\src\hb-ucdn\unicodedata_db.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-atomic-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-buffer-deserialize-json.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-buffer-deserialize-text.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-buffer-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-cache-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-face-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-font-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-mutex-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-open-file-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-open-type-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-set-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-shape-plan-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-shaper-impl-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-shaper-list.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-shaper-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-unicode-private.hh" />
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-utf-private.hh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-blob.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-buffer-serialize.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-buffer.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-common.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-face.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-fallback-shape.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-font.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-ft.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-set.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-shape-plan.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-shape.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-shaper.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-ucdn.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-ucdn\ucdn.c" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-unicode.cc" />
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-warning.cc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B93F0EAA-020E-44CE-B16E-C41166D7E9FC}</ProjectGuid>
+    <RootNamespace>c-ares</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\3rdTools\freetype\include;..\..\3rdTools\freetype\include\freetype;..\..\3rdTools\harfbuzz\include;..\..\3rdTools\harfbuzz\src;..\..\3rdTools\harfbuzz\src\win32;..\..\3rdTools\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4819;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\3rdTools\freetype\include;..\..\3rdTools\freetype\include\freetype;..\..\3rdTools\harfbuzz\include;..\..\3rdTools\harfbuzz\src;..\..\3rdTools\harfbuzz\src\win32;..\..\3rdTools\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_CONFIG_H;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4819;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

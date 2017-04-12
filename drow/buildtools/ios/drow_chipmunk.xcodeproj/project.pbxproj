@@ -1,0 +1,1859 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A4DFD02E1AC97F9D00D6CCB7 /* UIPopupPage.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A4DFD02C1AC97F9D00D6CCB7 /* UIPopupPage.hpp */; };
+		C9024BBF1A221E0C00CCF478 /* plugin_chipmunk_env.c in Sources */ = {isa = PBXBuildFile; fileRef = C9024BBA1A221E0C00CCF478 /* plugin_chipmunk_env.c */; };
+		C9024BC01A221E0C00CCF478 /* plugin_chipmunk_env_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C9024BBB1A221E0C00CCF478 /* plugin_chipmunk_env_i.h */; };
+		C9024BC11A221E0C00CCF478 /* plugin_chipmunk_module.c in Sources */ = {isa = PBXBuildFile; fileRef = C9024BBC1A221E0C00CCF478 /* plugin_chipmunk_module.c */; };
+		C9024BC21A221E0C00CCF478 /* plugin_chipmunk_module_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C9024BBD1A221E0C00CCF478 /* plugin_chipmunk_module_i.h */; };
+		C9024BDE1A221E5D00CCF478 /* plugin_chipmunk_env.h in Headers */ = {isa = PBXBuildFile; fileRef = C9024BDB1A221E5D00CCF478 /* plugin_chipmunk_env.h */; };
+		C9024BDF1A221E5D00CCF478 /* plugin_chipmunk_module.h in Headers */ = {isa = PBXBuildFile; fileRef = C9024BDC1A221E5D00CCF478 /* plugin_chipmunk_module.h */; };
+		C9024BE01A221E5D00CCF478 /* plugin_chipmunk_types.h in Headers */ = {isa = PBXBuildFile; fileRef = C9024BDD1A221E5D00CCF478 /* plugin_chipmunk_types.h */; };
+		C91225171A8AE0A400C40A01 /* plugin_chipmunk_data_constraint_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C91225151A8AE0A400C40A01 /* plugin_chipmunk_data_constraint_i.h */; };
+		C91225181A8AE0A400C40A01 /* plugin_chipmunk_data_constraint.c in Sources */ = {isa = PBXBuildFile; fileRef = C91225161A8AE0A400C40A01 /* plugin_chipmunk_data_constraint.c */; };
+		C91225321A8AE0D900C40A01 /* plugin_chipmunk_data_body.h in Headers */ = {isa = PBXBuildFile; fileRef = C912252D1A8AE0D900C40A01 /* plugin_chipmunk_data_body.h */; };
+		C91225331A8AE0D900C40A01 /* plugin_chipmunk_data_constraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C912252E1A8AE0D900C40A01 /* plugin_chipmunk_data_constraint.h */; };
+		C91225341A8AE0D900C40A01 /* plugin_chipmunk_data_fixture.h in Headers */ = {isa = PBXBuildFile; fileRef = C912252F1A8AE0D900C40A01 /* plugin_chipmunk_data_fixture.h */; };
+		C91225351A8AE0D900C40A01 /* plugin_chipmunk_data_polygon_node.h in Headers */ = {isa = PBXBuildFile; fileRef = C91225301A8AE0D900C40A01 /* plugin_chipmunk_data_polygon_node.h */; };
+		C91225361A8AE0D900C40A01 /* plugin_chipmunk_data_scene.h in Headers */ = {isa = PBXBuildFile; fileRef = C91225311A8AE0D900C40A01 /* plugin_chipmunk_data_scene.h */; };
+		C92A172E1DF7B50E00F9E231 /* meta_traits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C92A172B1DF7B50E00F9E231 /* meta_traits.cpp */; };
+		C92A172F1DF7B50E00F9E231 /* metalib.c in Sources */ = {isa = PBXBuildFile; fileRef = C92A172C1DF7B50E00F9E231 /* metalib.c */; };
+		C9436E6C1DF5B14B00E87359 /* chipmunk_common.h in Headers */ = {isa = PBXBuildFile; fileRef = C9436E671DF5B14B00E87359 /* chipmunk_common.h */; };
+		C9436E6D1DF5B14B00E87359 /* chipmunk_info.h in Headers */ = {isa = PBXBuildFile; fileRef = C9436E681DF5B14B00E87359 /* chipmunk_info.h */; };
+		C9436E6E1DF5B14B00E87359 /* meta_traits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9436E691DF5B14B00E87359 /* meta_traits.cpp */; };
+		C9436E6F1DF5B14B00E87359 /* metalib.c in Sources */ = {isa = PBXBuildFile; fileRef = C9436E6A1DF5B14B00E87359 /* metalib.c */; };
+		C9436E771DF5B1A500E87359 /* meta_traits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9436E721DF5B1A500E87359 /* meta_traits.cpp */; };
+		C9436E781DF5B1A500E87359 /* metalib.c in Sources */ = {isa = PBXBuildFile; fileRef = C9436E731DF5B1A500E87359 /* metalib.c */; };
+		C9436E791DF5B1A500E87359 /* ui_sprite_chipmunk_data.h in Headers */ = {isa = PBXBuildFile; fileRef = C9436E741DF5B1A500E87359 /* ui_sprite_chipmunk_data.h */; };
+		C9436E7A1DF5B1A500E87359 /* ui_sprite_chipmunk_evt.h in Headers */ = {isa = PBXBuildFile; fileRef = C9436E751DF5B1A500E87359 /* ui_sprite_chipmunk_evt.h */; };
+		C95A244B1DBC918F0019BA7F /* ui_sprite_barrage_barrage.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A21931DBC918E0019BA7F /* ui_sprite_barrage_barrage.c */; };
+		C95A244C1DBC918F0019BA7F /* ui_sprite_barrage_barrage_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A21941DBC918E0019BA7F /* ui_sprite_barrage_barrage_i.h */; };
+		C95A244D1DBC918F0019BA7F /* ui_sprite_barrage_clear_bullets.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A21951DBC918E0019BA7F /* ui_sprite_barrage_clear_bullets.c */; };
+		C95A244E1DBC918F0019BA7F /* ui_sprite_barrage_clear_bullets_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A21961DBC918E0019BA7F /* ui_sprite_barrage_clear_bullets_i.h */; };
+		C95A244F1DBC918F0019BA7F /* ui_sprite_barrage_enable_emitter.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A21971DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter.c */; };
+		C95A24501DBC918F0019BA7F /* ui_sprite_barrage_enable_emitter_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A21981DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter_i.h */; };
+		C95A24511DBC918F0019BA7F /* ui_sprite_barrage_enable_emitter_random.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A21991DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter_random.c */; };
+		C95A24521DBC918F0019BA7F /* ui_sprite_barrage_enable_emitter_random_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A219A1DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter_random_i.h */; };
+		C95A24531DBC918F0019BA7F /* ui_sprite_barrage_enable_seq.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A219B1DBC918E0019BA7F /* ui_sprite_barrage_enable_seq.c */; };
+		C95A24541DBC918F0019BA7F /* ui_sprite_barrage_enable_seq_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A219C1DBC918E0019BA7F /* ui_sprite_barrage_enable_seq_i.h */; };
+		C95A24551DBC918F0019BA7F /* ui_sprite_barrage_env.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A219D1DBC918E0019BA7F /* ui_sprite_barrage_env.c */; };
+		C95A24561DBC918F0019BA7F /* ui_sprite_barrage_env_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A219E1DBC918E0019BA7F /* ui_sprite_barrage_env_i.h */; };
+		C95A24571DBC918F0019BA7F /* ui_sprite_barrage_env_load.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A219F1DBC918E0019BA7F /* ui_sprite_barrage_env_load.c */; };
+		C95A24581DBC918F0019BA7F /* ui_sprite_barrage_mask.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A21A01DBC918E0019BA7F /* ui_sprite_barrage_mask.c */; };
+		C95A24591DBC918F0019BA7F /* ui_sprite_barrage_mask_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A21A11DBC918E0019BA7F /* ui_sprite_barrage_mask_i.h */; };
+		C95A245A1DBC918F0019BA7F /* ui_sprite_barrage_module.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A21A21DBC918E0019BA7F /* ui_sprite_barrage_module.c */; };
+		C95A245B1DBC918F0019BA7F /* ui_sprite_barrage_module_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A21A31DBC918E0019BA7F /* ui_sprite_barrage_module_i.h */; };
+		C95A245C1DBC918F0019BA7F /* ui_sprite_barrage_obj.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A21A41DBC918E0019BA7F /* ui_sprite_barrage_obj.c */; };
+		C95A245D1DBC918F0019BA7F /* ui_sprite_barrage_obj_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A21A51DBC918E0019BA7F /* ui_sprite_barrage_obj_i.h */; };
+		C95A245E1DBC918F0019BA7F /* ui_sprite_barrage_pause_emitter.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A21A61DBC918E0019BA7F /* ui_sprite_barrage_pause_emitter.c */; };
+		C95A245F1DBC918F0019BA7F /* ui_sprite_barrage_pause_emitter_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A21A71DBC918E0019BA7F /* ui_sprite_barrage_pause_emitter_i.h */; };
+		C95A24601DBC918F0019BA7F /* ui_sprite_barrage_render_creator.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A21A81DBC918E0019BA7F /* ui_sprite_barrage_render_creator.c */; };
+		C95A24611DBC918F0019BA7F /* ui_sprite_barrage_render_creator_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A21A91DBC918E0019BA7F /* ui_sprite_barrage_render_creator_i.h */; };
+		C95A24B21DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22091DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity.c */; };
+		C95A24B31DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A220A1DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity_i.h */; };
+		C95A24B41DBC918F0019BA7F /* ui_sprite_chipmunk_env.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A220B1DBC918F0019BA7F /* ui_sprite_chipmunk_env.c */; };
+		C95A24B51DBC918F0019BA7F /* ui_sprite_chipmunk_env_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A220C1DBC918F0019BA7F /* ui_sprite_chipmunk_env_i.h */; };
+		C95A24B61DBC918F0019BA7F /* ui_sprite_chipmunk_env_load.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A220D1DBC918F0019BA7F /* ui_sprite_chipmunk_env_load.c */; };
+		C95A24B71DBC918F0019BA7F /* ui_sprite_chipmunk_env_query.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A220E1DBC918F0019BA7F /* ui_sprite_chipmunk_env_query.c */; };
+		C95A24B81DBC918F0019BA7F /* ui_sprite_chipmunk_env_touch.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A220F1DBC918F0019BA7F /* ui_sprite_chipmunk_env_touch.c */; };
+		C95A24B91DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22101DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.c */; };
+		C95A24BA1DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22111DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.h */; };
+		C95A24BB1DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22121DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator.c */; };
+		C95A24BC1DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22131DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator_i.h */; };
+		C95A24BD1DBC918F0019BA7F /* ui_sprite_chipmunk_module.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22141DBC918F0019BA7F /* ui_sprite_chipmunk_module.c */; };
+		C95A24BE1DBC918F0019BA7F /* ui_sprite_chipmunk_module_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22151DBC918F0019BA7F /* ui_sprite_chipmunk_module_i.h */; };
+		C95A24BF1DBC918F0019BA7F /* ui_sprite_chipmunk_monitor.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22161DBC918F0019BA7F /* ui_sprite_chipmunk_monitor.c */; };
+		C95A24C01DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22171DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding.c */; };
+		C95A24C11DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22181DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding_i.h */; };
+		C95A24C21DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22191DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_i.h */; };
+		C95A24C31DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A221A1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity.c */; };
+		C95A24C41DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_gravitation.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A221B1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_gravitation.c */; };
+		C95A24C51DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A221C1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_i.h */; };
+		C95A24C61DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_move.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A221D1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_move.c */; };
+		C95A24C71DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_spring.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A221E1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_spring.c */; };
+		C95A24C81DBC918F0019BA7F /* ui_sprite_chipmunk_obj.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A221F1DBC918F0019BA7F /* ui_sprite_chipmunk_obj.c */; };
+		C95A24C91DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22201DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body.c */; };
+		C95A24CA1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22211DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group.c */; };
+		C95A24CB1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22221DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group_i.h */; };
+		C95A24CC1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22231DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_i.h */; };
+		C95A24CD1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22241DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint.c */; };
+		C95A24CE1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22251DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint_i.h */; };
+		C95A24CF1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22261DBC918F0019BA7F /* ui_sprite_chipmunk_obj_i.h */; };
+		C95A24D01DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22271DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load.c */; };
+		C95A24D11DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22281DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.c */; };
+		C95A24D21DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22291DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.h */; };
+		C95A24D31DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_tree.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A222A1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_tree.c */; };
+		C95A24D41DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A222B1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group.c */; };
+		C95A24D51DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A222C1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group_i.h */; };
+		C95A24D61DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A222D1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape.c */; };
+		C95A24D71DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A222E1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group.c */; };
+		C95A24D81DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A222F1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group_i.h */; };
+		C95A24D91DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22301DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_i.h */; };
+		C95A24DA1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22311DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator.c */; };
+		C95A24DB1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22321DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator_i.h */; };
+		C95A24DC1DBC918F0019BA7F /* ui_sprite_chipmunk_on_click.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22331DBC918F0019BA7F /* ui_sprite_chipmunk_on_click.c */; };
+		C95A24DD1DBC918F0019BA7F /* ui_sprite_chipmunk_on_click_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22341DBC918F0019BA7F /* ui_sprite_chipmunk_on_click_i.h */; };
+		C95A24DE1DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22351DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision.c */; };
+		C95A24DF1DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22361DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision_i.h */; };
+		C95A24E01DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22371DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator.c */; };
+		C95A24E11DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22381DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator_i.h */; };
+		C95A24E21DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22391DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding.c */; };
+		C95A24E31DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A223A1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding_i.h */; };
+		C95A24E41DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A223B1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser.c */; };
+		C95A24E51DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A223C1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser_i.h */; };
+		C95A24E61DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A223D1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace.c */; };
+		C95A24E71DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A223E1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace_i.h */; };
+		C95A24E81DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A223F1DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle.c */; };
+		C95A24E91DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22401DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle_i.h */; };
+		C95A24EA1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22411DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity.c */; };
+		C95A24EB1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22421DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity_i.h */; };
+		C95A24EC1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22431DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope.c */; };
+		C95A24ED1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22441DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_i.h */; };
+		C95A24EE1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22451DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render.c */; };
+		C95A24EF1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22461DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator.c */; };
+		C95A24F01DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22471DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator_i.h */; };
+		C95A24F11DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22481DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_i.h */; };
+		C95A24F21DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22491DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision.c */; };
+		C95A24F31DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A224A1DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision_i.h */; };
+		C95A24F41DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A224B1DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel.c */; };
+		C95A24F51DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A224C1DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel_i.h */; };
+		C95A24F61DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A224D1DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor.c */; };
+		C95A24F71DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_gravitation.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A224E1DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_gravitation.c */; };
+		C95A24F81DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A224F1DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_i.h */; };
+		C95A24F91DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_spring.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22501DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_spring.c */; };
+		C95A24FA1DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22511DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary.c */; };
+		C95A24FB1DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22521DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary_i.h */; };
+		C95A24FC1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22531DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision.c */; };
+		C95A24FD1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22541DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body.c */; };
+		C95A24FE1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22551DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body_i.h */; };
+		C95A24FF1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22561DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_i.h */; };
+		C95A25001DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_load.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22571DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_load.c */; };
+		C95A25011DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22581DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape.c */; };
+		C95A25021DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22591DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape_i.h */; };
+		C95A25031DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A225A1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src.c */; };
+		C95A25041DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A225B1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src_i.h */; };
+		C95A25051DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A225C1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint.c */; };
+		C95A25061DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A225D1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_i.h */; };
+		C95A25071DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_info.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A225E1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_info.c */; };
+		C95A25081DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_load.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A225F1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_load.c */; };
+		C95A25091DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22601DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping.c */; };
+		C95A250A1DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22611DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping_i.h */; };
+		C95A250B1DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22621DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity.c */; };
+		C95A250C1DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22631DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity_i.h */; };
+		C95A250D1DBC918F0019BA7F /* ui_sprite_chipmunk_with_group.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22641DBC918F0019BA7F /* ui_sprite_chipmunk_with_group.c */; };
+		C95A250E1DBC918F0019BA7F /* ui_sprite_chipmunk_with_group_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22651DBC918F0019BA7F /* ui_sprite_chipmunk_with_group_i.h */; };
+		C95A25781DBC91900019BA7F /* ui_sprite_particle_chipmunk_body.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22E51DBC918F0019BA7F /* ui_sprite_particle_chipmunk_body.c */; };
+		C95A25791DBC91900019BA7F /* ui_sprite_particle_chipmunk_body_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22E61DBC918F0019BA7F /* ui_sprite_particle_chipmunk_body_i.h */; };
+		C95A257A1DBC91900019BA7F /* ui_sprite_particle_chipmunk_env.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22E71DBC918F0019BA7F /* ui_sprite_particle_chipmunk_env.c */; };
+		C95A257B1DBC91900019BA7F /* ui_sprite_particle_chipmunk_env_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22E81DBC918F0019BA7F /* ui_sprite_particle_chipmunk_env_i.h */; };
+		C95A257C1DBC91900019BA7F /* ui_sprite_particle_chipmunk_module.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22E91DBC918F0019BA7F /* ui_sprite_particle_chipmunk_module.c */; };
+		C95A257D1DBC91900019BA7F /* ui_sprite_particle_chipmunk_module_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22EA1DBC918F0019BA7F /* ui_sprite_particle_chipmunk_module_i.h */; };
+		C95A257E1DBC91900019BA7F /* ui_sprite_particle_chipmunk_with_collision.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A22EB1DBC918F0019BA7F /* ui_sprite_particle_chipmunk_with_collision.c */; };
+		C95A257F1DBC91900019BA7F /* ui_sprite_particle_chipmunk_with_collision_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A22EC1DBC918F0019BA7F /* ui_sprite_particle_chipmunk_with_collision_i.h */; };
+		C95A25E81DBC91900019BA7F /* ui_sprite_spine_chipmunk_body.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A23631DBC918F0019BA7F /* ui_sprite_spine_chipmunk_body.c */; };
+		C95A25E91DBC91900019BA7F /* ui_sprite_spine_chipmunk_body_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A23641DBC918F0019BA7F /* ui_sprite_spine_chipmunk_body_i.h */; };
+		C95A25EA1DBC91900019BA7F /* ui_sprite_spine_chipmunk_module.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A23651DBC918F0019BA7F /* ui_sprite_spine_chipmunk_module.c */; };
+		C95A25EB1DBC91900019BA7F /* ui_sprite_spine_chipmunk_module_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A23661DBC918F0019BA7F /* ui_sprite_spine_chipmunk_module_i.h */; };
+		C95A25EC1DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_collision.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A23671DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_collision.c */; };
+		C95A25ED1DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_collision_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A23681DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_collision_i.h */; };
+		C95A25EE1DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A23691DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri.c */; };
+		C95A25EF1DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_action.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A236A1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_action.c */; };
+		C95A25F01DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A236B1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding.c */; };
+		C95A25F11DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A236C1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding_i.h */; };
+		C95A25F21DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_condition.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A236D1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_condition.c */; };
+		C95A25F31DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A236E1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_i.h */; };
+		C95A25F41DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_trigger.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A236F1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_trigger.c */; };
+		C95A268D1DBC91BF0019BA7F /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = C95A26681DBC91BF0019BA7F /* makefile */; };
+		C95A268E1DBC91BF0019BA7F /* plugin_barrage_barrage.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26691DBC91BF0019BA7F /* plugin_barrage_barrage.c */; };
+		C95A268F1DBC91BF0019BA7F /* plugin_barrage_barrage_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A266A1DBC91BF0019BA7F /* plugin_barrage_barrage_i.h */; };
+		C95A26901DBC91BF0019BA7F /* plugin_barrage_bullet.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A266B1DBC91BF0019BA7F /* plugin_barrage_bullet.c */; };
+		C95A26911DBC91BF0019BA7F /* plugin_barrage_bullet_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A266C1DBC91BF0019BA7F /* plugin_barrage_bullet_i.h */; };
+		C95A26921DBC91BF0019BA7F /* plugin_barrage_bullet_proto.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A266D1DBC91BF0019BA7F /* plugin_barrage_bullet_proto.c */; };
+		C95A26931DBC91BF0019BA7F /* plugin_barrage_bullet_proto_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A266E1DBC91BF0019BA7F /* plugin_barrage_bullet_proto_i.h */; };
+		C95A26941DBC91BF0019BA7F /* plugin_barrage_bullet_trigger.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A266F1DBC91BF0019BA7F /* plugin_barrage_bullet_trigger.c */; };
+		C95A26951DBC91BF0019BA7F /* plugin_barrage_data.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26701DBC91BF0019BA7F /* plugin_barrage_data.c */; };
+		C95A26961DBC91BF0019BA7F /* plugin_barrage_data_barrage.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26711DBC91BF0019BA7F /* plugin_barrage_data_barrage.c */; };
+		C95A26971DBC91BF0019BA7F /* plugin_barrage_data_barrage_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26721DBC91BF0019BA7F /* plugin_barrage_data_barrage_i.h */; };
+		C95A26981DBC91BF0019BA7F /* plugin_barrage_data_bullet_trigger.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26731DBC91BF0019BA7F /* plugin_barrage_data_bullet_trigger.c */; };
+		C95A26991DBC91BF0019BA7F /* plugin_barrage_data_emitter.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26741DBC91BF0019BA7F /* plugin_barrage_data_emitter.c */; };
+		C95A269A1DBC91BF0019BA7F /* plugin_barrage_data_emitter_bin.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26751DBC91BF0019BA7F /* plugin_barrage_data_emitter_bin.c */; };
+		C95A269B1DBC91BF0019BA7F /* plugin_barrage_data_emitter_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26761DBC91BF0019BA7F /* plugin_barrage_data_emitter_i.h */; };
+		C95A269C1DBC91BF0019BA7F /* plugin_barrage_data_emitter_trigger.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26771DBC91BF0019BA7F /* plugin_barrage_data_emitter_trigger.c */; };
+		C95A269D1DBC91BF0019BA7F /* plugin_barrage_data_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26781DBC91BF0019BA7F /* plugin_barrage_data_i.h */; };
+		C95A269E1DBC91BF0019BA7F /* plugin_barrage_emitter.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26791DBC91BF0019BA7F /* plugin_barrage_emitter.c */; };
+		C95A269F1DBC91BF0019BA7F /* plugin_barrage_emitter_do.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A267A1DBC91BF0019BA7F /* plugin_barrage_emitter_do.c */; };
+		C95A26A01DBC91BF0019BA7F /* plugin_barrage_emitter_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A267B1DBC91BF0019BA7F /* plugin_barrage_emitter_i.h */; };
+		C95A26A11DBC91BF0019BA7F /* plugin_barrage_emitter_trigger.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A267C1DBC91BF0019BA7F /* plugin_barrage_emitter_trigger.c */; };
+		C95A26A21DBC91BF0019BA7F /* plugin_barrage_env.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A267D1DBC91BF0019BA7F /* plugin_barrage_env.c */; };
+		C95A26A31DBC91BF0019BA7F /* plugin_barrage_env_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A267E1DBC91BF0019BA7F /* plugin_barrage_env_i.h */; };
+		C95A26A41DBC91BF0019BA7F /* plugin_barrage_group.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A267F1DBC91BF0019BA7F /* plugin_barrage_group.c */; };
+		C95A26A51DBC91BF0019BA7F /* plugin_barrage_group_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26801DBC91BF0019BA7F /* plugin_barrage_group_i.h */; };
+		C95A26A61DBC91BF0019BA7F /* plugin_barrage_module.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26811DBC91BF0019BA7F /* plugin_barrage_module.c */; };
+		C95A26A71DBC91BF0019BA7F /* plugin_barrage_module_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26821DBC91BF0019BA7F /* plugin_barrage_module_i.h */; };
+		C95A26A81DBC91BF0019BA7F /* plugin_barrage_op.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26831DBC91BF0019BA7F /* plugin_barrage_op.c */; };
+		C95A26A91DBC91BF0019BA7F /* plugin_barrage_op_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26841DBC91BF0019BA7F /* plugin_barrage_op_i.h */; };
+		C95A26AA1DBC91BF0019BA7F /* plugin_barrage_render.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26851DBC91BF0019BA7F /* plugin_barrage_render.c */; };
+		C95A26AB1DBC91BF0019BA7F /* plugin_barrage_render_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26861DBC91BF0019BA7F /* plugin_barrage_render_i.h */; };
+		C95A26AC1DBC91BF0019BA7F /* plugin_barrage_trigger_op.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26871DBC91BF0019BA7F /* plugin_barrage_trigger_op.c */; };
+		C95A26AD1DBC91BF0019BA7F /* plugin_barrage_trigger_op_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26881DBC91BF0019BA7F /* plugin_barrage_trigger_op_i.h */; };
+		C95A26AE1DBC91BF0019BA7F /* plugin_barrage_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = C95A26891DBC91BF0019BA7F /* plugin_barrage_utils.c */; };
+		C95A26AF1DBC91BF0019BA7F /* plugin_barrage_utils_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A268A1DBC91BF0019BA7F /* plugin_barrage_utils_i.h */; };
+		C95A26BB1DBC91D20019BA7F /* plugin_barrage_barrage.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26B11DBC91D20019BA7F /* plugin_barrage_barrage.h */; };
+		C95A26BC1DBC91D20019BA7F /* plugin_barrage_bullet.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26B21DBC91D20019BA7F /* plugin_barrage_bullet.h */; };
+		C95A26BD1DBC91D20019BA7F /* plugin_barrage_data_barrage.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26B31DBC91D20019BA7F /* plugin_barrage_data_barrage.h */; };
+		C95A26BE1DBC91D20019BA7F /* plugin_barrage_data_emitter.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26B41DBC91D20019BA7F /* plugin_barrage_data_emitter.h */; };
+		C95A26BF1DBC91D20019BA7F /* plugin_barrage_emitter.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26B51DBC91D20019BA7F /* plugin_barrage_emitter.h */; };
+		C95A26C01DBC91D20019BA7F /* plugin_barrage_env.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26B61DBC91D20019BA7F /* plugin_barrage_env.h */; };
+		C95A26C11DBC91D20019BA7F /* plugin_barrage_group.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26B71DBC91D20019BA7F /* plugin_barrage_group.h */; };
+		C95A26C21DBC91D20019BA7F /* plugin_barrage_module.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26B81DBC91D20019BA7F /* plugin_barrage_module.h */; };
+		C95A26C31DBC91D20019BA7F /* plugin_barrage_render.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26B91DBC91D20019BA7F /* plugin_barrage_render.h */; };
+		C95A26C41DBC91D20019BA7F /* plugin_barrage_types.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26BA1DBC91D20019BA7F /* plugin_barrage_types.h */; };
+		C95A27FE1DBC91DF0019BA7F /* ui_sprite_barrage_barrage.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26F11DBC91DF0019BA7F /* ui_sprite_barrage_barrage.h */; };
+		C95A27FF1DBC91DF0019BA7F /* ui_sprite_barrage_clear_bullets.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26F21DBC91DF0019BA7F /* ui_sprite_barrage_clear_bullets.h */; };
+		C95A28001DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26F31DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter.h */; };
+		C95A28011DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter_random.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26F41DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter_random.h */; };
+		C95A28021DBC91DF0019BA7F /* ui_sprite_barrage_enable_seq.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26F51DBC91DF0019BA7F /* ui_sprite_barrage_enable_seq.h */; };
+		C95A28031DBC91DF0019BA7F /* ui_sprite_barrage_env.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26F61DBC91DF0019BA7F /* ui_sprite_barrage_env.h */; };
+		C95A28041DBC91DF0019BA7F /* ui_sprite_barrage_mask.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26F71DBC91DF0019BA7F /* ui_sprite_barrage_mask.h */; };
+		C95A28051DBC91DF0019BA7F /* ui_sprite_barrage_module.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26F81DBC91DF0019BA7F /* ui_sprite_barrage_module.h */; };
+		C95A28061DBC91DF0019BA7F /* ui_sprite_barrage_obj.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26F91DBC91DF0019BA7F /* ui_sprite_barrage_obj.h */; };
+		C95A28071DBC91DF0019BA7F /* ui_sprite_barrage_pause_emitter.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26FA1DBC91DF0019BA7F /* ui_sprite_barrage_pause_emitter.h */; };
+		C95A28081DBC91DF0019BA7F /* ui_sprite_barrage_types.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A26FB1DBC91DF0019BA7F /* ui_sprite_barrage_types.h */; };
+		C95A28281DBC91DF0019BA7F /* ui_sprite_chipmunk_apply_velocity.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A271F1DBC91DF0019BA7F /* ui_sprite_chipmunk_apply_velocity.h */; };
+		C95A28291DBC91DF0019BA7F /* ui_sprite_chipmunk_env.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27201DBC91DF0019BA7F /* ui_sprite_chipmunk_env.h */; };
+		C95A282A1DBC91DF0019BA7F /* ui_sprite_chipmunk_manipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27211DBC91DF0019BA7F /* ui_sprite_chipmunk_manipulator.h */; };
+		C95A282B1DBC91DF0019BA7F /* ui_sprite_chipmunk_module.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27221DBC91DF0019BA7F /* ui_sprite_chipmunk_module.h */; };
+		C95A282C1DBC91DF0019BA7F /* ui_sprite_chipmunk_move_to_entity.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27231DBC91DF0019BA7F /* ui_sprite_chipmunk_move_to_entity.h */; };
+		C95A282D1DBC91DF0019BA7F /* ui_sprite_chipmunk_obj.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27241DBC91DF0019BA7F /* ui_sprite_chipmunk_obj.h */; };
+		C95A282E1DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_body.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27251DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_body.h */; };
+		C95A282F1DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_constraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27261DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_constraint.h */; };
+		C95A28301DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27271DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape.h */; };
+		C95A28311DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape_group.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27281DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape_group.h */; };
+		C95A28321DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_updator.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27291DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_updator.h */; };
+		C95A28331DBC91DF0019BA7F /* ui_sprite_chipmunk_on_click.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A272A1DBC91DF0019BA7F /* ui_sprite_chipmunk_on_click.h */; };
+		C95A28341DBC91DF0019BA7F /* ui_sprite_chipmunk_on_collision.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A272B1DBC91DF0019BA7F /* ui_sprite_chipmunk_on_collision.h */; };
+		C95A28351DBC91DF0019BA7F /* ui_sprite_chipmunk_track_angle.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A272C1DBC91DF0019BA7F /* ui_sprite_chipmunk_track_angle.h */; };
+		C95A28361DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_have_entity.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A272D1DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_have_entity.h */; };
+		C95A28371DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A272E1DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope.h */; };
+		C95A28381DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope_render.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A272F1DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope_render.h */; };
+		C95A28391DBC91DF0019BA7F /* ui_sprite_chipmunk_types.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27301DBC91DF0019BA7F /* ui_sprite_chipmunk_types.h */; };
+		C95A283A1DBC91DF0019BA7F /* ui_sprite_chipmunk_wait_collision.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27311DBC91DF0019BA7F /* ui_sprite_chipmunk_wait_collision.h */; };
+		C95A283B1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_addition_accel.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27321DBC91DF0019BA7F /* ui_sprite_chipmunk_with_addition_accel.h */; };
+		C95A283C1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_attractor.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27331DBC91DF0019BA7F /* ui_sprite_chipmunk_with_attractor.h */; };
+		C95A283D1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_boundary.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27341DBC91DF0019BA7F /* ui_sprite_chipmunk_with_boundary.h */; };
+		C95A283E1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_collision.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27351DBC91DF0019BA7F /* ui_sprite_chipmunk_with_collision.h */; };
+		C95A283F1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_constraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27361DBC91DF0019BA7F /* ui_sprite_chipmunk_with_constraint.h */; };
+		C95A28401DBC91DF0019BA7F /* ui_sprite_chipmunk_with_damping.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27371DBC91DF0019BA7F /* ui_sprite_chipmunk_with_damping.h */; };
+		C95A28411DBC91DF0019BA7F /* ui_sprite_chipmunk_with_gravity.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27381DBC91DF0019BA7F /* ui_sprite_chipmunk_with_gravity.h */; };
+		C95A28421DBC91DF0019BA7F /* ui_sprite_chipmunk_with_group.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27391DBC91DF0019BA7F /* ui_sprite_chipmunk_with_group.h */; };
+		C95A286D1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_module.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A276B1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_module.h */; };
+		C95A286E1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_types.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A276C1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_types.h */; };
+		C95A286F1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_with_collision.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A276D1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_with_collision.h */; };
+		C95A289D1DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_module.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27A01DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_module.h */; };
+		C95A289E1DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_types.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27A11DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_types.h */; };
+		C95A289F1DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_collision.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27A21DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_collision.h */; };
+		C95A28A01DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_tri.h in Headers */ = {isa = PBXBuildFile; fileRef = C95A27A31DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_tri.h */; };
+		C9696FDB1DD8922D000A186C /* ui_sprite_chipmunk_with_time_scale.h in Headers */ = {isa = PBXBuildFile; fileRef = C9696FDA1DD8922D000A186C /* ui_sprite_chipmunk_with_time_scale.h */; };
+		C9696FDE1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C9696FDC1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale_i.h */; };
+		C9696FDF1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale.c in Sources */ = {isa = PBXBuildFile; fileRef = C9696FDD1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale.c */; };
+		C9696FFD1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C9696FFB1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode_i.h */; };
+		C9696FFE1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode.c in Sources */ = {isa = PBXBuildFile; fileRef = C9696FFC1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode.c */; };
+		C96970001DD8A594000A186C /* ui_sprite_chipmunk_with_runing_mode.h in Headers */ = {isa = PBXBuildFile; fileRef = C9696FFF1DD8A594000A186C /* ui_sprite_chipmunk_with_runing_mode.h */; };
+		C969700C1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C96970091DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_i.h */; };
+		C969700D1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_load.c in Sources */ = {isa = PBXBuildFile; fileRef = C969700A1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_load.c */; };
+		C969700E1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move.c in Sources */ = {isa = PBXBuildFile; fileRef = C969700B1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move.c */; };
+		C96970101DD8CD51000A186C /* ui_sprite_chipmunk_touch_move.h in Headers */ = {isa = PBXBuildFile; fileRef = C969700F1DD8CD51000A186C /* ui_sprite_chipmunk_touch_move.h */; };
+		C980962E1A2E08C60085B812 /* plugin_chipmunk_data_body_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C98096251A2E08C60085B812 /* plugin_chipmunk_data_body_i.h */; };
+		C980962F1A2E08C60085B812 /* plugin_chipmunk_data_body.c in Sources */ = {isa = PBXBuildFile; fileRef = C98096261A2E08C60085B812 /* plugin_chipmunk_data_body.c */; };
+		C98096301A2E08C60085B812 /* plugin_chipmunk_data_fixture_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C98096271A2E08C60085B812 /* plugin_chipmunk_data_fixture_i.h */; };
+		C98096311A2E08C60085B812 /* plugin_chipmunk_data_fixture.c in Sources */ = {isa = PBXBuildFile; fileRef = C98096281A2E08C60085B812 /* plugin_chipmunk_data_fixture.c */; };
+		C98096321A2E08C60085B812 /* plugin_chipmunk_data_polygon_node_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C98096291A2E08C60085B812 /* plugin_chipmunk_data_polygon_node_i.h */; };
+		C98096331A2E08C60085B812 /* plugin_chipmunk_data_polygon_node.c in Sources */ = {isa = PBXBuildFile; fileRef = C980962A1A2E08C60085B812 /* plugin_chipmunk_data_polygon_node.c */; };
+		C98096341A2E08C60085B812 /* plugin_chipmunk_data_scene_bin.c in Sources */ = {isa = PBXBuildFile; fileRef = C980962B1A2E08C60085B812 /* plugin_chipmunk_data_scene_bin.c */; };
+		C98096351A2E08C60085B812 /* plugin_chipmunk_data_scene_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C980962C1A2E08C60085B812 /* plugin_chipmunk_data_scene_i.h */; };
+		C98096361A2E08C60085B812 /* plugin_chipmunk_data_scene.c in Sources */ = {isa = PBXBuildFile; fileRef = C980962D1A2E08C60085B812 /* plugin_chipmunk_data_scene.c */; };
+		C9970CE51B0DA14200701382 /* plugin_chipmunk_env_updator_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C9970CE31B0DA14200701382 /* plugin_chipmunk_env_updator_i.h */; };
+		C9970CE61B0DA14200701382 /* plugin_chipmunk_env_updator.c in Sources */ = {isa = PBXBuildFile; fileRef = C9970CE41B0DA14200701382 /* plugin_chipmunk_env_updator.c */; };
+		C99D74A71DBDB57A001256C5 /* chipmunk.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D746A1DBDB57A001256C5 /* chipmunk.h */; };
+		C99D74A81DBDB57A001256C5 /* chipmunk_ffi.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D746B1DBDB57A001256C5 /* chipmunk_ffi.h */; };
+		C99D74A91DBDB57A001256C5 /* chipmunk_private.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D746C1DBDB57A001256C5 /* chipmunk_private.h */; };
+		C99D74AA1DBDB57A001256C5 /* chipmunk_types.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D746D1DBDB57A001256C5 /* chipmunk_types.h */; };
+		C99D74AB1DBDB57A001256C5 /* chipmunk_unsafe.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D746E1DBDB57A001256C5 /* chipmunk_unsafe.h */; };
+		C99D74AC1DBDB57A001256C5 /* cpArbiter.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D746F1DBDB57A001256C5 /* cpArbiter.h */; };
+		C99D74AD1DBDB57A001256C5 /* cpBB.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74701DBDB57A001256C5 /* cpBB.h */; };
+		C99D74AE1DBDB57A001256C5 /* cpBody.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74711DBDB57A001256C5 /* cpBody.h */; };
+		C99D74AF1DBDB57A001256C5 /* cpConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74721DBDB57A001256C5 /* cpConstraint.h */; };
+		C99D74B01DBDB57A001256C5 /* cpDampedRotarySpring.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74731DBDB57A001256C5 /* cpDampedRotarySpring.h */; };
+		C99D74B11DBDB57A001256C5 /* cpDampedSpring.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74741DBDB57A001256C5 /* cpDampedSpring.h */; };
+		C99D74B21DBDB57A001256C5 /* cpGearJoint.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74751DBDB57A001256C5 /* cpGearJoint.h */; };
+		C99D74B31DBDB57A001256C5 /* cpGrooveJoint.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74761DBDB57A001256C5 /* cpGrooveJoint.h */; };
+		C99D74B41DBDB57A001256C5 /* cpPinJoint.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74771DBDB57A001256C5 /* cpPinJoint.h */; };
+		C99D74B51DBDB57A001256C5 /* cpPivotJoint.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74781DBDB57A001256C5 /* cpPivotJoint.h */; };
+		C99D74B61DBDB57A001256C5 /* cpPolyShape.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74791DBDB57A001256C5 /* cpPolyShape.h */; };
+		C99D74B71DBDB57A001256C5 /* cpRatchetJoint.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D747A1DBDB57A001256C5 /* cpRatchetJoint.h */; };
+		C99D74B81DBDB57A001256C5 /* cpRotaryLimitJoint.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D747B1DBDB57A001256C5 /* cpRotaryLimitJoint.h */; };
+		C99D74B91DBDB57A001256C5 /* cpShape.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D747C1DBDB57A001256C5 /* cpShape.h */; };
+		C99D74BA1DBDB57A001256C5 /* cpSimpleMotor.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D747D1DBDB57A001256C5 /* cpSimpleMotor.h */; };
+		C99D74BB1DBDB57A001256C5 /* cpSlideJoint.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D747E1DBDB57A001256C5 /* cpSlideJoint.h */; };
+		C99D74BC1DBDB57A001256C5 /* cpSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D747F1DBDB57A001256C5 /* cpSpace.h */; };
+		C99D74BD1DBDB57A001256C5 /* cpSpatialIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74801DBDB57A001256C5 /* cpSpatialIndex.h */; };
+		C99D74BE1DBDB57A001256C5 /* cpTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74811DBDB57A001256C5 /* cpTransform.h */; };
+		C99D74BF1DBDB57A001256C5 /* cpVect.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74821DBDB57A001256C5 /* cpVect.h */; };
+		C99D74C01DBDB57A001256C5 /* cpHastySpace.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74851DBDB57A001256C5 /* cpHastySpace.c */; };
+		C99D74C11DBDB57A001256C5 /* cpMarch.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74861DBDB57A001256C5 /* cpMarch.c */; };
+		C99D74C21DBDB57A001256C5 /* cpPolyline.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74871DBDB57A001256C5 /* cpPolyline.c */; };
+		C99D74C31DBDB57A001256C5 /* cpRobust.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74881DBDB57A001256C5 /* cpRobust.c */; };
+		C99D74C41DBDB57A001256C5 /* chipmunk.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74891DBDB57A001256C5 /* chipmunk.c */; };
+		C99D74C51DBDB57A001256C5 /* cpArbiter.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D748A1DBDB57A001256C5 /* cpArbiter.c */; };
+		C99D74C61DBDB57A001256C5 /* cpArray.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D748B1DBDB57A001256C5 /* cpArray.c */; };
+		C99D74C71DBDB57A001256C5 /* cpBBTree.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D748C1DBDB57A001256C5 /* cpBBTree.c */; };
+		C99D74C81DBDB57A001256C5 /* cpBody.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D748D1DBDB57A001256C5 /* cpBody.c */; };
+		C99D74C91DBDB57A001256C5 /* cpCollision.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D748E1DBDB57A001256C5 /* cpCollision.c */; };
+		C99D74CA1DBDB57A001256C5 /* cpConstraint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D748F1DBDB57A001256C5 /* cpConstraint.c */; };
+		C99D74CB1DBDB57A001256C5 /* cpDampedRotarySpring.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74901DBDB57A001256C5 /* cpDampedRotarySpring.c */; };
+		C99D74CC1DBDB57A001256C5 /* cpDampedSpring.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74911DBDB57A001256C5 /* cpDampedSpring.c */; };
+		C99D74CD1DBDB57A001256C5 /* cpGearJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74921DBDB57A001256C5 /* cpGearJoint.c */; };
+		C99D74CE1DBDB57A001256C5 /* cpGrooveJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74931DBDB57A001256C5 /* cpGrooveJoint.c */; };
+		C99D74CF1DBDB57A001256C5 /* cpHashSet.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74941DBDB57A001256C5 /* cpHashSet.c */; };
+		C99D74D01DBDB57A001256C5 /* cpPinJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74951DBDB57A001256C5 /* cpPinJoint.c */; };
+		C99D74D11DBDB57A001256C5 /* cpPivotJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74961DBDB57A001256C5 /* cpPivotJoint.c */; };
+		C99D74D21DBDB57A001256C5 /* cpPolyShape.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74971DBDB57A001256C5 /* cpPolyShape.c */; };
+		C99D74D31DBDB57A001256C5 /* cpRatchetJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74981DBDB57A001256C5 /* cpRatchetJoint.c */; };
+		C99D74D41DBDB57A001256C5 /* cpRotaryLimitJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74991DBDB57A001256C5 /* cpRotaryLimitJoint.c */; };
+		C99D74D51DBDB57A001256C5 /* cpShape.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D749A1DBDB57A001256C5 /* cpShape.c */; };
+		C99D74D61DBDB57A001256C5 /* cpSimpleMotor.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D749B1DBDB57A001256C5 /* cpSimpleMotor.c */; };
+		C99D74D71DBDB57A001256C5 /* cpSlideJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D749C1DBDB57A001256C5 /* cpSlideJoint.c */; };
+		C99D74D81DBDB57A001256C5 /* cpSpace.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D749D1DBDB57A001256C5 /* cpSpace.c */; };
+		C99D74D91DBDB57A001256C5 /* cpSpaceComponent.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D749E1DBDB57A001256C5 /* cpSpaceComponent.c */; };
+		C99D74DA1DBDB57A001256C5 /* cpSpaceDebug.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D749F1DBDB57A001256C5 /* cpSpaceDebug.c */; };
+		C99D74DB1DBDB57A001256C5 /* cpSpaceHash.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74A01DBDB57A001256C5 /* cpSpaceHash.c */; };
+		C99D74DC1DBDB57A001256C5 /* cpSpaceQuery.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74A11DBDB57A001256C5 /* cpSpaceQuery.c */; };
+		C99D74DD1DBDB57A001256C5 /* cpSpaceStep.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74A21DBDB57A001256C5 /* cpSpaceStep.c */; };
+		C99D74DE1DBDB57A001256C5 /* cpSpatialIndex.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74A31DBDB57A001256C5 /* cpSpatialIndex.c */; };
+		C99D74DF1DBDB57A001256C5 /* cpSweep1D.c in Sources */ = {isa = PBXBuildFile; fileRef = C99D74A41DBDB57A001256C5 /* cpSweep1D.c */; };
+		C99D74E01DBDB57A001256C5 /* prime.h in Headers */ = {isa = PBXBuildFile; fileRef = C99D74A51DBDB57A001256C5 /* prime.h */; };
+		C9BAB5CC1DD238CC00226A6F /* ui_sprite_chipmunk_send_event_to_collision_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BAB5CA1DD238CC00226A6F /* ui_sprite_chipmunk_send_event_to_collision_i.h */; };
+		C9BAB5CF1DD238D600226A6F /* ui_sprite_chipmunk_send_event_to_collision.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BAB5CE1DD238D600226A6F /* ui_sprite_chipmunk_send_event_to_collision.h */; };
+		C9BAB5D11DD266BC00226A6F /* ui_sprite_chipmunk_send_event_to_collision.c in Sources */ = {isa = PBXBuildFile; fileRef = C9BAB5D01DD266BC00226A6F /* ui_sprite_chipmunk_send_event_to_collision.c */; };
+		C9D36F671B4BAB910083F4CC /* plugin_chipmunk_render_i.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D36F651B4BAB910083F4CC /* plugin_chipmunk_render_i.h */; };
+		C9D36F681B4BAB910083F4CC /* plugin_chipmunk_render.c in Sources */ = {isa = PBXBuildFile; fileRef = C9D36F661B4BAB910083F4CC /* plugin_chipmunk_render.c */; };
+		C9D36F6B1B4BABB30083F4CC /* plugin_chipmunk_env_updator.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D36F691B4BABB30083F4CC /* plugin_chipmunk_env_updator.h */; };
+		C9D36F6C1B4BABB30083F4CC /* plugin_chipmunk_render.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D36F6A1B4BABB30083F4CC /* plugin_chipmunk_render.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A4DFD02C1AC97F9D00D6CCB7 /* UIPopupPage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UIPopupPage.hpp; sourceTree = "<group>"; };
+		C9024BBA1A221E0C00CCF478 /* plugin_chipmunk_env.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_env.c; sourceTree = "<group>"; };
+		C9024BBB1A221E0C00CCF478 /* plugin_chipmunk_env_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_env_i.h; sourceTree = "<group>"; };
+		C9024BBC1A221E0C00CCF478 /* plugin_chipmunk_module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_module.c; sourceTree = "<group>"; };
+		C9024BBD1A221E0C00CCF478 /* plugin_chipmunk_module_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_module_i.h; sourceTree = "<group>"; };
+		C9024BDB1A221E5D00CCF478 /* plugin_chipmunk_env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_env.h; sourceTree = "<group>"; };
+		C9024BDC1A221E5D00CCF478 /* plugin_chipmunk_module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_module.h; sourceTree = "<group>"; };
+		C9024BDD1A221E5D00CCF478 /* plugin_chipmunk_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_types.h; sourceTree = "<group>"; };
+		C91225151A8AE0A400C40A01 /* plugin_chipmunk_data_constraint_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_constraint_i.h; sourceTree = "<group>"; };
+		C91225161A8AE0A400C40A01 /* plugin_chipmunk_data_constraint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_data_constraint.c; sourceTree = "<group>"; };
+		C912252D1A8AE0D900C40A01 /* plugin_chipmunk_data_body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_body.h; sourceTree = "<group>"; };
+		C912252E1A8AE0D900C40A01 /* plugin_chipmunk_data_constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_constraint.h; sourceTree = "<group>"; };
+		C912252F1A8AE0D900C40A01 /* plugin_chipmunk_data_fixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_fixture.h; sourceTree = "<group>"; };
+		C91225301A8AE0D900C40A01 /* plugin_chipmunk_data_polygon_node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_polygon_node.h; sourceTree = "<group>"; };
+		C91225311A8AE0D900C40A01 /* plugin_chipmunk_data_scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_scene.h; sourceTree = "<group>"; };
+		C92A172B1DF7B50E00F9E231 /* meta_traits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = meta_traits.cpp; sourceTree = "<group>"; };
+		C92A172C1DF7B50E00F9E231 /* metalib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = metalib.c; sourceTree = "<group>"; };
+		C9436E671DF5B14B00E87359 /* chipmunk_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_common.h; sourceTree = "<group>"; };
+		C9436E681DF5B14B00E87359 /* chipmunk_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_info.h; sourceTree = "<group>"; };
+		C9436E691DF5B14B00E87359 /* meta_traits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = meta_traits.cpp; sourceTree = "<group>"; };
+		C9436E6A1DF5B14B00E87359 /* metalib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = metalib.c; sourceTree = "<group>"; };
+		C9436E721DF5B1A500E87359 /* meta_traits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = meta_traits.cpp; sourceTree = "<group>"; };
+		C9436E731DF5B1A500E87359 /* metalib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = metalib.c; sourceTree = "<group>"; };
+		C9436E741DF5B1A500E87359 /* ui_sprite_chipmunk_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_data.h; sourceTree = "<group>"; };
+		C9436E751DF5B1A500E87359 /* ui_sprite_chipmunk_evt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_evt.h; sourceTree = "<group>"; };
+		C95A21931DBC918E0019BA7F /* ui_sprite_barrage_barrage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_barrage.c; sourceTree = "<group>"; };
+		C95A21941DBC918E0019BA7F /* ui_sprite_barrage_barrage_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_barrage_i.h; sourceTree = "<group>"; };
+		C95A21951DBC918E0019BA7F /* ui_sprite_barrage_clear_bullets.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_clear_bullets.c; sourceTree = "<group>"; };
+		C95A21961DBC918E0019BA7F /* ui_sprite_barrage_clear_bullets_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_clear_bullets_i.h; sourceTree = "<group>"; };
+		C95A21971DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_enable_emitter.c; sourceTree = "<group>"; };
+		C95A21981DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_enable_emitter_i.h; sourceTree = "<group>"; };
+		C95A21991DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter_random.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_enable_emitter_random.c; sourceTree = "<group>"; };
+		C95A219A1DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter_random_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_enable_emitter_random_i.h; sourceTree = "<group>"; };
+		C95A219B1DBC918E0019BA7F /* ui_sprite_barrage_enable_seq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_enable_seq.c; sourceTree = "<group>"; };
+		C95A219C1DBC918E0019BA7F /* ui_sprite_barrage_enable_seq_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_enable_seq_i.h; sourceTree = "<group>"; };
+		C95A219D1DBC918E0019BA7F /* ui_sprite_barrage_env.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_env.c; sourceTree = "<group>"; };
+		C95A219E1DBC918E0019BA7F /* ui_sprite_barrage_env_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_env_i.h; sourceTree = "<group>"; };
+		C95A219F1DBC918E0019BA7F /* ui_sprite_barrage_env_load.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_env_load.c; sourceTree = "<group>"; };
+		C95A21A01DBC918E0019BA7F /* ui_sprite_barrage_mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_mask.c; sourceTree = "<group>"; };
+		C95A21A11DBC918E0019BA7F /* ui_sprite_barrage_mask_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_mask_i.h; sourceTree = "<group>"; };
+		C95A21A21DBC918E0019BA7F /* ui_sprite_barrage_module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_module.c; sourceTree = "<group>"; };
+		C95A21A31DBC918E0019BA7F /* ui_sprite_barrage_module_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_module_i.h; sourceTree = "<group>"; };
+		C95A21A41DBC918E0019BA7F /* ui_sprite_barrage_obj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_obj.c; sourceTree = "<group>"; };
+		C95A21A51DBC918E0019BA7F /* ui_sprite_barrage_obj_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_obj_i.h; sourceTree = "<group>"; };
+		C95A21A61DBC918E0019BA7F /* ui_sprite_barrage_pause_emitter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_pause_emitter.c; sourceTree = "<group>"; };
+		C95A21A71DBC918E0019BA7F /* ui_sprite_barrage_pause_emitter_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_pause_emitter_i.h; sourceTree = "<group>"; };
+		C95A21A81DBC918E0019BA7F /* ui_sprite_barrage_render_creator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_barrage_render_creator.c; sourceTree = "<group>"; };
+		C95A21A91DBC918E0019BA7F /* ui_sprite_barrage_render_creator_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_render_creator_i.h; sourceTree = "<group>"; };
+		C95A22091DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_apply_velocity.c; sourceTree = "<group>"; };
+		C95A220A1DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_apply_velocity_i.h; sourceTree = "<group>"; };
+		C95A220B1DBC918F0019BA7F /* ui_sprite_chipmunk_env.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_env.c; sourceTree = "<group>"; };
+		C95A220C1DBC918F0019BA7F /* ui_sprite_chipmunk_env_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_env_i.h; sourceTree = "<group>"; };
+		C95A220D1DBC918F0019BA7F /* ui_sprite_chipmunk_env_load.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_env_load.c; sourceTree = "<group>"; };
+		C95A220E1DBC918F0019BA7F /* ui_sprite_chipmunk_env_query.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_env_query.c; sourceTree = "<group>"; };
+		C95A220F1DBC918F0019BA7F /* ui_sprite_chipmunk_env_touch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_env_touch.c; sourceTree = "<group>"; };
+		C95A22101DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_load_utils.c; sourceTree = "<group>"; };
+		C95A22111DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_load_utils.h; sourceTree = "<group>"; };
+		C95A22121DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_manipulator.c; sourceTree = "<group>"; };
+		C95A22131DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_manipulator_i.h; sourceTree = "<group>"; };
+		C95A22141DBC918F0019BA7F /* ui_sprite_chipmunk_module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_module.c; sourceTree = "<group>"; };
+		C95A22151DBC918F0019BA7F /* ui_sprite_chipmunk_module_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_module_i.h; sourceTree = "<group>"; };
+		C95A22161DBC918F0019BA7F /* ui_sprite_chipmunk_monitor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_monitor.c; sourceTree = "<group>"; };
+		C95A22171DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_monitor_binding.c; sourceTree = "<group>"; };
+		C95A22181DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_monitor_binding_i.h; sourceTree = "<group>"; };
+		C95A22191DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_monitor_i.h; sourceTree = "<group>"; };
+		C95A221A1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_move_to_entity.c; sourceTree = "<group>"; };
+		C95A221B1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_gravitation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_move_to_entity_gravitation.c; sourceTree = "<group>"; };
+		C95A221C1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_move_to_entity_i.h; sourceTree = "<group>"; };
+		C95A221D1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_move.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_move_to_entity_move.c; sourceTree = "<group>"; };
+		C95A221E1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_spring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_move_to_entity_spring.c; sourceTree = "<group>"; };
+		C95A221F1DBC918F0019BA7F /* ui_sprite_chipmunk_obj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj.c; sourceTree = "<group>"; };
+		C95A22201DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_body.c; sourceTree = "<group>"; };
+		C95A22211DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_body_group.c; sourceTree = "<group>"; };
+		C95A22221DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_body_group_i.h; sourceTree = "<group>"; };
+		C95A22231DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_body_i.h; sourceTree = "<group>"; };
+		C95A22241DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_constraint.c; sourceTree = "<group>"; };
+		C95A22251DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_constraint_i.h; sourceTree = "<group>"; };
+		C95A22261DBC918F0019BA7F /* ui_sprite_chipmunk_obj_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_i.h; sourceTree = "<group>"; };
+		C95A22271DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_load.c; sourceTree = "<group>"; };
+		C95A22281DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_load_ctx.c; sourceTree = "<group>"; };
+		C95A22291DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_load_ctx.h; sourceTree = "<group>"; };
+		C95A222A1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_load_tree.c; sourceTree = "<group>"; };
+		C95A222B1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_runtime_group.c; sourceTree = "<group>"; };
+		C95A222C1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_runtime_group_i.h; sourceTree = "<group>"; };
+		C95A222D1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_shape.c; sourceTree = "<group>"; };
+		C95A222E1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_shape_group.c; sourceTree = "<group>"; };
+		C95A222F1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_shape_group_i.h; sourceTree = "<group>"; };
+		C95A22301DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_shape_i.h; sourceTree = "<group>"; };
+		C95A22311DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_obj_updator.c; sourceTree = "<group>"; };
+		C95A22321DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_updator_i.h; sourceTree = "<group>"; };
+		C95A22331DBC918F0019BA7F /* ui_sprite_chipmunk_on_click.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_on_click.c; sourceTree = "<group>"; };
+		C95A22341DBC918F0019BA7F /* ui_sprite_chipmunk_on_click_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_on_click_i.h; sourceTree = "<group>"; };
+		C95A22351DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_on_collision.c; sourceTree = "<group>"; };
+		C95A22361DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_on_collision_i.h; sourceTree = "<group>"; };
+		C95A22371DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_render_creator.c; sourceTree = "<group>"; };
+		C95A22381DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_render_creator_i.h; sourceTree = "<group>"; };
+		C95A22391DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_touch_binding.c; sourceTree = "<group>"; };
+		C95A223A1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_touch_binding_i.h; sourceTree = "<group>"; };
+		C95A223B1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_touch_responser.c; sourceTree = "<group>"; };
+		C95A223C1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_touch_responser_i.h; sourceTree = "<group>"; };
+		C95A223D1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_touch_trace.c; sourceTree = "<group>"; };
+		C95A223E1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_touch_trace_i.h; sourceTree = "<group>"; };
+		C95A223F1DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_track_angle.c; sourceTree = "<group>"; };
+		C95A22401DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_track_angle_i.h; sourceTree = "<group>"; };
+		C95A22411DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_tri_have_entity.c; sourceTree = "<group>"; };
+		C95A22421DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_tri_have_entity_i.h; sourceTree = "<group>"; };
+		C95A22431DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_tri_scope.c; sourceTree = "<group>"; };
+		C95A22441DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_tri_scope_i.h; sourceTree = "<group>"; };
+		C95A22451DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_tri_scope_render.c; sourceTree = "<group>"; };
+		C95A22461DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_tri_scope_render_creator.c; sourceTree = "<group>"; };
+		C95A22471DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_tri_scope_render_creator_i.h; sourceTree = "<group>"; };
+		C95A22481DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_tri_scope_render_i.h; sourceTree = "<group>"; };
+		C95A22491DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_wait_collision.c; sourceTree = "<group>"; };
+		C95A224A1DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_wait_collision_i.h; sourceTree = "<group>"; };
+		C95A224B1DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_addition_accel.c; sourceTree = "<group>"; };
+		C95A224C1DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_addition_accel_i.h; sourceTree = "<group>"; };
+		C95A224D1DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_attractor.c; sourceTree = "<group>"; };
+		C95A224E1DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_gravitation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_attractor_gravitation.c; sourceTree = "<group>"; };
+		C95A224F1DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_attractor_i.h; sourceTree = "<group>"; };
+		C95A22501DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_spring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_attractor_spring.c; sourceTree = "<group>"; };
+		C95A22511DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_boundary.c; sourceTree = "<group>"; };
+		C95A22521DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_boundary_i.h; sourceTree = "<group>"; };
+		C95A22531DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_collision.c; sourceTree = "<group>"; };
+		C95A22541DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_collision_body.c; sourceTree = "<group>"; };
+		C95A22551DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_collision_body_i.h; sourceTree = "<group>"; };
+		C95A22561DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_collision_i.h; sourceTree = "<group>"; };
+		C95A22571DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_load.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_collision_load.c; sourceTree = "<group>"; };
+		C95A22581DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_collision_shape.c; sourceTree = "<group>"; };
+		C95A22591DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_collision_shape_i.h; sourceTree = "<group>"; };
+		C95A225A1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_collision_src.c; sourceTree = "<group>"; };
+		C95A225B1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_collision_src_i.h; sourceTree = "<group>"; };
+		C95A225C1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_constraint.c; sourceTree = "<group>"; };
+		C95A225D1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_constraint_i.h; sourceTree = "<group>"; };
+		C95A225E1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_constraint_info.c; sourceTree = "<group>"; };
+		C95A225F1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_load.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_constraint_load.c; sourceTree = "<group>"; };
+		C95A22601DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_damping.c; sourceTree = "<group>"; };
+		C95A22611DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_damping_i.h; sourceTree = "<group>"; };
+		C95A22621DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_gravity.c; sourceTree = "<group>"; };
+		C95A22631DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_gravity_i.h; sourceTree = "<group>"; };
+		C95A22641DBC918F0019BA7F /* ui_sprite_chipmunk_with_group.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_group.c; sourceTree = "<group>"; };
+		C95A22651DBC918F0019BA7F /* ui_sprite_chipmunk_with_group_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_group_i.h; sourceTree = "<group>"; };
+		C95A22E51DBC918F0019BA7F /* ui_sprite_particle_chipmunk_body.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_particle_chipmunk_body.c; sourceTree = "<group>"; };
+		C95A22E61DBC918F0019BA7F /* ui_sprite_particle_chipmunk_body_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_particle_chipmunk_body_i.h; sourceTree = "<group>"; };
+		C95A22E71DBC918F0019BA7F /* ui_sprite_particle_chipmunk_env.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_particle_chipmunk_env.c; sourceTree = "<group>"; };
+		C95A22E81DBC918F0019BA7F /* ui_sprite_particle_chipmunk_env_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_particle_chipmunk_env_i.h; sourceTree = "<group>"; };
+		C95A22E91DBC918F0019BA7F /* ui_sprite_particle_chipmunk_module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_particle_chipmunk_module.c; sourceTree = "<group>"; };
+		C95A22EA1DBC918F0019BA7F /* ui_sprite_particle_chipmunk_module_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_particle_chipmunk_module_i.h; sourceTree = "<group>"; };
+		C95A22EB1DBC918F0019BA7F /* ui_sprite_particle_chipmunk_with_collision.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_particle_chipmunk_with_collision.c; sourceTree = "<group>"; };
+		C95A22EC1DBC918F0019BA7F /* ui_sprite_particle_chipmunk_with_collision_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_particle_chipmunk_with_collision_i.h; sourceTree = "<group>"; };
+		C95A23631DBC918F0019BA7F /* ui_sprite_spine_chipmunk_body.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_spine_chipmunk_body.c; sourceTree = "<group>"; };
+		C95A23641DBC918F0019BA7F /* ui_sprite_spine_chipmunk_body_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_spine_chipmunk_body_i.h; sourceTree = "<group>"; };
+		C95A23651DBC918F0019BA7F /* ui_sprite_spine_chipmunk_module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_spine_chipmunk_module.c; sourceTree = "<group>"; };
+		C95A23661DBC918F0019BA7F /* ui_sprite_spine_chipmunk_module_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_spine_chipmunk_module_i.h; sourceTree = "<group>"; };
+		C95A23671DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_collision.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_spine_chipmunk_with_collision.c; sourceTree = "<group>"; };
+		C95A23681DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_collision_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_spine_chipmunk_with_collision_i.h; sourceTree = "<group>"; };
+		C95A23691DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_spine_chipmunk_with_tri.c; sourceTree = "<group>"; };
+		C95A236A1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_action.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_spine_chipmunk_with_tri_action.c; sourceTree = "<group>"; };
+		C95A236B1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_spine_chipmunk_with_tri_binding.c; sourceTree = "<group>"; };
+		C95A236C1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_spine_chipmunk_with_tri_binding_i.h; sourceTree = "<group>"; };
+		C95A236D1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_condition.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_spine_chipmunk_with_tri_condition.c; sourceTree = "<group>"; };
+		C95A236E1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_spine_chipmunk_with_tri_i.h; sourceTree = "<group>"; };
+		C95A236F1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_trigger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_spine_chipmunk_with_tri_trigger.c; sourceTree = "<group>"; };
+		C95A26671DBC91BF0019BA7F /* config.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.mk; sourceTree = "<group>"; };
+		C95A26681DBC91BF0019BA7F /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		C95A26691DBC91BF0019BA7F /* plugin_barrage_barrage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_barrage.c; sourceTree = "<group>"; };
+		C95A266A1DBC91BF0019BA7F /* plugin_barrage_barrage_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_barrage_i.h; sourceTree = "<group>"; };
+		C95A266B1DBC91BF0019BA7F /* plugin_barrage_bullet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_bullet.c; sourceTree = "<group>"; };
+		C95A266C1DBC91BF0019BA7F /* plugin_barrage_bullet_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_bullet_i.h; sourceTree = "<group>"; };
+		C95A266D1DBC91BF0019BA7F /* plugin_barrage_bullet_proto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_bullet_proto.c; sourceTree = "<group>"; };
+		C95A266E1DBC91BF0019BA7F /* plugin_barrage_bullet_proto_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_bullet_proto_i.h; sourceTree = "<group>"; };
+		C95A266F1DBC91BF0019BA7F /* plugin_barrage_bullet_trigger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_bullet_trigger.c; sourceTree = "<group>"; };
+		C95A26701DBC91BF0019BA7F /* plugin_barrage_data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_data.c; sourceTree = "<group>"; };
+		C95A26711DBC91BF0019BA7F /* plugin_barrage_data_barrage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_data_barrage.c; sourceTree = "<group>"; };
+		C95A26721DBC91BF0019BA7F /* plugin_barrage_data_barrage_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_data_barrage_i.h; sourceTree = "<group>"; };
+		C95A26731DBC91BF0019BA7F /* plugin_barrage_data_bullet_trigger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_data_bullet_trigger.c; sourceTree = "<group>"; };
+		C95A26741DBC91BF0019BA7F /* plugin_barrage_data_emitter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_data_emitter.c; sourceTree = "<group>"; };
+		C95A26751DBC91BF0019BA7F /* plugin_barrage_data_emitter_bin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_data_emitter_bin.c; sourceTree = "<group>"; };
+		C95A26761DBC91BF0019BA7F /* plugin_barrage_data_emitter_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_data_emitter_i.h; sourceTree = "<group>"; };
+		C95A26771DBC91BF0019BA7F /* plugin_barrage_data_emitter_trigger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_data_emitter_trigger.c; sourceTree = "<group>"; };
+		C95A26781DBC91BF0019BA7F /* plugin_barrage_data_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_data_i.h; sourceTree = "<group>"; };
+		C95A26791DBC91BF0019BA7F /* plugin_barrage_emitter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_emitter.c; sourceTree = "<group>"; };
+		C95A267A1DBC91BF0019BA7F /* plugin_barrage_emitter_do.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_emitter_do.c; sourceTree = "<group>"; };
+		C95A267B1DBC91BF0019BA7F /* plugin_barrage_emitter_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_emitter_i.h; sourceTree = "<group>"; };
+		C95A267C1DBC91BF0019BA7F /* plugin_barrage_emitter_trigger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_emitter_trigger.c; sourceTree = "<group>"; };
+		C95A267D1DBC91BF0019BA7F /* plugin_barrage_env.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_env.c; sourceTree = "<group>"; };
+		C95A267E1DBC91BF0019BA7F /* plugin_barrage_env_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_env_i.h; sourceTree = "<group>"; };
+		C95A267F1DBC91BF0019BA7F /* plugin_barrage_group.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_group.c; sourceTree = "<group>"; };
+		C95A26801DBC91BF0019BA7F /* plugin_barrage_group_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_group_i.h; sourceTree = "<group>"; };
+		C95A26811DBC91BF0019BA7F /* plugin_barrage_module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_module.c; sourceTree = "<group>"; };
+		C95A26821DBC91BF0019BA7F /* plugin_barrage_module_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_module_i.h; sourceTree = "<group>"; };
+		C95A26831DBC91BF0019BA7F /* plugin_barrage_op.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_op.c; sourceTree = "<group>"; };
+		C95A26841DBC91BF0019BA7F /* plugin_barrage_op_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_op_i.h; sourceTree = "<group>"; };
+		C95A26851DBC91BF0019BA7F /* plugin_barrage_render.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_render.c; sourceTree = "<group>"; };
+		C95A26861DBC91BF0019BA7F /* plugin_barrage_render_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_render_i.h; sourceTree = "<group>"; };
+		C95A26871DBC91BF0019BA7F /* plugin_barrage_trigger_op.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_trigger_op.c; sourceTree = "<group>"; };
+		C95A26881DBC91BF0019BA7F /* plugin_barrage_trigger_op_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_trigger_op_i.h; sourceTree = "<group>"; };
+		C95A26891DBC91BF0019BA7F /* plugin_barrage_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_barrage_utils.c; sourceTree = "<group>"; };
+		C95A268A1DBC91BF0019BA7F /* plugin_barrage_utils_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_utils_i.h; sourceTree = "<group>"; };
+		C95A268B1DBC91BF0019BA7F /* protocol.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = protocol.def; sourceTree = "<group>"; };
+		C95A268C1DBC91BF0019BA7F /* symbols.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = symbols.def; sourceTree = "<group>"; };
+		C95A26B11DBC91D20019BA7F /* plugin_barrage_barrage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_barrage.h; sourceTree = "<group>"; };
+		C95A26B21DBC91D20019BA7F /* plugin_barrage_bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_bullet.h; sourceTree = "<group>"; };
+		C95A26B31DBC91D20019BA7F /* plugin_barrage_data_barrage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_data_barrage.h; sourceTree = "<group>"; };
+		C95A26B41DBC91D20019BA7F /* plugin_barrage_data_emitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_data_emitter.h; sourceTree = "<group>"; };
+		C95A26B51DBC91D20019BA7F /* plugin_barrage_emitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_emitter.h; sourceTree = "<group>"; };
+		C95A26B61DBC91D20019BA7F /* plugin_barrage_env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_env.h; sourceTree = "<group>"; };
+		C95A26B71DBC91D20019BA7F /* plugin_barrage_group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_group.h; sourceTree = "<group>"; };
+		C95A26B81DBC91D20019BA7F /* plugin_barrage_module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_module.h; sourceTree = "<group>"; };
+		C95A26B91DBC91D20019BA7F /* plugin_barrage_render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_render.h; sourceTree = "<group>"; };
+		C95A26BA1DBC91D20019BA7F /* plugin_barrage_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_barrage_types.h; sourceTree = "<group>"; };
+		C95A26F11DBC91DF0019BA7F /* ui_sprite_barrage_barrage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_barrage.h; sourceTree = "<group>"; };
+		C95A26F21DBC91DF0019BA7F /* ui_sprite_barrage_clear_bullets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_clear_bullets.h; sourceTree = "<group>"; };
+		C95A26F31DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_enable_emitter.h; sourceTree = "<group>"; };
+		C95A26F41DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter_random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_enable_emitter_random.h; sourceTree = "<group>"; };
+		C95A26F51DBC91DF0019BA7F /* ui_sprite_barrage_enable_seq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_enable_seq.h; sourceTree = "<group>"; };
+		C95A26F61DBC91DF0019BA7F /* ui_sprite_barrage_env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_env.h; sourceTree = "<group>"; };
+		C95A26F71DBC91DF0019BA7F /* ui_sprite_barrage_mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_mask.h; sourceTree = "<group>"; };
+		C95A26F81DBC91DF0019BA7F /* ui_sprite_barrage_module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_module.h; sourceTree = "<group>"; };
+		C95A26F91DBC91DF0019BA7F /* ui_sprite_barrage_obj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_obj.h; sourceTree = "<group>"; };
+		C95A26FA1DBC91DF0019BA7F /* ui_sprite_barrage_pause_emitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_pause_emitter.h; sourceTree = "<group>"; };
+		C95A26FB1DBC91DF0019BA7F /* ui_sprite_barrage_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_barrage_types.h; sourceTree = "<group>"; };
+		C95A271F1DBC91DF0019BA7F /* ui_sprite_chipmunk_apply_velocity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_apply_velocity.h; sourceTree = "<group>"; };
+		C95A27201DBC91DF0019BA7F /* ui_sprite_chipmunk_env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_env.h; sourceTree = "<group>"; };
+		C95A27211DBC91DF0019BA7F /* ui_sprite_chipmunk_manipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_manipulator.h; sourceTree = "<group>"; };
+		C95A27221DBC91DF0019BA7F /* ui_sprite_chipmunk_module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_module.h; sourceTree = "<group>"; };
+		C95A27231DBC91DF0019BA7F /* ui_sprite_chipmunk_move_to_entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_move_to_entity.h; sourceTree = "<group>"; };
+		C95A27241DBC91DF0019BA7F /* ui_sprite_chipmunk_obj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj.h; sourceTree = "<group>"; };
+		C95A27251DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_body.h; sourceTree = "<group>"; };
+		C95A27261DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_constraint.h; sourceTree = "<group>"; };
+		C95A27271DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_shape.h; sourceTree = "<group>"; };
+		C95A27281DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape_group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_shape_group.h; sourceTree = "<group>"; };
+		C95A27291DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_updator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_obj_updator.h; sourceTree = "<group>"; };
+		C95A272A1DBC91DF0019BA7F /* ui_sprite_chipmunk_on_click.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_on_click.h; sourceTree = "<group>"; };
+		C95A272B1DBC91DF0019BA7F /* ui_sprite_chipmunk_on_collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_on_collision.h; sourceTree = "<group>"; };
+		C95A272C1DBC91DF0019BA7F /* ui_sprite_chipmunk_track_angle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_track_angle.h; sourceTree = "<group>"; };
+		C95A272D1DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_have_entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_tri_have_entity.h; sourceTree = "<group>"; };
+		C95A272E1DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_tri_scope.h; sourceTree = "<group>"; };
+		C95A272F1DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope_render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_tri_scope_render.h; sourceTree = "<group>"; };
+		C95A27301DBC91DF0019BA7F /* ui_sprite_chipmunk_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_types.h; sourceTree = "<group>"; };
+		C95A27311DBC91DF0019BA7F /* ui_sprite_chipmunk_wait_collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_wait_collision.h; sourceTree = "<group>"; };
+		C95A27321DBC91DF0019BA7F /* ui_sprite_chipmunk_with_addition_accel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_addition_accel.h; sourceTree = "<group>"; };
+		C95A27331DBC91DF0019BA7F /* ui_sprite_chipmunk_with_attractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_attractor.h; sourceTree = "<group>"; };
+		C95A27341DBC91DF0019BA7F /* ui_sprite_chipmunk_with_boundary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_boundary.h; sourceTree = "<group>"; };
+		C95A27351DBC91DF0019BA7F /* ui_sprite_chipmunk_with_collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_collision.h; sourceTree = "<group>"; };
+		C95A27361DBC91DF0019BA7F /* ui_sprite_chipmunk_with_constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_constraint.h; sourceTree = "<group>"; };
+		C95A27371DBC91DF0019BA7F /* ui_sprite_chipmunk_with_damping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_damping.h; sourceTree = "<group>"; };
+		C95A27381DBC91DF0019BA7F /* ui_sprite_chipmunk_with_gravity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_gravity.h; sourceTree = "<group>"; };
+		C95A27391DBC91DF0019BA7F /* ui_sprite_chipmunk_with_group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_group.h; sourceTree = "<group>"; };
+		C95A276B1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_particle_chipmunk_module.h; sourceTree = "<group>"; };
+		C95A276C1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_particle_chipmunk_types.h; sourceTree = "<group>"; };
+		C95A276D1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_with_collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_particle_chipmunk_with_collision.h; sourceTree = "<group>"; };
+		C95A27A01DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_spine_chipmunk_module.h; sourceTree = "<group>"; };
+		C95A27A11DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_spine_chipmunk_types.h; sourceTree = "<group>"; };
+		C95A27A21DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_spine_chipmunk_with_collision.h; sourceTree = "<group>"; };
+		C95A27A31DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_tri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_spine_chipmunk_with_tri.h; sourceTree = "<group>"; };
+		C9696FDA1DD8922D000A186C /* ui_sprite_chipmunk_with_time_scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_time_scale.h; sourceTree = "<group>"; };
+		C9696FDC1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_time_scale_i.h; sourceTree = "<group>"; };
+		C9696FDD1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_time_scale.c; sourceTree = "<group>"; };
+		C9696FFB1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_runing_mode_i.h; sourceTree = "<group>"; };
+		C9696FFC1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_with_runing_mode.c; sourceTree = "<group>"; };
+		C9696FFF1DD8A594000A186C /* ui_sprite_chipmunk_with_runing_mode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_with_runing_mode.h; sourceTree = "<group>"; };
+		C96970091DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_touch_move_i.h; sourceTree = "<group>"; };
+		C969700A1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_load.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_touch_move_load.c; sourceTree = "<group>"; };
+		C969700B1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_touch_move.c; sourceTree = "<group>"; };
+		C969700F1DD8CD51000A186C /* ui_sprite_chipmunk_touch_move.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_touch_move.h; sourceTree = "<group>"; };
+		C98096251A2E08C60085B812 /* plugin_chipmunk_data_body_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_body_i.h; sourceTree = "<group>"; };
+		C98096261A2E08C60085B812 /* plugin_chipmunk_data_body.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_data_body.c; sourceTree = "<group>"; };
+		C98096271A2E08C60085B812 /* plugin_chipmunk_data_fixture_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_fixture_i.h; sourceTree = "<group>"; };
+		C98096281A2E08C60085B812 /* plugin_chipmunk_data_fixture.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_data_fixture.c; sourceTree = "<group>"; };
+		C98096291A2E08C60085B812 /* plugin_chipmunk_data_polygon_node_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_polygon_node_i.h; sourceTree = "<group>"; };
+		C980962A1A2E08C60085B812 /* plugin_chipmunk_data_polygon_node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_data_polygon_node.c; sourceTree = "<group>"; };
+		C980962B1A2E08C60085B812 /* plugin_chipmunk_data_scene_bin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_data_scene_bin.c; sourceTree = "<group>"; };
+		C980962C1A2E08C60085B812 /* plugin_chipmunk_data_scene_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_data_scene_i.h; sourceTree = "<group>"; };
+		C980962D1A2E08C60085B812 /* plugin_chipmunk_data_scene.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_data_scene.c; sourceTree = "<group>"; };
+		C9970CE31B0DA14200701382 /* plugin_chipmunk_env_updator_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_env_updator_i.h; sourceTree = "<group>"; };
+		C9970CE41B0DA14200701382 /* plugin_chipmunk_env_updator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_env_updator.c; sourceTree = "<group>"; };
+		C99D746A1DBDB57A001256C5 /* chipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk.h; sourceTree = "<group>"; };
+		C99D746B1DBDB57A001256C5 /* chipmunk_ffi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_ffi.h; sourceTree = "<group>"; };
+		C99D746C1DBDB57A001256C5 /* chipmunk_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_private.h; sourceTree = "<group>"; };
+		C99D746D1DBDB57A001256C5 /* chipmunk_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_types.h; sourceTree = "<group>"; };
+		C99D746E1DBDB57A001256C5 /* chipmunk_unsafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_unsafe.h; sourceTree = "<group>"; };
+		C99D746F1DBDB57A001256C5 /* cpArbiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpArbiter.h; sourceTree = "<group>"; };
+		C99D74701DBDB57A001256C5 /* cpBB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpBB.h; sourceTree = "<group>"; };
+		C99D74711DBDB57A001256C5 /* cpBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpBody.h; sourceTree = "<group>"; };
+		C99D74721DBDB57A001256C5 /* cpConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpConstraint.h; sourceTree = "<group>"; };
+		C99D74731DBDB57A001256C5 /* cpDampedRotarySpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpDampedRotarySpring.h; sourceTree = "<group>"; };
+		C99D74741DBDB57A001256C5 /* cpDampedSpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpDampedSpring.h; sourceTree = "<group>"; };
+		C99D74751DBDB57A001256C5 /* cpGearJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpGearJoint.h; sourceTree = "<group>"; };
+		C99D74761DBDB57A001256C5 /* cpGrooveJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpGrooveJoint.h; sourceTree = "<group>"; };
+		C99D74771DBDB57A001256C5 /* cpPinJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpPinJoint.h; sourceTree = "<group>"; };
+		C99D74781DBDB57A001256C5 /* cpPivotJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpPivotJoint.h; sourceTree = "<group>"; };
+		C99D74791DBDB57A001256C5 /* cpPolyShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpPolyShape.h; sourceTree = "<group>"; };
+		C99D747A1DBDB57A001256C5 /* cpRatchetJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpRatchetJoint.h; sourceTree = "<group>"; };
+		C99D747B1DBDB57A001256C5 /* cpRotaryLimitJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpRotaryLimitJoint.h; sourceTree = "<group>"; };
+		C99D747C1DBDB57A001256C5 /* cpShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpShape.h; sourceTree = "<group>"; };
+		C99D747D1DBDB57A001256C5 /* cpSimpleMotor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpSimpleMotor.h; sourceTree = "<group>"; };
+		C99D747E1DBDB57A001256C5 /* cpSlideJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpSlideJoint.h; sourceTree = "<group>"; };
+		C99D747F1DBDB57A001256C5 /* cpSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpSpace.h; sourceTree = "<group>"; };
+		C99D74801DBDB57A001256C5 /* cpSpatialIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpSpatialIndex.h; sourceTree = "<group>"; };
+		C99D74811DBDB57A001256C5 /* cpTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpTransform.h; sourceTree = "<group>"; };
+		C99D74821DBDB57A001256C5 /* cpVect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpVect.h; sourceTree = "<group>"; };
+		C99D74851DBDB57A001256C5 /* cpHastySpace.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpHastySpace.c; sourceTree = "<group>"; };
+		C99D74861DBDB57A001256C5 /* cpMarch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpMarch.c; sourceTree = "<group>"; };
+		C99D74871DBDB57A001256C5 /* cpPolyline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpPolyline.c; sourceTree = "<group>"; };
+		C99D74881DBDB57A001256C5 /* cpRobust.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpRobust.c; sourceTree = "<group>"; };
+		C99D74891DBDB57A001256C5 /* chipmunk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = chipmunk.c; sourceTree = "<group>"; };
+		C99D748A1DBDB57A001256C5 /* cpArbiter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpArbiter.c; sourceTree = "<group>"; };
+		C99D748B1DBDB57A001256C5 /* cpArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpArray.c; sourceTree = "<group>"; };
+		C99D748C1DBDB57A001256C5 /* cpBBTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpBBTree.c; sourceTree = "<group>"; };
+		C99D748D1DBDB57A001256C5 /* cpBody.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpBody.c; sourceTree = "<group>"; };
+		C99D748E1DBDB57A001256C5 /* cpCollision.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpCollision.c; sourceTree = "<group>"; };
+		C99D748F1DBDB57A001256C5 /* cpConstraint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpConstraint.c; sourceTree = "<group>"; };
+		C99D74901DBDB57A001256C5 /* cpDampedRotarySpring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpDampedRotarySpring.c; sourceTree = "<group>"; };
+		C99D74911DBDB57A001256C5 /* cpDampedSpring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpDampedSpring.c; sourceTree = "<group>"; };
+		C99D74921DBDB57A001256C5 /* cpGearJoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpGearJoint.c; sourceTree = "<group>"; };
+		C99D74931DBDB57A001256C5 /* cpGrooveJoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpGrooveJoint.c; sourceTree = "<group>"; };
+		C99D74941DBDB57A001256C5 /* cpHashSet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpHashSet.c; sourceTree = "<group>"; };
+		C99D74951DBDB57A001256C5 /* cpPinJoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpPinJoint.c; sourceTree = "<group>"; };
+		C99D74961DBDB57A001256C5 /* cpPivotJoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpPivotJoint.c; sourceTree = "<group>"; };
+		C99D74971DBDB57A001256C5 /* cpPolyShape.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpPolyShape.c; sourceTree = "<group>"; };
+		C99D74981DBDB57A001256C5 /* cpRatchetJoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpRatchetJoint.c; sourceTree = "<group>"; };
+		C99D74991DBDB57A001256C5 /* cpRotaryLimitJoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpRotaryLimitJoint.c; sourceTree = "<group>"; };
+		C99D749A1DBDB57A001256C5 /* cpShape.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpShape.c; sourceTree = "<group>"; };
+		C99D749B1DBDB57A001256C5 /* cpSimpleMotor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSimpleMotor.c; sourceTree = "<group>"; };
+		C99D749C1DBDB57A001256C5 /* cpSlideJoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSlideJoint.c; sourceTree = "<group>"; };
+		C99D749D1DBDB57A001256C5 /* cpSpace.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSpace.c; sourceTree = "<group>"; };
+		C99D749E1DBDB57A001256C5 /* cpSpaceComponent.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSpaceComponent.c; sourceTree = "<group>"; };
+		C99D749F1DBDB57A001256C5 /* cpSpaceDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSpaceDebug.c; sourceTree = "<group>"; };
+		C99D74A01DBDB57A001256C5 /* cpSpaceHash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSpaceHash.c; sourceTree = "<group>"; };
+		C99D74A11DBDB57A001256C5 /* cpSpaceQuery.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSpaceQuery.c; sourceTree = "<group>"; };
+		C99D74A21DBDB57A001256C5 /* cpSpaceStep.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSpaceStep.c; sourceTree = "<group>"; };
+		C99D74A31DBDB57A001256C5 /* cpSpatialIndex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSpatialIndex.c; sourceTree = "<group>"; };
+		C99D74A41DBDB57A001256C5 /* cpSweep1D.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpSweep1D.c; sourceTree = "<group>"; };
+		C99D74A51DBDB57A001256C5 /* prime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prime.h; sourceTree = "<group>"; };
+		C9BAB5CA1DD238CC00226A6F /* ui_sprite_chipmunk_send_event_to_collision_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_send_event_to_collision_i.h; sourceTree = "<group>"; };
+		C9BAB5CE1DD238D600226A6F /* ui_sprite_chipmunk_send_event_to_collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_sprite_chipmunk_send_event_to_collision.h; sourceTree = "<group>"; };
+		C9BAB5D01DD266BC00226A6F /* ui_sprite_chipmunk_send_event_to_collision.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui_sprite_chipmunk_send_event_to_collision.c; sourceTree = "<group>"; };
+		C9C281631C81A36900E3B842 /* libdrow_chipmunk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdrow_chipmunk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D36F651B4BAB910083F4CC /* plugin_chipmunk_render_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_render_i.h; sourceTree = "<group>"; };
+		C9D36F661B4BAB910083F4CC /* plugin_chipmunk_render.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin_chipmunk_render.c; sourceTree = "<group>"; };
+		C9D36F691B4BABB30083F4CC /* plugin_chipmunk_env_updator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_env_updator.h; sourceTree = "<group>"; };
+		C9D36F6A1B4BABB30083F4CC /* plugin_chipmunk_render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin_chipmunk_render.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54BA05B214A1B4B500E0350A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54BA05AA14A1B4B500E0350A = {
+			isa = PBXGroup;
+			children = (
+				C9436E661DF5B11D00E87359 /* pro */,
+				C99D74681DBDB556001256C5 /* 3rdTools */,
+				C95B0A1419B80264008CE3C5 /* include */,
+				C979F7E719B7050D00093AEF /* src */,
+				54BA05B614A1B4B500E0350A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		54BA05B614A1B4B500E0350A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9C281631C81A36900E3B842 /* libdrow_chipmunk.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9024BB71A221E0C00CCF478 /* chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C9D36F651B4BAB910083F4CC /* plugin_chipmunk_render_i.h */,
+				C9D36F661B4BAB910083F4CC /* plugin_chipmunk_render.c */,
+				C9970CE31B0DA14200701382 /* plugin_chipmunk_env_updator_i.h */,
+				C9970CE41B0DA14200701382 /* plugin_chipmunk_env_updator.c */,
+				C91225151A8AE0A400C40A01 /* plugin_chipmunk_data_constraint_i.h */,
+				C91225161A8AE0A400C40A01 /* plugin_chipmunk_data_constraint.c */,
+				C98096251A2E08C60085B812 /* plugin_chipmunk_data_body_i.h */,
+				C98096261A2E08C60085B812 /* plugin_chipmunk_data_body.c */,
+				C98096271A2E08C60085B812 /* plugin_chipmunk_data_fixture_i.h */,
+				C98096281A2E08C60085B812 /* plugin_chipmunk_data_fixture.c */,
+				C98096291A2E08C60085B812 /* plugin_chipmunk_data_polygon_node_i.h */,
+				C980962A1A2E08C60085B812 /* plugin_chipmunk_data_polygon_node.c */,
+				C980962B1A2E08C60085B812 /* plugin_chipmunk_data_scene_bin.c */,
+				C980962C1A2E08C60085B812 /* plugin_chipmunk_data_scene_i.h */,
+				C980962D1A2E08C60085B812 /* plugin_chipmunk_data_scene.c */,
+				C9024BBA1A221E0C00CCF478 /* plugin_chipmunk_env.c */,
+				C9024BBB1A221E0C00CCF478 /* plugin_chipmunk_env_i.h */,
+				C9024BBC1A221E0C00CCF478 /* plugin_chipmunk_module.c */,
+				C9024BBD1A221E0C00CCF478 /* plugin_chipmunk_module_i.h */,
+			);
+			path = chipmunk;
+			sourceTree = "<group>";
+		};
+		C9024BDA1A221E5D00CCF478 /* chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C9D36F691B4BABB30083F4CC /* plugin_chipmunk_env_updator.h */,
+				C9D36F6A1B4BABB30083F4CC /* plugin_chipmunk_render.h */,
+				C912252D1A8AE0D900C40A01 /* plugin_chipmunk_data_body.h */,
+				C912252E1A8AE0D900C40A01 /* plugin_chipmunk_data_constraint.h */,
+				C912252F1A8AE0D900C40A01 /* plugin_chipmunk_data_fixture.h */,
+				C91225301A8AE0D900C40A01 /* plugin_chipmunk_data_polygon_node.h */,
+				C91225311A8AE0D900C40A01 /* plugin_chipmunk_data_scene.h */,
+				C9024BDB1A221E5D00CCF478 /* plugin_chipmunk_env.h */,
+				C9024BDC1A221E5D00CCF478 /* plugin_chipmunk_module.h */,
+				C9024BDD1A221E5D00CCF478 /* plugin_chipmunk_types.h */,
+			);
+			path = chipmunk;
+			sourceTree = "<group>";
+		};
+		C9190EAA19E38614003A5391 /* plugin */ = {
+			isa = PBXGroup;
+			children = (
+				C95A26B01DBC91D20019BA7F /* barrage */,
+				C9024BDA1A221E5D00CCF478 /* chipmunk */,
+			);
+			path = plugin;
+			sourceTree = "<group>";
+		};
+		C9190EB819E38639003A5391 /* plugin */ = {
+			isa = PBXGroup;
+			children = (
+				C95A26661DBC91BF0019BA7F /* barrage */,
+				C9024BB71A221E0C00CCF478 /* chipmunk */,
+			);
+			name = plugin;
+			path = ../../src/plugin;
+			sourceTree = "<group>";
+		};
+		C92A172D1DF7B50E00F9E231 /* barrage */ = {
+			isa = PBXGroup;
+			children = (
+				C92A172B1DF7B50E00F9E231 /* meta_traits.cpp */,
+				C92A172C1DF7B50E00F9E231 /* metalib.c */,
+			);
+			name = barrage;
+			path = ../../../build/xcode/protocol/plugin/barrage;
+			sourceTree = "<group>";
+		};
+		C9436E661DF5B11D00E87359 /* pro */ = {
+			isa = PBXGroup;
+			children = (
+				C9436E711DF5B19B00E87359 /* ui */,
+				C9436E701DF5B18E00E87359 /* plugin */,
+			);
+			name = pro;
+			sourceTree = "<group>";
+		};
+		C9436E6B1DF5B14B00E87359 /* chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C9436E671DF5B14B00E87359 /* chipmunk_common.h */,
+				C9436E681DF5B14B00E87359 /* chipmunk_info.h */,
+				C9436E691DF5B14B00E87359 /* meta_traits.cpp */,
+				C9436E6A1DF5B14B00E87359 /* metalib.c */,
+			);
+			name = chipmunk;
+			path = ../../../build/xcode/protocol/plugin/chipmunk;
+			sourceTree = "<group>";
+		};
+		C9436E701DF5B18E00E87359 /* plugin */ = {
+			isa = PBXGroup;
+			children = (
+				C92A172D1DF7B50E00F9E231 /* barrage */,
+				C9436E6B1DF5B14B00E87359 /* chipmunk */,
+			);
+			name = plugin;
+			sourceTree = "<group>";
+		};
+		C9436E711DF5B19B00E87359 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				C9436E761DF5B1A500E87359 /* sprite_chipmunk */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		C9436E761DF5B1A500E87359 /* sprite_chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C9436E721DF5B1A500E87359 /* meta_traits.cpp */,
+				C9436E731DF5B1A500E87359 /* metalib.c */,
+				C9436E741DF5B1A500E87359 /* ui_sprite_chipmunk_data.h */,
+				C9436E751DF5B1A500E87359 /* ui_sprite_chipmunk_evt.h */,
+			);
+			name = sprite_chipmunk;
+			path = ../../../build/xcode/protocol/ui/sprite_chipmunk;
+			sourceTree = "<group>";
+		};
+		C95A21261DBC918E0019BA7F /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				C95A218F1DBC918E0019BA7F /* sprite_barrage */,
+				C95A22041DBC918F0019BA7F /* sprite_chipmunk */,
+				C95A22E11DBC918F0019BA7F /* sprite_particle_chipmunk */,
+				C95A235F1DBC918F0019BA7F /* sprite_spine_chipmunk */,
+			);
+			name = ui;
+			path = ../../src/ui;
+			sourceTree = "<group>";
+		};
+		C95A218F1DBC918E0019BA7F /* sprite_barrage */ = {
+			isa = PBXGroup;
+			children = (
+				C95A21931DBC918E0019BA7F /* ui_sprite_barrage_barrage.c */,
+				C95A21941DBC918E0019BA7F /* ui_sprite_barrage_barrage_i.h */,
+				C95A21951DBC918E0019BA7F /* ui_sprite_barrage_clear_bullets.c */,
+				C95A21961DBC918E0019BA7F /* ui_sprite_barrage_clear_bullets_i.h */,
+				C95A21971DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter.c */,
+				C95A21981DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter_i.h */,
+				C95A21991DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter_random.c */,
+				C95A219A1DBC918E0019BA7F /* ui_sprite_barrage_enable_emitter_random_i.h */,
+				C95A219B1DBC918E0019BA7F /* ui_sprite_barrage_enable_seq.c */,
+				C95A219C1DBC918E0019BA7F /* ui_sprite_barrage_enable_seq_i.h */,
+				C95A219D1DBC918E0019BA7F /* ui_sprite_barrage_env.c */,
+				C95A219E1DBC918E0019BA7F /* ui_sprite_barrage_env_i.h */,
+				C95A219F1DBC918E0019BA7F /* ui_sprite_barrage_env_load.c */,
+				C95A21A01DBC918E0019BA7F /* ui_sprite_barrage_mask.c */,
+				C95A21A11DBC918E0019BA7F /* ui_sprite_barrage_mask_i.h */,
+				C95A21A21DBC918E0019BA7F /* ui_sprite_barrage_module.c */,
+				C95A21A31DBC918E0019BA7F /* ui_sprite_barrage_module_i.h */,
+				C95A21A41DBC918E0019BA7F /* ui_sprite_barrage_obj.c */,
+				C95A21A51DBC918E0019BA7F /* ui_sprite_barrage_obj_i.h */,
+				C95A21A61DBC918E0019BA7F /* ui_sprite_barrage_pause_emitter.c */,
+				C95A21A71DBC918E0019BA7F /* ui_sprite_barrage_pause_emitter_i.h */,
+				C95A21A81DBC918E0019BA7F /* ui_sprite_barrage_render_creator.c */,
+				C95A21A91DBC918E0019BA7F /* ui_sprite_barrage_render_creator_i.h */,
+			);
+			path = sprite_barrage;
+			sourceTree = "<group>";
+		};
+		C95A22041DBC918F0019BA7F /* sprite_chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C96970091DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_i.h */,
+				C969700A1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_load.c */,
+				C969700B1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move.c */,
+				C9696FFB1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode_i.h */,
+				C9696FFC1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode.c */,
+				C9696FDC1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale_i.h */,
+				C9696FDD1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale.c */,
+				C9BAB5D01DD266BC00226A6F /* ui_sprite_chipmunk_send_event_to_collision.c */,
+				C9BAB5CA1DD238CC00226A6F /* ui_sprite_chipmunk_send_event_to_collision_i.h */,
+				C95A22091DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity.c */,
+				C95A220A1DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity_i.h */,
+				C95A220B1DBC918F0019BA7F /* ui_sprite_chipmunk_env.c */,
+				C95A220C1DBC918F0019BA7F /* ui_sprite_chipmunk_env_i.h */,
+				C95A220D1DBC918F0019BA7F /* ui_sprite_chipmunk_env_load.c */,
+				C95A220E1DBC918F0019BA7F /* ui_sprite_chipmunk_env_query.c */,
+				C95A220F1DBC918F0019BA7F /* ui_sprite_chipmunk_env_touch.c */,
+				C95A22101DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.c */,
+				C95A22111DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.h */,
+				C95A22121DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator.c */,
+				C95A22131DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator_i.h */,
+				C95A22141DBC918F0019BA7F /* ui_sprite_chipmunk_module.c */,
+				C95A22151DBC918F0019BA7F /* ui_sprite_chipmunk_module_i.h */,
+				C95A22161DBC918F0019BA7F /* ui_sprite_chipmunk_monitor.c */,
+				C95A22171DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding.c */,
+				C95A22181DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding_i.h */,
+				C95A22191DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_i.h */,
+				C95A221A1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity.c */,
+				C95A221B1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_gravitation.c */,
+				C95A221C1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_i.h */,
+				C95A221D1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_move.c */,
+				C95A221E1DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_spring.c */,
+				C95A221F1DBC918F0019BA7F /* ui_sprite_chipmunk_obj.c */,
+				C95A22201DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body.c */,
+				C95A22211DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group.c */,
+				C95A22221DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group_i.h */,
+				C95A22231DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_i.h */,
+				C95A22241DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint.c */,
+				C95A22251DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint_i.h */,
+				C95A22261DBC918F0019BA7F /* ui_sprite_chipmunk_obj_i.h */,
+				C95A22271DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load.c */,
+				C95A22281DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.c */,
+				C95A22291DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.h */,
+				C95A222A1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_tree.c */,
+				C95A222B1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group.c */,
+				C95A222C1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group_i.h */,
+				C95A222D1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape.c */,
+				C95A222E1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group.c */,
+				C95A222F1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group_i.h */,
+				C95A22301DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_i.h */,
+				C95A22311DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator.c */,
+				C95A22321DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator_i.h */,
+				C95A22331DBC918F0019BA7F /* ui_sprite_chipmunk_on_click.c */,
+				C95A22341DBC918F0019BA7F /* ui_sprite_chipmunk_on_click_i.h */,
+				C95A22351DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision.c */,
+				C95A22361DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision_i.h */,
+				C95A22371DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator.c */,
+				C95A22381DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator_i.h */,
+				C95A22391DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding.c */,
+				C95A223A1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding_i.h */,
+				C95A223B1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser.c */,
+				C95A223C1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser_i.h */,
+				C95A223D1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace.c */,
+				C95A223E1DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace_i.h */,
+				C95A223F1DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle.c */,
+				C95A22401DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle_i.h */,
+				C95A22411DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity.c */,
+				C95A22421DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity_i.h */,
+				C95A22431DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope.c */,
+				C95A22441DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_i.h */,
+				C95A22451DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render.c */,
+				C95A22461DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator.c */,
+				C95A22471DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator_i.h */,
+				C95A22481DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_i.h */,
+				C95A22491DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision.c */,
+				C95A224A1DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision_i.h */,
+				C95A224B1DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel.c */,
+				C95A224C1DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel_i.h */,
+				C95A224D1DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor.c */,
+				C95A224E1DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_gravitation.c */,
+				C95A224F1DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_i.h */,
+				C95A22501DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_spring.c */,
+				C95A22511DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary.c */,
+				C95A22521DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary_i.h */,
+				C95A22531DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision.c */,
+				C95A22541DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body.c */,
+				C95A22551DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body_i.h */,
+				C95A22561DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_i.h */,
+				C95A22571DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_load.c */,
+				C95A22581DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape.c */,
+				C95A22591DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape_i.h */,
+				C95A225A1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src.c */,
+				C95A225B1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src_i.h */,
+				C95A225C1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint.c */,
+				C95A225D1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_i.h */,
+				C95A225E1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_info.c */,
+				C95A225F1DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_load.c */,
+				C95A22601DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping.c */,
+				C95A22611DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping_i.h */,
+				C95A22621DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity.c */,
+				C95A22631DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity_i.h */,
+				C95A22641DBC918F0019BA7F /* ui_sprite_chipmunk_with_group.c */,
+				C95A22651DBC918F0019BA7F /* ui_sprite_chipmunk_with_group_i.h */,
+			);
+			path = sprite_chipmunk;
+			sourceTree = "<group>";
+		};
+		C95A22E11DBC918F0019BA7F /* sprite_particle_chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C95A22E51DBC918F0019BA7F /* ui_sprite_particle_chipmunk_body.c */,
+				C95A22E61DBC918F0019BA7F /* ui_sprite_particle_chipmunk_body_i.h */,
+				C95A22E71DBC918F0019BA7F /* ui_sprite_particle_chipmunk_env.c */,
+				C95A22E81DBC918F0019BA7F /* ui_sprite_particle_chipmunk_env_i.h */,
+				C95A22E91DBC918F0019BA7F /* ui_sprite_particle_chipmunk_module.c */,
+				C95A22EA1DBC918F0019BA7F /* ui_sprite_particle_chipmunk_module_i.h */,
+				C95A22EB1DBC918F0019BA7F /* ui_sprite_particle_chipmunk_with_collision.c */,
+				C95A22EC1DBC918F0019BA7F /* ui_sprite_particle_chipmunk_with_collision_i.h */,
+			);
+			path = sprite_particle_chipmunk;
+			sourceTree = "<group>";
+		};
+		C95A235F1DBC918F0019BA7F /* sprite_spine_chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C95A23631DBC918F0019BA7F /* ui_sprite_spine_chipmunk_body.c */,
+				C95A23641DBC918F0019BA7F /* ui_sprite_spine_chipmunk_body_i.h */,
+				C95A23651DBC918F0019BA7F /* ui_sprite_spine_chipmunk_module.c */,
+				C95A23661DBC918F0019BA7F /* ui_sprite_spine_chipmunk_module_i.h */,
+				C95A23671DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_collision.c */,
+				C95A23681DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_collision_i.h */,
+				C95A23691DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri.c */,
+				C95A236A1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_action.c */,
+				C95A236B1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding.c */,
+				C95A236C1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding_i.h */,
+				C95A236D1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_condition.c */,
+				C95A236E1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_i.h */,
+				C95A236F1DBC918F0019BA7F /* ui_sprite_spine_chipmunk_with_tri_trigger.c */,
+			);
+			path = sprite_spine_chipmunk;
+			sourceTree = "<group>";
+		};
+		C95A26661DBC91BF0019BA7F /* barrage */ = {
+			isa = PBXGroup;
+			children = (
+				C95A26671DBC91BF0019BA7F /* config.mk */,
+				C95A26681DBC91BF0019BA7F /* makefile */,
+				C95A26691DBC91BF0019BA7F /* plugin_barrage_barrage.c */,
+				C95A266A1DBC91BF0019BA7F /* plugin_barrage_barrage_i.h */,
+				C95A266B1DBC91BF0019BA7F /* plugin_barrage_bullet.c */,
+				C95A266C1DBC91BF0019BA7F /* plugin_barrage_bullet_i.h */,
+				C95A266D1DBC91BF0019BA7F /* plugin_barrage_bullet_proto.c */,
+				C95A266E1DBC91BF0019BA7F /* plugin_barrage_bullet_proto_i.h */,
+				C95A266F1DBC91BF0019BA7F /* plugin_barrage_bullet_trigger.c */,
+				C95A26701DBC91BF0019BA7F /* plugin_barrage_data.c */,
+				C95A26711DBC91BF0019BA7F /* plugin_barrage_data_barrage.c */,
+				C95A26721DBC91BF0019BA7F /* plugin_barrage_data_barrage_i.h */,
+				C95A26731DBC91BF0019BA7F /* plugin_barrage_data_bullet_trigger.c */,
+				C95A26741DBC91BF0019BA7F /* plugin_barrage_data_emitter.c */,
+				C95A26751DBC91BF0019BA7F /* plugin_barrage_data_emitter_bin.c */,
+				C95A26761DBC91BF0019BA7F /* plugin_barrage_data_emitter_i.h */,
+				C95A26771DBC91BF0019BA7F /* plugin_barrage_data_emitter_trigger.c */,
+				C95A26781DBC91BF0019BA7F /* plugin_barrage_data_i.h */,
+				C95A26791DBC91BF0019BA7F /* plugin_barrage_emitter.c */,
+				C95A267A1DBC91BF0019BA7F /* plugin_barrage_emitter_do.c */,
+				C95A267B1DBC91BF0019BA7F /* plugin_barrage_emitter_i.h */,
+				C95A267C1DBC91BF0019BA7F /* plugin_barrage_emitter_trigger.c */,
+				C95A267D1DBC91BF0019BA7F /* plugin_barrage_env.c */,
+				C95A267E1DBC91BF0019BA7F /* plugin_barrage_env_i.h */,
+				C95A267F1DBC91BF0019BA7F /* plugin_barrage_group.c */,
+				C95A26801DBC91BF0019BA7F /* plugin_barrage_group_i.h */,
+				C95A26811DBC91BF0019BA7F /* plugin_barrage_module.c */,
+				C95A26821DBC91BF0019BA7F /* plugin_barrage_module_i.h */,
+				C95A26831DBC91BF0019BA7F /* plugin_barrage_op.c */,
+				C95A26841DBC91BF0019BA7F /* plugin_barrage_op_i.h */,
+				C95A26851DBC91BF0019BA7F /* plugin_barrage_render.c */,
+				C95A26861DBC91BF0019BA7F /* plugin_barrage_render_i.h */,
+				C95A26871DBC91BF0019BA7F /* plugin_barrage_trigger_op.c */,
+				C95A26881DBC91BF0019BA7F /* plugin_barrage_trigger_op_i.h */,
+				C95A26891DBC91BF0019BA7F /* plugin_barrage_utils.c */,
+				C95A268A1DBC91BF0019BA7F /* plugin_barrage_utils_i.h */,
+				C95A268B1DBC91BF0019BA7F /* protocol.def */,
+				C95A268C1DBC91BF0019BA7F /* symbols.def */,
+			);
+			path = barrage;
+			sourceTree = "<group>";
+		};
+		C95A26B01DBC91D20019BA7F /* barrage */ = {
+			isa = PBXGroup;
+			children = (
+				C95A26B11DBC91D20019BA7F /* plugin_barrage_barrage.h */,
+				C95A26B21DBC91D20019BA7F /* plugin_barrage_bullet.h */,
+				C95A26B31DBC91D20019BA7F /* plugin_barrage_data_barrage.h */,
+				C95A26B41DBC91D20019BA7F /* plugin_barrage_data_emitter.h */,
+				C95A26B51DBC91D20019BA7F /* plugin_barrage_emitter.h */,
+				C95A26B61DBC91D20019BA7F /* plugin_barrage_env.h */,
+				C95A26B71DBC91D20019BA7F /* plugin_barrage_group.h */,
+				C95A26B81DBC91D20019BA7F /* plugin_barrage_module.h */,
+				C95A26B91DBC91D20019BA7F /* plugin_barrage_render.h */,
+				C95A26BA1DBC91D20019BA7F /* plugin_barrage_types.h */,
+			);
+			path = barrage;
+			sourceTree = "<group>";
+		};
+		C95A26C51DBC91DF0019BA7F /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				C95A26F01DBC91DF0019BA7F /* sprite_barrage */,
+				C95A271E1DBC91DF0019BA7F /* sprite_chipmunk */,
+				C95A276A1DBC91DF0019BA7F /* sprite_particle_chipmunk */,
+				C95A279F1DBC91DF0019BA7F /* sprite_spine_chipmunk */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C95A26F01DBC91DF0019BA7F /* sprite_barrage */ = {
+			isa = PBXGroup;
+			children = (
+				C95A26F11DBC91DF0019BA7F /* ui_sprite_barrage_barrage.h */,
+				C95A26F21DBC91DF0019BA7F /* ui_sprite_barrage_clear_bullets.h */,
+				C95A26F31DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter.h */,
+				C95A26F41DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter_random.h */,
+				C95A26F51DBC91DF0019BA7F /* ui_sprite_barrage_enable_seq.h */,
+				C95A26F61DBC91DF0019BA7F /* ui_sprite_barrage_env.h */,
+				C95A26F71DBC91DF0019BA7F /* ui_sprite_barrage_mask.h */,
+				C95A26F81DBC91DF0019BA7F /* ui_sprite_barrage_module.h */,
+				C95A26F91DBC91DF0019BA7F /* ui_sprite_barrage_obj.h */,
+				C95A26FA1DBC91DF0019BA7F /* ui_sprite_barrage_pause_emitter.h */,
+				C95A26FB1DBC91DF0019BA7F /* ui_sprite_barrage_types.h */,
+			);
+			path = sprite_barrage;
+			sourceTree = "<group>";
+		};
+		C95A271E1DBC91DF0019BA7F /* sprite_chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C969700F1DD8CD51000A186C /* ui_sprite_chipmunk_touch_move.h */,
+				C9696FFF1DD8A594000A186C /* ui_sprite_chipmunk_with_runing_mode.h */,
+				C9696FDA1DD8922D000A186C /* ui_sprite_chipmunk_with_time_scale.h */,
+				C9BAB5CE1DD238D600226A6F /* ui_sprite_chipmunk_send_event_to_collision.h */,
+				C95A271F1DBC91DF0019BA7F /* ui_sprite_chipmunk_apply_velocity.h */,
+				C95A27201DBC91DF0019BA7F /* ui_sprite_chipmunk_env.h */,
+				C95A27211DBC91DF0019BA7F /* ui_sprite_chipmunk_manipulator.h */,
+				C95A27221DBC91DF0019BA7F /* ui_sprite_chipmunk_module.h */,
+				C95A27231DBC91DF0019BA7F /* ui_sprite_chipmunk_move_to_entity.h */,
+				C95A27241DBC91DF0019BA7F /* ui_sprite_chipmunk_obj.h */,
+				C95A27251DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_body.h */,
+				C95A27261DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_constraint.h */,
+				C95A27271DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape.h */,
+				C95A27281DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape_group.h */,
+				C95A27291DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_updator.h */,
+				C95A272A1DBC91DF0019BA7F /* ui_sprite_chipmunk_on_click.h */,
+				C95A272B1DBC91DF0019BA7F /* ui_sprite_chipmunk_on_collision.h */,
+				C95A272C1DBC91DF0019BA7F /* ui_sprite_chipmunk_track_angle.h */,
+				C95A272D1DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_have_entity.h */,
+				C95A272E1DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope.h */,
+				C95A272F1DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope_render.h */,
+				C95A27301DBC91DF0019BA7F /* ui_sprite_chipmunk_types.h */,
+				C95A27311DBC91DF0019BA7F /* ui_sprite_chipmunk_wait_collision.h */,
+				C95A27321DBC91DF0019BA7F /* ui_sprite_chipmunk_with_addition_accel.h */,
+				C95A27331DBC91DF0019BA7F /* ui_sprite_chipmunk_with_attractor.h */,
+				C95A27341DBC91DF0019BA7F /* ui_sprite_chipmunk_with_boundary.h */,
+				C95A27351DBC91DF0019BA7F /* ui_sprite_chipmunk_with_collision.h */,
+				C95A27361DBC91DF0019BA7F /* ui_sprite_chipmunk_with_constraint.h */,
+				C95A27371DBC91DF0019BA7F /* ui_sprite_chipmunk_with_damping.h */,
+				C95A27381DBC91DF0019BA7F /* ui_sprite_chipmunk_with_gravity.h */,
+				C95A27391DBC91DF0019BA7F /* ui_sprite_chipmunk_with_group.h */,
+			);
+			path = sprite_chipmunk;
+			sourceTree = "<group>";
+		};
+		C95A276A1DBC91DF0019BA7F /* sprite_particle_chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C95A276B1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_module.h */,
+				C95A276C1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_types.h */,
+				C95A276D1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_with_collision.h */,
+			);
+			path = sprite_particle_chipmunk;
+			sourceTree = "<group>";
+		};
+		C95A279F1DBC91DF0019BA7F /* sprite_spine_chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C95A27A01DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_module.h */,
+				C95A27A11DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_types.h */,
+				C95A27A21DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_collision.h */,
+				C95A27A31DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_tri.h */,
+			);
+			path = sprite_spine_chipmunk;
+			sourceTree = "<group>";
+		};
+		C95B0A1419B80264008CE3C5 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				C95A26C51DBC91DF0019BA7F /* ui */,
+				C9190EAA19E38614003A5391 /* plugin */,
+			);
+			name = include;
+			path = ../../include;
+			sourceTree = "<group>";
+		};
+		C979F7E719B7050D00093AEF /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C95A21261DBC918E0019BA7F /* ui */,
+				C9190EB819E38639003A5391 /* plugin */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		C99D74681DBDB556001256C5 /* 3rdTools */ = {
+			isa = PBXGroup;
+			children = (
+				C99D74691DBDB565001256C5 /* Chipmunk2D */,
+			);
+			name = 3rdTools;
+			sourceTree = "<group>";
+		};
+		C99D74691DBDB565001256C5 /* Chipmunk2D */ = {
+			isa = PBXGroup;
+			children = (
+				C99D74841DBDB57A001256C5 /* include */,
+				C99D74A61DBDB57A001256C5 /* src */,
+			);
+			name = Chipmunk2D;
+			sourceTree = "<group>";
+		};
+		C99D74831DBDB57A001256C5 /* chipmunk */ = {
+			isa = PBXGroup;
+			children = (
+				C99D746A1DBDB57A001256C5 /* chipmunk.h */,
+				C99D746B1DBDB57A001256C5 /* chipmunk_ffi.h */,
+				C99D746C1DBDB57A001256C5 /* chipmunk_private.h */,
+				C99D746D1DBDB57A001256C5 /* chipmunk_types.h */,
+				C99D746E1DBDB57A001256C5 /* chipmunk_unsafe.h */,
+				C99D746F1DBDB57A001256C5 /* cpArbiter.h */,
+				C99D74701DBDB57A001256C5 /* cpBB.h */,
+				C99D74711DBDB57A001256C5 /* cpBody.h */,
+				C99D74721DBDB57A001256C5 /* cpConstraint.h */,
+				C99D74731DBDB57A001256C5 /* cpDampedRotarySpring.h */,
+				C99D74741DBDB57A001256C5 /* cpDampedSpring.h */,
+				C99D74751DBDB57A001256C5 /* cpGearJoint.h */,
+				C99D74761DBDB57A001256C5 /* cpGrooveJoint.h */,
+				C99D74771DBDB57A001256C5 /* cpPinJoint.h */,
+				C99D74781DBDB57A001256C5 /* cpPivotJoint.h */,
+				C99D74791DBDB57A001256C5 /* cpPolyShape.h */,
+				C99D747A1DBDB57A001256C5 /* cpRatchetJoint.h */,
+				C99D747B1DBDB57A001256C5 /* cpRotaryLimitJoint.h */,
+				C99D747C1DBDB57A001256C5 /* cpShape.h */,
+				C99D747D1DBDB57A001256C5 /* cpSimpleMotor.h */,
+				C99D747E1DBDB57A001256C5 /* cpSlideJoint.h */,
+				C99D747F1DBDB57A001256C5 /* cpSpace.h */,
+				C99D74801DBDB57A001256C5 /* cpSpatialIndex.h */,
+				C99D74811DBDB57A001256C5 /* cpTransform.h */,
+				C99D74821DBDB57A001256C5 /* cpVect.h */,
+			);
+			path = chipmunk;
+			sourceTree = "<group>";
+		};
+		C99D74841DBDB57A001256C5 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				C99D74831DBDB57A001256C5 /* chipmunk */,
+			);
+			name = include;
+			path = /Users/wangjian/workspace/DrowGames/buildtools/3rdTools/Chipmunk2D/../../../3rdTools/Chipmunk2D/include;
+			sourceTree = "<absolute>";
+		};
+		C99D74A61DBDB57A001256C5 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C99D74851DBDB57A001256C5 /* cpHastySpace.c */,
+				C99D74861DBDB57A001256C5 /* cpMarch.c */,
+				C99D74871DBDB57A001256C5 /* cpPolyline.c */,
+				C99D74881DBDB57A001256C5 /* cpRobust.c */,
+				C99D74891DBDB57A001256C5 /* chipmunk.c */,
+				C99D748A1DBDB57A001256C5 /* cpArbiter.c */,
+				C99D748B1DBDB57A001256C5 /* cpArray.c */,
+				C99D748C1DBDB57A001256C5 /* cpBBTree.c */,
+				C99D748D1DBDB57A001256C5 /* cpBody.c */,
+				C99D748E1DBDB57A001256C5 /* cpCollision.c */,
+				C99D748F1DBDB57A001256C5 /* cpConstraint.c */,
+				C99D74901DBDB57A001256C5 /* cpDampedRotarySpring.c */,
+				C99D74911DBDB57A001256C5 /* cpDampedSpring.c */,
+				C99D74921DBDB57A001256C5 /* cpGearJoint.c */,
+				C99D74931DBDB57A001256C5 /* cpGrooveJoint.c */,
+				C99D74941DBDB57A001256C5 /* cpHashSet.c */,
+				C99D74951DBDB57A001256C5 /* cpPinJoint.c */,
+				C99D74961DBDB57A001256C5 /* cpPivotJoint.c */,
+				C99D74971DBDB57A001256C5 /* cpPolyShape.c */,
+				C99D74981DBDB57A001256C5 /* cpRatchetJoint.c */,
+				C99D74991DBDB57A001256C5 /* cpRotaryLimitJoint.c */,
+				C99D749A1DBDB57A001256C5 /* cpShape.c */,
+				C99D749B1DBDB57A001256C5 /* cpSimpleMotor.c */,
+				C99D749C1DBDB57A001256C5 /* cpSlideJoint.c */,
+				C99D749D1DBDB57A001256C5 /* cpSpace.c */,
+				C99D749E1DBDB57A001256C5 /* cpSpaceComponent.c */,
+				C99D749F1DBDB57A001256C5 /* cpSpaceDebug.c */,
+				C99D74A01DBDB57A001256C5 /* cpSpaceHash.c */,
+				C99D74A11DBDB57A001256C5 /* cpSpaceQuery.c */,
+				C99D74A21DBDB57A001256C5 /* cpSpaceStep.c */,
+				C99D74A31DBDB57A001256C5 /* cpSpatialIndex.c */,
+				C99D74A41DBDB57A001256C5 /* cpSweep1D.c */,
+				C99D74A51DBDB57A001256C5 /* prime.h */,
+			);
+			name = src;
+			path = ../../../3rdTools/Chipmunk2D/src;
+			sourceTree = "<absolute>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		54BA05B314A1B4B500E0350A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C95A286D1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_module.h in Headers */,
+				C95A26C21DBC91D20019BA7F /* plugin_barrage_module.h in Headers */,
+				C95A24D51DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group_i.h in Headers */,
+				C99D74B91DBDB57A001256C5 /* cpShape.h in Headers */,
+				C95A24E71DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace_i.h in Headers */,
+				C95A283D1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_boundary.h in Headers */,
+				C95A257D1DBC91900019BA7F /* ui_sprite_particle_chipmunk_module_i.h in Headers */,
+				C95A27FF1DBC91DF0019BA7F /* ui_sprite_barrage_clear_bullets.h in Headers */,
+				C95A286F1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_with_collision.h in Headers */,
+				C95A28401DBC91DF0019BA7F /* ui_sprite_chipmunk_with_damping.h in Headers */,
+				C99D74AB1DBDB57A001256C5 /* chipmunk_unsafe.h in Headers */,
+				C99D74BA1DBDB57A001256C5 /* cpSimpleMotor.h in Headers */,
+				C95A282F1DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_constraint.h in Headers */,
+				C95A24FE1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body_i.h in Headers */,
+				C95A28A01DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_tri.h in Headers */,
+				C95A24CC1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_i.h in Headers */,
+				C9D36F6B1B4BABB30083F4CC /* plugin_chipmunk_env_updator.h in Headers */,
+				C95A257F1DBC91900019BA7F /* ui_sprite_particle_chipmunk_with_collision_i.h in Headers */,
+				C95A28421DBC91DF0019BA7F /* ui_sprite_chipmunk_with_group.h in Headers */,
+				C95A28411DBC91DF0019BA7F /* ui_sprite_chipmunk_with_gravity.h in Headers */,
+				C95A28301DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape.h in Headers */,
+				C99D74B21DBDB57A001256C5 /* cpGearJoint.h in Headers */,
+				C95A26BE1DBC91D20019BA7F /* plugin_barrage_data_emitter.h in Headers */,
+				C95A24F31DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision_i.h in Headers */,
+				C99D74BB1DBDB57A001256C5 /* cpSlideJoint.h in Headers */,
+				C95A26C41DBC91D20019BA7F /* plugin_barrage_types.h in Headers */,
+				C969700C1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_i.h in Headers */,
+				C95A26931DBC91BF0019BA7F /* plugin_barrage_bullet_proto_i.h in Headers */,
+				C95A24D91DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_i.h in Headers */,
+				C95A283F1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_constraint.h in Headers */,
+				C95A24ED1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_i.h in Headers */,
+				C9024BE01A221E5D00CCF478 /* plugin_chipmunk_types.h in Headers */,
+				C95A25021DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape_i.h in Headers */,
+				C99D74AF1DBDB57A001256C5 /* cpConstraint.h in Headers */,
+				C99D74B61DBDB57A001256C5 /* cpPolyShape.h in Headers */,
+				C95A24B31DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity_i.h in Headers */,
+				C95A24E51DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser_i.h in Headers */,
+				C95A28351DBC91DF0019BA7F /* ui_sprite_chipmunk_track_angle.h in Headers */,
+				C91225321A8AE0D900C40A01 /* plugin_chipmunk_data_body.h in Headers */,
+				C95A24C11DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding_i.h in Headers */,
+				C95A24F11DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_i.h in Headers */,
+				C95A27FE1DBC91DF0019BA7F /* ui_sprite_barrage_barrage.h in Headers */,
+				C99D74B51DBDB57A001256C5 /* cpPivotJoint.h in Headers */,
+				C95A269B1DBC91BF0019BA7F /* plugin_barrage_data_emitter_i.h in Headers */,
+				C95A28361DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_have_entity.h in Headers */,
+				C9436E6D1DF5B14B00E87359 /* chipmunk_info.h in Headers */,
+				C9D36F671B4BAB910083F4CC /* plugin_chipmunk_render_i.h in Headers */,
+				C99D74B41DBDB57A001256C5 /* cpPinJoint.h in Headers */,
+				C95A28071DBC91DF0019BA7F /* ui_sprite_barrage_pause_emitter.h in Headers */,
+				C95A24541DBC918F0019BA7F /* ui_sprite_barrage_enable_seq_i.h in Headers */,
+				C99D74B31DBDB57A001256C5 /* cpGrooveJoint.h in Headers */,
+				C99D74AC1DBDB57A001256C5 /* cpArbiter.h in Headers */,
+				A4DFD02E1AC97F9D00D6CCB7 /* UIPopupPage.hpp in Headers */,
+				C95A25041DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src_i.h in Headers */,
+				C95A24D81DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group_i.h in Headers */,
+				C9024BDF1A221E5D00CCF478 /* plugin_chipmunk_module.h in Headers */,
+				C95A24591DBC918F0019BA7F /* ui_sprite_barrage_mask_i.h in Headers */,
+				C99D74BF1DBDB57A001256C5 /* cpVect.h in Headers */,
+				C99D74B71DBDB57A001256C5 /* cpRatchetJoint.h in Headers */,
+				C99D74E01DBDB57A001256C5 /* prime.h in Headers */,
+				C95A24561DBC918F0019BA7F /* ui_sprite_barrage_env_i.h in Headers */,
+				C95A244E1DBC918F0019BA7F /* ui_sprite_barrage_clear_bullets_i.h in Headers */,
+				C98096351A2E08C60085B812 /* plugin_chipmunk_data_scene_i.h in Headers */,
+				C99D74A81DBDB57A001256C5 /* chipmunk_ffi.h in Headers */,
+				C95A24C21DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_i.h in Headers */,
+				C95A282D1DBC91DF0019BA7F /* ui_sprite_chipmunk_obj.h in Headers */,
+				C9696FFD1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode_i.h in Headers */,
+				C95A245D1DBC918F0019BA7F /* ui_sprite_barrage_obj_i.h in Headers */,
+				C95A24501DBC918F0019BA7F /* ui_sprite_barrage_enable_emitter_i.h in Headers */,
+				C99D74B11DBDB57A001256C5 /* cpDampedSpring.h in Headers */,
+				C95A269D1DBC91BF0019BA7F /* plugin_barrage_data_i.h in Headers */,
+				C95A283C1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_attractor.h in Headers */,
+				C95A24B51DBC918F0019BA7F /* ui_sprite_chipmunk_env_i.h in Headers */,
+				C95A26A91DBC91BF0019BA7F /* plugin_barrage_op_i.h in Headers */,
+				C99D74AE1DBDB57A001256C5 /* cpBody.h in Headers */,
+				C95A245B1DBC918F0019BA7F /* ui_sprite_barrage_module_i.h in Headers */,
+				C99D74B81DBDB57A001256C5 /* cpRotaryLimitJoint.h in Headers */,
+				C95A26911DBC91BF0019BA7F /* plugin_barrage_bullet_i.h in Headers */,
+				C91225331A8AE0D900C40A01 /* plugin_chipmunk_data_constraint.h in Headers */,
+				C95A28321DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_updator.h in Headers */,
+				C95A28341DBC91DF0019BA7F /* ui_sprite_chipmunk_on_collision.h in Headers */,
+				C95A24DB1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator_i.h in Headers */,
+				C95A26BB1DBC91D20019BA7F /* plugin_barrage_barrage.h in Headers */,
+				C95A257B1DBC91900019BA7F /* ui_sprite_particle_chipmunk_env_i.h in Headers */,
+				C99D74BD1DBDB57A001256C5 /* cpSpatialIndex.h in Headers */,
+				C95A28081DBC91DF0019BA7F /* ui_sprite_barrage_types.h in Headers */,
+				C99D74BE1DBDB57A001256C5 /* cpTransform.h in Headers */,
+				C91225341A8AE0D900C40A01 /* plugin_chipmunk_data_fixture.h in Headers */,
+				C9BAB5CC1DD238CC00226A6F /* ui_sprite_chipmunk_send_event_to_collision_i.h in Headers */,
+				C95A24BC1DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator_i.h in Headers */,
+				C95A282A1DBC91DF0019BA7F /* ui_sprite_chipmunk_manipulator.h in Headers */,
+				C95A24BE1DBC918F0019BA7F /* ui_sprite_chipmunk_module_i.h in Headers */,
+				C95A24F81DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_i.h in Headers */,
+				C9024BC01A221E0C00CCF478 /* plugin_chipmunk_env_i.h in Headers */,
+				C9436E791DF5B1A500E87359 /* ui_sprite_chipmunk_data.h in Headers */,
+				C95A25E91DBC91900019BA7F /* ui_sprite_spine_chipmunk_body_i.h in Headers */,
+				C95A26A01DBC91BF0019BA7F /* plugin_barrage_emitter_i.h in Headers */,
+				C95A26A71DBC91BF0019BA7F /* plugin_barrage_module_i.h in Headers */,
+				C95A24CF1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_i.h in Headers */,
+				C95A282C1DBC91DF0019BA7F /* ui_sprite_chipmunk_move_to_entity.h in Headers */,
+				C95A282E1DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_body.h in Headers */,
+				C9970CE51B0DA14200701382 /* plugin_chipmunk_env_updator_i.h in Headers */,
+				C95A28281DBC91DF0019BA7F /* ui_sprite_chipmunk_apply_velocity.h in Headers */,
+				C980962E1A2E08C60085B812 /* plugin_chipmunk_data_body_i.h in Headers */,
+				C95A24611DBC918F0019BA7F /* ui_sprite_barrage_render_creator_i.h in Headers */,
+				C95A245F1DBC918F0019BA7F /* ui_sprite_barrage_pause_emitter_i.h in Headers */,
+				C95A26BC1DBC91D20019BA7F /* plugin_barrage_bullet.h in Headers */,
+				C95A26A51DBC91BF0019BA7F /* plugin_barrage_group_i.h in Headers */,
+				C95A24D21DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.h in Headers */,
+				C95A25ED1DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_collision_i.h in Headers */,
+				C95A24F51DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel_i.h in Headers */,
+				C95A28061DBC91DF0019BA7F /* ui_sprite_barrage_obj.h in Headers */,
+				C95A24CB1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group_i.h in Headers */,
+				C99D74AD1DBDB57A001256C5 /* cpBB.h in Headers */,
+				C95A26AF1DBC91BF0019BA7F /* plugin_barrage_utils_i.h in Headers */,
+				C9024BC21A221E0C00CCF478 /* plugin_chipmunk_module_i.h in Headers */,
+				C95A28371DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope.h in Headers */,
+				C95A26AD1DBC91BF0019BA7F /* plugin_barrage_trigger_op_i.h in Headers */,
+				C95A26C01DBC91D20019BA7F /* plugin_barrage_env.h in Headers */,
+				C95A283E1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_collision.h in Headers */,
+				C95A24BA1DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.h in Headers */,
+				C95A26C31DBC91D20019BA7F /* plugin_barrage_render.h in Headers */,
+				C95A28311DBC91DF0019BA7F /* ui_sprite_chipmunk_obj_shape_group.h in Headers */,
+				C91225361A8AE0D900C40A01 /* plugin_chipmunk_data_scene.h in Headers */,
+				C95A24C51DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_i.h in Headers */,
+				C99D74A71DBDB57A001256C5 /* chipmunk.h in Headers */,
+				C95A24FF1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_i.h in Headers */,
+				C95A289E1DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_types.h in Headers */,
+				C91225351A8AE0D900C40A01 /* plugin_chipmunk_data_polygon_node.h in Headers */,
+				C95A28331DBC91DF0019BA7F /* ui_sprite_chipmunk_on_click.h in Headers */,
+				C95A250C1DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity_i.h in Headers */,
+				C95A26A31DBC91BF0019BA7F /* plugin_barrage_env_i.h in Headers */,
+				C95A28021DBC91DF0019BA7F /* ui_sprite_barrage_enable_seq.h in Headers */,
+				C95A24DD1DBC918F0019BA7F /* ui_sprite_chipmunk_on_click_i.h in Headers */,
+				C98096321A2E08C60085B812 /* plugin_chipmunk_data_polygon_node_i.h in Headers */,
+				C9D36F6C1B4BABB30083F4CC /* plugin_chipmunk_render.h in Headers */,
+				C95A25F11DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding_i.h in Headers */,
+				C95A289D1DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_module.h in Headers */,
+				C9696FDB1DD8922D000A186C /* ui_sprite_chipmunk_with_time_scale.h in Headers */,
+				C95A24EB1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity_i.h in Headers */,
+				C95A28041DBC91DF0019BA7F /* ui_sprite_barrage_mask.h in Headers */,
+				C95A286E1DBC91DF0019BA7F /* ui_sprite_particle_chipmunk_types.h in Headers */,
+				C95A24E11DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator_i.h in Headers */,
+				C9436E7A1DF5B1A500E87359 /* ui_sprite_chipmunk_evt.h in Headers */,
+				C95A25EB1DBC91900019BA7F /* ui_sprite_spine_chipmunk_module_i.h in Headers */,
+				C95A268F1DBC91BF0019BA7F /* plugin_barrage_barrage_i.h in Headers */,
+				C95A26971DBC91BF0019BA7F /* plugin_barrage_data_barrage_i.h in Headers */,
+				C95A244C1DBC918F0019BA7F /* ui_sprite_barrage_barrage_i.h in Headers */,
+				C99D74A91DBDB57A001256C5 /* chipmunk_private.h in Headers */,
+				C95A28381DBC91DF0019BA7F /* ui_sprite_chipmunk_tri_scope_render.h in Headers */,
+				C95A24FB1DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary_i.h in Headers */,
+				C96970101DD8CD51000A186C /* ui_sprite_chipmunk_touch_move.h in Headers */,
+				C98096301A2E08C60085B812 /* plugin_chipmunk_data_fixture_i.h in Headers */,
+				C95A26BF1DBC91D20019BA7F /* plugin_barrage_emitter.h in Headers */,
+				C91225171A8AE0A400C40A01 /* plugin_chipmunk_data_constraint_i.h in Headers */,
+				C95A24DF1DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision_i.h in Headers */,
+				C95A283A1DBC91DF0019BA7F /* ui_sprite_chipmunk_wait_collision.h in Headers */,
+				C95A26AB1DBC91BF0019BA7F /* plugin_barrage_render_i.h in Headers */,
+				C95A24E31DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding_i.h in Headers */,
+				C95A26BD1DBC91D20019BA7F /* plugin_barrage_data_barrage.h in Headers */,
+				C95A24521DBC918F0019BA7F /* ui_sprite_barrage_enable_emitter_random_i.h in Headers */,
+				C9436E6C1DF5B14B00E87359 /* chipmunk_common.h in Headers */,
+				C95A282B1DBC91DF0019BA7F /* ui_sprite_chipmunk_module.h in Headers */,
+				C95A24CE1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint_i.h in Headers */,
+				C9696FDE1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale_i.h in Headers */,
+				C95A24E91DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle_i.h in Headers */,
+				C95A24F01DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator_i.h in Headers */,
+				C9BAB5CF1DD238D600226A6F /* ui_sprite_chipmunk_send_event_to_collision.h in Headers */,
+				C95A28001DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter.h in Headers */,
+				C95A283B1DBC91DF0019BA7F /* ui_sprite_chipmunk_with_addition_accel.h in Headers */,
+				C95A28011DBC91DF0019BA7F /* ui_sprite_barrage_enable_emitter_random.h in Headers */,
+				C96970001DD8A594000A186C /* ui_sprite_chipmunk_with_runing_mode.h in Headers */,
+				C95A25061DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_i.h in Headers */,
+				C95A250E1DBC918F0019BA7F /* ui_sprite_chipmunk_with_group_i.h in Headers */,
+				C99D74B01DBDB57A001256C5 /* cpDampedRotarySpring.h in Headers */,
+				C99D74AA1DBDB57A001256C5 /* chipmunk_types.h in Headers */,
+				C95A28391DBC91DF0019BA7F /* ui_sprite_chipmunk_types.h in Headers */,
+				C95A25791DBC91900019BA7F /* ui_sprite_particle_chipmunk_body_i.h in Headers */,
+				C99D74BC1DBDB57A001256C5 /* cpSpace.h in Headers */,
+				C95A289F1DBC91DF0019BA7F /* ui_sprite_spine_chipmunk_with_collision.h in Headers */,
+				C95A28051DBC91DF0019BA7F /* ui_sprite_barrage_module.h in Headers */,
+				C95A25F31DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_i.h in Headers */,
+				C95A28031DBC91DF0019BA7F /* ui_sprite_barrage_env.h in Headers */,
+				C95A250A1DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping_i.h in Headers */,
+				C9024BDE1A221E5D00CCF478 /* plugin_chipmunk_env.h in Headers */,
+				C95A26C11DBC91D20019BA7F /* plugin_barrage_group.h in Headers */,
+				C95A28291DBC91DF0019BA7F /* ui_sprite_chipmunk_env.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		54BA05B414A1B4B500E0350A /* drow_chipmunk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54BA05C214A1B4B500E0350A /* Build configuration list for PBXNativeTarget "drow_chipmunk" */;
+			buildPhases = (
+				C99D16E919C43F98000ACF4D /* ShellScript */,
+				54BA05B114A1B4B500E0350A /* Sources */,
+				54BA05B214A1B4B500E0350A /* Frameworks */,
+				54BA05B314A1B4B500E0350A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = drow_chipmunk;
+			productName = REngine;
+			productReference = C9C281631C81A36900E3B842 /* libdrow_chipmunk.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54BA05AC14A1B4B500E0370A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = 54BA05AF14A1B4B500E0350A /* Build configuration list for PBXProject "drow_chipmunk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 54BA05AA14A1B4B500E0350A;
+			productRefGroup = 54BA05B614A1B4B500E0350A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54BA05B414A1B4B500E0350A /* drow_chipmunk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C99D16E919C43F98000ACF4D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				../../pro/chipmunk/chipmunk_common.xml,
+				../../pro/chipmunk/chipmunk_info.xml,
+				../../pro/barrage/barrage_common.xml,
+				../../pro/barrage/barrage_info.xml,
+				../../pro/barrage/barrage_ins.xml,
+				../../pro/sprite_chipmunk/ui_sprite_chipmunk_data.xml,
+				../../pro/sprite_chipmunk/ui_sprite_chipmunk_evt.xml,
+			);
+			outputPaths = (
+				../../../build/xcode/protocol/plugin/chipmunk/metalib.c,
+				../../../build/xcode/protocol/plugin/barrage/metalib.c,
+				../../../build/xcode/protocol/ui/sprite_chipmunk/metalib.c,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "../../../build/tools/bin/cpe_dr_tool --input-group-root ../../pro/chipmunk --input-group ../../src/plugin/chipmunk/protocol.def --align 4 --output-h ../../../build/xcode/protocol/plugin/chipmunk --output-lib-c ../../../build/xcode/protocol/plugin/chipmunk/metalib.c --output-lib-c-arg=g_metalib_plugin_chipmunk --with-traits --output-traits-cpp=../../../build/xcode/protocol/plugin/chipmunk/meta_traits.cpp\n\n../../../build/tools/bin/cpe_dr_tool --input-group-root ../../pro/sprite_chipmunk --input-group ../../src/ui/sprite_chipmunk/protocol.def --align 4 --output-h ../../../build/xcode/protocol/ui/sprite_chipmunk --output-lib-c ../../../build/xcode/protocol/ui/sprite_chipmunk/metalib.c --output-lib-c-arg=g_metalib_ui_sprite_chipmunk --with-traits --output-traits-cpp=../../../build/xcode/protocol/ui/sprite_chipmunk/meta_traits.cpp\n\n../../../build/tools/bin/cpe_dr_tool --input-group-root ../../pro/barrage --input-group ../../src/plugin/barrage/protocol.def --align 4 --output-h ../../../build/xcode/protocol/plugin/barrage --output-lib-c ../../../build/xcode/protocol/plugin/barrage/metalib.c --output-lib-c-arg=g_metalib_plugin_barrage --with-traits --output-traits-cpp=../../../build/xcode/protocol/plugin/barrage/meta_traits.cpp\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54BA05B114A1B4B500E0350A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C95A24CD1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_constraint.c in Sources */,
+				C95A269C1DBC91BF0019BA7F /* plugin_barrage_data_emitter_trigger.c in Sources */,
+				C99D74D41DBDB57A001256C5 /* cpRotaryLimitJoint.c in Sources */,
+				C99D74DC1DBDB57A001256C5 /* cpSpaceQuery.c in Sources */,
+				C99D74C81DBDB57A001256C5 /* cpBody.c in Sources */,
+				C95A24D71DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape_group.c in Sources */,
+				C95A26A61DBC91BF0019BA7F /* plugin_barrage_module.c in Sources */,
+				C95A25EF1DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_action.c in Sources */,
+				C95A26AC1DBC91BF0019BA7F /* plugin_barrage_trigger_op.c in Sources */,
+				C95A24F61DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor.c in Sources */,
+				C95A24DE1DBC918F0019BA7F /* ui_sprite_chipmunk_on_collision.c in Sources */,
+				C99D74CB1DBDB57A001256C5 /* cpDampedRotarySpring.c in Sources */,
+				C95A24B91DBC918F0019BA7F /* ui_sprite_chipmunk_load_utils.c in Sources */,
+				C95A25001DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_load.c in Sources */,
+				C95A25781DBC91900019BA7F /* ui_sprite_particle_chipmunk_body.c in Sources */,
+				C9436E781DF5B1A500E87359 /* metalib.c in Sources */,
+				C95A24EE1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render.c in Sources */,
+				C95A24FD1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_body.c in Sources */,
+				C95A26991DBC91BF0019BA7F /* plugin_barrage_data_emitter.c in Sources */,
+				C98096361A2E08C60085B812 /* plugin_chipmunk_data_scene.c in Sources */,
+				C95A24EF1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope_render_creator.c in Sources */,
+				C99D74CA1DBDB57A001256C5 /* cpConstraint.c in Sources */,
+				C99D74C01DBDB57A001256C5 /* cpHastySpace.c in Sources */,
+				C99D74C61DBDB57A001256C5 /* cpArray.c in Sources */,
+				C95A24511DBC918F0019BA7F /* ui_sprite_barrage_enable_emitter_random.c in Sources */,
+				C95A24BB1DBC918F0019BA7F /* ui_sprite_chipmunk_manipulator.c in Sources */,
+				C95A24F21DBC918F0019BA7F /* ui_sprite_chipmunk_wait_collision.c in Sources */,
+				C99D74CE1DBDB57A001256C5 /* cpGrooveJoint.c in Sources */,
+				C95A24C01DBC918F0019BA7F /* ui_sprite_chipmunk_monitor_binding.c in Sources */,
+				C91225181A8AE0A400C40A01 /* plugin_chipmunk_data_constraint.c in Sources */,
+				C95A24531DBC918F0019BA7F /* ui_sprite_barrage_enable_seq.c in Sources */,
+				C95A257C1DBC91900019BA7F /* ui_sprite_particle_chipmunk_module.c in Sources */,
+				C9BAB5D11DD266BC00226A6F /* ui_sprite_chipmunk_send_event_to_collision.c in Sources */,
+				C95A25EE1DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri.c in Sources */,
+				C99D74D91DBDB57A001256C5 /* cpSpaceComponent.c in Sources */,
+				C99D74C71DBDB57A001256C5 /* cpBBTree.c in Sources */,
+				C99D74CF1DBDB57A001256C5 /* cpHashSet.c in Sources */,
+				C95A24B61DBC918F0019BA7F /* ui_sprite_chipmunk_env_load.c in Sources */,
+				C95A24DA1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_updator.c in Sources */,
+				C95A244D1DBC918F0019BA7F /* ui_sprite_barrage_clear_bullets.c in Sources */,
+				C98096341A2E08C60085B812 /* plugin_chipmunk_data_scene_bin.c in Sources */,
+				C95A24C61DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_move.c in Sources */,
+				C95A26901DBC91BF0019BA7F /* plugin_barrage_bullet.c in Sources */,
+				C99D74D71DBDB57A001256C5 /* cpSlideJoint.c in Sources */,
+				C95A24601DBC918F0019BA7F /* ui_sprite_barrage_render_creator.c in Sources */,
+				C95A25071DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_info.c in Sources */,
+				C95A24E21DBC918F0019BA7F /* ui_sprite_chipmunk_touch_binding.c in Sources */,
+				C95A26A21DBC91BF0019BA7F /* plugin_barrage_env.c in Sources */,
+				C99D74DB1DBDB57A001256C5 /* cpSpaceHash.c in Sources */,
+				C99D74CC1DBDB57A001256C5 /* cpDampedSpring.c in Sources */,
+				C95A244B1DBC918F0019BA7F /* ui_sprite_barrage_barrage.c in Sources */,
+				C95A24F71DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_gravitation.c in Sources */,
+				C9D36F681B4BAB910083F4CC /* plugin_chipmunk_render.c in Sources */,
+				C92A172E1DF7B50E00F9E231 /* meta_traits.cpp in Sources */,
+				C99D74D61DBDB57A001256C5 /* cpSimpleMotor.c in Sources */,
+				C95A257E1DBC91900019BA7F /* ui_sprite_particle_chipmunk_with_collision.c in Sources */,
+				C95A250B1DBC918F0019BA7F /* ui_sprite_chipmunk_with_gravity.c in Sources */,
+				C95A24571DBC918F0019BA7F /* ui_sprite_barrage_env_load.c in Sources */,
+				C95A26AE1DBC91BF0019BA7F /* plugin_barrage_utils.c in Sources */,
+				C969700E1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move.c in Sources */,
+				C95A26A41DBC91BF0019BA7F /* plugin_barrage_group.c in Sources */,
+				C95A24D01DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load.c in Sources */,
+				C99D74C31DBDB57A001256C5 /* cpRobust.c in Sources */,
+				C95A24D41DBC918F0019BA7F /* ui_sprite_chipmunk_obj_runtime_group.c in Sources */,
+				C95A24CA1DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body_group.c in Sources */,
+				C99D74C91DBDB57A001256C5 /* cpCollision.c in Sources */,
+				C95A24551DBC918F0019BA7F /* ui_sprite_barrage_env.c in Sources */,
+				C99D74D01DBDB57A001256C5 /* cpPinJoint.c in Sources */,
+				C99D74C11DBDB57A001256C5 /* cpMarch.c in Sources */,
+				C95A24E01DBC918F0019BA7F /* ui_sprite_chipmunk_render_creator.c in Sources */,
+				C95A245E1DBC918F0019BA7F /* ui_sprite_barrage_pause_emitter.c in Sources */,
+				C92A172F1DF7B50E00F9E231 /* metalib.c in Sources */,
+				C9696FDF1DD89251000A186C /* ui_sprite_chipmunk_with_time_scale.c in Sources */,
+				C95A24F41DBC918F0019BA7F /* ui_sprite_chipmunk_with_addition_accel.c in Sources */,
+				C95A24C91DBC918F0019BA7F /* ui_sprite_chipmunk_obj_body.c in Sources */,
+				C95A26941DBC91BF0019BA7F /* plugin_barrage_bullet_trigger.c in Sources */,
+				C95A24C41DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_gravitation.c in Sources */,
+				C95A25E81DBC91900019BA7F /* ui_sprite_spine_chipmunk_body.c in Sources */,
+				C99D74D31DBDB57A001256C5 /* cpRatchetJoint.c in Sources */,
+				C99D74DA1DBDB57A001256C5 /* cpSpaceDebug.c in Sources */,
+				C95A269F1DBC91BF0019BA7F /* plugin_barrage_emitter_do.c in Sources */,
+				C969700D1DD8CD43000A186C /* ui_sprite_chipmunk_touch_move_load.c in Sources */,
+				C95A268E1DBC91BF0019BA7F /* plugin_barrage_barrage.c in Sources */,
+				C99D74C21DBDB57A001256C5 /* cpPolyline.c in Sources */,
+				C9436E6F1DF5B14B00E87359 /* metalib.c in Sources */,
+				C95A257A1DBC91900019BA7F /* ui_sprite_particle_chipmunk_env.c in Sources */,
+				C95A250D1DBC918F0019BA7F /* ui_sprite_chipmunk_with_group.c in Sources */,
+				C99D74D81DBDB57A001256C5 /* cpSpace.c in Sources */,
+				C95A26961DBC91BF0019BA7F /* plugin_barrage_data_barrage.c in Sources */,
+				C95A245A1DBC918F0019BA7F /* ui_sprite_barrage_module.c in Sources */,
+				C95A268D1DBC91BF0019BA7F /* makefile in Sources */,
+				C95A26A81DBC91BF0019BA7F /* plugin_barrage_op.c in Sources */,
+				C9436E771DF5B1A500E87359 /* meta_traits.cpp in Sources */,
+				C99D74DE1DBDB57A001256C5 /* cpSpatialIndex.c in Sources */,
+				C99D74DF1DBDB57A001256C5 /* cpSweep1D.c in Sources */,
+				C95A24B81DBC918F0019BA7F /* ui_sprite_chipmunk_env_touch.c in Sources */,
+				C95A26951DBC91BF0019BA7F /* plugin_barrage_data.c in Sources */,
+				C99D74DD1DBDB57A001256C5 /* cpSpaceStep.c in Sources */,
+				C95A24E81DBC918F0019BA7F /* ui_sprite_chipmunk_track_angle.c in Sources */,
+				C95A25081DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint_load.c in Sources */,
+				C99D74D51DBDB57A001256C5 /* cpShape.c in Sources */,
+				C95A24581DBC918F0019BA7F /* ui_sprite_barrage_mask.c in Sources */,
+				C95A26AA1DBC91BF0019BA7F /* plugin_barrage_render.c in Sources */,
+				C95A24B21DBC918F0019BA7F /* ui_sprite_chipmunk_apply_velocity.c in Sources */,
+				C95A24D31DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_tree.c in Sources */,
+				C95A26981DBC91BF0019BA7F /* plugin_barrage_data_bullet_trigger.c in Sources */,
+				C95A24EA1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_have_entity.c in Sources */,
+				C95A24C31DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity.c in Sources */,
+				C95A245C1DBC918F0019BA7F /* ui_sprite_barrage_obj.c in Sources */,
+				C980962F1A2E08C60085B812 /* plugin_chipmunk_data_body.c in Sources */,
+				C99D74CD1DBDB57A001256C5 /* cpGearJoint.c in Sources */,
+				C99D74D21DBDB57A001256C5 /* cpPolyShape.c in Sources */,
+				C95A25F21DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_condition.c in Sources */,
+				C95A24E41DBC918F0019BA7F /* ui_sprite_chipmunk_touch_responser.c in Sources */,
+				C9436E6E1DF5B14B00E87359 /* meta_traits.cpp in Sources */,
+				C95A24BD1DBC918F0019BA7F /* ui_sprite_chipmunk_module.c in Sources */,
+				C95A24B41DBC918F0019BA7F /* ui_sprite_chipmunk_env.c in Sources */,
+				C95A25EA1DBC91900019BA7F /* ui_sprite_spine_chipmunk_module.c in Sources */,
+				C9696FFE1DD8A587000A186C /* ui_sprite_chipmunk_with_runing_mode.c in Sources */,
+				C95A25F41DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_trigger.c in Sources */,
+				C95A24FC1DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision.c in Sources */,
+				C95A25011DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_shape.c in Sources */,
+				C95A25051DBC918F0019BA7F /* ui_sprite_chipmunk_with_constraint.c in Sources */,
+				C95A25091DBC918F0019BA7F /* ui_sprite_chipmunk_with_damping.c in Sources */,
+				C99D74C41DBDB57A001256C5 /* chipmunk.c in Sources */,
+				C95A244F1DBC918F0019BA7F /* ui_sprite_barrage_enable_emitter.c in Sources */,
+				C95A24F91DBC918F0019BA7F /* ui_sprite_chipmunk_with_attractor_spring.c in Sources */,
+				C95A24DC1DBC918F0019BA7F /* ui_sprite_chipmunk_on_click.c in Sources */,
+				C95A24FA1DBC918F0019BA7F /* ui_sprite_chipmunk_with_boundary.c in Sources */,
+				C95A25031DBC918F0019BA7F /* ui_sprite_chipmunk_with_collision_src.c in Sources */,
+				C9024BC11A221E0C00CCF478 /* plugin_chipmunk_module.c in Sources */,
+				C95A25EC1DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_collision.c in Sources */,
+				C95A24D61DBC918F0019BA7F /* ui_sprite_chipmunk_obj_shape.c in Sources */,
+				C95A24EC1DBC918F0019BA7F /* ui_sprite_chipmunk_tri_scope.c in Sources */,
+				C95A24C81DBC918F0019BA7F /* ui_sprite_chipmunk_obj.c in Sources */,
+				C95A269E1DBC91BF0019BA7F /* plugin_barrage_emitter.c in Sources */,
+				C99D74C51DBDB57A001256C5 /* cpArbiter.c in Sources */,
+				C9024BBF1A221E0C00CCF478 /* plugin_chipmunk_env.c in Sources */,
+				C95A26921DBC91BF0019BA7F /* plugin_barrage_bullet_proto.c in Sources */,
+				C95A25F01DBC91900019BA7F /* ui_sprite_spine_chipmunk_with_tri_binding.c in Sources */,
+				C95A269A1DBC91BF0019BA7F /* plugin_barrage_data_emitter_bin.c in Sources */,
+				C98096331A2E08C60085B812 /* plugin_chipmunk_data_polygon_node.c in Sources */,
+				C9970CE61B0DA14200701382 /* plugin_chipmunk_env_updator.c in Sources */,
+				C95A26A11DBC91BF0019BA7F /* plugin_barrage_emitter_trigger.c in Sources */,
+				C95A24B71DBC918F0019BA7F /* ui_sprite_chipmunk_env_query.c in Sources */,
+				C95A24D11DBC918F0019BA7F /* ui_sprite_chipmunk_obj_load_ctx.c in Sources */,
+				C95A24BF1DBC918F0019BA7F /* ui_sprite_chipmunk_monitor.c in Sources */,
+				C98096311A2E08C60085B812 /* plugin_chipmunk_data_fixture.c in Sources */,
+				C95A24E61DBC918F0019BA7F /* ui_sprite_chipmunk_touch_trace.c in Sources */,
+				C99D74D11DBDB57A001256C5 /* cpPivotJoint.c in Sources */,
+				C95A24C71DBC918F0019BA7F /* ui_sprite_chipmunk_move_to_entity_spring.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		54BA05C014A1B4B500E0350A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = drow_chipmunk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SYMROOT = ../../../build/xcode/REngine;
+			};
+			name = Debug;
+		};
+		54BA05C114A1B4B500E0350A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = drow_chipmunk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SYMROOT = ../../../build/xcode/REngine;
+			};
+			name = Release;
+		};
+		54BA05C314A1B4B500E0350A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					GL_GLEXT_PROTOTYPES,
+					_APPLE,
+					"DEBUG=1",
+					"$(inherited)",
+					"PCRE2_CODE_UNIT_WIDTH=8",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
+					"DEBUG=1",
+					GL_GLEXT_PROTOTYPES,
+					_APPLE,
+				);
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../3rdTools/libgif/include,
+					../../../3rdTools/zlib/include,
+					../../../3rdTools/libxml2/include,
+					../../../3rdTools/libxml2/include/ios,
+					../../../3rdTools/libpng/include,
+					../../../3rdTools/libjpg/include,
+					../../../3rdTools/yajl/include,
+					"../../../3rdTools/spine-runtimes/spine-c/include",
+					../../../3rdTools/Chipmunk2D/include,
+					../../include,
+					../../../include,
+					../../../build/xcode,
+					../../../3rdTools/pcre2/include,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		54BA05C414A1B4B500E0350A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					_APPLE,
+					GL_GLEXT_PROTOTYPES,
+					"PCRE2_CODE_UNIT_WIDTH=8",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
+					GL_GLEXT_PROTOTYPES,
+					_APPLE,
+				);
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../3rdTools/libgif/include,
+					../../../3rdTools/zlib/include,
+					../../../3rdTools/libxml2/include,
+					../../../3rdTools/libxml2/include/ios,
+					../../../3rdTools/libpng/include,
+					../../../3rdTools/libjpg/include,
+					../../../3rdTools/yajl/include,
+					"../../../3rdTools/spine-runtimes/spine-c/include",
+					../../../3rdTools/Chipmunk2D/include,
+					../../include,
+					../../../include,
+					../../../build/xcode,
+					../../../3rdTools/pcre2/include,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54BA05AF14A1B4B500E0350A /* Build configuration list for PBXProject "drow_chipmunk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54BA05C014A1B4B500E0350A /* Debug */,
+				54BA05C114A1B4B500E0350A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54BA05C214A1B4B500E0350A /* Build configuration list for PBXNativeTarget "drow_chipmunk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54BA05C314A1B4B500E0350A /* Debug */,
+				54BA05C414A1B4B500E0350A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54BA05AC14A1B4B500E0370A /* Project object */;
+}

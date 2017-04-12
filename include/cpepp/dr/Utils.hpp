@@ -16,6 +16,25 @@ size_t calc_dyn_size(size_t record_count) { return MetaTraits<T>::META.calc_dyn_
 template<class T>
 size_t data_size(T const & o) { return MetaTraits<T>::data_size(o); }
 
+template<class T>
+inline dr_data mk_data(T const & o) {
+    dr_data r;
+    r.m_data = (void*)&o;
+    r.m_size = data_size(o);
+    r.m_meta = metaOf(o);
+    return r;
+}
+
+template<class T>
+inline dr_data_source mk_data_source(T const & o, dr_data_source_t next = NULL) {
+    dr_data_source r;
+    r.m_data.m_data = (void*)&o;
+    r.m_data.m_size = data_size(o);
+    r.m_data.m_meta = metaOf(o);
+    r.m_next = next;
+    return r;
+}
+
 template<class T1, typename T2>
 inline void copy_same_entries(T1 & target, T2 const & src, int policy = 0, error_monitor_t em = 0) {
     MetaTraits<T1>::META.copy_same_entries(

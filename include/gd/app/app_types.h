@@ -27,6 +27,7 @@ typedef struct gd_app_context * gd_app_context_t;
 typedef struct gd_app_child_context * gd_app_child_context_t;
 typedef struct gd_app_lib * gd_app_lib_t;
 typedef struct gd_app_module * gd_app_module_t;
+typedef struct gd_app_module_installer * gd_app_module_installer_t;
 
 typedef int (*gd_app_fn_t)(gd_app_context_t ctx, void * user_ctx);
 

@@ -19,3 +19,9 @@
   respons-to: SVR_ACCOUNT_CMD_REQ_QUERY_LOGIN_INFO
   operations:
     - account_op_query_login_info
+
+- name: account_query_external_friends
+  respons-to: SVR_ACCOUNT_CMD_REQ_QUERY_EXTERNAL_FRIENDS
+  operations:
+    - account_op_query_external_friends
+    

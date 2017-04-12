@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{b6db7058-88af-4a3d-92a6-4f2051e5e433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\app">
+      <UniqueIdentifier>{d2202b49-b30a-425b-a065-917f14da860e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\evt">
+      <UniqueIdentifier>{703a0d0d-7c85-48ab-aea2-730f6099351e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\timer">
+      <UniqueIdentifier>{e727bd98-1060-4fc6-9250-14e40891ac65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\utils">
+      <UniqueIdentifier>{fe7278e2-24a6-4a2d-a6c5-990efe33f6dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dr_dm">
+      <UniqueIdentifier>{e6d12f8e-431b-4365-9ed8-3b45dc4ad664}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{abec17c0-66f5-4c6b-91a0-682c1a2124cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\app">
+      <UniqueIdentifier>{f67625c7-d9e9-4b21-af1e-a8877327c4b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\evt">
+      <UniqueIdentifier>{65044e74-2a61-42a9-9156-03688ce7ae24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\timer">
+      <UniqueIdentifier>{5e3f137a-c3e1-4d45-94ba-2896ecb504cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{ed8db685-47e4-4a83-89e8-1fc70b55fb29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dr_dm">
+      <UniqueIdentifier>{2cfa62a3-c1d7-40b8-90ad-d50e341c06c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\utils\Gen">
+      <UniqueIdentifier>{2a0175ad-e528-45d1-b01f-5dad0b7a57f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\net_trans">
+      <UniqueIdentifier>{da522ee5-6c53-4475-ae54-1cd0415c115c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\net_trans">
+      <UniqueIdentifier>{0ed2f99e-542a-4127-9080-bc8e0d4835e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\app_attr">
+      <UniqueIdentifier>{3cd5fb99-158c-4d08-a738-3b92e39623a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\app_attr">
+      <UniqueIdentifier>{be8d12a9-b4ff-4898-b245-46df2c438943}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\gdpp\app\Application.hpp">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app\Log.hpp">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app\Module.hpp">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app\ModuleDef.hpp">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app\Random.hpp">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app\ReqResponser.hpp">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app\System.hpp">
+      <Filter>include\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\evt\Event.hpp">
+      <Filter>include\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\evt\EventCenter.hpp">
+      <Filter>include\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\evt\EventResponser.hpp">
+      <Filter>include\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\evt\EventResponserBase.hpp">
+      <Filter>include\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\evt\System.hpp">
+      <Filter>include\evt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\timer\System.hpp">
+      <Filter>include\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\timer\TimerCenter.hpp">
+      <Filter>include\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\timer\TimerProcessor.hpp">
+      <Filter>include\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\timer\TimerProcessorBase.hpp">
+      <Filter>include\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\utils\IdGenerator.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\dr_dm\Data.hpp">
+      <Filter>include\dr_dm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\dr_dm\DataManager.hpp">
+      <Filter>include\dr_dm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\dr_dm\DataManagerGen.hpp">
+      <Filter>include\dr_dm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\dr_dm\System.hpp">
+      <Filter>include\dr_dm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\utils\Gen\BasicMetaInfoManagerGen.hpp">
+      <Filter>include\utils\Gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\utils\FileIdGenerator.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\utils\System.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransMgr.hpp">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransProcessor.hpp">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransProcessorBase.hpp">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransTask.hpp">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransTaskBuilder.hpp">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\net_trans\System.hpp">
+      <Filter>include\net_trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app_attr\AppAttrManager.hpp">
+      <Filter>include\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app_attr\AppAttrProcessor.hpp">
+      <Filter>include\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app_attr\AppAttrProcessorBase.hpp">
+      <Filter>include\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app_attr\AppAttrRequest.hpp">
+      <Filter>include\app_attr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gdpp\app_attr\System.hpp">
+      <Filter>include\app_attr</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\gdpp\app\Application.cpp">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\app\Random.cpp">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\app\ReqResponser.cpp">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\evt\Event.cpp">
+      <Filter>src\evt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\evt\EventCenter.cpp">
+      <Filter>src\evt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\evt\EventResponser.cpp">
+      <Filter>src\evt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\timer\TimerCenter.cpp">
+      <Filter>src\timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\timer\TimerProcessor.cpp">
+      <Filter>src\timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\utils\FileIdGenerator.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\utils\IdGenerator.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\dr_dm\DataManager.cpp">
+      <Filter>src\dr_dm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\net_trans\NetTransMgr.cpp">
+      <Filter>src\net_trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\net_trans\NetTransProcessor.cpp">
+      <Filter>src\net_trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\net_trans\NetTransTask.cpp">
+      <Filter>src\net_trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\app_attr\AppAttrManager.cpp">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\app_attr\AppAttrProcessorBase.cpp">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\app_attr\AppAttrRequest.cpp">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\app_attr\AppAttrFormula.cpp">
+      <Filter>src\app_attr</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -9,7 +9,9 @@ xtoken_t xcomputer_func_strlen(void * ctx, xcomputer_t computer, const char * fu
 
 /*math*/
 xtoken_t xcomputer_func_angle_to_radians(void * ctx, xcomputer_t computer, const char * func_name, xtoken_it_t args, error_monitor_t em);
+xtoken_t xcomputer_func_mod(void * ctx, xcomputer_t computer, const char * func_name, xtoken_it_t args, error_monitor_t em);
 xtoken_t xcomputer_func_random(void * ctx, xcomputer_t computer, const char * func_name, xtoken_it_t args, error_monitor_t em);
+xtoken_t xcomputer_func_random_select(void * ctx, xcomputer_t computer, const char * func_name, xtoken_it_t args, error_monitor_t em);
 
 static struct {
     const char * m_func_name;
@@ -18,7 +20,9 @@ static struct {
     { "strlen", xcomputer_func_strlen }
     , { "regex", xcomputer_func_regex }
     , { "angle-to-radians", xcomputer_func_angle_to_radians }
+    , { "mod", xcomputer_func_mod }
     , { "random", xcomputer_func_random }
+    , { "random-select", xcomputer_func_random_select }
 };
 
 int xcomputer_load_default_funcs(xcomputer_t computer) {

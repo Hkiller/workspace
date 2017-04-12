@@ -35,7 +35,7 @@ float cpe_math_angle(float x1, float y1, float x2, float y2) {
     float diff_x = x2 - x1;
     float diff_y = y2 - y1;
 
-    return cpe_math_radians_to_angle(atan2f(diff_y, diff_x));
+    return (float)cpe_math_radians_to_angle(atan2f(diff_y, diff_x));
 }
 
 float cpe_math_angle_regular(float angle) {

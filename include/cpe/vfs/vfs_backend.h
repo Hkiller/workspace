@@ -49,9 +49,11 @@ vfs_backend_t vfs_backend_create(
     vfs_dir_mk_fun_t dir_mk_recursion);
 
 void vfs_backend_free(vfs_backend_t backend);
-    
+
 vfs_backend_t vfs_backend_find_by_name(vfs_mgr_t mgr, const char * name);
 vfs_backend_t vfs_backend_native(vfs_mgr_t mgr);
+
+void * vfs_backend_ctx(vfs_backend_t backend);
     
 #ifdef __cplusplus
 }

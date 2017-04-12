@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_sprite_touch_data" file="ui_sprite_touch_data.xml"/>
+
+    <struct name="ui_sprite_touch_pos_binding" version="1">
+        <entry name="screen_pos" type="ui_sprite_touch_pair" id="1"/>
+        <entry name="world_pos" type="ui_sprite_touch_pair" id="2"/>
+    </struct>
+
+    <!-- move -->
+    <struct name="ui_sprite_touch_move_state" version="1">
+        <entry name="start_world_pos" type="ui_sprite_touch_pair" id="1"/>
+        <entry name="start_screen_pos" type="ui_sprite_touch_pair" id="2"/>
+        <entry name="start_time_ms" type="uint64" id="3"/>
+        <entry name="pre_world_pos" type="ui_sprite_touch_pair" id="4"/>
+        <entry name="pre_screen_pos" type="ui_sprite_touch_pair" id="5"/>
+        <entry name="pre_time_ms" type="uint64" id="6"/>
+        <entry name="cur_world_pos" type="ui_sprite_touch_pair" id="7"/>
+        <entry name="cur_screen_pos" type="ui_sprite_touch_pair" id="8"/>
+        <entry name="cur_time_ms" type="uint64" id="9"/>
+        <entry name="world_speed" type="ui_sprite_touch_pair" id="10"/>
+        <entry name="screen_speed" type="ui_sprite_touch_pair" id="11"/>
+    </struct>
+
+    <!-- scale -->
+    <struct name="ui_sprite_touch_scale_state" version="1">
+        <entry name="finger_count" type="uint8" id="1"/>
+        <entry name="start_pos" type="ui_sprite_touch_pos_binding" count="4" refer="finger_count" id="2"/>
+        <entry name="curent_pos" type="ui_sprite_touch_pos_binding" count="4" refer="finger_count" id="3"/>
+        <entry name="weight_start" type="float" id="4"/>
+        <entry name="weight_cur" type="float" id="5"/>
+        <entry name="percent_cur" type="float" id="6"/>
+    </struct>
+
+</metalib>

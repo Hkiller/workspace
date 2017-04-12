@@ -1,0 +1,15 @@
+*.vcproj        eol=crlf
+*.pbxproj       eol=lf
+*.sh            eol=lf
+*.h             eol=lf
+*.hpp           eol=lf
+*.c             eol=lf
+*.cpp           eol=lf
+*.m             eol=lf
+*.mm            eol=lf
+makefile        eol=lf
+*.mk            eol=lf
+*.pm            eol=lf
+*.pl            eol=lf
+*.yml           eol=lf
+*.yaml          eol=lf

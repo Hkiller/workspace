@@ -448,7 +448,6 @@ int dr_yaml_print_array(
         CPE_ERROR(em, "dr_yaml_print_array: bad para!");
         return -1;
     }
-
     if (!yaml_document_initialize(&document, NULL, NULL, NULL, 0, 0)) {
         CPE_ERROR(em, "yaml document initialize fail!");
         return -1;
@@ -458,12 +457,12 @@ int dr_yaml_print_array(
     
     if (em) {
         CPE_DEF_ERROR_MONITOR_ADD(logError, em, cpe_error_save_last_errno, &ret);
-        dr_yaml_add_struct_array_i(&document, input, count, meta, dr_meta_size(meta), em);
+        dr_yaml_add_struct_array_i(&document, input, count, meta, (uint32_t)dr_meta_size(meta), em);
         CPE_DEF_ERROR_MONITOR_REMOVE(logError, em);
     }
     else {
         CPE_DEF_ERROR_MONITOR(logError, cpe_error_save_last_errno, &ret);
-        dr_yaml_add_struct_array_i(&document, input, count, meta,dr_meta_size(meta),  &logError);
+        dr_yaml_add_struct_array_i(&document, input, count, meta, (uint32_t)dr_meta_size(meta),  &logError);
     }
 
     if (ret == 0) {

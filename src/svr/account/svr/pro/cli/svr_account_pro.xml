@@ -10,9 +10,10 @@
         <macro name="SVR_ACCOUNT_WEIXIN" value="4"/>
         <macro name="SVR_ACCOUNT_QIHOO" value="5"/>
         <macro name="SVR_ACCOUNT_DAMAI" value="6"/>
+        <macro name="SVR_ACCOUNT_FACEBOOK" value="7"/>
     </macrosgroup>
     <macro name="SVR_ACCOUNT_TYPE_MIN" value="1"/>
-    <macro name="SVR_ACCOUNT_TYPE_MAX" value="7"/>
+    <macro name="SVR_ACCOUNT_TYPE_MAX" value="8"/>
 
     <macrosgroup name="SVR_ACCOUNT_STATE">
         <macro name="SVR_ACCOUNT_STATE_NORMAL" value="0"/>
@@ -53,11 +54,27 @@
     <struct name="svr_account_login_info" version="1">
         <entry name="account_id" type="uint64" id="1"/>
         <entry name="logic_id" type="svr_account_logic_id" id="2"/>
-        <entry name="token" type="string" size="64" id="3"/>
+        <entry name="token" type="string" size="4096" id="3"/>
         <entry name="name" type="string" size="64" id="4"/>
-        <entry name="avatar" type="string" size="128" id="5"/>
+        <entry name="avatar" type="string" size="512" id="5"/>
     </struct>
 
+    <struct name="svr_account_role_external_data" version="1">
+        <entry name="logic_id" type="svr_account_logic_id" id="1"/>
+        <entry name="name" type="string" size="64" id="2"/>
+        <entry name="avatar" type="string" size="512" id="3"/>
+    </struct>
+
+    <union name="svr_account_role_external" version="1">
+        <entry name="data" type="svr_account_role_external_data" id="1"/>
+    </union>
+    
+    <struct name="svr_account_role_info" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+        <entry name="has_external" type="uint8" id="2"/>
+        <entry name="external" type="svr_account_role_external" id="3" select="has_external"/>
+    </struct>
+    
     <!-- 协议定义 -->
 
     <!-- 创建一个账号并且绑定 -->
@@ -113,6 +130,17 @@
         <entry name="account_id" type="uint64" id="1"/>
     </struct>
 
+    <!-- 根据账号信息，获取外部系统好友列表 -->
+    <struct name="svr_account_req_query_external_friends" version="1">
+        <entry name="account_id" type="uint64" id="1"/>
+        <entry name="with_external" type="uint8" id="2"/>
+    </struct>
+
+    <struct name="svr_account_res_query_external_friends" version="1">
+        <entry name="friend_count" type="uint16" id="1"/>
+        <entry name="friends" type="svr_account_role_info" count="0" refer="friend_count" id="2"/>
+    </struct>
+    
     <!-- 错误响应 -->
     <struct name="svr_account_res_error" version="1">
         <entry name="error" type="int16" id="1"/>
@@ -141,6 +169,9 @@
         <macro name="SVR_ACCOUNT_CMD_REQ_QUERY_LOGIN_INFO" value="12"/>
         <macro name="SVR_ACCOUNT_CMD_RES_QUERY_LOGIN_INFO" value="13"/>
 
+        <macro name="SVR_ACCOUNT_CMD_REQ_QUERY_EXTERNAL_FRIENDS" value="14"/>
+        <macro name="SVR_ACCOUNT_CMD_RES_QUERY_EXTERNAL_FRIENDS" value="15"/>
+        
         <macro name="SVR_ACCOUNT_CMD_RES_ERROR" value="21"/>
     </macrosgroup>
 
@@ -162,6 +193,9 @@
         <entry name="svr_account_req_query_login_info" type="svr_account_req_query_login_info" id="SVR_ACCOUNT_CMD_REQ_QUERY_LOGIN_INFO"/>
         <entry name="svr_account_res_query_login_info" type="svr_account_res_query_login_info" id="SVR_ACCOUNT_CMD_RES_QUERY_LOGIN_INFO"/>
 
+        <entry name="svr_account_req_query_external_friends" type="svr_account_req_query_external_friends" id="SVR_ACCOUNT_CMD_REQ_QUERY_EXTERNAL_FRIENDS"/>
+        <entry name="svr_account_res_query_external_friends" type="svr_account_res_query_external_friends" id="SVR_ACCOUNT_CMD_RES_QUERY_EXTERNAL_FRIENDS"/>
+        
         <entry name="svr_account_res_error" type="svr_account_res_error" id="SVR_ACCOUNT_CMD_RES_ERROR"/>
     </union>
 

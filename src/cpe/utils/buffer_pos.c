@@ -164,6 +164,77 @@ char mem_pos_data(mem_buffer_pos_t l) {
     return ((char *)mem_trunk_data(l->m_trunk))[l->m_pos_in_trunk];
 }
 
+size_t mem_pos_read(mem_buffer_pos_t l, void * data, size_t n) {
+    size_t readed_size = 0;
+    struct mem_buffer_trunk * trunk = l->m_trunk;
+    size_t pos_in_trunk = l->m_pos_in_trunk;
+    
+    while(n > 0 && trunk) {
+        size_t once_size;
+        
+        assert(pos_in_trunk <= trunk->m_size);
+        once_size = trunk->m_size - pos_in_trunk;
+
+        if (once_size > n) once_size = n;
+        
+        memcpy(data, ((char*)mem_trunk_data(trunk)) + pos_in_trunk, once_size);
+
+        readed_size += once_size;
+        n -= once_size;
+        data = ((char*)data) + once_size;
+        trunk = TAILQ_NEXT(trunk, m_next);
+        pos_in_trunk = 0;
+    }
+    
+    return readed_size;
+}
+
+size_t mem_pos_write(mem_buffer_pos_t l, void const * data, size_t n) {
+    size_t writed_size = 0;
+    struct mem_buffer_trunk * trunk = l->m_trunk;
+    size_t pos_in_trunk = l->m_pos_in_trunk;
+    
+    while(n > 0 && trunk) {
+        size_t once_size;
+        struct mem_buffer_trunk * next_data_trunk;
+
+        next_data_trunk = TAILQ_NEXT(trunk, m_next);
+        while(next_data_trunk && next_data_trunk->m_size == 0) {
+            next_data_trunk = TAILQ_NEXT(next_data_trunk, m_next);
+        }
+        
+        assert(pos_in_trunk <= trunk->m_size);
+        once_size = (next_data_trunk ? trunk->m_size : trunk->m_capacity) - pos_in_trunk;
+
+        if (once_size > n) once_size = n;
+        
+        memcpy(((char*)mem_trunk_data(trunk)) + pos_in_trunk, data, once_size);
+
+        if (next_data_trunk == NULL) {
+            trunk->m_size = pos_in_trunk + once_size;
+            assert(trunk->m_size <= trunk->m_capacity);
+        }
+        
+        writed_size += once_size;
+        n -= once_size;
+        data = ((const char*)data) + once_size;
+        trunk = next_data_trunk ? next_data_trunk : TAILQ_NEXT(trunk, m_next);
+        pos_in_trunk = 0;
+    }
+
+    if (n > 0) {
+        trunk = mem_buffer_append_trunk(l->m_buffer, n);
+        if (trunk) {
+            memcpy(((char*)mem_trunk_data(trunk)), data, n);
+            trunk->m_size = n;
+            l->m_buffer->m_size += n;
+            writed_size += n;
+        }
+    }
+
+    return writed_size;
+}
+
 void * mem_pos_insert_alloc(mem_buffer_pos_t pos, size_t n) {
     struct mem_buffer_trunk * trunk;
 

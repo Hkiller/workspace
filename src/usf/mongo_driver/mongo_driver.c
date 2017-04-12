@@ -256,12 +256,11 @@ int mongo_driver_set_uri(mongo_driver_t driver, const char * uri) {
         uri, "replicaSet", ',', '=');
 
     /*更新topo结构设置 */
-    CPE_ERROR(driver->m_em, "*****************topo=%d, server_count = %d*****************", driver->m_replica_set[0], driver->m_server_count);
     if (driver->m_replica_set[0]) {
         driver->m_topology_type = mongo_topology_type_rs_no_primary;
     }
     else {
-        if (driver->m_server_count > 0) {
+        if (driver->m_server_count > 1) {
             driver->m_topology_type = mongo_topology_type_unknown;
         }
         else {

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{09483523-0f60-42a0-b2c6-4040b500b60a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{c493c36a-ba51-47e9-a52f-f64328135fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hb-ucdn">
+      <UniqueIdentifier>{0f3f29a9-3e4f-43eb-b8fb-5cc00f172a55}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-blob.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-buffer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-common.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-deprecated.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-face.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-font.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-ft.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-set.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-shape.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-shape-plan.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-unicode.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\include\hb-version.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\src\hb-ucdn\ucdn.h">
+      <Filter>src\hb-ucdn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdTools\harfbuzz\src\hb-ucdn\unicodedata_db.h">
+      <Filter>src\hb-ucdn</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-atomic-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-buffer-deserialize-json.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-buffer-deserialize-text.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-buffer-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-cache-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-face-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-font-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-mutex-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-open-file-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-open-type-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-set-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-shape-plan-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-shaper-impl-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-shaper-list.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-shaper-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-unicode-private.hh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\3rdTools\harfbuzz\src\hb-utf-private.hh">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-blob.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-buffer.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-buffer-serialize.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-common.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-face.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-fallback-shape.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-font.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-ft.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-set.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-shape.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-shape-plan.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-shaper.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-ucdn.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-unicode.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-warning.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdTools\harfbuzz\src\hb-ucdn\ucdn.c">
+      <Filter>src\hb-ucdn</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

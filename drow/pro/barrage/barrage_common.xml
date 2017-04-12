@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="barrage_color" version="1">
+        <entry name="r" type="float" id="1"/>
+        <entry name="g" type="float" id="2"/>
+	    <entry name="b" type="float" id="3"/>
+	    <entry name="a" type="float" id="4" defaultvalue="1"/>
+    </struct>
+
+    <struct name="barrage_pair" version="1">
+        <entry name="x" type="float" id="1"/>
+        <entry name="y" type="float" id="2"/>
+    </struct>
+
+    <struct name="barrage_rect" version="1">
+        <entry name="lt" type="barrage_pair" id="1"/>
+        <entry name="rb" type="barrage_pair" id="2"/>
+    </struct>
+
+</metalib>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D02DC647-3AD0-4714-AAE7-3A531077EB05}</ProjectGuid>
+    <RootNamespace>gdpp</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\3rdTools\yaml\include;..\..\3rdTools\yajl\include;..\..\3rdTools\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4624;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\3rdTools\yaml\include;..\..\3rdTools\yajl\include;..\..\3rdTools\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4624;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\gdpp\app\Application.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app\Log.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app\Module.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app\ModuleDef.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app\Random.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app\ReqResponser.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app\System.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app_attr\AppAttrManager.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app_attr\AppAttrProcessor.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app_attr\AppAttrProcessorBase.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app_attr\AppAttrRequest.hpp" />
+    <ClInclude Include="..\..\include\gdpp\app_attr\System.hpp" />
+    <ClInclude Include="..\..\include\gdpp\evt\Event.hpp" />
+    <ClInclude Include="..\..\include\gdpp\evt\EventCenter.hpp" />
+    <ClInclude Include="..\..\include\gdpp\evt\EventResponser.hpp" />
+    <ClInclude Include="..\..\include\gdpp\evt\EventResponserBase.hpp" />
+    <ClInclude Include="..\..\include\gdpp\evt\System.hpp" />
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransMgr.hpp" />
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransProcessor.hpp" />
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransProcessorBase.hpp" />
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransTask.hpp" />
+    <ClInclude Include="..\..\include\gdpp\net_trans\NetTransTaskBuilder.hpp" />
+    <ClInclude Include="..\..\include\gdpp\net_trans\System.hpp" />
+    <ClInclude Include="..\..\include\gdpp\timer\System.hpp" />
+    <ClInclude Include="..\..\include\gdpp\timer\TimerCenter.hpp" />
+    <ClInclude Include="..\..\include\gdpp\timer\TimerProcessor.hpp" />
+    <ClInclude Include="..\..\include\gdpp\timer\TimerProcessorBase.hpp" />
+    <ClInclude Include="..\..\include\gdpp\utils\FileIdGenerator.hpp" />
+    <ClInclude Include="..\..\include\gdpp\utils\Gen\BasicMetaInfoManagerGen.hpp" />
+    <ClInclude Include="..\..\include\gdpp\utils\IdGenerator.hpp" />
+    <ClInclude Include="..\..\include\gdpp\dr_dm\Data.hpp" />
+    <ClInclude Include="..\..\include\gdpp\dr_dm\DataManager.hpp" />
+    <ClInclude Include="..\..\include\gdpp\dr_dm\DataManagerGen.hpp" />
+    <ClInclude Include="..\..\include\gdpp\dr_dm\System.hpp" />
+    <ClInclude Include="..\..\include\gdpp\utils\System.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\gdpp\app\Application.cpp" />
+    <ClCompile Include="..\..\src\gdpp\app\Random.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)AppRandom.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gdpp\app\ReqResponser.cpp" />
+    <ClCompile Include="..\..\src\gdpp\app_attr\AppAttrFormula.cpp" />
+    <ClCompile Include="..\..\src\gdpp\app_attr\AppAttrManager.cpp" />
+    <ClCompile Include="..\..\src\gdpp\app_attr\AppAttrProcessorBase.cpp" />
+    <ClCompile Include="..\..\src\gdpp\app_attr\AppAttrRequest.cpp" />
+    <ClCompile Include="..\..\src\gdpp\evt\Event.cpp" />
+    <ClCompile Include="..\..\src\gdpp\evt\EventCenter.cpp" />
+    <ClCompile Include="..\..\src\gdpp\evt\EventResponser.cpp" />
+    <ClCompile Include="..\..\src\gdpp\net_trans\NetTransMgr.cpp" />
+    <ClCompile Include="..\..\src\gdpp\net_trans\NetTransProcessor.cpp" />
+    <ClCompile Include="..\..\src\gdpp\net_trans\NetTransTask.cpp" />
+    <ClCompile Include="..\..\src\gdpp\timer\TimerCenter.cpp" />
+    <ClCompile Include="..\..\src\gdpp\timer\TimerProcessor.cpp" />
+    <ClCompile Include="..\..\src\gdpp\utils\FileIdGenerator.cpp" />
+    <ClCompile Include="..\..\src\gdpp\utils\IdGenerator.cpp" />
+    <ClCompile Include="..\..\src\gdpp\dr_dm\DataManager.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

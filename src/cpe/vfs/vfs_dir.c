@@ -74,6 +74,8 @@ uint8_t vfs_dir_exist(vfs_mgr_t mgr, const char * path) {
     backend = mount_point->m_backend;
     assert(backend);
 
+    if (path[0] == 0) return 1;
+    
     return backend->m_dir_exist ? backend->m_dir_exist(backend->m_ctx, mount_point->m_backend_env, path) : 0;
 }
 

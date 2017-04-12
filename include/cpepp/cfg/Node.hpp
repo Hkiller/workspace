@@ -7,8 +7,8 @@
 #include "NodePlacehold.hpp"
 #include "NodeIterator.hpp"
 
-#ifdef _MSC_VER
 # pragma warning(push)
+#ifdef _MSC_VER
 # pragma warning(disable:4624)
 #endif
 
@@ -108,15 +108,13 @@ public:
         return Utils::CString::_cast((const char *)(dft(v)));
     }
 
-    static Node const & invalid(void) { return *(Node const *)0; }
+    static Node const & invalid(void) { return _cast(NULL); }
 
     static Node & _cast(cfg_t cfg) { return  *(Node *)cfg; }
 };
 
 }}
 
-#ifdef _MSC_VER
 # pragma warning(pop)
-#endif
 
 #endif

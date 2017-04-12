@@ -69,7 +69,7 @@ PROCESS_ERROR:
 xtoken_t xcomputer_compute(xcomputer_t computer, const char * str, xcomputer_args_t args) {
     xcontext_t context;
 
-    assert(computer->m_allocked_token_count == 0);
+    //assert(computer->m_allocked_token_count == 0);
 
     context = xcontext_create(computer, str);
     if (context == NULL) return NULL;
@@ -146,7 +146,7 @@ xtoken_t xcomputer_compute(xcomputer_t computer, const char * str, xcomputer_arg
                         }
 
                         xcontext_free(context);
-                        assert(computer->m_allocked_token_count == 1);
+                        //assert(computer->m_allocked_token_count == 1);
                         return result;
                     }
                 }
@@ -164,7 +164,7 @@ PROCESS_ERROR:
     }
 
     xcontext_free(context);
-    assert(computer->m_allocked_token_count == 0);
+    //assert(computer->m_allocked_token_count == 0);
     return NULL;
 }
 
@@ -210,7 +210,7 @@ static void xcomputer_tmp_buffer_append_token(xcomputer_t computer, xtoken_t tok
         stream_printf((write_stream_t)&s, "%d", token->m_data.num._int);
     }
     else if (xtoken_get_type(token) == XTOKEN_NUM_FLOAT) {
-        stream_printf((write_stream_t)&s, "%f", token->m_data.num._double);
+        stream_printf((write_stream_t)&s, "%f", (float)token->m_data.num._double);
     }
     else {
         if (token->m_data.str._end) {

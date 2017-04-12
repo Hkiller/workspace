@@ -11,17 +11,14 @@
 static int mongo_connection_process_data(mongo_driver_t driver, mongo_connection_t connection);
 
 void mongo_connection_rw_cb(EV_P_ ev_io *w, int revents) {
-    
     mongo_connection_t connection;
     mongo_driver_t driver;
     char * buffer;
 
     connection = w->data;
     driver = connection->m_server->m_driver;
-    CPE_ERROR(driver->m_em, "***************HolleWorld nice to meet you************");
 
     if (revents & EV_READ) {
-        CPE_ERROR(driver->m_em, "***************HolleWorld nice to meet you in if************");
         ringbuffer_block_t blk;
         if (mongo_connection_alloc(&blk, driver, connection, driver->m_read_block_size) != 0) return;
         assert(blk);
@@ -29,9 +26,8 @@ void mongo_connection_rw_cb(EV_P_ ev_io *w, int revents) {
         buffer = NULL;
         ringbuffer_block_data(driver->m_ringbuf, blk, 0, (void **)&buffer);
         assert(buffer);
-CPE_ERROR(driver->m_em, "***************HolleWorld nice to meet you again************");
+
         for(;;) {
-            CPE_ERROR(driver->m_em, "***************HolleWorld nice to meet you in for************");
             int bytes = cpe_recv(connection->m_fd, buffer, driver->m_read_block_size, 0);
             if (bytes > 0) {
                 if (driver->m_debug >= 2) {
@@ -74,7 +70,7 @@ CPE_ERROR(driver->m_em, "***************HolleWorld nice to meet you again*******
                 }
             }
         }
-CPE_ERROR(driver->m_em, "***************HolleWorld bye************");
+
         if (mongo_connection_process_data(driver, connection) != 0) return;
     }
 
@@ -231,7 +227,6 @@ static void * mongo_connection_merge_rb(mongo_driver_t driver, mongo_connection_
 
 
 static int mongo_connection_process_data(mongo_driver_t driver, mongo_connection_t connection) {
-    CPE_ERROR(driver->m_em, "***************HolleWorld************");
     void * buf;
     uint32_t buf_len;
     uint32_t read_pos;
@@ -360,7 +355,7 @@ static int mongo_connection_process_data(mongo_driver_t driver, mongo_connection
             mongo_pkg_set_size(pkg, doc_size);
             mongo_pkg_doc_count_update(pkg);
         }
-CPE_ERROR(driver->m_em, "***************HolleWorld meet debug, debug=%d************", driver->m_debug);
+
         if (driver->m_debug >= 2) {
             CPE_INFO(
                 driver->m_em, "%s: server %s.%d: recv one pkg: doc-size=%d, doc-count=%d\n%s\n",

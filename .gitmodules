@@ -1,0 +1,39 @@
+[submodule "drow"]
+	path = drow
+	url = http://admin:admin@192.168.0.110:22/r/DrowRender.git
+[submodule "Game_Flight"]
+	path = Game_Flight
+	url = http://admin:admin@192.168.0.110:22/r/DrowFlight.git
+[submodule "3rdTools/spine-runtimes"]
+	path = 3rdTools/spine-runtimes
+	url = http://admin:admin@192.168.0.110:22/r/spine-runtime.git
+[submodule "3rdTools/Chipmunk2D"]
+	path = 3rdTools/Chipmunk2D
+	url = git@github.com:slembcke/Chipmunk2D.git
+[submodule "drow_ed"]
+	path = drow_ed
+	url = git@github.com:wangjian1009/DrowEditor.git
+[submodule "3rdTools/gameswf"]
+	path = 3rdTools/gameswf
+	url = git@github.com:wangjian1009/gameswf.git
+[submodule "Game_Xiaoxin"]
+	path = Game_Xiaoxin
+	url = git@github.com:wangjian1009/DrowXiaoxinSrc.git
+[submodule "Game_Tank"]
+	path = Game_Tank
+	url = http://admin:admin@192.168.0.110:22/r/DrowTank.git
+[submodule "Game_Run"]
+	path = Game_Run
+	url = http://admin:admin@192.168.0.110:22/r/DrowRun.git
+[submodule "Game_ShootMinions"]
+	path = Game_ShootMinions
+	url = http://admin:admin@192.168.0.110:22/r/DrowShootMinions.git
+[submodule "Game_FlightDragon"]
+	path = Game_FlightDragon
+	url = http://admin:admin@192.168.0.110:22/r/DrowDragon.git
+[submodule "drow_irrlicht"]
+	path = drow_irrlicht
+	url = http://admin:admin@192.168.0.110:22/r/DrowIrrlicht.git
+[submodule "Game_Six"]
+	path = Game_Six
+	url = http://admin:admin@192.168.0.110:22/r/DrowSix.git

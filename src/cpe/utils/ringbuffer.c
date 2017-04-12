@@ -72,7 +72,8 @@ ringbuffer_unlink(ringbuffer_t rb , ringbuffer_block_t * head) {
     if (r == NULL) return NULL;
 
     *head = r->next >= 0 ? block_ptr(rb, r->next) : NULL;
-
+    r->next = -1;
+    
     return r;
 }
 

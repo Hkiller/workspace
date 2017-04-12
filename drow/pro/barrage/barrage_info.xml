@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="barrage_common" file="barrage_common.xml"/>
+
+    <!-- 条件组合方式 -->
+    <macrosgroup name="barrage_emitter_condition_compose_type">
+        <macro name="barrage_emitter_condition_compose_or" value="1"/>
+        <macro name="barrage_emitter_condition_compose_and" value="2"/>
+    </macrosgroup>
+
+    <macrosgroup name="barrage_emitter_condition_op_type">
+        <macro name="barrage_emitter_condition_op_eq" value="1"/>
+        <macro name="barrage_emitter_condition_op_bg" value="2"/>
+        <macro name="barrage_emitter_condition_op_lt" value="3"/>
+    </macrosgroup>
+
+    <macrosgroup name="barrage_emitter_result_op_type">
+        <macro name="barrage_emitter_result_op_set" value="1"/>
+        <macro name="barrage_emitter_result_op_inc" value="2"/>
+        <macro name="barrage_emitter_result_op_dec" value="3"/>
+    </macrosgroup>
+
+    <macrosgroup name="barrage_emitter_result_change_type">
+        <macro name="barrage_emitter_result_change_fix" value="1"/>
+        <macro name="barrage_emitter_result_change_line" value="2"/>
+        <macro name="barrage_emitter_result_change_sin" value="3"/>
+    </macrosgroup>
+
+    <macrosgroup name="barrage_value_calc_type">
+        <macro name="barrage_value_calc_target_angle" value="1"/>
+        <macro name="barrage_value_calc_target_angle_locked" value="2"/>
+    </macrosgroup>
+    
+    <macrosgroup name="barrage_emitter_value_type">
+        <macro name="barrage_emitter_value_value" value="1"/>
+        <macro name="barrage_emitter_value_calc" value="2"/>
+    </macrosgroup>
+
+    <union name="barrage_emitter_value_data" version="1">
+        <entry name="value" type="float" id="barrage_emitter_value_value"/>
+        <entry name="calc_type" type="uint8" bindmacrosgroup="barrage_value_calc_type" id="barrage_emitter_value_calc"/>
+    </union>
+
+    <struct name="barrage_emitter_value" version="1">
+        <entry name="type" type="uint8" id="1" bindmacrosgroup="barrage_emitter_value_type"/>
+        <entry name="data" type="barrage_emitter_value_data" id="2" select="type"/>
+    </struct>
+
+    <!-- 随机参数的值 -->
+    <struct name="barrage_rand_float" version="1">
+        <entry name="base" type="float" id="1"/>
+        <entry name="adj" type="float" id="2"/>
+    </struct>
+
+    <struct name="barrage_rand_uint8" version="1">
+        <entry name="base" type="uint8" id="1"/>
+        <entry name="adj" type="uint8" id="2"/>
+    </struct>
+
+    <struct name="barrage_rand_uint16" version="1">
+        <entry name="base" type="uint16" id="1"/>
+        <entry name="adj" type="uint16" id="2"/>
+    </struct>
+
+    <struct name="barrage_rand_pair" version="1">
+        <entry name="x" type="barrage_rand_float" id="1"/>
+        <entry name="y" type="barrage_rand_float" id="2"/>
+    </struct>
+
+    <union name="barrage_rand_emitter_value_data" version="1">
+        <entry name="value" type="barrage_rand_float" id="barrage_emitter_value_value"/>
+        <entry name="calc_type" type="uint8" id="barrage_emitter_value_calc"/>
+    </union>
+    
+    <struct name="barrage_rand_emitter_value" version="1">
+        <entry name="type" type="uint8" id="1" bindmacrosgroup="barrage_emitter_value_type"/>
+        <entry name="data" type="barrage_rand_emitter_value_data" id="2" select="type"/>
+    </struct>
+    
+    <!-- 发射器事件 -->
+    <macrosgroup name="barrage_emitter_emitter_value_type">
+        <macro name="barrage_emitter_emitter_value_frame" value="1"/> <!-- 当前帧 -->
+        <macro name="barrage_emitter_emitter_value_pos_x" value="2"/> <!-- X坐标 -->
+        <macro name="barrage_emitter_emitter_value_pos_y" value="3"/> <!-- Y坐标 -->
+        <macro name="barrage_emitter_emitter_value_pos_radius" value="4"/> <!-- 半径 -->
+        <macro name="barrage_emitter_emitter_value_pos_angle" value="5"/> <!-- 半径方向 -->
+        <macro name="barrage_emitter_emitter_value_count" value="6"/> <!-- 条数 -->
+        <macro name="barrage_emitter_emitter_value_span" value="7"/> <!-- 周期 -->
+        <macro name="barrage_emitter_emitter_value_angle" value="8"/> <!-- 角度 -->
+        <macro name="barrage_emitter_emitter_value_angle_range" value="9"/> <!-- 范围 -->
+        <macro name="barrage_emitter_emitter_value_x_rate" value="10"/> <!-- 宽比 -->
+        <macro name="barrage_emitter_emitter_value_y_rate" value="11"/> <!-- 高比 -->
+        <macro name="barrage_emitter_emitter_value_alpha" value="12"/> <!-- 不透明度 -->
+        <macro name="barrage_emitter_emitter_value_speed" value="13"/> <!-- 子弹速度 -->
+        <macro name="barrage_emitter_emitter_value_acceleration" value="14"/> <!-- 子弹加速度速度 -->
+        <macro name="barrage_emitter_emitter_value_acceleration_angle" value="15"/> <!-- 子弹加速度速度 -->
+    </macrosgroup>
+
+    <struct name="barrage_emitter_emitter_condition_info" version="1">
+        <entry name="condition_type" type="uint8" id="1" bindmacrosgroup="barrage_emitter_emitter_value_type"/>
+        <entry name="condition_op" type="uint8" id="2" bindmacrosgroup="barrage_emitter_condition_op_type"/>
+        <entry name="condition_value" type="float" id="3"/>
+    </struct>
+
+    <!-- 触发结果操作 -->
+    <macrosgroup name="barrage_emitter_emitter_trigger_op_type">
+        <macro name="barrage_emitter_emitter_trigger_op_change_value" value="1"/>
+        <macro name="barrage_emitter_emitter_trigger_op_emit" value="2"/>
+        <macro name="barrage_emitter_emitter_trigger_op_restore" value="3"/>
+    </macrosgroup>
+
+    <struct name="barrage_emitter_emitter_trigger_op_data_change_value" version="1">
+        <entry name="result_type" type="uint8" id="7" bindmacrosgroup="barrage_emitter_emitter_value_type"/>
+        <entry name="result_op" type="uint8" id="8" bindmacrosgroup="barrage_emitter_result_op_type"/>
+        <entry name="result_value" type="barrage_emitter_value" id="9"/>
+        <entry name="result_change_type" type="uint8" id="10"/>
+        <entry name="result_change_duration" type="uint16" id="11"/>
+    </struct>
+
+    <union name="barrage_emitter_emitter_trigger_op_data" version="1">
+        <entry name="chagne_value" type="barrage_emitter_emitter_trigger_op_data_change_value" id="barrage_emitter_emitter_trigger_op_change_value"/>
+    </union>
+    
+    <struct name="barrage_emitter_emitter_trigger_info" version="1">
+        <entry name="group_id" type="uint8" id="1"/>
+        <entry name="condition_compose" type="uint8" id="2" bindmacrosgroup="barrage_emitter_condition_compose_type"/>
+        <entry name="condition_count" type="uint8" id="3"/>
+        <entry name="conditions" type="barrage_emitter_emitter_condition_info" id="4" count="2" refer="condition_count"/>
+        <entry name="trigger_op_type" type="uint8" id="5" bindmacrosgroup="barrage_emitter_emitter_trigger_op_type"/>
+        <entry name="trigger_op_data" type="barrage_emitter_emitter_trigger_op_data" id="6" select="trigger_op_type"/>
+    </struct>
+    
+    <!-- 子弹事件 -->
+    <macrosgroup name="barrage_emitter_bullet_value_type">
+        <macro name="barrage_emitter_bullet_value_frame" value="1"/> <!-- 当前帧 -->
+        <macro name="barrage_emitter_bullet_value_pos_x" value="2"/> <!-- X坐标 -->
+        <macro name="barrage_emitter_bullet_value_pos_y" value="3"/> <!-- Y坐标 -->
+        <macro name="barrage_emitter_bullet_value_life_circle" value="4"/> <!-- 类别 -->
+        <macro name="barrage_emitter_bullet_value_scale_x" value="5"/> <!-- 宽比 -->
+        <macro name="barrage_emitter_bullet_value_scale_y" value="6"/> <!-- 高比 -->
+        <macro name="barrage_emitter_bullet_value_color_r" value="7"/> <!-- R -->
+        <macro name="barrage_emitter_bullet_value_color_g" value="8"/> <!-- G -->
+        <macro name="barrage_emitter_bullet_value_color_b" value="9"/> <!-- B -->
+        <macro name="barrage_emitter_bullet_value_color_a" value="10"/> <!-- A -->
+        <macro name="barrage_emitter_bullet_value_angle" value="11"/> <!-- 朝向 -->
+        <macro name="barrage_emitter_bullet_value_speed" value="12"/> <!-- 子弹速度 -->
+        <macro name="barrage_emitter_bullet_value_speed_angle" value="13"/> <!-- 子弹速度方向 -->
+        <macro name="barrage_emitter_bullet_value_acceleration" value="14"/> <!-- 子弹加速度 -->
+        <macro name="barrage_emitter_bullet_value_acceleration_angle" value="15"/> <!-- 子弹加速度方向 -->
+        <macro name="barrage_emitter_bullet_value_x_rate" value="16"/> <!-- 横比 -->
+        <macro name="barrage_emitter_bullet_value_y_rate" value="17"/> <!-- 纵比 -->
+    </macrosgroup>
+
+    <struct name="barrage_emitter_bullet_condition_info" version="1">
+        <entry name="condition_type" type="uint8" id="1" bindmacrosgroup="barrage_emitter_bullet_value_type"/>
+        <entry name="condition_op" type="uint8" id="2" bindmacrosgroup="barrage_emitter_condition_op_type"/>
+        <entry name="condition_value" type="float" id="3"/>
+    </struct>
+
+    <struct name="barrage_emitter_bullet_trigger_info" version="1">
+        <entry name="group_id" type="uint8" id="3"/>
+        <entry name="condition_compose" type="uint8" id="4" bindmacrosgroup="barrage_emitter_condition_compose_type"/>
+        <entry name="condition_count" type="uint8" id="5"/>
+        <entry name="conditions" type="barrage_emitter_bullet_condition_info" id="6" count="2" refer="condition_count"/>
+        <entry name="result_type" type="uint8" id="7" bindmacrosgroup="barrage_emitter_bullet_value_type"/>
+        <entry name="result_op" type="uint8" id="8" bindmacrosgroup="barrage_emitter_result_op_type"/>
+        <entry name="result_value" type="barrage_emitter_value" id="9"/>
+        <entry name="result_change_type" type="uint8" id="10"/>
+        <entry name="result_change_duration" type="uint16" id="11"/>
+    </struct>
+
+    <!-- Emitter: 发射子弹的信息 -->
+    <struct name="barrage_emitter_bullet_info" version="1">
+        <entry name="proto" type="string" size="64" id="1"/>
+        <entry name="life_circle" type="barrage_rand_uint16" id="2"/>
+        <entry name="scale" type="barrage_rand_pair" id="3"/>
+        <entry name="angle" type="barrage_rand_float" id="4"/>
+        <entry name="color" type="barrage_color" id="5"/>
+        <entry name="speed" type="barrage_rand_float" id="6"/>
+        <entry name="acceleration" type="barrage_rand_float" id="8"/>
+        <entry name="acceleration_angle" type="barrage_rand_float" id="9"/>
+        <entry name="angle_to_speed" type="uint8" id="10"/>
+        <entry name="x_rate" type="barrage_rand_float" id="11"/>
+        <entry name="y_rate" type="barrage_rand_float" id="12"/>
+    </struct>
+
+    <!-- Emitter: 发射器信息信息 -->
+    <struct name="barrage_emitter_emitter_info" version="1">
+        <entry name="pos" type="barrage_rand_pair" id="1"/>
+        <entry name="speed" type="barrage_rand_float" id="2"/>
+        <entry name="speed_angle" type="barrage_rand_float" id="3"/>
+        <entry name="acceleration" type="barrage_rand_float" id="4"/>
+        <entry name="acceleration_angle" type="barrage_rand_float" id="5"/>
+
+        <entry name="emitter_pos_radius" type="barrage_rand_float" id="6"/>
+        <entry name="emitter_pos_angle" type="barrage_rand_float" id="7"/>
+        <entry name="emitter_count" type="barrage_rand_uint8" id="8"/>
+        <entry name="emitter_span" type="barrage_rand_uint8" id="9"/>
+        <entry name="emitter_angle" type="barrage_rand_emitter_value" id="10"/>
+        <entry name="emitter_angle_range" type="barrage_rand_float" id="11"/>
+    </struct>
+
+    <!-- 整体Emitter信息 -->
+    <struct name="barrage_emitter_info" version="1">
+        <entry name="frame_start" type="barrage_rand_uint16" id="1"/>
+        <entry name="frame_duration" type="barrage_rand_uint16" id="2"/>
+        <entry name="frame_loop" type="uint16" id="3"/>
+        <entry name="layer" type="string" size="32" id="4"/>
+        <entry name="emitter" type="barrage_emitter_emitter_info" id="5"/>
+        <entry name="bullet" type="barrage_emitter_bullet_info" id="6"/>
+    </struct>
+
+    <!-- 整体弹幕信息信息 -->
+    <struct name="barrage_barrage_info" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+    
+</metalib>

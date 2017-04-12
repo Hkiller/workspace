@@ -60,7 +60,7 @@
   uri: $db-svr
   ringbuf-size: $db-buf-size
   auto-enable: 1
-  debug: 0
+  debug: 2
 
 - name: db-client
   type: mongo_cli_proxy

@@ -35,6 +35,7 @@ struct logic_op_register_def g_rank_g_ops[] = {
     , { "rank_g_op_remove", rank_g_svr_op_remove_send, rank_g_svr_op_remove_recv }
     , { "rank_g_op_query", rank_g_svr_op_query_send, rank_g_svr_op_query_recv }
     , { "rank_g_op_query_with_data", rank_g_svr_op_query_with_data_send, rank_g_svr_op_query_with_data_recv }
+    , { "rank_g_op_query_data", rank_g_svr_op_query_data_send, NULL }
     , { "rank_g_op_query_season", rank_g_svr_op_query_season_send, NULL }
     , { "rank_g_op_change_season", rank_g_svr_op_change_season_send, rank_g_svr_op_change_season_recv }
     , { "rank_g_op_dump", rank_g_svr_op_dump_send, NULL }
@@ -85,6 +86,7 @@ rank_g_svr_create(
     RANK_G_SVR_LOAD_META(m_pkg_meta_res_query, "svr_rank_g_res_query");
     RANK_G_SVR_LOAD_META(m_pkg_meta_res_query_with_data, "svr_rank_g_res_query_with_data");
     RANK_G_SVR_LOAD_META(m_pkg_meta_res_query_season, "svr_rank_g_res_query_season");
+    RANK_G_SVR_LOAD_META(m_pkg_meta_res_query_data, "svr_rank_g_res_query_data");
     RANK_G_SVR_LOAD_META(m_meta_season_saving, "svr_rank_g_season_saving");
     RANK_G_SVR_LOAD_META(m_meta_season_role_to_rank, "svr_rank_g_season_role_to_rank");
     

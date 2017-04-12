@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\uipp\sprite\Component.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentGen.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentMeta.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentReg.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentSimulate.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\ComponentWithDataGen.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\Entity.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\EntityIterator.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\Group.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\Repository.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\System.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\World.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\WorldRes.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\WorldResGen.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite\WorldUpdatorGen.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_2d\System.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_2d\Transform.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_anim\AnimationBackend.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_anim\AnimationBackendGen.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_anim\AnimationCamera.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_anim\AnimationSch.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_anim\System.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_cfg\ActionModuleReg.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_cfg\CfgLoader.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_cfg\CfgLoaderExternGen.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_cfg\System.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\Action.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\ActionGen.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\ActionMeta.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\ActionReg.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\ActionVisitor.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\Fsm.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\Repository.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\State.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_fsm\System.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_touch\System.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_touch\TouchComponent.hpp" />
+    <ClInclude Include="..\..\include\uipp\sprite_touch\TouchManager.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\uipp\sprite\Component.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite\Entity.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite\EntityIterator.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite\Group.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite\Repository.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)SpriteRepository.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)SpriteRepository.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite\World.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/SpriteWorld.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/SpriteWorld.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\uipp\sprite_2d\Transform.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_anim\AnimationCamera.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_anim\AnimationSch.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_cfg\CfgLoader.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_fsm\Action.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_fsm\Fsm.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_fsm\Repository.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_fsm\State.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_touch\Touchable.cpp" />
+    <ClCompile Include="..\..\src\uipp\sprite_touch\TouchManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\uipp\sprite\config.mk" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CD696340-AF2A-4D07-BC14-0990C0FA0833}</ProjectGuid>
+    <RootNamespace>uipp</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../3rdTools/yaml/include;../../3rdTools/yajl/include;../../3rdTools/libev/include;../../3rdTools/libxml2/include;../../3rdTools/iconv/vc/include;../../3rdTools/libxml2/include/vc;../../3rdTools/gles/vc/include/glee;../../drow/include;../../drow/m3e/inc;../../3rdTools/pthread/vc/include;../../3rdTools/openal/vc/include;../../3rdTools/gles/include;../../3rdTools/Box2D/Box2D;../../build/vc;../../include;../../3rdTools/spine-runtimes/spine-c/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;YAML_DECLARE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4819;4996;4355;4624;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../../3rdTools/yaml/include;../../3rdTools/yajl/include;../../3rdTools/libev/include;../../3rdTools/libxml2/include;../../3rdTools/iconv/vc/include;../../3rdTools/libxml2/include/vc;../../3rdTools/gles/vc/include/glee;../../drow/include;../../drow/m3e/inc;../../3rdTools/pthread/vc/include;../../3rdTools/openal/vc/include;../../3rdTools/gles/include;../../3rdTools/Box2D/Box2D;../../build/vc;../../include;../../3rdTools/spine-runtimes/spine-c/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;YAML_DECLARE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4819;4996;4355;4624;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

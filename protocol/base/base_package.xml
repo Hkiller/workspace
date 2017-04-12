@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GBK" standalone="yes" ?>
+<metalib tagsetversion="1" name="BASEPKG" version="1" >
+    <macro name="APPEND_INFO_MAX_COUNT" value='64'/>
+
+    <macro name="BASEPKG_HEAD_FLAG_ZIP" value='1'/>
+
+    <struct name="AppendInfo" version="1" align='1'>
+        <entry name="id" type="uint32" id="1"/>
+        <entry name="size" type="uint16" id="2"/>
+        <entry name="reserve" type="uint16"/>
+    </struct>
+
+    <struct name="basepkg_head" version="1" align='1'>
+        <entry name="sn" type="uint32" id="1"/>
+        <entry name="cmd" type="uint32" id="2"/>
+        <entry name="clientId" type="uint64" id="3"/>
+        <entry name="errorNo" type="uint32" id="4"/>
+        <entry name="flags" type="uint16" id="5"/>
+        <entry name="headlen" type="uint16" id="6"/>
+        <entry name="bodylen" type="uint16" id="7"/>
+        <entry name="bodytotallen" type="uint16" id="8"/>
+        <entry name="reserve" type="uint16"/>
+        <entry name="appendInfoCount" type="uint16" id="9"/>
+        <entry name="appendInfos"  type="AppendInfo" count="APPEND_INFO_MAX_COUNT" refer="appendInfoCount" id="10"/>
+    </struct>
+
+    <struct name="basepkg" version="1" align='1'>
+        <entry name="head" type="basepkg_head" sizeinfo="head.headlen" id="1"/>
+        <entry name="body" type="int8" count="0" refer="head.bodytotallen" id="2"/>
+    </struct>
+</metalib>

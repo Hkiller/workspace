@@ -39,4 +39,9 @@ account_svr_op_query_by_account_id_recv(logic_context_t ctx, logic_stack_node_t 
 logic_op_exec_result_t
 account_svr_op_query_login_info(logic_context_t ctx, logic_stack_node_t stack, void * user_data, cfg_t cfg);
 
+logic_op_exec_result_t
+account_svr_op_query_external_friends_send(logic_context_t ctx, logic_stack_node_t stack, void * user_data, cfg_t cfg);
+logic_op_exec_result_t
+account_svr_op_query_external_friends_recv(logic_context_t ctx, logic_stack_node_t stack, logic_require_t require, void * user_data, cfg_t cfg);
+
 #endif

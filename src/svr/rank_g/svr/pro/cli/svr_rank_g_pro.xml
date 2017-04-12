@@ -84,9 +84,10 @@
         <entry name="index_id" type="uint32" id="1"/>
         <entry name="season" type="uint16" id="2"/>
         <entry name="query" type="svr_rank_g_query" id="3"/>
-        <entry name="result_start" type="uint32" id="4"/>
-        <entry name="user_id_count" type="uint32" id="5"/>
-        <entry name="user_ids" type="uint64" count="0" refer="user_id_count" id="6"/>
+        <entry name="total_count" type="uint32" id="4"/>
+        <entry name="result_start" type="uint32" id="5"/>
+        <entry name="user_id_count" type="uint32" id="6"/>
+        <entry name="user_ids" type="uint64" count="0" refer="user_id_count" id="7"/>
     </struct>
 
     <!--     查询排行榜（包括数据) -->
@@ -101,11 +102,23 @@
         <entry name="index_id" type="uint32" id="1"/>
         <entry name="season" type="uint16" id="2"/>
         <entry name="query" type="svr_rank_g_query" id="3"/>
-        <entry name="result_start" type="uint32" id="4"/>
-        <entry name="data_len" type="uint16" id="5"/>
-        <entry name="data" type="uint8" count="0" refer="data_len" id="6"/>
+        <entry name="total_count" type="uint32" id="4"/>
+        <entry name="result_start" type="uint32" id="5"/>
+        <entry name="data_len" type="uint16" id="6"/>
+        <entry name="data" type="uint8" count="0" refer="data_len" id="7"/>
     </struct>
 
+    <!--     查询排行榜缓存数据 -->
+    <struct name="svr_rank_g_req_query_data" version="1">
+        <entry name="user_id_count" type="uint32" id="1"/>
+        <entry name="user_ids" type="uint64" count="0" refer="user_id_count" id="2"/>
+    </struct>
+
+    <struct name="svr_rank_g_res_query_data" version="1">
+        <entry name="data_len" type="uint16" id="1"/>
+        <entry name="data" type="uint8" count="0" refer="data_len" id="2"/>
+    </struct>
+    
     <!-- 错误响应 -->
     <struct name="svr_rank_g_res_error" version="1">
         <entry name="error" type="int16" id="1"/>
@@ -127,6 +140,9 @@
 
         <macro name="SVR_RANK_G_CMD_REQ_QUERY_SEASON" value="9"/>
         <macro name="SVR_RANK_G_CMD_RES_QUERY_SEASON" value="10"/>
+
+        <macro name="SVR_RANK_G_CMD_REQ_QUERY_DATA" value="11"/>
+        <macro name="SVR_RANK_G_CMD_RES_QUERY_DATA" value="12"/>
         
         <macro name="SVR_RANK_G_CMD_REQ_INIT" value="17"/>
         <macro name="SVR_RANK_G_CMD_REQ_DUMP" value="19"/>
@@ -146,6 +162,9 @@
 
         <entry name="svr_rank_g_res_query_season" type="svr_rank_g_res_query_season" id="SVR_RANK_G_CMD_RES_QUERY_SEASON"/>
 
+		<entry name="svr_rank_g_req_query_data" type="svr_rank_g_req_query_data" id="SVR_RANK_G_CMD_REQ_QUERY_DATA"/>
+        <entry name="svr_rank_g_res_query_data" type="svr_rank_g_res_query_data" id="SVR_RANK_G_CMD_RES_QUERY_DATA"/>
+        
         <entry name="svr_rank_g_res_error" type="svr_rank_g_res_error" id="SVR_RANK_G_CMD_RES_ERROR"/>
     </union>
 

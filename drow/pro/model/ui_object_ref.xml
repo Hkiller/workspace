@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_common" file="ui_common.xml"/>
+
+    <macrosgroup name="ui_object_type">
+        <macro name="UI_OBJECT_TYPE_NONE" value="0"/>
+        <macro name="UI_OBJECT_TYPE_IMG_BLOCK" value="1"/>
+        <macro name="UI_OBJECT_TYPE_FRAME" value="2"/>
+        <macro name="UI_OBJECT_TYPE_ACTOR" value="3"/>
+        <macro name="UI_OBJECT_TYPE_PARTICLE" value="4"/>
+        <macro name="UI_OBJECT_TYPE_SKELETON" value="5"/>
+        <macro name="UI_OBJECT_TYPE_LAYOUT" value="6"/>
+        <macro name="UI_OBJECT_TYPE_MOVING" value="7"/>
+        <macro name="UI_OBJECT_TYPE_CHIPMUNK" value="8"/>
+        <macro name="UI_OBJECT_TYPE_TILEDMAP" value="9"/>
+        <macro name="UI_OBJECT_TYPE_UI_TEMPLATE" value="11"/>
+        <macro name="UI_OBJECT_TYPE_EMITTER" value="12"/>
+        <macro name="UI_OBJECT_TYPE_SPINE_STATE_DEF" value="13"/>
+        <macro name="UI_OBJECT_TYPE_SCROLLMAP" value="14"/>
+        <macro name="UI_OBJECT_TYPE_SWF" value="15"/>
+        <macro name="UI_OBJECT_TYPE_MASK" value="16"/>
+    </macrosgroup>
+    <macro name="UI_OBJECT_TYPE_MIN" value="1"/>
+    <macro name="UI_OBJECT_TYPE_MAX" value="17"/>
+
+    <!-- 源文件引用 -->
+    <macrosgroup name="ui_object_src_ref_type">
+        <macro name="UI_OBJECT_SRC_REF_TYPE_NONE" value="0"/>
+        <macro name="UI_OBJECT_SRC_REF_TYPE_BY_ID" value="1"/>
+        <macro name="UI_OBJECT_SRC_REF_TYPE_BY_PATH" value="3"/>
+    </macrosgroup>
+
+    <struct name="ui_object_src_ref_by_id" version="1">
+        <entry name="src_id" type="uint32" id="1"/>
+    </struct>
+
+    <struct name="ui_object_src_ref_by_path" version="1">
+        <entry name="path" type="string" size="128" id="1"/>
+    </struct>
+
+    <union name="ui_object_src_ref_union" version="1">
+        <entry name="by_id" type="ui_object_src_ref_by_id" id="UI_OBJECT_SRC_REF_TYPE_BY_ID"/>
+        <entry name="by_path" type="ui_object_src_ref_by_path" id="UI_OBJECT_SRC_REF_TYPE_BY_PATH"/>
+    </union>
+
+    <struct name="ui_object_src_ref" version="1">
+        <entry name="type" type="uint8" bindmacrosgroup="ui_object_src_ref_type" id="1"/>
+        <entry name="data" type="ui_object_src_ref_union" select="type" id="2"/>
+    </struct>
+
+    <!-- 资源引用数据 -->
+    <struct name="ui_object_url_data_src_id" version="1">
+        <entry name="id" type="uint32" id="1"/>
+        <entry name="src" type="ui_object_src_ref" id="2"/>
+        <entry name="name" type="string" size="64" id="3"/>
+    </struct>
+
+    <struct name="ui_object_url_data_partical" version="1">
+        <entry name="src" type="ui_object_src_ref" id="2"/>
+    </struct>
+
+    <struct name="ui_object_url_data_skeleton" version="1">
+        <entry name="anim_def" type="string" size="128" id="1"/>
+        <entry name="src" type="ui_object_src_ref" id="2"/>
+    </struct>
+
+    <struct name="ui_object_url_data_swf" version="1">
+        <entry name="src" type="ui_object_src_ref" id="1"/>
+    </struct>
+    
+    <struct name="ui_object_url_data_layout" version="1">
+        <entry name="src" type="ui_object_src_ref" id="1"/>
+    </struct>
+
+    <struct name="ui_object_url_data_moving" version="1">
+        <entry name="node" type="string" size="64" id="1"/>
+        <entry name="src" type="ui_object_src_ref" id="2"/>
+    </struct>
+
+    <struct name="ui_object_url_data_chipmunk" version="1">
+        <entry name="body" type="string" size="64" id="1"/>
+        <entry name="src" type="ui_object_src_ref" id="2"/>
+    </struct>
+
+    <struct name="ui_object_url_data_tiledmap" version="1">
+        <entry name="src" type="ui_object_src_ref" id="1"/>
+    </struct>
+
+    <struct name="ui_object_url_data_scrollmap" version="1">
+        <entry name="src" type="ui_object_src_ref" id="1"/>
+    </struct>
+
+    <struct name="ui_object_url_data_ui_template" version="1">
+        <entry name="src" type="ui_object_src_ref" id="1"/>
+    </struct>
+
+    <struct name="ui_object_url_data_emitter" version="1">
+        <entry name="src" type="ui_object_src_ref" id="1"/>
+    </struct>
+    
+    <struct name="ui_object_url_data_spine_state" version="1">
+        <entry name="src" type="ui_object_src_ref" id="1"/>
+    </struct>
+
+    <struct name="ui_object_url_data_mask" version="1">
+        <entry name="block" type="string" size="64" id="1"/>
+        <entry name="src" type="ui_object_src_ref" id="2"/>
+    </struct>
+    
+    <struct name="ui_object_url_data_unknown_type" version="1">
+        <entry name="type_name" type="string" size="64" id="1"/>
+    </struct>
+    
+    <union name="ui_object_url_data" version="1">
+        <entry name="unknown_type" type="ui_object_url_data_unknown_type" id="UI_OBJECT_TYPE_NONE"/>
+        <entry name="img_block" type="ui_object_url_data_src_id" id="UI_OBJECT_TYPE_IMG_BLOCK"/>
+        <entry name="frame" type="ui_object_url_data_src_id" id="UI_OBJECT_TYPE_FRAME"/>
+        <entry name="actor" type="ui_object_url_data_src_id" id="UI_OBJECT_TYPE_ACTOR"/>
+        <entry name="particle" type="ui_object_url_data_partical" id="UI_OBJECT_TYPE_PARTICLE"/>
+        <entry name="skeleton" type="ui_object_url_data_skeleton" id="UI_OBJECT_TYPE_SKELETON"/>
+        <entry name="layout" type="ui_object_url_data_layout" id="UI_OBJECT_TYPE_LAYOUT"/>
+        <entry name="moving" type="ui_object_url_data_moving" id="UI_OBJECT_TYPE_MOVING"/>
+        <entry name="chipmunk" type="ui_object_url_data_chipmunk" id="UI_OBJECT_TYPE_CHIPMUNK"/>
+        <entry name="tiledmap" type="ui_object_url_data_tiledmap" id="UI_OBJECT_TYPE_TILEDMAP"/>
+        <entry name="ui_template" type="ui_object_url_data_ui_template" id="UI_OBJECT_TYPE_UI_TEMPLATE"/>
+        <entry name="emitter" type="ui_object_url_data_emitter" id="UI_OBJECT_TYPE_EMITTER"/>
+        <entry name="spine_state" type="ui_object_url_data_spine_state" id="UI_OBJECT_TYPE_SPINE_STATE_DEF"/>
+        <entry name="scrollmap" type="ui_object_url_data_scrollmap" id="UI_OBJECT_TYPE_SCROLLMAP"/>
+        <entry name="swf" type="ui_object_url_data_swf" id="UI_OBJECT_TYPE_SWF"/>
+        <entry name="mask" type="ui_object_url_data_mask" id="UI_OBJECT_TYPE_MASK"/>
+    </union>
+
+    <struct name="ui_object_url" version="1">
+        <entry name="type" type="uint8" bindmacrosgroup="ui_object_type" id="1"/>
+        <entry name="data" type="ui_object_url_data" select="type" id="2"/>
+    </struct>
+
+</metalib>

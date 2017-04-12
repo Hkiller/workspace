@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CD696340-AF2A-4D07-BC14-0990C0FA0864}</ProjectGuid>
+    <RootNamespace>cpe</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../include;../../3rdTools/yaml/include;../../3rdTools/yajl/include;../../3rdTools/libev/include;../../3rdTools/libxml2/include;../../3rdTools/iconv/vc/include;../../3rdTools/libxml2/include/vc;../../3rdTools/zlib/vc/include;../../3rdTools/pcre2/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;PCRE2_CODE_UNIT_WIDTH=8;PCRE2_STATIC;_LIB;YAML_DECLARE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../../include;../../3rdTools/yaml/include;../../3rdTools/yajl/include;../../3rdTools/libev/include;../../3rdTools/libxml2/include;../../3rdTools/iconv/vc/include;../../3rdTools/libxml2/include/vc;../../3rdTools/zlib/vc/include;../../3rdTools/pcre2/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;PCRE2_CODE_UNIT_WIDTH=8;NDEBUG;_LIB;YAML_DECLARE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\cpe\cfg\cfg.h" />
+    <ClInclude Include="..\..\include\cpe\cfg\cfg_manage.h" />
+    <ClInclude Include="..\..\include\cpe\cfg\cfg_read.h" />
+    <ClInclude Include="..\..\include\cpe\cfg\cfg_types.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_bson.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_calc.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_cfg.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_ctypes_info.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_ctypes_op.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_data.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_data_cvt.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_data_entry.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_data_value.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_define.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_error.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_external.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_json.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_md5.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_metalib_build.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_metalib_builder.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_metalib_cmp.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_metalib_init.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_metalib_manage.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_metalib_validate.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_metalib_xml.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_pbuf.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_types.h" />
+    <ClInclude Include="..\..\include\cpe\dr\dr_xml.h" />
+    <ClInclude Include="..\..\include\cpe\pal\msvc_dirent.h" />
+    <ClInclude Include="..\..\include\cpe\pal\msvc_dlfcn.h" />
+    <ClInclude Include="..\..\include\cpe\pal\msvc_time.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_ctype.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_dirent.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_dlfcn.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_external.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_fcntl.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_getopt.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_limits.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_math.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_platform.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_queue.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_shm.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_signal.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_socket.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_stackbuf.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_stat.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_stdarg.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_stdio.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_stdlib.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_string.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_strings.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_time.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_tree.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_types.h" />
+    <ClInclude Include="..\..\include\cpe\pal\pal_unistd.h" />
+    <ClInclude Include="..\..\include\cpe\pal\win32_dirent.h" />
+    <ClInclude Include="..\..\include\cpe\timer\timer_manage.h" />
+    <ClInclude Include="..\..\include\cpe\timer\timer_types.h" />
+    <ClInclude Include="..\..\include\cpe\utils\algorithm.h" />
+    <ClInclude Include="..\..\include\cpe\utils\assert.h" />
+    <ClInclude Include="..\..\include\cpe\utils\base64.h" />
+    <ClInclude Include="..\..\include\cpe\utils\binpack.h" />
+    <ClInclude Include="..\..\include\cpe\utils\bitarry.h" />
+    <ClInclude Include="..\..\include\cpe\utils\buffer.h" />
+    <ClInclude Include="..\..\include\cpe\utils\error.h" />
+    <ClInclude Include="..\..\include\cpe\utils\error_list.h" />
+    <ClInclude Include="..\..\include\cpe\utils\error_macros.h" />
+    <ClInclude Include="..\..\include\cpe\utils\file.h" />
+    <ClInclude Include="..\..\include\cpe\utils\graph.h" />
+    <ClInclude Include="..\..\include\cpe\utils\graph_weight_path.h" />
+    <ClInclude Include="..\..\include\cpe\utils\hash.h" />
+    <ClInclude Include="..\..\include\cpe\utils\hash_string.h" />
+    <ClInclude Include="..\..\include\cpe\utils\hex_utils.h" />
+    <ClInclude Include="..\..\include\cpe\utils\log.h" />
+    <ClInclude Include="..\..\include\cpe\utils\math_ex.h" />
+    <ClInclude Include="..\..\include\cpe\utils\md5.h" />
+    <ClInclude Include="..\..\include\cpe\utils\memory.h" />
+    <ClInclude Include="..\..\include\cpe\utils\memory_debug.h" />
+    <ClInclude Include="..\..\include\cpe\utils\mmap_utils.h" />
+    <ClInclude Include="..\..\include\cpe\utils\prand.h" />
+    <ClInclude Include="..\..\include\cpe\utils\priority_queue.h" />
+    <ClInclude Include="..\..\include\cpe\utils\random.h" />
+    <ClInclude Include="..\..\include\cpe\utils\range.h" />
+    <ClInclude Include="..\..\include\cpe\utils\range_bitarry.h" />
+    <ClInclude Include="..\..\include\cpe\utils\ringbuffer.h" />
+    <ClInclude Include="..\..\include\cpe\utils\rwpipe.h" />
+    <ClInclude Include="..\..\include\cpe\utils\rwpipe_mmap.h" />
+    <ClInclude Include="..\..\include\cpe\utils\rwpipe_shm.h" />
+    <ClInclude Include="..\..\include\cpe\utils\service.h" />
+    <ClInclude Include="..\..\include\cpe\utils\sorted_vector.h" />
+    <ClInclude Include="..\..\include\cpe\utils\stream.h" />
+    <ClInclude Include="..\..\include\cpe\utils\stream_buffer.h" />
+    <ClInclude Include="..\..\include\cpe\utils\stream_error.h" />
+    <ClInclude Include="..\..\include\cpe\utils\stream_file.h" />
+    <ClInclude Include="..\..\include\cpe\utils\stream_mem.h" />
+    <ClInclude Include="..\..\include\cpe\utils\stream_ringbuffer.h" />
+    <ClInclude Include="..\..\include\cpe\utils\string_buff.h" />
+    <ClInclude Include="..\..\include\cpe\utils\string_ucs4.h" />
+    <ClInclude Include="..\..\include\cpe\utils\string_utils.h" />
+    <ClInclude Include="..\..\include\cpe\utils\time_utils.h" />
+    <ClInclude Include="..\..\include\cpe\utils\tsort.h" />
+    <ClInclude Include="..\..\include\cpe\net\net.h" />
+    <ClInclude Include="..\..\include\cpe\net\net_chanel.h" />
+    <ClInclude Include="..\..\include\cpe\net\net_connector.h" />
+    <ClInclude Include="..\..\include\cpe\net\net_endpoint.h" />
+    <ClInclude Include="..\..\include\cpe\net\net_listener.h" />
+    <ClInclude Include="..\..\include\cpe\net\net_manage.h" />
+    <ClInclude Include="..\..\include\cpe\net\net_service_local.h" />
+    <ClInclude Include="..\..\include\cpe\net\net_service_tcp.h" />
+    <ClInclude Include="..\..\include\cpe\net\net_types.h" />
+    <ClInclude Include="..\..\include\cpe\nm\nm.h" />
+    <ClInclude Include="..\..\include\cpe\nm\nm_manage.h" />
+    <ClInclude Include="..\..\include\cpe\nm\nm_read.h" />
+    <ClInclude Include="..\..\include\cpe\nm\nm_types.h" />
+    <ClInclude Include="..\..\include\cpe\nm\tests-env\with_nm.hpp" />
+    <ClInclude Include="..\..\include\cpe\dp\dp.h" />
+    <ClInclude Include="..\..\include\cpe\dp\dp_manage.h" />
+    <ClInclude Include="..\..\include\cpe\dp\dp_request.h" />
+    <ClInclude Include="..\..\include\cpe\dp\dp_responser.h" />
+    <ClInclude Include="..\..\include\cpe\dp\dp_types.h" />
+    <ClInclude Include="..\..\include\cpe\tl\tl.h" />
+    <ClInclude Include="..\..\include\cpe\tl\tl_action.h" />
+    <ClInclude Include="..\..\include\cpe\tl\tl_errno.h" />
+    <ClInclude Include="..\..\include\cpe\tl\tl_intercept.h" />
+    <ClInclude Include="..\..\include\cpe\tl\tl_manage.h" />
+    <ClInclude Include="..\..\include\cpe\tl\tl_types.h" />
+    <ClInclude Include="..\..\include\cpe\pom\pom_class.h" />
+    <ClInclude Include="..\..\include\cpe\pom\pom_debuger.h" />
+    <ClInclude Include="..\..\include\cpe\pom\pom_error.h" />
+    <ClInclude Include="..\..\include\cpe\pom\pom_manage.h" />
+    <ClInclude Include="..\..\include\cpe\pom\pom_object.h" />
+    <ClInclude Include="..\..\include\cpe\pom\pom_types.h" />
+    <ClInclude Include="..\..\include\cpe\pom_grp\pom_grp_cfg.h" />
+    <ClInclude Include="..\..\include\cpe\pom_grp\pom_grp_meta.h" />
+    <ClInclude Include="..\..\include\cpe\pom_grp\pom_grp_meta_build.h" />
+    <ClInclude Include="..\..\include\cpe\pom_grp\pom_grp_obj.h" />
+    <ClInclude Include="..\..\include\cpe\pom_grp\pom_grp_obj_mgr.h" />
+    <ClInclude Include="..\..\include\cpe\pom_grp\pom_grp_shm.h" />
+    <ClInclude Include="..\..\include\cpe\pom_grp\pom_grp_store.h" />
+    <ClInclude Include="..\..\include\cpe\pom_grp\pom_grp_types.h" />
+    <ClInclude Include="..\..\include\cpe\otm\otm_manage.h" />
+    <ClInclude Include="..\..\include\cpe\otm\otm_memo.h" />
+    <ClInclude Include="..\..\include\cpe\otm\otm_timer.h" />
+    <ClInclude Include="..\..\include\cpe\otm\otm_types.h" />
+    <ClInclude Include="..\..\include\cpe\fsm\fsm_def.h" />
+    <ClInclude Include="..\..\include\cpe\fsm\fsm_ins.h" />
+    <ClInclude Include="..\..\include\cpe\fsm\fsm_types.h" />
+    <ClInclude Include="..\..\include\cpe\utils\utils_types.h" />
+    <ClInclude Include="..\..\include\cpe\utils\weight_selector.h" />
+    <ClInclude Include="..\..\include\cpe\utils_xml\xml_utils.h" />
+    <ClInclude Include="..\..\include\cpe\vfs\vfs_backend.h" />
+    <ClInclude Include="..\..\include\cpe\vfs\vfs_dir.h" />
+    <ClInclude Include="..\..\include\cpe\vfs\vfs_entry_info.h" />
+    <ClInclude Include="..\..\include\cpe\vfs\vfs_file.h" />
+    <ClInclude Include="..\..\include\cpe\vfs\vfs_manage.h" />
+    <ClInclude Include="..\..\include\cpe\vfs\vfs_mount_point.h" />
+    <ClInclude Include="..\..\include\cpe\vfs\vfs_stream.h" />
+    <ClInclude Include="..\..\include\cpe\vfs\vfs_types.h" />
+    <ClInclude Include="..\..\include\cpe\vfs\vfs_visitor.h" />
+    <ClInclude Include="..\..\include\cpe\xcalc\xcalc_computer.h" />
+    <ClInclude Include="..\..\include\cpe\xcalc\xcalc_token.h" />
+    <ClInclude Include="..\..\include\cpe\xcalc\xcalc_types.h" />
+    <ClInclude Include="..\..\include\cpe\zip\zip_file.h" />
+    <ClInclude Include="..\..\include\cpe\zip\zip_types.h" />
+    <ClInclude Include="..\..\src\cpe\cfg\cfg_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\cfg\cfg_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\dr\dr_ctype_ops.h" />
+    <ClInclude Include="..\..\src\cpe\dr\dr_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\dr\meta-inout\dr_builder_ops.h" />
+    <ClInclude Include="..\..\src\cpe\dr\meta-inout\dr_builder_types.h" />
+    <ClInclude Include="..\..\src\cpe\dr\meta-inout\dr_inbuild_error.h" />
+    <ClInclude Include="..\..\src\cpe\dr\meta-inout\dr_inbuild_types.h" />
+    <ClInclude Include="..\..\src\cpe\dr\meta-inout\dr_metalib_ops.h" />
+    <ClInclude Include="..\..\src\cpe\dr\meta-inout\dr_XMLtags.h" />
+    <ClInclude Include="..\..\src\cpe\dr\data-pbuf\dr_pbuf_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\dr\data-pbuf\dr_pbuf_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\dr\data-bson\dr_bson_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\dr\data-bson\dr_bson_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\timer\timer_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\timer\timer_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\utils\binpack_maxrects_i.h" />
+    <ClInclude Include="..\..\src\cpe\utils\buffer_private.h" />
+    <ClInclude Include="..\..\src\cpe\utils\file_internal.h" />
+    <ClInclude Include="..\..\src\cpe\net\net_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\net\net_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\nm\nm_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\nm\nm_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\dp\dp_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\dp\dp_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\tl\tl_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\tl\tl_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\pom\pom_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\pom\pom_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\pom\pom_page_head.h" />
+    <ClInclude Include="..\..\src\cpe\pom_grp\pom_grp_data.h" />
+    <ClInclude Include="..\..\src\cpe\pom_grp\pom_grp_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\pom_grp\pom_grp_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\otm\otm_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\otm\otm_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\fsm\fsm_internal_ops.h" />
+    <ClInclude Include="..\..\src\cpe\fsm\fsm_internal_types.h" />
+    <ClInclude Include="..\..\src\cpe\utils\graph_edge_i.h" />
+    <ClInclude Include="..\..\src\cpe\utils\graph_i.h" />
+    <ClInclude Include="..\..\src\cpe\utils\graph_node_i.h" />
+    <ClInclude Include="..\..\src\cpe\utils\graph_weight_path_i.h" />
+    <ClInclude Include="..\..\src\cpe\vfs\vfs_backend_i.h" />
+    <ClInclude Include="..\..\src\cpe\vfs\vfs_dir_i.h" />
+    <ClInclude Include="..\..\src\cpe\vfs\vfs_file_i.h" />
+    <ClInclude Include="..\..\src\cpe\vfs\vfs_manage_i.h" />
+    <ClInclude Include="..\..\src\cpe\vfs\vfs_mount_point_i.h" />
+    <ClInclude Include="..\..\src\cpe\xcalc\xcalc_computer_i.h" />
+    <ClInclude Include="..\..\src\cpe\xcalc\xcalc_context_i.h" />
+    <ClInclude Include="..\..\src\cpe\xcalc\xcalc_function_i.h" />
+    <ClInclude Include="..\..\src\cpe\xcalc\xcalc_token_i.h" />
+    <ClInclude Include="..\..\src\cpe\zip\crypt.h" />
+    <ClInclude Include="..\..\src\cpe\zip\ioapi.h" />
+    <ClInclude Include="..\..\src\cpe\zip\iowin32.h" />
+    <ClInclude Include="..\..\src\cpe\zip\unzip.h" />
+    <ClInclude Include="..\..\src\cpe\zip\zip.h" />
+    <ClInclude Include="..\..\src\cpe\zip\zip_internal_types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_bin_read.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_bin_write.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_compaire.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_dir_read.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_dump.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_json_read.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_manage.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_merge.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_modify.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_path_create.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_read.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_seq_op.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_struct_op.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_yaml_read.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_yaml_write.c" />
+    <ClCompile Include="..\..\src\cpe\cfg\cfg_zip_read.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_calc.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_ctypes_info.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_data_compaire.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_data_convert.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_data_from_ctype.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_data_from_numeric.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_data_from_string.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_data_hash.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_data_print.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_error.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_metalib_cmp.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_metalib_dump.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_metalib_init.c" />
+    <ClCompile Include="..\..\src\cpe\dr\basic\dr_metalib_manage.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-basic\dr_data_cvt.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-basic\dr_data_entry.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-basic\dr_data_md5.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-basic\dr_data_value.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-json\dr_json_print.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-json\dr_json_read.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-yaml\dr_yaml_print.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-yaml\dr_yaml_read.c" />
+    <ClCompile Include="..\..\src\cpe\dr\meta-inout\dr_builder.c" />
+    <ClCompile Include="..\..\src\cpe\dr\meta-inout\dr_builder_element.c" />
+    <ClCompile Include="..\..\src\cpe\dr\meta-inout\dr_builder_source.c" />
+    <ClCompile Include="..\..\src\cpe\dr\meta-inout\dr_inbuild.c" />
+    <ClCompile Include="..\..\src\cpe\dr\meta-inout\dr_inbuild_create.c" />
+    <ClCompile Include="..\..\src\cpe\dr\meta-inout\dr_metalib_ops.c" />
+    <ClCompile Include="..\..\src\cpe\dr\meta-inout\dr_xml_input.c" />
+    <ClCompile Include="..\..\src\cpe\dr\meta-inout\dr_xml_output.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-basic\dr_data_copy.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-basic\dr_data_defaults.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-cfg\dr_cfg_read.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-cfg\dr_cfg_write.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-pbuf\dr_pbuf_read.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-pbuf\dr_pbuf_varint.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-pbuf\dr_pbuf_write.c" />
+    <ClCompile Include="..\..\src\cpe\dr\meta-validate\dr_validate_align.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-bson\dr_bson_read.c" />
+    <ClCompile Include="..\..\src\cpe\dr\data-bson\dr_bson_write.c" />
+    <ClCompile Include="..\..\src\cpe\pal\msvc_dlfcn.c" />
+    <ClCompile Include="..\..\src\cpe\pal\msvc_time.c" />
+    <ClCompile Include="..\..\src\cpe\pal\pal_math.c" />
+    <ClCompile Include="..\..\src\cpe\pal\pal_shm.c" />
+    <ClCompile Include="..\..\src\cpe\pal\pal_socket.c" />
+    <ClCompile Include="..\..\src\cpe\pal\pal_stdlib.c" />
+    <ClCompile Include="..\..\src\cpe\pal\pal_string.c" />
+    <ClCompile Include="..\..\src\cpe\pal\win32_dirent.c" />
+    <ClCompile Include="..\..\src\cpe\timer\timer_debug.c" />
+    <ClCompile Include="..\..\src\cpe\timer\timer_manage.c" />
+    <ClCompile Include="..\..\src\cpe\timer\timer_processor.c" />
+    <ClCompile Include="..\..\src\cpe\utils\algorithm.c" />
+    <ClCompile Include="..\..\src\cpe\utils\assert_ex.c" />
+    <ClCompile Include="..\..\src\cpe\utils\base64.c" />
+    <ClCompile Include="..\..\src\cpe\utils\binpack_maxrects.c" />
+    <ClCompile Include="..\..\src\cpe\utils\binpack_maxrects_utils.c" />
+    <ClCompile Include="..\..\src\cpe\utils\bitarry.c" />
+    <ClCompile Include="..\..\src\cpe\utils\buffer.c" />
+    <ClCompile Include="..\..\src\cpe\utils\buffer_pos.c" />
+    <ClCompile Include="..\..\src\cpe\utils\buffer_trunk.c" />
+    <ClCompile Include="..\..\src\cpe\utils\error.c" />
+    <ClCompile Include="..\..\src\cpe\utils\error_list.c" />
+    <ClCompile Include="..\..\src\cpe\utils\fcvt.c" />
+    <ClCompile Include="..\..\src\cpe\utils\file_dir.c" />
+    <ClCompile Include="..\..\src\cpe\utils\file_file.c" />
+    <ClCompile Include="..\..\src\cpe\utils\file_visitor.c" />
+    <ClCompile Include="..\..\src\cpe\utils\file_wrapper.c" />
+    <ClCompile Include="..\..\src\cpe\utils\graph.c" />
+    <ClCompile Include="..\..\src\cpe\utils\graph_dijkstra.c" />
+    <ClCompile Include="..\..\src\cpe\utils\graph_edge.c" />
+    <ClCompile Include="..\..\src\cpe\utils\graph_node.c" />
+    <ClCompile Include="..\..\src\cpe\utils\graph_weight_path.c" />
+    <ClCompile Include="..\..\src\cpe\utils\hash.c" />
+    <ClCompile Include="..\..\src\cpe\utils\hash_string.c" />
+    <ClCompile Include="..\..\src\cpe\utils\hex_utils.c" />
+    <ClCompile Include="..\..\src\cpe\utils\math_ex.c" />
+    <ClCompile Include="..\..\src\cpe\utils\math_ex_fast.c" />
+    <ClCompile Include="..\..\src\cpe\utils\md5.c" />
+    <ClCompile Include="..\..\src\cpe\utils\memory.c" />
+    <ClCompile Include="..\..\src\cpe\utils\memory_debug.c" />
+    <ClCompile Include="..\..\src\cpe\utils\mmap_utils.c" />
+    <ClCompile Include="..\..\src\cpe\utils\prand.c" />
+    <ClCompile Include="..\..\src\cpe\utils\random.c" />
+    <ClCompile Include="..\..\src\cpe\utils\range.c" />
+    <ClCompile Include="..\..\src\cpe\utils\range_bitarry.c" />
+    <ClCompile Include="..\..\src\cpe\utils\ringbuffer.c" />
+    <ClCompile Include="..\..\src\cpe\utils\rwpipe.c" />
+    <ClCompile Include="..\..\src\cpe\utils\rwpipe_mmap.c" />
+    <ClCompile Include="..\..\src\cpe\utils\rwpipe_shm.c" />
+    <ClCompile Include="..\..\src\cpe\utils\service.c" />
+    <ClCompile Include="..\..\src\cpe\utils\sorted_vector.c" />
+    <ClCompile Include="..\..\src\cpe\utils\stream.c" />
+    <ClCompile Include="..\..\src\cpe\utils\stream_error.c" />
+    <ClCompile Include="..\..\src\cpe\utils\stream_file.c" />
+    <ClCompile Include="..\..\src\cpe\utils\stream_printf.c" />
+    <ClCompile Include="..\..\src\cpe\utils\stream_ringbuffer.c" />
+    <ClCompile Include="..\..\src\cpe\utils\string_ucs4.c" />
+    <ClCompile Include="..\..\src\cpe\utils\string_utils.c" />
+    <ClCompile Include="..\..\src\cpe\utils\time_utils.c" />
+    <ClCompile Include="..\..\src\cpe\utils\tsort_str.c" />
+    <ClCompile Include="..\..\src\cpe\utils\urange.c" />
+    <ClCompile Include="..\..\src\cpe\utils\urange_bitarry.c" />
+    <ClCompile Include="..\..\src\cpe\net\net_chanel.c" />
+    <ClCompile Include="..\..\src\cpe\net\net_chanel_queue.c" />
+    <ClCompile Include="..\..\src\cpe\net\net_connector.c" />
+    <ClCompile Include="..\..\src\cpe\net\net_endpoint.c" />
+    <ClCompile Include="..\..\src\cpe\net\net_ep_pages.c" />
+    <ClCompile Include="..\..\src\cpe\net\net_listener.c" />
+    <ClCompile Include="..\..\src\cpe\net\net_manage.c" />
+    <ClCompile Include="..\..\src\cpe\net\net_manage_run.c" />
+    <ClCompile Include="..\..\src\cpe\net\net_socket.c" />
+    <ClCompile Include="..\..\src\cpe\nm\nm_binding.c" />
+    <ClCompile Include="..\..\src\cpe\nm\nm_manage.c" />
+    <ClCompile Include="..\..\src\cpe\nm\nm_node.c" />
+    <ClCompile Include="..\..\src\cpe\nm\nm_node_group.c" />
+    <ClCompile Include="..\..\src\cpe\nm\nm_node_instance.c" />
+    <ClCompile Include="..\..\src\cpe\dp\dp_binding.c" />
+    <ClCompile Include="..\..\src\cpe\dp\dp_manage.c" />
+    <ClCompile Include="..\..\src\cpe\dp\dp_pbuf.c" />
+    <ClCompile Include="..\..\src\cpe\dp\dp_request.c" />
+    <ClCompile Include="..\..\src\cpe\dp\dp_responser.c" />
+    <ClCompile Include="..\..\src\cpe\tl\tl_action.c" />
+    <ClCompile Include="..\..\src\cpe\tl\tl_dispatch.c" />
+    <ClCompile Include="..\..\src\cpe\tl\tl_event.c" />
+    <ClCompile Include="..\..\src\cpe\tl\tl_intercept.c" />
+    <ClCompile Include="..\..\src\cpe\tl\tl_manage.c" />
+    <ClCompile Include="..\..\src\cpe\tl\tl_time.c" />
+    <ClCompile Include="..\..\src\cpe\pom\pom_backend_memory.c" />
+    <ClCompile Include="..\..\src\cpe\pom\pom_buffer.c" />
+    <ClCompile Include="..\..\src\cpe\pom\pom_class.c" />
+    <ClCompile Include="..\..\src\cpe\pom\pom_debuger.c" />
+    <ClCompile Include="..\..\src\cpe\pom\pom_dump_alloc.c" />
+    <ClCompile Include="..\..\src\cpe\pom\pom_dump_page.c" />
+    <ClCompile Include="..\..\src\cpe\pom\pom_manage.c" />
+    <ClCompile Include="..\..\src\cpe\pom\pom_object.c" />
+    <ClCompile Include="..\..\src\cpe\pom\pom_validate.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_build_from_cfg.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_build_from_meta.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_cfg_dump.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_cfg_load.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_entry_meta.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_meta.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_meta_bin.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_obj.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_obj_entry_binary.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_obj_entry_bitarry.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_obj_entry_list.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_obj_entry_normal.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_obj_mgr.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_obj_mgr_dump.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_obj_mgr_init.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_shm.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_store.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_store_data.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_store_entry.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_store_meta.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_store_table.c" />
+    <ClCompile Include="..\..\src\cpe\pom_grp\pom_grp_validate.c" />
+    <ClCompile Include="..\..\src\cpe\otm\otm_manage.c" />
+    <ClCompile Include="..\..\src\cpe\otm\otm_timer.c" />
+    <ClCompile Include="..\..\src\cpe\fsm\fsm_def_machine.c" />
+    <ClCompile Include="..\..\src\cpe\fsm\fsm_def_state.c" />
+    <ClCompile Include="..\..\src\cpe\fsm\fsm_ins.c" />
+    <ClCompile Include="..\..\src\cpe\utils\weight_selector.c" />
+    <ClCompile Include="..\..\src\cpe\utils_xml\xml_utils.c" />
+    <ClCompile Include="..\..\src\cpe\vfs\vfs_backend.c" />
+    <ClCompile Include="..\..\src\cpe\vfs\vfs_backend_native.c" />
+    <ClCompile Include="..\..\src\cpe\vfs\vfs_dir.c" />
+    <ClCompile Include="..\..\src\cpe\vfs\vfs_file.c" />
+    <ClCompile Include="..\..\src\cpe\vfs\vfs_file_md5.c" />
+    <ClCompile Include="..\..\src\cpe\vfs\vfs_manage.c" />
+    <ClCompile Include="..\..\src\cpe\vfs\vfs_mount_point.c" />
+    <ClCompile Include="..\..\src\cpe\vfs\vfs_stream.c" />
+    <ClCompile Include="..\..\src\cpe\vfs\vfs_visitor.c" />
+    <ClCompile Include="..\..\src\cpe\xcalc\xcalc_computer.c" />
+    <ClCompile Include="..\..\src\cpe\xcalc\xcalc_computer_calc.c" />
+    <ClCompile Include="..\..\src\cpe\xcalc\xcalc_context.c" />
+    <ClCompile Include="..\..\src\cpe\xcalc\xcalc_function.c" />
+    <ClCompile Include="..\..\src\cpe\xcalc\xcalc_function_math.c" />
+    <ClCompile Include="..\..\src\cpe\xcalc\xcalc_function_regex.c" />
+    <ClCompile Include="..\..\src\cpe\xcalc\xcalc_function_string.c" />
+    <ClCompile Include="..\..\src\cpe\xcalc\xcalc_token.c" />
+    <ClCompile Include="..\..\src\cpe\zip\ioapi.c" />
+    <ClCompile Include="..\..\src\cpe\zip\iowin32.c" />
+    <ClCompile Include="..\..\src\cpe\zip\unzip.c" />
+    <ClCompile Include="..\..\src\cpe\zip\zip.c" />
+    <ClCompile Include="..\..\src\cpe\zip\zip_dir.c" />
+    <ClCompile Include="..\..\src\cpe\zip\zip_file.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\cpe\utils\config.mk" />
+    <None Include="..\..\src\cpe\utils\makefile" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

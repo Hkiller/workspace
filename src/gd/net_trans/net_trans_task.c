@@ -264,7 +264,7 @@ mem_buffer_t net_trans_task_buffer(net_trans_task_t task) {
     return &task->m_buffer;
 }
 
-const char * net_trans_task_buffer_to_string(net_trans_task_t task) {
+char * net_trans_task_buffer_to_string(net_trans_task_t task) {
     net_trans_manage_t mgr = task->m_group->m_mgr;
     char * r;
     size_t r_size;
@@ -357,25 +357,25 @@ int net_trans_task_set_get(net_trans_task_t task, const char * uri) {
     return 0;
 }
 
-int net_trans_task_set_post_to(net_trans_task_t task, const char * uri, const char * data, int data_len) {
+int net_trans_task_set_post_to(net_trans_task_t task, const char * uri, const char * data, size_t data_len) {
     net_trans_manage_t mgr = task->m_group->m_mgr;
 
     if (task->m_state == net_trans_task_working) {
         CPE_ERROR(
             mgr->m_em, "%s: task %d (%s): can`t set post %d data to %s in state %s!",
             net_trans_manage_name(mgr), task->m_id, task->m_group->m_name,
-            data_len, uri, net_trans_task_state_str(task->m_state));
+            (int)data_len, uri, net_trans_task_state_str(task->m_state));
         return -1;
     }
 
     if (curl_easy_setopt(task->m_handler, CURLOPT_POST, 1L) != (int)CURLM_OK
-        || curl_easy_setopt(task->m_handler, CURLOPT_POSTFIELDSIZE, data_len) != (int)CURLM_OK
+        || curl_easy_setopt(task->m_handler, CURLOPT_POSTFIELDSIZE, (int)data_len) != (int)CURLM_OK
         || curl_easy_setopt(task->m_handler, CURLOPT_COPYPOSTFIELDS, data) != (int)CURLM_OK
         || curl_easy_setopt(task->m_handler, CURLOPT_URL, uri) != (int)CURLM_OK)
     {
         CPE_ERROR(
             mgr->m_em, "%s: task %d (%s): set post %d data to %s fail!",
-            net_trans_manage_name(mgr), task->m_id, task->m_group->m_name, data_len, uri);
+            net_trans_manage_name(mgr), task->m_id, task->m_group->m_name, (int)data_len, uri);
         return -1;
     }
 
@@ -387,7 +387,7 @@ int net_trans_task_set_post_to(net_trans_task_t task, const char * uri, const ch
     if (mgr->m_debug) {
         CPE_INFO(
             mgr->m_em, "%s: task %d (%s): set post %d data to %s!",
-            net_trans_manage_name(mgr), task->m_id, task->m_group->m_name, data_len, uri);
+            net_trans_manage_name(mgr), task->m_id, task->m_group->m_name, (int)data_len, uri);
     }
 
     return 0;
@@ -434,9 +434,8 @@ int net_trans_task_set_done(net_trans_task_t task, net_trans_task_result_t resul
         return -1;
     }
 
-    if (task->m_state == net_trans_task_working) {
-        curl_multi_remove_handle(mgr->m_multi_handle, task->m_handler);
-    }
+    assert(task->m_state == net_trans_task_working);
+    curl_multi_remove_handle(mgr->m_multi_handle, task->m_handler);
 
     task->m_result = result;
     task->m_errno = (net_trans_errno_t)err;

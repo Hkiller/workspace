@@ -187,6 +187,9 @@ uint8_t account_svr_account_type_from_str(const char * account_type) {
     else if (strcmp(account_type, "damai") == 0) {
         return SVR_ACCOUNT_DAMAI;
     }
+    else if (strcmp(account_type, "facebook") == 0) {
+        return SVR_ACCOUNT_FACEBOOK;
+    }
     else {
         return 0;
     }

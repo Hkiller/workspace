@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="moving_common" file="moving_common.xml"/>
+
+    <struct name="moving_plan_point" version="1">
+        <entry name="pos" type="moving_pair" id="1"/>
+        <entry name="control_pre" type="moving_pair" id="2"/>
+        <entry name="control_next" type="moving_pair" id="3"/>
+        <entry name="length" type="float" id="4"/>
+    </struct>
+
+    <struct name="moving_plan_track" version="1">
+        <entry name="id" type="uint16" id="1"/>
+    </struct>
+
+    <struct name="moving_plan_node" version="1">
+        <entry name="name" type="string" size="64" id="1"/>
+        <entry name="track" type="uint16" id="2"/>
+    </struct>
+
+    <struct name="moving_plan_segment" version="1">
+        <entry name="delay" type="float" id="1"/>
+        <entry name="speed" type="float" id="2"/>
+        <entry name="length" type="float" id="3"/>
+        <entry name="on_begin" type="string" size="64" id="4"/>
+        <entry name="on_end" type="string" size="64" id="5"/>
+    </struct>
+
+    <struct name="moving_plan" version="1">
+        <entry name="frame_start" type="uint16" id="1"/>
+        <entry name="frame_duration" type="uint16" id="2"/>
+        <entry name="frame_total" type="uint16" id="3"/>
+    </struct>
+
+</metalib>

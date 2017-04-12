@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_common" file="ui_common.xml"/>
+    <include name="ui_object_ref" file="ui_object_ref.xml"/>
+
+    <macrosgroup name="ui_control_frame_usage" version="1">
+        <macro name="ui_control_frame_usage_normal" value="0"/>
+        <macro name="ui_control_frame_usage_down" value="1"/>
+        <macro name="ui_control_frame_usage_gray" value="2"/>
+    </macrosgroup>
+
+    <macrosgroup name="ui_control_frame_layer" version="1">
+        <macro name="ui_control_frame_layer_back" value="0"/>
+        <macro name="ui_control_frame_layer_text" value="1"/>
+        <macro name="ui_control_frame_layer_tail" value="2"/>
+        <macro name="ui_control_frame_layer_float" value="3"/>
+    </macrosgroup>
+    
+    <struct name="ui_control_object_url" version="1">
+        <entry name="type" type="uint8" id="1"/>
+        <entry name="src_id" type="uint32" id="2"/>
+        <entry name="res_id" type="uint32" id="3"/>
+    </struct>
+    
+    <struct name="ui_control_res_ref" version="1">
+        <entry name="res" type="ui_control_object_url" id="1"/>
+        <entry name="color" type="ui_color" id="2"/>
+        <entry name="urect" type="ui_unit_rect" id="3"/>
+        <entry name="erect" type="ui_rect" id="4"/>
+    </struct>
+
+    <struct name="ui_control_basic" version="1">
+        <entry name="user_text_id" type="uint32" id="1"/>
+        <entry name="editor_pt" type="ui_vector_2" id="2"/>
+        <entry name="editor_sz" type="ui_vector_2" id="3"/>
+        <entry name="editor_pd" type="ui_rect" id="4"/>
+        <entry name="is_link" type="uint8" id="5"/>
+        <entry name="link_control_id" type="uint32" id="6"/>
+	    <entry name="align_horz" type="uint8" id="7"/>
+	    <entry name="align_vert" type="uint8" id="8"/>
+	    <entry name="client_sz" type="ui_unit_vector_2" id="9"/>
+	    <entry name="render_pt" type="ui_unit_vector_2" id="10"/>
+	    <entry name="render_sz" type="ui_unit_vector_2" id="11"/>
+	    <entry name="client_pd" type="ui_unit_rect" id="12"/>
+        <entry name="pivot" type="ui_vector_2" id="13"/>
+        <entry name="scale" type="ui_vector_2" id="14"/>
+        <entry name="float_scale" type="ui_vector_2" id="15"/>
+        <entry name="angle" type="ui_vector_3" id="16"/>
+        <entry name="alpha" type="float" id="17"/>
+        <entry name="color" type="ui_color" id="18"/>
+        <entry name="gray_color" type="ui_color" id="19"/>
+        <entry name="draw_align" type="uint8" id="20"/>
+        <entry name="draw_color" type="uint8" id="21"/>
+        <entry name="draw_frame" type="uint8" id="22"/>
+        <entry name="draw_inner" type="uint8" id="23"/>
+        <entry name="fire_anim_clip" type="uint8" id="24"/>
+        <entry name="enable" type="uint8" id="25"/>
+        <entry name="visible" type="uint8" id="26"/>
+        <entry name="always_top" type="uint8" id="27"/>
+        <entry name="accept_pt_ls" type="uint8" id="28"/>
+        <entry name="accept_sz_ls" type="uint8" id="29"/>
+        <entry name="accept_move" type="uint8" id="30"/>
+        <entry name="accept_clip" type="uint8" id="31"/>
+        <entry name="parent_clip" type="uint8" id="32"/>
+        <entry name="accept_hits" type="uint8" id="33"/>
+        <entry name="accept_double_click" type="uint8" id="34"/>
+        <entry name="accept_click_move" type="uint8" id="35"/>
+        <entry name="accept_float" type="uint8" id="36"/>
+        <entry name="accept_global_down_color" type="uint8" id="37"/>
+	    <entry name="force_clip" type="uint8" id="38"/>
+        <entry name="show_sfx_file_id" type="uint32" id="39"/>
+        <entry name="hide_sfx_file_id" type="uint32" id="40"/>
+        <entry name="down_sfx_file_id" type="uint32" id="41"/>
+        <entry name="rise_sfx_file_id" type="uint32" id="42"/>
+        <entry name="push_sfx_file_id" type="uint32" id="43"/>
+        <!-- last-id: 44 -->
+    </struct>
+
+    <struct name="ui_control_text" version="1">
+	    <entry name="text_id" type="uint32" id="1"/>
+	    <entry name="text_sl" type="uint8" id="2"/>
+	    <entry name="text_key" type="uint32" id="3"/>
+	    <entry name="text_align" type="uint8" id="4"/>
+        <entry name="font_info" type="ui_font" id="5"/>
+        <entry name="back_drow" type="ui_font_drow" id="6"/>
+        <entry name="font_unit" type="ui_unit" id="7"/>
+        <entry name="back_grap" type="ui_unit_vector_2" id="8"/>
+    </struct>
+    
+    <struct name="ui_control_down" version="1">
+        <entry name="down_dist" type="ui_vector_2" id="1"/>
+        <entry name="down_scale" type="ui_vector_2" id="2"/>
+        <entry name="down_text" type="ui_control_text" id="3"/>
+    </struct>
+
+    <struct name="ui_control_box" version="1">
+        <entry name="horz_grap" type="int32" id="1"/>
+        <entry name="vert_grap" type="int32" id="2"/>
+        <entry name="light_frame" type="ui_control_res_ref" id="3"/>
+        <entry name="light_frame_show" type="uint8" id="4"/>
+        <entry name="item_free_size" type="uint8" id="5"/>
+        <entry name="item_template_id" type="uint32" id="6"/>
+        <entry name="head_template_id" type="uint32" id="7"/>
+        <entry name="tail_template_id" type="uint32" id="8"/>
+    </struct>
+
+    <struct name="ui_control_check" version="1">
+        <entry name="checked" type="uint8" id="1"/>
+        <entry name="check_frame" type="ui_control_res_ref" id="2"/>
+    </struct>
+
+    <struct name="ui_control_group" version="1">
+        <entry name="group" type="uint32" id="1"/>
+    </struct>
+
+    <struct name="ui_control_editor" version="1">
+        <entry name="max_length" type="uint32" id="1"/>
+        <entry name="is_passwd" type="uint8" id="2"/>
+        <entry name="is_read_only" type="uint8" id="3"/>
+        <entry name="is_number_only" type="uint8" id="4"/>
+        <entry name="hint_text_id" type="uint32" id="5"/>
+        <entry name="hint_draw" type="ui_font_drow" id="6"/>
+    </struct>
+    
+    <struct name="ui_control_scroll" version="1">
+        <entry name="h_scroll_soft" type="uint8" id="1"/>
+        <entry name="v_scroll_soft" type="uint8" id="2"/>
+        <entry name="h_scroll_auto_hide" type="uint8" id="3"/>
+        <entry name="v_scroll_auto_hide" type="uint8" id="4"/>
+        <entry name="v_scroll_bar" type="ui_control_res_ref" id="5"/>
+        <entry name="v_scroll_mid" type="ui_control_res_ref" id="6"/>
+        <entry name="h_scroll_bar" type="ui_control_res_ref" id="7"/>
+        <entry name="h_scroll_mid" type="ui_control_res_ref" id="8"/>
+        <entry name="left_btn_template_id" type="uint32" id="9"/>
+        <entry name="right_btn_template_id" type="uint32" id="10"/>
+        <entry name="up_btn_template_id" type="uint32" id="11"/>
+        <entry name="down_btn_template_id" type="uint32" id="12"/>
+    </struct>
+
+    <!-- 控件动画数据 -->
+    <macrosgroup name="ui_control_anim_type">
+        <macro name="ui_control_anim_type_show" value="1"/>
+        <macro name="ui_control_anim_type_hide" value="2"/>
+        <macro name="ui_control_anim_type_dead" value="3"/>
+        <macro name="ui_control_anim_type_down" value="4"/>
+        <macro name="ui_control_anim_type_rise" value="5"/>
+        <macro name="ui_control_anim_type_user" value="6"/>
+    </macrosgroup>
+
+    <struct name="ui_control_anim" version="1">
+        <entry name="anim_type" type="uint8" id="1"/>
+        <entry name="soft" type="uint8" id="2"/>
+        <entry name="loop" type="uint8" id="3"/>
+    </struct>
+
+    <struct name="ui_control_anim_frame_opt_trans" version="1">
+        <entry name="data" type="ui_unit_vector_2" id="1"/>
+    </struct>
+
+    <struct name="ui_control_anim_frame_opt_scale" version="1">
+        <entry name="data" type="ui_vector_2" id="1"/>
+    </struct>
+
+    <struct name="ui_control_anim_frame_opt_alpha" version="1">
+        <entry name="data" type="float" id="1"/>
+    </struct>
+
+    <struct name="ui_control_anim_frame_opt_color" version="1">
+        <entry name="data" type="ui_color" id="1"/>
+    </struct>
+
+    <struct name="ui_control_anim_frame_opt_angle" version="1">
+        <entry name="data" type="ui_vector_3" id="1"/>
+    </struct>
+    
+    <struct name="ui_control_anim_frame" version="1">
+	    <entry name="frame" type="uint32" id="1"/>
+
+        <entry name="have_trans" type="uint8" id="2"/>
+        <entry name="have_scale" type="uint8" id="3"/>
+        <entry name="have_alpha" type="uint8" id="4"/>
+        <entry name="have_color" type="uint8" id="5"/>
+        <entry name="have_angle" type="uint8" id="6"/>
+        
+        <entry name="trans" type="ui_control_anim_frame_opt_trans" select="have_trans" id="7"/>
+        <entry name="scale" type="ui_control_anim_frame_opt_scale" select="have_scale" id="8"/>
+        <entry name="alpha" type="ui_control_anim_frame_opt_alpha" select="have_alpha" id="9"/>
+        <entry name="color" type="ui_control_anim_frame_opt_color" select="have_color" id="10"/>
+        <entry name="angle" type="ui_control_anim_frame_opt_angle" select="have_angle" id="11"/>
+    </struct>
+
+    <!-- 控件附加数据 -->
+    <struct name="ui_control_addition_data_res_ref" version="1">
+        <entry name="frame" type="ui_control_res_ref" id="1"/>
+        <entry name="usage" type="uint8" id="2" bindmacrosgroup="ui_control_frame_usage"/>
+        <entry name="layer" type="uint8" id="3" bindmacrosgroup="ui_control_frame_layer"/>
+    </struct>
+
+    <struct name="ui_control_addition_data_text" version="1">
+	    <entry name="text_id" type="uint32" id="1"/>
+	    <entry name="text_key" type="uint32" id="2"/>
+        <entry name="text_drow" type="ui_font_drow" id="3"/>
+    </struct>
+
+    <struct name="ui_control_addition_data_rich_element" version="1">
+        <entry name="icon" type="ui_control_object_url" id="1"/>
+	    <entry name="text_id" type="uint32" id="2"/>
+	    <entry name="text_key" type="uint32" id="3"/>
+        <entry name="text_drow" type="ui_font_drow" id="4"/>
+    </struct>
+
+    <struct name="ui_control_addition_data_animation" version="1">
+        <entry name="res" type="ui_control_object_url" id="1"/>
+        <entry name="trigger" type="uint16" id="2"/>
+        <entry name="draw_frame" type="uint8" id="3"/>
+    </struct>
+    
+    <macrosgroup name="ui_control_addition_type">
+        <macro name="ui_control_addition_type_res_ref" value="1"/>
+        <macro name="ui_control_addition_type_text" value="2"/>
+        <macro name="ui_control_addition_type_animation" value="3"/>
+        <macro name="ui_control_addition_type_rich_element" value="4"/>
+    </macrosgroup>
+
+    <union name="ui_control_addition_data" version="1">
+        <entry name="res_ref" type="ui_control_addition_data_res_ref" id="ui_control_addition_type_res_ref"/>
+        <entry name="text" type="ui_control_addition_data_text" id="ui_control_addition_type_text"/>
+        <entry name="animation" type="ui_control_addition_data_animation" id="ui_control_addition_type_animation"/>
+        <entry name="rich_element" type="ui_control_addition_data_rich_element" id="ui_control_addition_type_rich_element"/>
+    </union>
+
+    <struct name="ui_control_addition" version="1">
+        <entry name="type" type="uint8" bindmacrosgroup="ui_control_addition_type" id="1"/>
+        <entry name="data" type="ui_control_addition_data" select="type" id="2"/>
+    </struct>
+
+</metalib>

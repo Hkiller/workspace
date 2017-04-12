@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <macro name="UI_NAME_LEN" value="64"/>
+
+    <struct name="ui_color" version="1">
+        <entry name="r" type="float" id="1"/>
+        <entry name="g" type="float" id="2"/>
+	    <entry name="b" type="float" id="3"/>
+	    <entry name="a" type="float" id="4" defaultvalue="1"/>
+    </struct>
+
+    <struct name="ui_vector_2" version="1">
+        <entry name="value" type="float" count="2" id="1"/>
+    </struct>
+
+    <struct name="ui_vector_3" version="1">
+        <entry name="value" type="float" count="3" id="1"/>
+    </struct>
+
+    <struct name="ui_vector_4" version="1">
+        <entry name="value" type="float" count="4" id="1"/>
+    </struct>
+
+    <struct name="ui_rect" version="1">
+        <entry name="lt" type="int32" id="1" desc="left"/>
+        <entry name="tp" type="int32" id="2" desc="top"/>
+        <entry name="rt" type="int32" id="3" desc="right"/>
+        <entry name="bm" type="int32" id="4" desc="botton"/>
+    </struct>
+
+    <struct name="ui_unit" version="1">
+        <entry name="k" type="float" id="1"/>
+        <entry name="b" type="float" id="2"/>
+    </struct>
+
+    <struct name="ui_unit_vector_2" version="1">
+        <entry name="x" type="ui_unit" id="1"/>
+        <entry name="y" type="ui_unit" id="2"/>
+    </struct>
+    
+    <struct name="ui_unit_rect" version="1">
+        <entry name="lt" type="ui_unit_vector_2" id="1"/>
+        <entry name="rb" type="ui_unit_vector_2" id="2"/>
+    </struct>
+
+    <!-- 控件对齐策略 -->
+    <macrosgroup name="ui_align_mode_vert">
+        <macro name="ui_align_mode_vert_none" value="0"/>
+        <macro name="ui_align_mode_vert_top" value="1"/>
+        <macro name="ui_align_mode_vert_center" value="2"/>
+        <macro name="ui_align_mode_vert_bottom" value="3"/>
+    </macrosgroup>
+
+    <macrosgroup name="ui_align_mode_horz">
+        <macro name="ui_align_mode_horz_none" value="0"/>
+        <macro name="ui_align_mode_horz_left" value="1"/>
+        <macro name="ui_align_mode_horz_center" value="2"/>
+        <macro name="ui_align_mode_horz_right" value="3"/>
+    </macrosgroup>
+    
+    <!-- 位置策略 -->
+    <macrosgroup name="ui_pos_policy">
+        <macro name="ui_pos_policy_top_left" value="0"/>
+        <macro name="ui_pos_policy_top_center" value="1"/>
+        <macro name="ui_pos_policy_top_right" value="2"/>
+        <macro name="ui_pos_policy_center_left" value="3"/>
+        <macro name="ui_pos_policy_center" value="4"/>
+        <macro name="ui_pos_policy_center_right" value="5"/>
+        <macro name="ui_pos_policy_bottom_left" value="6"/>
+        <macro name="ui_pos_policy_bottom_center" value="7"/>
+        <macro name="ui_pos_policy_bottom_right" value="8"/>
+        <macro name="ui_pos_policy_pivot" value="9"/>
+    </macrosgroup>
+    
+    <!-- 曲线变化 -->
+    <macrosgroup name="ui_curve_interp_mode">
+        <macro name="ui_curve_interp_mode_linear" value="0"/> <!-- straight line between two control points -->
+        <macro name="ui_curve_interp_mode_bezier" value="1"/> <!--sample along a bezier curve -->
+        <macro name="ui_curve_interp_mode_break"  value="2"/> <!-- out value is held constant until the next key -->
+    </macrosgroup>
+
+    <struct name="ui_curve_point" version="1">
+        <entry name="curve_id" type="uint16" id="1"/>
+        <entry name="interp" type="uint8" bindmacrosgroup="ui_curve_interp_mode" id="2"/>
+        <entry name="key" type="float" id="3"/>
+        <entry name="ret" type="float" id="4"/>
+        <entry name="enter_tan" type="float" id="5"/>
+        <entry name="leave_tan" type="float" id="6"/>
+    </struct>
+
+    <!-- 基本转换信息 -->
+    <struct name="ui_trans_base" version="1">
+        <entry name="angle" type="float" id="1"/>
+        <entry name="angle_pivot" type="ui_vector_3" id="2"/>
+        <entry name="flips" type="uint8" id="3"/>
+        <entry name="scale" type="ui_vector_3" id="4"/>
+        <entry name="trans" type="ui_vector_3" id="5"/>
+    </struct>
+
+    <!-- 描边信息 -->
+    <struct name="ui_ol" version="1">
+        <entry name="enable" type="uint8" id="1"/>
+        <entry name="width" type="uint8" id="2" defaultvalue="1"/>
+        <entry name="color" type="ui_color" id="3"/>
+    </struct>
+
+    <!-- 转换信息 -->
+    <struct name="ui_trans" version="1">
+        <entry name="local_trans" type="ui_trans_base" id="1"/>
+        <entry name="world_trans" type="ui_trans_base" id="2"/>
+        <entry name="filter" type="uint32" id="3"/>
+        <entry name="tex_env" type="uint32" id="4"/>
+        <entry name="src_abm" type="uint32" id="5"/>
+        <entry name="dst_abm" type="uint32" id="6"/>
+        <entry name="background" type="ui_color" id="7"/>
+        <entry name="ol" type="ui_ol" id="8"/>
+    </struct>
+
+    <!-- 碰撞框 -->
+    <struct name="ui_collision" version="1">
+        <entry name="name" type="string" size="UI_NAME_LEN" id="1"/>
+        <entry name="bounding" type="ui_rect" id="2"/>
+    </struct>
+
+    <!-- Font信息 -->
+    <struct name="ui_font" version="1">
+        <entry name="face" type="uint32" id="1"/>
+        <entry name="size" type="int32" id="2"/>
+        <entry name="outline" type="int32" id="3"/>
+        <entry name="artfile" type="uint32" id="4"/>
+    </struct>
+    
+    <!-- Font绘制信息 -->
+    <struct name="ui_font_drow" version="1">
+        <entry name="drow_flag" type="uint32" id="1"/>
+        <entry name="horz_grap" type="int32" id="2"/>
+        <entry name="vert_grap" type="int32" id="3"/>
+        <entry name="normal_color" type="ui_color" id="4"/>
+        <entry name="shadow_color" type="ui_color" id="5"/>
+        <entry name="stroke_color" type="ui_color" id="6"/>
+        <entry name="shadow_orien" type="uint32" id="7"/>
+        <entry name="shadow_width" type="uint32" id="8"/>
+        <entry name="stroke_width" type="uint32" id="9"/>
+    </struct>
+    
+    <!-- 控件类型 -->
+    <macrosgroup name="ui_control_type">
+        <macro name="ui_control_type_window" value="1"/>
+        <macro name="ui_control_type_panel" value="2"/>
+        <macro name="ui_control_type_picture" value="3"/>
+        <macro name="ui_control_type_label" value="4"/>
+        <macro name="ui_control_type_button" value="5"/>
+        <macro name="ui_control_type_toggle" value="6"/>
+        <macro name="ui_control_type_progress" value="7"/>
+        <macro name="ui_control_type_picture_cond" value="8"/>
+        <macro name="ui_control_type_check_box" value="9"/>
+        <macro name="ui_control_type_radio_box" value="10"/>
+        <macro name="ui_control_type_combo_box" value="11"/>
+        <macro name="ui_control_type_edit_box" value="12"/>
+        <macro name="ui_control_type_multi_edit_box" value="13"/>
+        <macro name="ui_control_type_label_condition" value="14"/>
+        <macro name="ui_control_type_rich_label" value="15"/>
+        <macro name="ui_control_type_rich_text" value="16"/>
+        <macro name="ui_control_type_list_box_col" value="17"/>
+        <macro name="ui_control_type_list_box_row" value="18"/>
+        <macro name="ui_control_type_list_box_adv_item" value="19"/>
+        <macro name="ui_control_type_scroll_panel" value="20"/>
+        <macro name="ui_control_type_slider" value="21"/>
+        <macro name="ui_control_type_switcher" value="22"/>
+        <macro name="ui_control_type_tab" value="23"/>
+        <macro name="ui_control_type_tab_page" value="24"/>
+        <macro name="ui_control_type_swiper" value="25"/>
+        <macro name="ui_control_type_comb_box_drop_list" value="26"/>
+    </macrosgroup>
+    <macro name="UI_CONTROL_TYPE_MIN" value="1"/>
+    <macro name="UI_CONTROL_TYPE_MAX" value="27"/>
+    
+</metalib>

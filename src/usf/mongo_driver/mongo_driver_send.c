@@ -42,7 +42,7 @@ mongo_driver_select(mongo_driver_t driver, uint8_t for_writes, mongo_read_mode_t
    }
 
    mongo_driver_topology_suitable_servers(suitable_servers, &suitable_server_count, driver, for_writes, read_mode);
-   CPE_ERROR(driver->m_em, "*************count = %d, server.host= %s, m_mode=%d*************", suitable_server_count, &suitable_servers[0]->m_host, suitable_servers[0]->m_mode);
+   
    if (suitable_server_count != 0) {
        sd = suitable_servers[cpe_rand_dft(suitable_server_count)];
    }
@@ -57,7 +57,7 @@ int mongo_driver_send(mongo_driver_t driver, mongo_pkg_t pkg) {
     bson_iter_t it;
     
     if (!driver->m_is_enable) {
-        CPE_ERROR(driver->m_em, "%s: send: driver not enable!", mongo_driver_name(driver));
+        CPE_ERROR(driver->m_em, "%s: send: driver not enable!", mongo_driver_name(driver))
         return -1;
     }
 
@@ -75,7 +75,7 @@ int mongo_driver_send(mongo_driver_t driver, mongo_pkg_t pkg) {
     default:
         break;
     }
-CPE_ERROR(driver->m_em, "************for_writes=%d************3", for_writes);
+
     /*选择一个服务 */
     server = mongo_driver_select(driver, for_writes, pkg->m_read_mode);
     if (server == NULL) {

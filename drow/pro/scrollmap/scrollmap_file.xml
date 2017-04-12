@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="scrollmap_common" file="scrollmap_common.xml"/>
+
+    <struct name="scrollmap_file_head" version="1">
+        <entry name="tiles_start" type="uint32" id="1"/>
+        <entry name="tiles_count" type="uint32" id="2"/>
+        <entry name="tiles_size" type="uint32" id="3"/>
+        <entry name="layers_start" type="uint32" id="4"/>
+        <entry name="layers_count" type="uint32" id="5"/>
+        <entry name="layers_size" type="uint32" id="6"/>
+        <entry name="blocks_start" type="uint32" id="7"/>
+        <entry name="blocks_count" type="uint32" id="8"/>
+        <entry name="blocks_size" type="uint32" id="9"/>
+        <entry name="scripts_start" type="uint32" id="10"/>
+        <entry name="scripts_count" type="uint32" id="11"/>
+        <entry name="scripts_size" type="uint32" id="12"/>
+    </struct>
+    
+</metalib>

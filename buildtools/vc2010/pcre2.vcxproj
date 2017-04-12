@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdTools\pcre2\include\pcre2.h" />
+    <ClInclude Include="..\..\3rdTools\pcre2\src\pcre2_internal.h" />
+    <ClInclude Include="..\..\3rdTools\pcre2\src\pcre2_intmodedep.h" />
+    <ClInclude Include="..\..\3rdTools\pcre2\src\pcre2_ucp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_auto_possess.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_chartables.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_compile.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_config.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_context.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_dfa_match.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_error.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_find_bracket.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_jit_compile.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_maketables.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_match.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_match_data.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_newline.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_ord2utf.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_pattern_info.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_serialize.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_string_utils.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_study.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_substitute.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_substring.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_tables.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_ucd.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_valid_utf.c" />
+    <ClCompile Include="..\..\3rdTools\pcre2\src\pcre2_xclass.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9F86E135-4FBC-4BCC-A695-8BDEB1F3196C}</ProjectGuid>
+    <RootNamespace>cpe</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../3rdTools/pcre2/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;PCRE2_CODE_UNIT_WIDTH=8;HAVE_CONFIG_H;PCRE2_STATIC;_LIB;YAML_DECLARE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../../3rdTools/pcre2l/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;PCRE2_CODE_UNIT_WIDTH=8;HAVE_CONFIG_H;PCRE2_STATIC;NDEBUG;_LIB;YAML_DECLARE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

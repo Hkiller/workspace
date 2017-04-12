@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{33a07e81-357b-43ed-a940-3c1422f5a73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{d585358d-e795-4c02-8714-2387bebb563a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\chipmunk">
+      <UniqueIdentifier>{d0b6dcb1-69f0-4a04-b0ce-47111516bb2f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\src\prime.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk_ffi.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk_private.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk_types.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk_unsafe.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpArbiter.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpBB.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpBody.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpConstraint.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpDampedRotarySpring.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpDampedSpring.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpGearJoint.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpGrooveJoint.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpPinJoint.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpPivotJoint.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpPolyShape.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpRatchetJoint.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpRotaryLimitJoint.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpShape.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpSimpleMotor.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpSlideJoint.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpSpace.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpSpatialIndex.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpTransform.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpVect.h">
+      <Filter>include\chipmunk</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\chipmunk.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpArbiter.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpArray.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpBBTree.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpBody.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpCollision.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpConstraint.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpDampedRotarySpring.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpDampedSpring.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpGearJoint.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpGrooveJoint.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpHashSet.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpPinJoint.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpPivotJoint.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpPolyShape.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpRatchetJoint.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpRotaryLimitJoint.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpShape.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSimpleMotor.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSlideJoint.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpace.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceComponent.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceDebug.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceHash.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceQuery.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceStep.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpatialIndex.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSweep1D.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpMarch.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpRobust.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

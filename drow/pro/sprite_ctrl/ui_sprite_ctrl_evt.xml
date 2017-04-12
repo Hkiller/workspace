@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="ui_sprite_ctrl_data" file="ui_sprite_ctrl_data.xml"/>
+
+    <!-- circle -->
+    <struct name="ui_sprite_evt_ctrl_circle_begin" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_ctrl_circle_move" version="1">
+        <entry name="center_pos" type="ui_sprite_ctrl_pair" id="1"/>
+        <entry name="cur_pos" type="ui_sprite_ctrl_pair" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_ctrl_circle_complete" version="1">
+        <entry name="center_pos" type="ui_sprite_ctrl_pair" id="1"/>
+        <entry name="cur_pos" type="ui_sprite_ctrl_pair" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_ctrl_circle_state" version="1">
+        <entry name="center_pos" type="ui_sprite_ctrl_pair" id="1"/>
+        <entry name="cur_pos" type="ui_sprite_ctrl_pair" id="2"/>
+        <entry name="angle" type="float" id="3"/>
+        <entry name="percent" type="float" id="4"/>
+        <entry name="logic_percent" type="float" id="6"/>
+        <entry name="logic_value" type="float" id="8"/>
+    </struct>
+
+    <!-- track-follow -->
+    <struct name="ui_sprite_evt_ctrl_track_follow_start" version="1">
+        <entry name="track_name" type="string" size="64" id="1"/>
+        <entry name="track_type" type="string" size="64" id="2"/>
+        <entry name="pos_of_entity" type="string" size="64" id="3"/>
+        <entry name="force_create" type="uint8" id="4"/>
+        <entry name="is_show" type="uint8" id="5"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_ctrl_track_follow_stop" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+
+    <!-- turntable -->
+    <struct name="ui_sprite_evt_ctrl_turntable_member_active" version="1">
+        <entry name="max_speed" type="float" id="1"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_ctrl_turntable_member_touch_begin" version="1">
+        <entry name="world_pos" type="ui_sprite_ctrl_pair" id="2"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_ctrl_turntable_member_touch_move" version="1">
+        <entry name="world_pos" type="ui_sprite_ctrl_pair" id="2"/>
+        <entry name="max_speed" type="float" id="3"/>
+    </struct>
+
+    <struct name="ui_sprite_evt_ctrl_turntable_member_touch_end" version="1">
+        <entry name="world_pos" type="ui_sprite_ctrl_pair" id="1"/>
+        <entry name="speed" type="ui_sprite_ctrl_pair" id="2"/>
+        <entry name="speed_reduce" type="float" id="3"/>
+        <entry name="speed_threshold" type="float" id="4"/>
+        <entry name="distance_threshold" type="float" id="5"/>
+    </struct>
+
+</metalib>

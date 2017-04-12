@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+
+    <struct name="appsvr_sdk_action" version="1">
+        <entry name="action" type="string" size="64" id="1"/>
+        <entry name="level_type" type="uint16"  id="2"/>
+        <entry name="level_name" type="string" size="64" id="3"/>
+        <entry name="is_success" type="uint8" id="4"/>
+    </struct>
+    
+</metalib>

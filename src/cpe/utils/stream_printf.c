@@ -18,17 +18,17 @@
 #define FL_NEGATIVE   0x00100   // Value is negative
 #define FL_FORCEOCTAL 0x00200   // Force leading '0' for octals
 
-extern char *ecvtbuf(double arg, int ndigits, int *decpt, int *sign, char *buf);
-extern char *fcvtbuf(double arg, int ndigits, int *decpt, int *sign, char *buf);
+extern char *ecvtbuf(double arg, int ndigits, int *decpt, int *sign, char *buf, size_t buf_capacity);
+extern char *fcvtbuf(double arg, int ndigits, int *decpt, int *sign, char *buf, size_t buf_capacity);
 
 static void cfltcvt(double value, char *buffer, char fmt, int precision, int capexp) {
     int decpt, sign, exp, pos;
     char *digits = NULL;
-    char cvtbuf[80];
+    char cvtbuf[MAXBUFFER];
     int magnitude;
 
     if (fmt == 'g') {
-        digits = ecvtbuf(value, precision, &decpt, &sign, cvtbuf);
+        digits = ecvtbuf(value, precision, &decpt, &sign, cvtbuf, sizeof(cvtbuf));
         magnitude = decpt - 1;
         if (magnitude < -4  ||  magnitude > precision - 1) {
             fmt = 'e';
@@ -41,7 +41,7 @@ static void cfltcvt(double value, char *buffer, char fmt, int precision, int cap
     }
 
     if (fmt == 'e') {
-        digits = ecvtbuf(value, precision + 1, &decpt, &sign, cvtbuf);
+        digits = ecvtbuf(value, precision + 1, &decpt, &sign, cvtbuf, sizeof(cvtbuf));
 
         if (sign) *buffer++ = '-';
         *buffer++ = *digits;
@@ -77,7 +77,7 @@ static void cfltcvt(double value, char *buffer, char fmt, int precision, int cap
     }
     else if (fmt == 'f')
     {
-        digits = fcvtbuf(value, precision, &decpt, &sign, cvtbuf);
+        digits = fcvtbuf(value, precision, &decpt, &sign, cvtbuf, sizeof(cvtbuf));
         if (sign) *buffer++ = '-';
         if (*digits)
         {

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk_ffi.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk_private.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk_types.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\chipmunk_unsafe.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpArbiter.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpBB.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpBody.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpConstraint.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpDampedRotarySpring.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpDampedSpring.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpGearJoint.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpGrooveJoint.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpPinJoint.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpPivotJoint.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpPolyShape.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpRatchetJoint.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpRotaryLimitJoint.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpShape.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpSimpleMotor.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpSlideJoint.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpSpace.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpSpatialIndex.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpTransform.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\include\chipmunk\cpVect.h" />
+    <ClInclude Include="..\..\..\3rdTools\Chipmunk2D\src\prime.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\chipmunk.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpArbiter.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpArray.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpBBTree.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpBody.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpCollision.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpConstraint.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpDampedRotarySpring.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpDampedSpring.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpGearJoint.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpGrooveJoint.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpHashSet.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpMarch.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpPinJoint.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpPivotJoint.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpPolyShape.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpRatchetJoint.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpRobust.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpRotaryLimitJoint.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpShape.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSimpleMotor.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSlideJoint.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpace.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceComponent.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceDebug.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceHash.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceQuery.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpaceStep.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSpatialIndex.c" />
+    <ClCompile Include="..\..\..\3rdTools\Chipmunk2D\src\cpSweep1D.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{197643B8-46BE-4559-89E6-E1B0226C8AAB}</ProjectGuid>
+    <RootNamespace>Chipmunk2D</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\3rdTools\Chipmunk2D\include;..\..\..\3rdTools\Chipmunk2D\include\chipmunk;..\..\..\3rdTools\pthread\vc\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\3rdTools\Chipmunk2D\include;..\..\..\3rdTools\Chipmunk2D\include\chipmunk</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

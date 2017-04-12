@@ -274,8 +274,12 @@ const char * cpe_str_char_not_in_pair(const char * p, char f, const char * start
     for(; (v = *p); p++) {
         if (v == f && state == 0) return p;
 
-        if (strchr(start_set, v)) ++state;
-        if (strchr(end_set, v)) --state;
+        if (strchr(start_set, v)) {
+            ++state;
+        }
+        else if (strchr(end_set, v)) {
+            --state;
+        }
     }
 
     return NULL;
@@ -441,8 +445,6 @@ char * cpe_str_mask_uint16(uint16_t v, char * buf, size_t buf_size) {
 }
 
 char * cpe_str_read_and_remove_arg_pocess_arg(char * input, char const * arg_name, size_t name_len, char pair) {
-    input = cpe_str_trim_head(input);
-
     if (memcmp(input, arg_name, name_len) != 0) return NULL;
 
     input = cpe_str_trim_head(input += name_len);
@@ -454,37 +456,71 @@ char * cpe_str_read_and_remove_arg_pocess_arg(char * input, char const * arg_nam
 char * cpe_str_read_and_remove_arg(char * input, const char * arg_name, char sep, char pair) {
     size_t name_len = strlen(arg_name);
     char * s;
-    char * p = input;
+    char * p = cpe_str_trim_head(input);
+    char * end_p = p + strlen(p);
     char * r;
 
-    while((s = strchr(p, sep))) {
-        *s = 0;
+    while((s = (char*)cpe_str_char_not_in_pair(p, sep, "{[('\"", "\"')]}"))) {
+        char * changed_pos = cpe_str_trim_tail(s, p);
+        *changed_pos = 0;
 
         r = cpe_str_read_and_remove_arg_pocess_arg(p, arg_name, name_len, pair);
 
         if (r) {
-            char buf[128];
+            char inline_buf[128];
+            size_t copy_len = strlen(r);
             size_t left_len = strlen(s + 1) + 1;
 
-            cpe_str_dup(buf, sizeof(buf), r);
-            memmove(p, s + 1, left_len);
-            strcpy(p + left_len, buf);
+            if (r[0] == '\'' && r[copy_len - 1] == '\'') {
+                r++; copy_len-= 2;
+            }
+            else if (r[0] == '"' && r[copy_len - 1] == '"') {
+                r++; copy_len-= 2;
+            }
+                
+            end_p = p + left_len;
 
+            if (copy_len + 1 > CPE_ARRAY_SIZE(inline_buf)) {
+                void * buf = cpe_str_mem_dup(NULL, r);
+                memmove(p, s + 1, left_len);
+                strcpy(p + left_len, buf);
+                mem_free(NULL, buf);
+            }
+            else {
+                cpe_str_dup(inline_buf, sizeof(inline_buf), r);
+                memmove(p, s + 1, left_len);
+                strcpy(p + left_len, inline_buf);
+            }
+                
             return p + left_len;
         }
         else {
-            *s = sep;
+            *changed_pos = sep;
             p = cpe_str_trim_head(s + 1);
         }
     }
 
-    r = cpe_str_read_and_remove_arg_pocess_arg(p, arg_name, name_len, pair);
-    if (r) {
-        *p = 0;
-        * cpe_str_trim_tail(r + strlen(r), r) = 0;
-        return r;
-    }
+    if (end_p - p > name_len) {
+        r = cpe_str_read_and_remove_arg_pocess_arg(p, arg_name, name_len, pair);
+        if (r) {
+            *p = 0;
 
+            end_p = cpe_str_trim_tail(r + strlen(r), r);
+            * end_p = 0;
+
+            if (r[0] == '\'' && *(end_p - 1) == '\'') {
+                r++;
+                *(end_p - 1) = 0;
+            }
+            else if (r[0] == '"' && *(end_p - 1) == '"') {
+                r++;
+                *(end_p - 1) = 0;
+            }
+            
+            return r;
+        }
+    }
+    
     return NULL;
 }
 
@@ -524,7 +560,7 @@ int cpe_str_read_arg(char * r, size_t r_capacity, const char * i, const char * a
     size_t name_len = strlen(arg_name);
     const char * s;
     
-    while((s = strchr(p, sep))) {
+    while((s = cpe_str_char_not_in_pair(p, sep, "{[('\"", "\"')]}"))) {
         if (cpe_str_read_process_one(r, r_capacity, p, s - p, arg_name, name_len, pair) == 0) return 0;
         p = cpe_str_trim_head((char *)(s + 1));
     }

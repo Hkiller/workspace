@@ -16,6 +16,7 @@ int xtoken_try_to_double(xtoken_t token, double * r);
 int xtoken_try_to_bool(xtoken_t token, uint8_t * r);
 const char * xtoken_try_to_str(xtoken_t token);
 const char * xtoken_to_str(xtoken_t token, char * buf, size_t buf_size);
+const char * xtoken_to_str_with_buffer(xtoken_t token, mem_buffer_t buffer);
 
 xtoken_data_type_t xtoken_data_type(xtoken_t token);
 

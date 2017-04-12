@@ -30,6 +30,8 @@ void gd_app_lib_close_for_module(
 void * gd_app_lib_sym(struct gd_app_lib * lib, const char * symName, error_monitor_t em);
 
 /*module operations*/
+int gd_app_module_create(gd_app_context_t context, const char * module_name, cfg_t cfg);
+    
 int gd_app_modules_load(gd_app_context_t context);
 void gd_app_modules_unload(gd_app_context_t context);
 

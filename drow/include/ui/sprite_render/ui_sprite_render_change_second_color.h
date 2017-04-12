@@ -1,0 +1,26 @@
+#ifndef UI_SPRITE_RENDER_CHANGE_SECOND_COLOR_H
+#define UI_SPRITE_RENDER_CHANGE_SECOND_COLOR_H
+#include "ui_sprite_render_types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+extern const char * UI_SPRITE_RENDER_CHANGE_SECOND_COLOR_NAME;
+
+ui_sprite_render_change_second_color_t ui_sprite_render_change_second_color_create(ui_sprite_fsm_state_t fsm_state, const char * name);
+void ui_sprite_render_change_second_color_free(ui_sprite_render_change_second_color_t send_evt);
+
+ui_runtime_render_second_color_t ui_sprite_render_change_second_color_second_color(ui_sprite_render_change_second_color_t change_second_color);
+void ui_sprite_render_change_second_color_set_second_color(ui_sprite_render_change_second_color_t change_second_color, ui_runtime_render_second_color_t second_color);
+
+ui_color_t ui_sprite_render_change_second_color_change_to_color(ui_sprite_render_change_second_color_t change_second_color);
+float ui_sprite_render_change_second_color_change_take_time(ui_sprite_render_change_second_color_t change_second_color);
+
+int ui_sprite_render_change_second_color_set_decorator(ui_sprite_render_change_second_color_t change_second_color, const char * decorator);
+    
+#ifdef __cplusplus
+}
+#endif
+
+#endif

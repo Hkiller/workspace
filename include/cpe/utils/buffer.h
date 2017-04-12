@@ -56,11 +56,13 @@ void mem_pos_at(mem_buffer_pos_t pos, mem_buffer_t buffer, size_t n);
 ssize_t mem_pos_seek(mem_buffer_pos_t pos, ssize_t n);
 void * mem_pos_insert_alloc(mem_buffer_pos_t pos, size_t n);
 ssize_t mem_pos_insert(mem_buffer_pos_t pos, const void * buf, size_t size);
+size_t mem_pos_write(mem_buffer_pos_t l, const void * data, size_t n);
 
 int mem_pos_eq(mem_buffer_pos_t l, mem_buffer_pos_t r);
 int mem_pos_valide(mem_buffer_pos_t l);
 ssize_t mem_pos_diff(mem_buffer_pos_t l, mem_buffer_pos_t r);
 char mem_pos_data(mem_buffer_pos_t l);
+size_t mem_pos_read(mem_buffer_pos_t l, void * data, size_t n);
 
 /* buffer read write operations */
 ssize_t mem_buffer_append(mem_buffer_t buffer, const void * buf, size_t size);

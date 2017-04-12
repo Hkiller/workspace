@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{95EB7DD2-A721-4246-A3DA-863D11C15008}</ProjectGuid>
+    <RootNamespace>svr_conn_net_cli</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../build/vc/$(ProjectName)/$(ConfigurationName)</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\build\vc\protocol\$(ProjectName);../../3rdTools/bson/include;../../3rdTools/libev/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\build\vc\protocol\$(ProjectName);../../3rdTools/bson/include;../../3rdTools/libev/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UndefinePreprocessorDefinitions>4819</UndefinePreprocessorDefinitions>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\build\vc\protocol\svr_conn_net_cli\protocol\svr\conn\metalib.c" />
+    <ClCompile Include="..\..\src\svrpp\conn\net_cli\NetClient.cpp" />
+    <ClCompile Include="..\..\src\svrpp\conn\net_cli\NetMonitor.cpp" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_fsm_connecting.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_fsm_disable.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_fsm_disconnected.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_fsm_established.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_module.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_monitor.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_net.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_pkg.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_send.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_svr_cmd.c" />
+    <ClCompile Include="..\..\src\svr\conn\net_cli\conn_net_cli_svr_stub.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\svr\conn\svr\pro\net\svr_conn_net.xml">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">set PATH=$(ProjectDir)..\..\3rdTools\iconv\vc\bin%3b$(ProjectDir)..\..\3rdTools\zlib\vc\bin%3b%PATH%
+$(ProjectDir)..\..\build\vc\tools\cpe_dr_tool.exe -i %(FullPath) --output-h $(ProjectDir)..\..\build\vc\protocol\$(SafeRootNamespace)\protocol\svr\conn --output-lib-c $(ProjectDir)..\..\build\vc\protocol\$(SafeRootNamespace)\protocol\svr\conn\metalib.c --output-lib-c-arg g_metalib_svr_conn_pro
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\build\vc\protocol\$(SafeRootNamespace)\protocol\svr\conn\metalib.c;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">set PATH=$(ProjectDir)..\..\3rdTools\iconv\vc\bin;$(ProjectDir)..\..\3rdTools\zlib\vc\bin;%PATH%
+$(ProjectDir)..\..\build\vc\tools\cpe_dr_tool.exe -i %(FullPath) --output-h $(ProjectDir)..\..\build\vc\protocol\$(ProjectName)\protocol\svr\conn --output-lib-c $(ProjectDir)..\..\build\vc\protocol\$(ProjectName)\protocol\svr\conn\metalib.c --output-lib-c-arg g_metalib_svr_conn_pro
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\build\vc\protocol\$(ProjectName)\protocol\svr\conn\metalib.c;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build svr_conn protocol</Message>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\svr\conn\net_cli\conn_net_cli_internal_ops.h" />
+    <ClInclude Include="..\..\src\svr\conn\net_cli\conn_net_cli_internal_types.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

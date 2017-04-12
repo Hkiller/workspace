@@ -1,5 +1,5 @@
-#include <ctype.h>
-#include <string.h>
+#include "cpe/pal/pal_types.h"
+#include "cpe/pal/pal_string.h"
 #include "cpe/utils/stream.h"
 #include "cpe/utils/stream_buffer.h"
 #include "cpe/utils/stream_mem.h"

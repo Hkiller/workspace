@@ -4,7 +4,7 @@
 
 namespace Gd { namespace NetTrans {
 
-void NetTransTask::set_post_to(const char * uri, const char * data, int data_len) {
+void NetTransTask::set_post_to(const char * uri, const char * data, size_t data_len) {
     if (net_trans_task_set_post_to(*this, uri, data, data_len) != 0) {
         APP_CTX_THROW_EXCEPTION(
             net_trans_manage_app(net_trans_task_manage(*this)),

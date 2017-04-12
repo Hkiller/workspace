@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="" version="1">
+    <include name="tiledmap_common" file="tiledmap_common.xml"/>
+
+    <!-- scene -->
+    <struct name="tiledmap_scene" version="1">
+        <entry name="dummy" type="uint8" id="1"/>
+    </struct>
+
+    <!-- layer -->
+    <struct name="tiledmap_layer" version="1">
+        <entry name="name" type="string" size="64" id="1"/>
+        <entry name="cell_row_begin" type="int32" id="2"/>
+        <entry name="cell_row_end" type="int32" id="3"/>
+        <entry name="cell_col_begin" type="int32" id="4"/>
+        <entry name="cell_col_end" type="int32" id="5"/>
+        <entry name="cell_w" type="uint32" id="6"/>
+        <entry name="cell_h" type="uint32" id="7"/>
+    </struct>
+
+    <!-- tile -->
+    <macrosgroup name="tiledmap_tile_flip_type">
+        <macro name="tiledmap_tile_flip_type_none" value="0"/>
+        <macro name="tiledmap_tile_flip_type_x" value="1"/>
+        <macro name="tiledmap_tile_flip_type_y" value="2"/>
+        <macro name="tiledmap_tile_flip_type_xy" value="3"/>
+    </macrosgroup>
+
+    <macrosgroup name="tiledmap_tile_angle_type">
+        <macro name="tiledmap_tile_angle_type_none" value="0"/>
+        <macro name="tiledmap_tile_angle_type_90" value="1"/>
+        <macro name="tiledmap_tile_angle_type_180" value="2"/>
+        <macro name="tiledmap_tile_angle_type_270" value="3"/>
+    </macrosgroup>
+    
+    <macrosgroup name="tiledmap_tile_ref_type">
+        <macro name="tiledmap_tile_ref_type_tag" value="0"/>
+        <macro name="tiledmap_tile_ref_type_img" value="1"/>
+        <macro name="tiledmap_tile_ref_type_frame" value="2"/>
+    </macrosgroup>
+
+    <struct name="tiledmap_tile_ref_tag" version="1">
+        <entry name="rect" type="tiledmap_rect" id="1"/>
+    </struct>
+    
+    <struct name="tiledmap_tile_ref_img" version="1">
+        <entry name="module_id" type="uint32" id="1"/>
+        <entry name="img_block_id" type="uint32" id="2"/>
+    </struct>
+
+    <struct name="tiledmap_tile_ref_frame" version="1">
+        <entry name="sprite_id" type="uint32" id="1"/>
+        <entry name="frame_id" type="uint32" id="2"/>
+    </struct>
+
+    <union name="tiledmap_tile_ref_data" version="1">
+        <entry name="tag" type="tiledmap_tile_ref_tag" id="tiledmap_tile_ref_type_tag"/>
+        <entry name="img" type="tiledmap_tile_ref_img" id="tiledmap_tile_ref_type_img"/>
+        <entry name="frame" type="tiledmap_tile_ref_frame" id="tiledmap_tile_ref_type_frame"/>
+    </union>
+
+    <struct name="tiledmap_tile" version="1">
+        <entry name="name" type="string" size="128" id="1"/>
+        <entry name="ref_type" type="uint8" id="3"/>
+        <entry name="ref_data" type="tiledmap_tile_ref_data" id="4" select="ref_type"/>
+        <entry name="flip_type" type="uint8" id="5" bindmacrogroup="tiledmap_tile_flip_type"/>
+        <entry name="angle_type" type="uint8" id="6" bindmacrogroup="tiledmap_tile_angle_type"/>
+        <entry name="pos" type="tiledmap_pair" id="7"/>
+        <entry name="scale" type="tiledmap_pair" id="8"/>
+    </struct>
+
+</metalib>
